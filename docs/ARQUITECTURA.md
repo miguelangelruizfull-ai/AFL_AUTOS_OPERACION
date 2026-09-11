@@ -31,6 +31,16 @@ Aquí viven branding, moodboards, campañas, formatos, casos, experimentos, hook
 
 El módulo **Plan de captura** debe consultarlo después de identificar el vehículo para adaptar tomas y estrategia al tipo de unidad y al aprendizaje vigente.
 
+## AFL_AUTOS_COMERCIAL — privado
+
+Función: autoridad de atención, conversión y aprendizaje comercial sanitizado.
+
+Aquí viven reglas comerciales, respuestas por intención, flujos Messenger/WhatsApp, calificación, visita, seguimiento, cierre, scripts, objeciones y plantillas sanitizadas.
+
+No sustituye `Vehiculos/PUENTE.md`: precio, disponibilidad, motor, documentación y demás datos variables de una unidad se resuelven desde el expediente vigente.
+
+RAW, capturas, exportaciones y conversaciones privadas permanecen en el Drive comercial; este repositorio no debe convertirse en almacén de PII.
+
 ## AFL_AUTOS_PLATFORM — privado
 
 Función: análisis, datasets sanitizados, metodología y evidencia reproducible.
@@ -43,6 +53,10 @@ Para unidades nuevas, el flujo recomendado separa:
 
 `ORIGINALES → SELECCIÓN → RETOQUE → PRODUCCIÓN → RESULTADOS`
 
+Para material comercial privado aplicar además:
+
+`RAW PRIVADO ≠ APRENDIZAJE SANITIZADO`
+
 Ver [`ESTRUCTURA_DRIVE_V2.md`](./ESTRUCTURA_DRIVE_V2.md).
 
 ## Secuencia operativa V2
@@ -51,10 +65,17 @@ Ver [`ESTRUCTURA_DRIVE_V2.md`](./ESTRUCTURA_DRIVE_V2.md).
 
 La identificación no debe convertirse automáticamente en producción. Primero se decide qué necesita mostrar esa unidad para comercializarla correctamente.
 
+## Flujo comercial
+
+`INTERACCION → CONVERSACION → LEAD_CALIFICADO → VISITA → NEGOCIACION → VENTA`
+
+Los estados no son equivalentes y cada lead activo debe conservar una `SIGUIENTE_ACCION`.
+
 ## Regla de resolución de contradicciones
 
 - Datos de una unidad → manda `Vehiculos`.
+- Atención/conversión → manda `AFL_AUTOS_COMERCIAL`.
 - Creatividad/formato → manda `AFL_AUTOS_CONTENT_SYSTEM`.
 - Análisis/metodología → manda `AFL_AUTOS_PLATFORM`.
-- Multimedia/evidencia pesada → manda Drive.
+- Multimedia/evidencia pesada/RAW → manda Drive.
 - Este repo coordina, pero no reemplaza esas fuentes.
