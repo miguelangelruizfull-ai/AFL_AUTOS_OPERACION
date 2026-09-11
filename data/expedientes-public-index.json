@@ -3,7 +3,7 @@
   "generated_at": "2026-09-11T10:59:00-06:00",
   "source": {
     "repository": "miguelangelruizfull-ai/Vehiculos",
-    "head": "cf1a87905f3a1bb739ac03e272c3ed57a2a23ee7",
+    "head": "dc0433a7f3d681dbcafae522e8e2e80f1a1d6d31",
     "private_index": "index/EXPEDIENTES_INDEX.json"
   },
   "rule": "NAVEGACION_DERIVADA_NO_FUENTE_DE_VERDAD",
@@ -11,12 +11,12 @@
     {
       "key": "PENDIENTE_Chevrolet_Silverado_2016_2026-09-11",
       "label": "Chevrolet Silverado 2016 Cabina Regular",
-      "estado": "PLAN_CAPTURA_LISTO / CAPTURA_PENDIENTE",
+      "estado": "PLAN_CAPTURA_LISTO / CAPTURA_PENDIENTE / FLYER_V2_RECHAZADO",
       "siguiente_accion": "CAPTURA",
       "puente_path": "vehiculos/PENDIENTE_Chevrolet_Silverado_2016_2026-09-11/PUENTE.md",
-      "puente_sha": "b4c38c3edcce65ff8a64c9f558a26a8600b1d747",
+      "puente_sha": "b8ed9008b64f843655e387dccda4bc6e172e691a",
       "drive_roots": [
-        {"role": "CANONICO", "directories": ["01_FOTOS_ORIGINALES", "02_VIDEOS_ORIGINALES", "02_FOTOS_PARA_ENVIAR", "03_FOTOS_RETOCADAS_PARA_ENVIAR"]}
+        {"role": "CANONICO", "directories": ["01_FOTOS_ORIGINALES", "02_VIDEOS_ORIGINALES", "02_FOTOS_PARA_ENVIAR", "03_FOTOS_RETOCADAS_PARA_ENVIAR", "05_FLYERS"]}
       ]
     },
     {
