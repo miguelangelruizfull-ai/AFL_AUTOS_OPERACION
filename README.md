@@ -4,9 +4,7 @@ Centro de operación público y móvil de AFL AUTOS.
 
 ## Estado actual del Home
 
-`index.html` volvió a la versión **V3.1 funcional** por decisión de Miguel el 2026-09-11.
-
-Commit histórico restaurado: `1f74f29acd00a8c5e841792ce28d52f6911b14f1`.
+`index.html` usa **V3.1 funcional** como base UX probada.
 
 Criterio vigente:
 
@@ -14,13 +12,17 @@ Criterio vigente:
 
 `V4.1 = CANDIDATO / LABORATORIO / NO CANONICO`
 
-La restauración afecta la interfaz principal, no elimina las mejoras posteriores del repositorio.
+V3.1 evolucionó de forma pequeña para incorporar revisión visual y aprendizaje sin convertirse en base de datos creativa.
 
 ## Principio
 
 `UN SOLO HOME / FUENTES SEPARADAS`
 
-El Home coordina y genera instrucciones. No es CRM, expediente técnico ni fuente de verdad.
+El Home coordina y genera instrucciones. No es CRM, expediente técnico ni fuente durable de aprendizaje creativo.
+
+La autoridad durable del aprendizaje visual es:
+
+`AFL_AUTOS_CONTENT_SYSTEM`
 
 ## URL
 
@@ -33,33 +35,101 @@ Archivo canónico: [`index.html`](./index.html).
 - centro de coordinación ligero;
 - entrada directa por módulos;
 - formulario corto;
+- Nuevo vehículo;
+- Plan de captura;
+- Seleccionar material;
+- Lavar / retocar;
+- Producir redes;
 - Continuar vehículo;
 - Procesar retorno;
 - Continuar hilo / tarea;
-- agenda local;
+- Publicación + medición;
+- Vendido / entrega;
+- Cerrar / sincronizar;
+- Nuevo chat principal;
+- agenda local `afl_autos_agenda_v1`;
 - recomendaciones de siguiente etapa;
 - flujo móvil probado.
 
-## Mejoras posteriores que SE CONSERVAN en el repositorio
+## Nuevo ciclo de aprendizaje visual
 
-Aunque el Home volvió a V3.1, siguen vigentes los módulos y prompts actualizados:
+V3.1 añade un módulo pequeño:
 
-- `prompts/PLAN_CAPTURA.md` — captura orientada por motores históricos;
-- `prompts/SELECCIONAR_MATERIAL.md` — HERO, hooks, familias y bloqueos de calidad;
-- `prompts/PRODUCIR_REDES.md` — gates obligatorios para flyers y Reel/TikTok;
-- `prompts/REVISION_APROBACION.md` — revisión contra auditorías/motores;
-- `prompts/PUBLICACION_MEDICION.md` — medición ligada a variables creativas;
-- `prompts/COMERCIAL_ROUTER.md` y `AFL_AUTOS_COMERCIAL` — lógica comercial separada;
-- `data/expedientes-public-index.json` — índice público sanitizado disponible para futuras integraciones;
-- `home_v4_1.html`, `assets/home-v4-1.*` y `config/home-v4-1-actions.js` — prototipo V4.1 conservado, no canónico.
+**Revisar diseño / Registrar aprendizaje**
 
-No borrar estas mejoras por el rollback visual.
+Permite generar un prompt con:
+
+- vehículo/proyecto;
+- Drive;
+- pieza/versión;
+- decisión de Miguel: aprobar / corregir / rechazar;
+- qué no gustó;
+- qué sí conservar;
+- referencia visual opcional;
+- comentario de Miguel.
+
+El Home solo construye el prompt. No guarda ese feedback como fuente de verdad en `localStorage`.
+
+Flujo:
+
+`PRODUCIR → REVISAR → APROBAR/CORREGIR/RECHAZAR → REGISTRAR_APRENDIZAJE → SIGUIENTE_PRODUCCION`
+
+Regla:
+
+`CASO_PARTICULAR ≠ REGLA_GENERAL ≠ APRENDIZAJE_VALIDADO`
+
+## Dirección visual activa
+
+La producción gráfica debe consultar en `AFL_AUTOS_CONTENT_SYSTEM`:
+
+- `formats/ACTIVE_VISUAL_DIRECTION.md`;
+- `formats/FLYERS_PORTADAS.md`;
+- `formats/FLYER_ENGINE.md`;
+- `formats/FLYER_FAMILIES.md`;
+- `library/flyer_audit/REFERENCE_STATUS.md`;
+- `COMMON_ERRORS.md`;
+- referencias aprobadas por Miguel cuando existan;
+- `NEGATIVE_CASES.md` y `VISUAL_FEEDBACK_LOG.md`.
+
+Regla creativa:
+
+`REFERENCIA_POSITIVA_APROBADA_POR_MIGUEL > REFERENCIA_HISTORICA_NO_VALIDADA`
+
+Ninguna referencia visual es fuente técnica del vehículo.
+
+## Producción
+
+`prompts/PRODUCIR_REDES.md` exige dirección visual activa y aprendizaje vigente antes de producir flyers, feed, historias o portadas.
+
+Entre otras reglas:
+
+- vehículo protagonista;
+- `NO ICONOS`;
+- máximo 2–4 datos confirmados/publicables;
+- jerarquía moderna/editorial;
+- composiciones específicas por formato;
+- evitar apariencia de plantilla genérica;
+- no producir una variante llamada `premium` sin una dirección realmente distinta y más sólida;
+- no publicar automáticamente.
+
+## Revisión y aprendizaje
+
+- `prompts/REVISION_APROBACION.md` — revisión de pieza real y decisión explícita de Miguel.
+- `prompts/REVISAR_DISENO_APRENDIZAJE.md` — persiste feedback en Content System.
+
+Decisiones:
+
+- `APROBADO_POR_MIGUEL`
+- `REQUIERE_CORRECCION`
+- `RECHAZADO_POR_MIGUEL / NO_PUBLICAR / REQUIERE_REDISENO`
+
+Una pieza producida/subida no queda aprobada por inferencia.
 
 ## Fuentes de autoridad
 
 - `AFL_AUTOS_OPERACION` — Home, coordinación, prompts y continuidad.
 - `Vehiculos` — verdad técnica/comercial por unidad mediante `PUENTE.md`.
-- `AFL_AUTOS_CONTENT_SYSTEM` — creatividad, branding, auditorías y motores editoriales.
+- `AFL_AUTOS_CONTENT_SYSTEM` — creatividad, dirección visual, referencias, auditorías y aprendizaje.
 - `AFL_AUTOS_COMERCIAL` — respuestas, calificación, visita, seguimiento, negociación y cierre.
 - `AFL_AUTOS_PLATFORM` — análisis, datasets sanitizados y métricas.
 - Google Drive — RAW, multimedia y evidencia pesada.
@@ -72,7 +142,7 @@ Para cualquier unidad:
 
 ## Flujo operativo
 
-`INGRESO → PLAN CAPTURA → CAPTURA → SELECCIÓN → RETOQUE → PRODUCCIÓN → APROBACIÓN → PUBLICACIÓN → MEDICIÓN`
+`INGRESO → PLAN_CAPTURA → CAPTURA → SELECCION → RETOQUE → PRODUCCION → REVISION/APRENDIZAJE → APROBACION → PUBLICACION → MEDICION`
 
 Mantener estrictamente:
 
@@ -82,13 +152,17 @@ Mantener estrictamente:
 
 ### Flyers / historias / portadas
 
-La producción debe consultar el Motor Visual y la auditoría de 100 piezas. Si la foto no soporta una pieza adecuada:
+La auditoría de 100 piezas sigue activa como evidencia visual histórica. Las referencias históricas no se consideran aprobadas por Miguel salvo registro explícito.
+
+Si la foto no soporta una pieza adecuada:
 
 `BLOQUEADO_POR_FOTO / REQUIERE_MEJOR_HERO`
 
 ### TikTok / Facebook Reel
 
-La producción debe consultar Motor Editorial, familias, hooks/CTA y `VIDEO_AUDIT_INDEX.md`. Si el material no soporta una pieza adecuada:
+La producción debe consultar Motor Editorial, familias, hooks/CTA y `VIDEO_AUDIT_INDEX.md`.
+
+Si el material no soporta una pieza adecuada:
 
 `BLOQUEADO_POR_MATERIAL / REQUIERE_MEJOR_SELECCION_O_CAPTURA`
 
@@ -121,6 +195,10 @@ No guardar en este repositorio público:
 Para contenido público aplicar:
 
 `DATO_CONFIRMADO ≠ DATO_PUBLICABLE ≠ EVIDENCIA_VISUAL ≠ MOODBOARD ≠ PIEZA_APROBADA`
+
+## Prototipos conservados
+
+`home_v4_1.html`, `assets/home-v4-1.*` y `config/home-v4-1-actions.js` permanecen como laboratorio no canónico. No sustituyen `index.html`.
 
 ## Guías
 
