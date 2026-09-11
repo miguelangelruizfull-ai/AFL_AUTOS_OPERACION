@@ -37,7 +37,11 @@ Nunca tratar estos estados como equivalentes.
 
 ## Comercial
 
-`INTERACCION ≠ CONVERSACION ≠ LEAD_CALIFICADO ≠ VISITA ≠ VENTA`
+`INTERACCION ≠ CONVERSACION ≠ LEAD_CALIFICADO ≠ VISITA ≠ NEGOCIACION ≠ VENTA`
+
+Para visita distinguir además `VISITA_PROPUESTA`, `VISITA_AGENDADA` y `VISITA_REALIZADA` cuando corresponda.
+
+Cada lead activo debe conservar una `SIGUIENTE_ACCION`.
 
 Nunca atribuir una venta a una publicación sin evidencia de relación.
 
