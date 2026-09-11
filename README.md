@@ -4,7 +4,7 @@ Centro de operación público y móvil de AFL AUTOS.
 
 ## Propósito
 
-Este repositorio funciona como **lanzador de trabajo**. Permite iniciar un vehículo nuevo, crear su estrategia de captura, seleccionar material, retocar fotos, producir redes, registrar una publicación, medir resultados, cerrar un chat o arrancar un nuevo chat principal sin depender de una conversación específica.
+Este repositorio funciona como **lanzador de trabajo**. Permite iniciar un vehículo nuevo, crear su estrategia de captura, seleccionar material, retocar fotos, producir redes, registrar una publicación, medir resultados, continuar una tarea en otro chat, cerrar trabajo o arrancar un nuevo chat principal sin depender de una conversación específica.
 
 No sustituye los repositorios privados ni Google Drive.
 
@@ -12,7 +12,7 @@ No sustituye los repositorios privados ni Google Drive.
 
 Archivo principal: [`index.html`](./index.html)
 
-Cuando GitHub Pages esté habilitado desde la rama `main` / raíz, la URL esperada será:
+URL esperada con GitHub Pages:
 
 `https://miguelangelruizfull-ai.github.io/AFL_AUTOS_OPERACION/`
 
@@ -28,7 +28,7 @@ La web es responsive, no requiere servidor y genera prompts localmente en el nav
 
 Ver [`docs/ARQUITECTURA.md`](./docs/ARQUITECTURA.md).
 
-## Inicio rápido V2
+## Inicio rápido V3
 
 1. **+ Nuevo vehículo** → identificar y crear/actualizar expediente.
 2. **Estrategia + plan de captura** → decidir cómo vender visualmente esa unidad, crear carpetas de originales y generar checklist con tomas/tiempos.
@@ -39,22 +39,52 @@ Ver [`docs/ARQUITECTURA.md`](./docs/ARQUITECTURA.md).
 7. Miguel aprueba/publica.
 8. **Publicación + medición** → URLs y 24 h / 72 h / 7 días.
 
-Guía: [`docs/COMO_EMPEZAR.md`](./docs/COMO_EMPEZAR.md)
+Si un chat se llena o una tarea queda a medias, usar **Continuar hilo / tarea**. Se pega el último `RETORNO_AL_COORDINADOR` o checkpoint y el nuevo chat valida las fuentes vigentes antes de continuar.
 
-Estructura Drive V2: [`docs/ESTRUCTURA_DRIVE_V2.md`](./docs/ESTRUCTURA_DRIVE_V2.md)
+Guías:
 
-## Módulos V2 de la herramienta
+- [`docs/COMO_EMPEZAR.md`](./docs/COMO_EMPEZAR.md)
+- [`docs/COORDINACION_Y_RETORNOS.md`](./docs/COORDINACION_Y_RETORNOS.md)
+- [`docs/AGENDA_OPERATIVA.md`](./docs/AGENDA_OPERATIVA.md)
+- [`docs/ESTRUCTURA_DRIVE_V2.md`](./docs/ESTRUCTURA_DRIVE_V2.md)
+
+## Módulos V3 de la herramienta
 
 - Nuevo vehículo
 - Estrategia + plan de captura
 - Seleccionar material
 - Continuar vehículo
+- **Continuar hilo / tarea**
 - Lavar / retocar fotos
 - Producir redes
 - Publicación + medición
 - Vendido / entrega
 - Cerrar / sincronizar chat
 - Nuevo chat principal
+
+Además incluye una **Agenda operativa local** para pendientes por fecha/etapa. Se guarda solo en el navegador mediante `localStorage`; no se publica en GitHub y no sustituye una automatización real.
+
+## Retorno al coordinador
+
+Todo prompt generado por la V3 añade un bloque obligatorio `RETORNO_AL_COORDINADOR`.
+
+La intención es que Miguel no tenga que copiar respuestas largas entre chats. Normalmente basta con copiar ese bloque al coordinador.
+
+Formato documentado en [`docs/COORDINACION_Y_RETORNOS.md`](./docs/COORDINACION_Y_RETORNOS.md).
+
+## Recordatorios y mediciones
+
+La agenda local puede guardar tareas como:
+
+- captura pendiente;
+- aprobación;
+- publicación;
+- medición 24 h;
+- medición 72 h;
+- medición 7 días;
+- auditoría o seguimiento.
+
+El botón **COPIAR PROMPT DE RECORDATORIOS** genera una instrucción para pegar en ChatGPT y solicitar recordatorios reales. La herramienta por sí sola no declara una tarea `PROGRAMADA`.
 
 ## Prompts especializados versionados
 
@@ -64,6 +94,7 @@ La carpeta [`prompts/`](./prompts/) conserva plantillas reutilizables:
 - `PLAN_CAPTURA.md`
 - `SELECCIONAR_MATERIAL.md`
 - `CONTINUAR_VEHICULO.md`
+- `CONTINUAR_HILO.md`
 - `LAVAR_FOTOS.md`
 - `PRODUCIR_REDES.md`
 - `PUBLICACION_MEDICION.md`
@@ -97,7 +128,7 @@ No guardar aquí:
 - credenciales;
 - evidencia privada innecesaria.
 
-Los enlaces o datos que se pegan en `index.html` se usan para construir el prompt en el navegador. No deben convertirse automáticamente en contenido del repositorio.
+Los enlaces/datos escritos en `index.html` se usan en el navegador para construir prompts. La agenda también permanece local. Ninguno debe convertirse automáticamente en contenido del repositorio.
 
 Ver [`docs/REGLAS_DRIVE_GITHUB.md`](./docs/REGLAS_DRIVE_GITHUB.md).
 
