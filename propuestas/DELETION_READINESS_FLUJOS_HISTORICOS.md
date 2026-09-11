@@ -8,78 +8,126 @@ Fecha: `2026-09-11`
 
 ## Checklist
 
-- [ ] `36/36 inventariados` — BLOQUEADO: el alcance declarado dice 36, pero el inventario directo observado durante el primer corte contiene 39 entradas. Reconciliar antes de borrar.
-- [x] auditoría guardada — `AUDITORIA_FLUJOS_HISTORICOS.md`
-- [x] ideas rescatables guardadas — `IDEAS_RESCATABLES.md`
-- [x] errores/antipatrones guardados — `ERRORES_Y_ANTI_PATRONES.md`
-- [x] Home objetivo guardado — `HOME_OBJETIVO.md`
-- [x] decisiones migración guardadas — `MIGRATION_DECISIONS.md`
-- [x] snapshot manifest guardado — `SOURCE_SNAPSHOT_FLUJOS_2026-09-11.md`
-- [x] duplicados documentados por contenido — 3 grupos confirmados por SHA-256
-- [x] lineage documentado — familia V10, backups, AFL-0032, ZIP y JSON
-- [x] información privada identificada — dos capturas fuera de alcance + RAW/bitácora sensibles
-- [x] información útil migrada — reglas/ideas materializadas en propuestas y Content System
-- [ ] dependencias verificadas — pendiente revisión final de referencias antes de borrar copias/legacy
-- [x] RAW que debe conservarse identificado
-- [x] candidatos a borrado identificados — solo duplicados exactos confirmados y archivos superados, sujetos a dependencia
-- [ ] autorización de Miguel pendiente
+- [x] inventario físico reconciliado — `39 archivos / 0 carpetas`.
+- [x] diferencia `36 vs 39` explicada — 36 entradas de auditoría sustantiva + 2 capturas fuera de alcance + 1 PDF no utilizado en el primer corte.
+- [x] auditoría guardada — `AUDITORIA_FLUJOS_HISTORICOS.md`.
+- [x] ideas rescatables guardadas — `IDEAS_RESCATABLES.md`.
+- [x] errores/antipatrones guardados — `ERRORES_Y_ANTI_PATRONES.md`.
+- [x] Home objetivo guardado — `HOME_OBJETIVO.md`.
+- [x] decisiones migración guardadas — `MIGRATION_DECISIONS.md`.
+- [x] snapshot manifest reconciliado — `SOURCE_SNAPSHOT_FLUJOS_2026-09-11.md`.
+- [x] tabla de limpieza por entrada creada — `DRIVE_CLEANUP_DECISION_TABLE.md`.
+- [x] duplicados exactos reconfirmados por SHA-256 — 3 grupos.
+- [x] copia canónica elegida para cada grupo duplicado.
+- [x] lineage V10/JSON/ZIP documentado.
+- [x] `00_CONTROL_MAESTRO_AFL_AUTOS.pdf` revisado — `SUPERADO_POR_SISTEMA_ACTUAL`.
+- [x] información privada fuera de alcance identificada — dos capturas; `SEPARAR_DE_AFL`.
+- [x] información útil migrada — reglas/ideas materializadas en propuestas y Content System.
+- [x] referencias internas de duplicados revisadas — no se encontraron referencias a las copias redundantes; el index V10 sin sufijo sí está referenciado históricamente.
+- [x] RAW que debe conservarse identificado.
+- [x] candidatos exactos y superados identificados.
+- [ ] riesgo de enlaces Drive compartidos aceptado/verificado por Miguel — Drive marca los archivos como compartidos y la conexión no expone un historial exhaustivo de quién conserva URLs directas.
+- [ ] autorización explícita de Miguel para borrar archivos concretos.
 
-## Duplicados exactos candidatos
+## Reconciliación 36 vs 39
+
+Total directo actual: `39 archivos`.
+
+Las tres entradas que explican el alcance inicial de 36 son:
+
+- `Screenshot_20260821-135811_Chrome.png` — fuera de alcance / privacidad alta.
+- `Screenshot_20260821-135807_Chrome.png` — fuera de alcance / privacidad alta.
+- `00_CONTROL_MAESTRO_AFL_AUTOS.pdf` — estaba presente, pero fue expresamente excluido como fundamento del primer corte hasta revisión posterior.
+
+No son altas nuevas y no son carpetas.
+
+## PDF Control Maestro
+
+Clasificación conceptual: `SUPERADO_POR_SISTEMA_ACTUAL`.
+
+Acción de limpieza: `BORRADO_CANDIDATO_SUPERADO`.
+
+Motivo: la estructura Drive-centric, el esquema de versionado y las reglas operativas útiles ya están preservadas en repositorios y documentación materializada. No se identificó una autoridad operativa única pendiente de migrar desde el PDF.
+
+## Duplicados exactos
 
 ### D01
-- `PREVIEW_LOTE_10.png`
-- `PREVIEW_LOTE_10 (1).png`
+- Conservar: `PREVIEW_LOTE_10.png`.
+- Candidato: `PREVIEW_LOTE_10 (1).png`.
+- SHA-256: `1b7611a7efd4e7c999eb5b673852c77d5cd1a834fd9db78f0bd6e54e25c08ee7`.
 
 ### D02
-- `MOODBOARD_AFL_AUTOS_SEPTIEMBRE_MES_PATRIO.md`
-- `MOODBOARD_AFL_AUTOS_SEPTIEMBRE_MES_PATRIO-1.md`
+- Conservar: `MOODBOARD_AFL_AUTOS_SEPTIEMBRE_MES_PATRIO.md`.
+- Candidato: `MOODBOARD_AFL_AUTOS_SEPTIEMBRE_MES_PATRIO-1.md`.
+- SHA-256: `ef4e3d973704ff755fd04d88345d1e5baa5194fa83d03ffa8390bfd594411424`.
 
 ### D03
-- `index_afl_autos_operacion_comercial_v10.html`
-- `index_afl_autos_operacion_comercial_v10 (1).html`
+- Conservar: `index_afl_autos_operacion_comercial_v10.html`.
+- Candidato: `index_afl_autos_operacion_comercial_v10 (1).html`.
+- SHA-256: `c894c959c63d36ef2d8739430aa2c1c6a8e3c16ed3fe0e1252b82952b09b14c1`.
 
-El manifiesto conserva los hashes. No borrar todavía.
+Los contextos RAW del 5-Sep y el snapshot ZIP respaldan conservar el nombre V10 sin sufijo.
 
-## RAW a conservar antes de cualquier limpieza
+## RAW / lineage a conservar
 
-- JSON históricos V10;
-- bitácora histórica;
-- ZIP snapshot 03SEP;
-- contextos RAW del 5-Sep;
-- backups necesarios para lineage;
-- audit Meta y documentación que no esté preservada en otra fuente durable;
-- `00_CONTROL_MAESTRO_AFL_AUTOS.pdf` hasta revisión manual;
-- cualquier archivo que siga siendo dependencia de un HTML/ZIP o de una auditoría vigente.
+### CONSERVAR_RAW
+- `BITACORA_DIARIA_AFL_AUTOS_02JUN_31AGO2026_V10.md`.
+- `AFL_AUTOS_DATOS_COMPLETOS_V10_31AGO2026.json`.
+- `AFL_AUTOS_DATOS_COMPLETOS_V10_31AGO2026 (1).json`.
+- `AFL_AUTOS_DATOS_COMPLETOS_V10_03SEP2026.json`.
+- `2026-09-05_195640_actualizacion-index-flyers-exportaciones_AJJNTR.md`.
+- `2026-09-05_183150_sistema-generador-flyers-lariat-drive_MYU8S5.md`.
+
+### CONSERVAR_LINEAGE
+- `MANUAL_USUARIO_AFL_AUTOS_V10.md`.
+- `indexv1.html`.
+- `index.html` de la carpeta histórica.
+- `index_afl_autos_operacion_comercial_v10.html`.
+- `index_afl_autos_operacion_comercial_v10 (2).html`.
+- `index_afl_autos_operacion_comercial_v10 (3).html`.
+- `BACKUP_PRE_AFL0032_index_afl_autos_operacion_comercial_v10.html`.
+- `AFL_AUTOS_V10_ACTUALIZADO_03SEP2026.zip`.
+- `AFL_AUTOS_RESPONDER_V1.html`.
+- `AFL_AUTOS_CONTENT_SALES_ENGINE_V4.html`.
+
+La tabla detallada conserva referencias adicionales que deben mantenerse como evidencia/referencia.
 
 ## Fuera de alcance
 
-Dos capturas ajenas a AFL AUTOS quedan clasificadas:
+- `Screenshot_20260821-135807_Chrome.png`.
+- `Screenshot_20260821-135811_Chrome.png`.
 
-`FUERA_DE_ALCANCE / PRIVACIDAD_ALTA`
+Clasificación: `SEPARAR_DE_AFL / PRIVACIDAD_ALTA`.
 
-Acción futura recomendada: separar de la carpeta AFL antes de crear archivos históricos compartibles. No mover/borrar sin autorización.
+No describir, publicar, mover ni borrar sin autorización de Miguel.
 
-## Dependencias pendientes
+## Candidatos de borrado técnico
 
-Antes de borrar candidatos:
-1. buscar referencias por filename/ID en HTML, Markdown, ZIP y repos;
-2. confirmar cuál copia queda como canónica;
-3. confirmar que no existe una URL compartida que dependa específicamente del duplicado;
-4. revisar `00_CONTROL_MAESTRO_AFL_AUTOS.pdf` si se pretende borrar o archivar la carpeta completa;
-5. reconciliar `36 declarados` vs `39 observados`.
+### Exactos
+- `PREVIEW_LOTE_10 (1).png`.
+- `MOODBOARD_AFL_AUTOS_SEPTIEMBRE_MES_PATRIO-1.md`.
+- `index_afl_autos_operacion_comercial_v10 (1).html`.
 
-## Criterio para autorización
+### Superados
+- `PRESENTACION_PONCHO_PLAN_SEMANAL.html`.
+- `07_CONTEXTO_MAESTRO.png`.
+- `02_INSTALACION.png`.
+- `01_INTRODUCCION.png`.
+- `00_PORTADA.png`.
+- `00_CONTROL_MAESTRO_AFL_AUTOS.pdf`.
 
-Miguel debe revisar:
-- discrepancia de conteo;
-- lista de RAW a conservar;
-- lineage V10/JSON/ZIP;
-- archivos fuera de alcance;
-- duplicados exactos;
-- dependencias restantes.
+## Dependencia residual
 
-Solo después puede cambiarse el estado a:
+Las dependencias internas conocidas ya están resueltas para los candidatos anteriores. Sin embargo, Drive reporta estas entradas como compartidas y no existe en la conexión disponible un historial exhaustivo que pruebe que un URL directo nunca fue compartido externamente.
 
-`BORRADO_AUTORIZADO_POR_MIGUEL`
+Por esa razón el estado NO sube todavía a `LISTO_PARA_AUTORIZACION_DE_MIGUEL`.
 
-Este documento no concede esa autorización.
+Miguel debe decidir si acepta que los URLs individuales de los candidatos dejen de funcionar si autoriza su borrado.
+
+## Autorización
+
+Estado actual:
+
+`AUTORIZACION_MIGUEL = PENDIENTE`
+
+Este documento no concede autorización de borrado.
