@@ -1,5 +1,26 @@
 # Estados operativos
 
+## Flujo de materia prima / preproducción
+
+Para vehículos nuevos V2:
+
+`INGRESO → IDENTIFICACIÓN → PLAN_CAPTURA → CAPTURA → SELECCIÓN → RETOQUE → PRODUCCIÓN`
+
+Estados útiles:
+
+- `EXPEDIENTE_CREADO_O_ACTUALIZADO`: existe `PUENTE.md` vigente.
+- `PLAN_CAPTURA_PENDIENTE`: la unidad ya está identificada, falta diseñar la sesión.
+- `PLAN_CAPTURA_LISTO`: existe estrategia/checklist específico.
+- `CARPETAS_ORIGINALES_LISTAS`: Drive tiene carpetas para fotos/videos fuente o equivalentes documentados.
+- `CAPTURA_PENDIENTE`: Miguel todavía debe tomar/subir material.
+- `MATERIAL_AUDITADO`: se revisó todo lo nuevo.
+- `SELECCION_CREADA`: mejores fotos/videos copiados a selección o equivalentes.
+- `PENDIENTE_RETOQUE`: selección lista para limpieza/retoque.
+
+Nunca tratar como equivalentes:
+
+`ORIGINALES ≠ SELECCIÓN ≠ RETOQUE ≠ PIEZA_FINAL`
+
 ## Producción de contenido
 
 `IDEA → CANDIDATO → PRODUCIDO → APROBADO → PROGRAMADO → PUBLICADO → MEDIDO`
