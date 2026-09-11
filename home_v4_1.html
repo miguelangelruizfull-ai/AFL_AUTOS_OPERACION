@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b0f12">
-<title>AFL AUTOS — Home V4.1 candidato</title>
+<title>AFL AUTOS — Home V4.1</title>
 <link rel="stylesheet" href="assets/home-v4-1.css">
 </head>
 <body>
@@ -16,55 +16,31 @@
       <h1>¿Qué quieres hacer ahora?</h1>
       <p class="muted">Elige un expediente y una tarea. El Home dirige; las fuentes privadas conservan la verdad.</p>
     </div>
-    <span class="badge">V4.1 CANDIDATO</span>
+    <span class="badge">V4.1 ACTIVO</span>
   </header>
 
   <section class="today" id="todayStrip">
-    <button class="todayMain" id="openAgenda" type="button">
-      <strong id="todayCount">0 pendientes</strong>
-      <span>Ver agenda local</span>
-    </button>
+    <button class="todayMain" id="openAgenda" type="button"><strong id="todayCount">0 pendientes</strong><span>Ver agenda local</span></button>
     <div class="todayMeta"><span id="todayWaiting">0 esperando</span><span id="todayMeasure">0 mediciones</span></div>
   </section>
 
   <section class="section projectPicker" id="projectPicker">
-    <div class="sectionHead">
-      <div><p class="eyebrow">Contexto</p><h2>Vehículo / proyecto</h2></div>
-      <span class="status" id="projectIndexStatus">Cargando expedientes...</span>
-    </div>
+    <div class="sectionHead"><div><p class="eyebrow">Contexto</p><h2>Vehículo / proyecto</h2></div><span class="status" id="projectIndexStatus">Cargando expedientes...</span></div>
     <label class="field"><span>Buscar expediente</span><input id="projectSearch" autocomplete="off" placeholder="Escribe Ford, Jeep, Silverado..."></label>
     <div class="projectList" id="projectList"></div>
     <div class="selectedProject hidden" id="selectedProject">
-      <div class="sectionHead">
-        <div><p class="eyebrow">Seleccionado</p><h3 id="selectedProjectLabel"></h3></div>
-        <button class="textBtn" id="clearProject" type="button">Quitar</button>
-      </div>
-      <p class="projectState" id="selectedProjectState"></p>
-      <p class="muted compact" id="selectedProjectNext"></p>
-      <div class="driveIndex" id="selectedDriveIndex"></div>
+      <div class="sectionHead"><div><p class="eyebrow">Seleccionado</p><h3 id="selectedProjectLabel"></h3></div><button class="textBtn" id="clearProject" type="button">Quitar</button></div>
+      <p class="projectState" id="selectedProjectState"></p><p class="muted compact" id="selectedProjectNext"></p><div class="driveIndex" id="selectedDriveIndex"></div>
       <p class="muted tiny">El índice solo ayuda a navegar. Antes de actuar, el chat debe leer el PUENTE.md vigente y verificar Drive cuando corresponda.</p>
     </div>
   </section>
 
-  <section class="section first">
-    <h2>Acciones</h2>
-    <div class="categoryGrid" id="categoryGrid"></div>
-  </section>
+  <section class="section first"><h2>Acciones</h2><div class="categoryGrid" id="categoryGrid"></div></section>
 
-  <section class="section hidden" id="actionSection">
-    <div class="sectionHead">
-      <div><p class="eyebrow" id="categoryEyebrow">Categoría</p><h2 id="categoryTitle">Elige una acción</h2></div>
-      <button class="textBtn" id="changeCategory" type="button">Cambiar</button>
-    </div>
-    <div class="actionGrid" id="actionGrid"></div>
-  </section>
+  <section class="section hidden" id="actionSection"><div class="sectionHead"><div><p class="eyebrow" id="categoryEyebrow">Categoría</p><h2 id="categoryTitle">Elige una acción</h2></div><button class="textBtn" id="changeCategory" type="button">Cambiar</button></div><div class="actionGrid" id="actionGrid"></div></section>
 
   <section class="section hidden" id="formSection">
-    <div class="sectionHead">
-      <div><p class="eyebrow">Tarea seleccionada</p><h2 id="actionTitle">Acción</h2><p class="muted compact" id="actionDescription"></p></div>
-      <button class="textBtn" id="changeAction" type="button">Cambiar</button>
-    </div>
-
+    <div class="sectionHead"><div><p class="eyebrow">Tarea seleccionada</p><h2 id="actionTitle">Acción</h2><p class="muted compact" id="actionDescription"></p></div><button class="textBtn" id="changeAction" type="button">Cambiar</button></div>
     <div class="formGrid">
       <label class="field hidden" data-field="vehicle"><span>Vehículo / proyecto</span><input id="vehicle" placeholder="Selecciona arriba o escribe manualmente"></label>
       <label class="field hidden" data-field="drive"><span>Drive / carpeta de trabajo</span><input id="drive" inputmode="url" placeholder="Opcional si seleccionaste un expediente indexado"></label>
@@ -77,48 +53,17 @@
       <label class="field"><span>Fecha</span><input id="date" type="date"></label>
       <label class="field"><span>Prioridad</span><select id="priority"><option>Normal</option><option>Publicar hoy</option><option>Urgente</option></select></label>
     </div>
-
     <div id="preflight" class="preflight hidden"></div>
-    <div class="buttonRow">
-      <button class="btn primary" id="generate" type="button">GENERAR PROMPT</button>
-      <button class="btn secondary" id="clearForm" type="button">LIMPIAR</button>
-    </div>
+    <div class="buttonRow"><button class="btn primary" id="generate" type="button">GENERAR PROMPT</button><button class="btn secondary" id="clearForm" type="button">LIMPIAR</button></div>
   </section>
 
-  <section class="section hidden" id="outputSection">
-    <div class="sectionHead"><h2>Prompt listo</h2><span class="status" id="outputStatus"></span></div>
-    <textarea class="output" id="output" readonly></textarea>
-    <div class="buttonRow"><button class="btn primary" id="copyPrompt" type="button">COPIAR PROMPT</button><button class="btn secondary" id="selectPrompt" type="button">SELECCIONAR</button></div>
-  </section>
+  <section class="section hidden" id="outputSection"><div class="sectionHead"><h2>Prompt listo</h2><span class="status" id="outputStatus"></span></div><textarea class="output" id="output" readonly></textarea><div class="buttonRow"><button class="btn primary" id="copyPrompt" type="button">COPIAR PROMPT</button><button class="btn secondary" id="selectPrompt" type="button">SELECCIONAR</button></div></section>
 
-  <details class="section details" id="agendaBox">
-    <summary>Agenda local</summary>
-    <p class="muted compact">Usa la misma agenda V4 (`afl_autos_agenda_v2`). Es auxiliar y no sustituye PUENTE.md ni recordatorios reales.</p>
-    <div class="agendaList" id="agendaList"></div>
-    <div class="formGrid agendaForm">
-      <label class="field"><span>Vehículo / proyecto</span><input id="taskVehicle" placeholder="Opcional"></label>
-      <label class="field"><span>Actividad</span><input id="taskTitle" placeholder="Ej. Medición 24 h"></label>
-      <label class="field"><span>Fecha y hora</span><input id="taskDue" type="datetime-local"></label>
-      <label class="field"><span>Tipo</span><select id="taskType"><option>Seguimiento</option><option>Captura</option><option>Selección</option><option>Aprobación</option><option>Publicación</option><option>Medición 24h</option><option>Medición 72h</option><option>Medición 7d</option><option>Auditoría</option><option>Esperando a Miguel</option><option>Esperando otro chat</option><option>Otro</option></select></label>
-    </div>
-    <div class="buttonRow"><button class="btn secondary" id="addTask" type="button">AGREGAR PENDIENTE</button><button class="btn ghost" id="clearDone" type="button">BORRAR COMPLETADOS</button></div>
-  </details>
+  <details class="section details" id="agendaBox"><summary>Agenda local</summary><p class="muted compact">Usa la misma agenda V4 (`afl_autos_agenda_v2`). Es auxiliar y no sustituye PUENTE.md ni recordatorios reales.</p><div class="agendaList" id="agendaList"></div><div class="formGrid agendaForm"><label class="field"><span>Vehículo / proyecto</span><input id="taskVehicle" placeholder="Opcional"></label><label class="field"><span>Actividad</span><input id="taskTitle" placeholder="Ej. Medición 24 h"></label><label class="field"><span>Fecha y hora</span><input id="taskDue" type="datetime-local"></label><label class="field"><span>Tipo</span><select id="taskType"><option>Seguimiento</option><option>Captura</option><option>Selección</option><option>Aprobación</option><option>Publicación</option><option>Medición 24h</option><option>Medición 72h</option><option>Medición 7d</option><option>Auditoría</option><option>Esperando a Miguel</option><option>Esperando otro chat</option><option>Otro</option></select></label></div><div class="buttonRow"><button class="btn secondary" id="addTask" type="button">AGREGAR PENDIENTE</button><button class="btn ghost" id="clearDone" type="button">BORRAR COMPLETADOS</button></div></details>
 
-  <details class="section details" id="advancedBox">
-    <summary>Fuentes y seguridad</summary>
-    <div class="compactText">
-      <p><strong>Home:</strong> UX, routing y prompts.</p>
-      <p><strong>Vehiculos/PUENTE.md:</strong> verdad vigente por unidad.</p>
-      <p><strong>Índice de expedientes:</strong> navegación derivada; nunca sustituye PUENTE.</p>
-      <p><strong>Content System:</strong> creatividad y publicación.</p>
-      <p><strong>Comercial:</strong> respuestas, flujos, leads, visita, seguimiento y cierre.</p>
-      <p><strong>Platform:</strong> análisis y datasets sanitizados.</p>
-      <p><strong>Drive:</strong> RAW, multimedia y evidencia pesada.</p>
-      <p class="muted">No guardes aquí VIN, odómetro, documentos, precios internos, teléfonos, nombres de prospectos ni conversaciones privadas.</p>
-    </div>
-  </details>
+  <details class="section details" id="advancedBox"><summary>Fuentes y seguridad</summary><div class="compactText"><p><strong>Home:</strong> UX, routing y prompts.</p><p><strong>Vehiculos/PUENTE.md:</strong> verdad vigente por unidad.</p><p><strong>Índice de expedientes:</strong> navegación derivada; nunca sustituye PUENTE.</p><p><strong>Content System:</strong> creatividad, auditorías históricas y publicación.</p><p><strong>Comercial:</strong> respuestas, flujos, leads, visita, seguimiento y cierre.</p><p><strong>Platform:</strong> análisis y datasets sanitizados.</p><p><strong>Drive:</strong> RAW, multimedia y evidencia pesada.</p><p class="muted">No guardes aquí VIN, odómetro, documentos, precios internos, teléfonos, nombres de prospectos ni conversaciones privadas.</p></div></details>
 
-  <footer>V4.1 es candidato de UX. `index.html` V4 permanece sin cambios durante la prueba.</footer>
+  <footer>Alias V4.1. La URL canónica del Home es la raíz de AFL_AUTOS_OPERACION.</footer>
 </main>
 <script src="config/home-v4-1-actions.js"></script>
 <script src="assets/home-v4-1.js"></script>
