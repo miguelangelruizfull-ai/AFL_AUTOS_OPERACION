@@ -1,206 +1,132 @@
 # AFL AUTOS OPERACIÓN — Cómo empezar
 
-Este repositorio es la puerta de entrada operativa de AFL AUTOS. No sustituye los expedientes privados ni Drive.
+Este repositorio es la puerta de entrada operativa de AFL AUTOS. No sustituye `Vehiculos`, `AFL_AUTOS_CONTENT_SYSTEM`, `AFL_AUTOS_COMERCIAL`, `AFL_AUTOS_PLATFORM` ni Drive.
 
-## Home V4.1
+## Home activo
 
-El Home activo está en `index.html` y abre con una pregunta simple:
+El Home canónico volvió a **V3.1**:
 
-`¿Qué quieres hacer ahora?`
+`index.html`
 
-Primero puedes seleccionar un expediente existente y después una categoría/acción. El Home genera la instrucción; el chat trabajador consulta las fuentes privadas autorizadas.
+URL:
 
-## Seleccionar expediente
+`https://miguelangelruizfull-ai.github.io/AFL_AUTOS_OPERACION/`
 
-El Home carga un índice público sanitizado de expedientes.
+V3.1 fue la interfaz que Miguel reportó como funcional en uso real. V4/V4.1 se conservan como aprendizaje/prototipo, pero no sustituyen al Home activo.
 
-Al seleccionar una unidad muestra:
+## Uso rápido
 
-- nombre;
-- estado resumido;
-- siguiente acción indexada;
-- directorios lógicos de Drive.
+1. Elige el módulo en el Home V3.1.
+2. Completa únicamente Drive, vehículo/proyecto, prioridad y notas cuando correspondan.
+3. Genera el prompt.
+4. En el chat trabajador, antes de escribir, verificar GitHub/Drive vigentes.
+5. Para una unidad existente, leer completo su `PUENTE.md`.
+6. Al terminar, devolver `RETORNO_AL_COORDINADOR`.
 
-Regla:
+## Flujo normal
+
+`NUEVO VEHÍCULO → PLAN CAPTURA → CAPTURA → SELECCIÓN → RETOQUE → PRODUCCIÓN → APROBACIÓN → PUBLICACIÓN → MEDICIÓN`
+
+No saltar etapas solo porque exista un archivo en Drive.
+
+## Importante: V3.1 visual, lógica nueva conservada
+
+El rollback del Home NO regresó los motores ni prompts a versiones antiguas.
+
+Cuando una tarea use los prompts versionados del repositorio, siguen vigentes las mejoras actuales:
+
+### Plan de captura
+
+`prompts/PLAN_CAPTURA.md` consulta el aprendizaje histórico de flyers y video para definir HERO, familias editoriales, hooks y tomas necesarias.
+
+### Selección
+
+`prompts/SELECCIONAR_MATERIAL.md` evalúa si el material realmente soporta flyer, historia, Reel o TikTok y puede registrar:
+
+- `HERO_FLYER`;
+- `HERO_HISTORIA`;
+- familia editorial;
+- hook disponible;
+- `BLOQUEADO_POR_FOTO`;
+- `BLOQUEADO_POR_MATERIAL`.
+
+### Producción
+
+`prompts/PRODUCIR_REDES.md` exige:
+
+- Motor Visual + auditoría de flyers para gráficas;
+- Motor Editorial + auditoría TikTok para Reel/TikTok;
+- comparación histórica;
+- gate de calidad antes de declarar `PRODUCIDO`.
+
+### Revisión
+
+`prompts/REVISION_APROBACION.md` revisa la pieza real contra el motor correspondiente. No basta con que los datos sean correctos.
+
+### Medición
+
+`prompts/PUBLICACION_MEDICION.md` conserva familia, HERO, hook, duración, CTA y variable creativa para aprender de los resultados.
+
+## Continuidad
+
+Usa:
+
+- **Continuar vehículo** para retomar desde `PUENTE.md`;
+- **Procesar RETORNO** cuando otro chat terminó;
+- **Continuar hilo / tarea** cuando un chat se llenó o una auditoría quedó a medias;
+- agenda local para pendientes auxiliares.
+
+La agenda local no sustituye fuentes privadas ni automatizaciones reales.
+
+## Índices
+
+El repositorio conserva `data/expedientes-public-index.json` y `Vehiculos` conserva su índice privado.
+
+Actualmente son infraestructura disponible para navegación/automatización futura; el Home V3.1 restaurado no depende de ellos.
+
+Regla permanente:
 
 `INDEX = NAVEGACION`
 
 `PUENTE.md = VERDAD`
 
-Antes de actuar sobre una unidad, el chat debe leer completo el `PUENTE.md` vigente y verificar Drive si corresponde.
+## Comercial
 
-Para una unidad nueva usa **Vehículo → + Nuevo vehículo**.
-
-## Flujo normal para un vehículo nuevo
-
-1. Crear/subir la carpeta raíz de la nueva unidad en Drive.
-2. Abrir el Home.
-3. Elegir **Vehículo → + Nuevo vehículo**.
-4. Generar el prompt y abrir un chat trabajador.
-5. Ese chat identifica la unidad y crea/actualiza `PUENTE.md`.
-6. Elegir **Vehículo → Plan de captura**.
-7. El plan consulta los motores históricos de flyers y video para decidir qué tomas hacen falta.
-8. Miguel captura fotos/videos y los sube a las carpetas de originales.
-9. Elegir **Vehículo → Seleccionar material**.
-10. La selección identifica HERO, hooks y familias viables antes de editar.
-11. Elegir **Vehículo → Lavar / retocar** para las fotos seleccionadas.
-12. Ir a **Crear contenido** y elegir la ruta correcta.
-13. Usar **Revisión / aprobación** antes de considerar una pieza aprobada.
-14. Miguel publica cuando corresponda.
-15. Usar **Publicar / Medir** para URL y checkpoints 24 h / 72 h / 7 días.
+`AFL_AUTOS_COMERCIAL` sigue activo como módulo privado aunque V3.1 no muestre todavía todas sus rutas como botones.
 
 Flujo:
 
-`INGRESO → PLAN CAPTURA → CAPTURA → SELECCIÓN → RETOQUE → PRODUCCIÓN → APROBACIÓN → PUBLICACIÓN → MEDICIÓN`
+`PREGUNTA → RESPUESTA_DIRECTA → UNA_PREGUNTA_UTIL → SIGUIENTE_ACCION`
 
-## Crear contenido
+No guardar conversaciones, teléfonos o leads identificables en este repositorio público.
 
-V4.1 separa tres rutas:
+## Fuentes de autoridad
 
-### Reel / TikTok
+- unidad/datos técnicos → `Vehiculos/PUENTE.md`;
+- creatividad/auditorías → `AFL_AUTOS_CONTENT_SYSTEM`;
+- conversación/comercial → `AFL_AUTOS_COMERCIAL`;
+- análisis/métricas → `AFL_AUTOS_PLATFORM`;
+- originales/RAW → Drive;
+- coordinación/prompts → `AFL_AUTOS_OPERACION`.
 
-Usar cuando el objetivo principal sea video.
+## Reglas críticas
 
-El prompt obliga a consultar:
+Antes de modificar un archivo existente, hacer fetch de su versión vigente.
 
-- Motor Editorial TikTok;
-- familias editoriales;
-- hooks y CTA;
-- índice de videos históricos auditados;
-- guía de captura cuando falten tomas.
+No publicar ni guardar aquí:
 
-Debe definir `FAMILIA_EDITORIAL`, `HOOK_0_3S`, secuencia, duración, CTA y comparación histórica.
-
-TikTok y Facebook Reel se adaptan por red; no deben ser clones automáticos.
-
-### Flyer / historia / portada
-
-Usar para piezas gráficas.
-
-El prompt obliga a consultar:
-
-- estándar de flyers/portadas;
-- Motor Visual;
-- familias visuales;
-- errores históricos;
-- referencias positivas;
-- branding/campaña vigente.
-
-Si la foto no soporta una pieza adecuada:
-
-`BLOQUEADO_POR_FOTO / REQUIERE_MEJOR_HERO`
-
-### Paquete completo de redes
-
-Usar solo cuando realmente se desea producir varios tipos de pieza. El flujo aplica el gate visual y el audiovisual de forma independiente.
-
-## Revisión / aprobación
-
-La revisión ya no comprueba únicamente seguridad/datos. También compara cada pieza contra el motor histórico correspondiente.
-
-Estados posibles incluyen:
-
-- `LISTO_PARA_REVISION_MIGUEL`
-- `REQUIERE_CORRECCION`
-- `BLOQUEADO_POR_FOTO`
-- `BLOQUEADO_POR_MATERIAL`
-- `RECHAZADO_POR_MIGUEL / NO_PUBLICAR / REQUIERE_REDISENO`
-- `APROBADO_POR_MIGUEL` solo con confirmación expresa.
+- VIN completo;
+- millas/kilómetros;
+- precios internos;
+- documentos;
+- PII;
+- conversaciones privadas;
+- credenciales.
 
 Mantener:
 
 `PRODUCIDO ≠ SUBIDO ≠ APROBADO ≠ PROGRAMADO ≠ PUBLICADO ≠ MEDIDO`
 
-## Continuidad y retornos
-
-En **Continuar / Hoy** están:
-
-- Continuar vehículo;
-- Procesar retorno;
-- Continuar tarea;
-- Agenda local.
-
-Para un retorno/checkpoint, pégalo solo en el campo que aparece para esa acción. El preflight es contextual: solo muestra faltantes/riesgos cuando hacen falta.
-
-El chat nuevo debe verificar GitHub/Drive antes de continuar y no rehacer trabajo cerrado.
-
-## Comercial
-
-En **Responder / Lead** están las rutas hacia `AFL_AUTOS_COMERCIAL`:
-
-- responder;
-- calificar;
-- mover a WhatsApp/llamada;
-- enviar fotos/video;
-- proponer visita;
-- seguimiento;
-- negociación;
-- cierre;
-- retorno comercial.
-
-El Home no guarda CRM ni conversaciones.
-
-Flujo base:
-
-`PREGUNTA → RESPUESTA_DIRECTA → UNA_PREGUNTA_UTIL → SIGUIENTE_ACCION`
-
-Cuando una respuesta depende de una unidad, manda su `PUENTE.md` vigente.
-
-## Publicación y medición
-
-En **Publicar / Medir** puedes:
-
-- registrar publicación;
-- medir 24 h;
-- medir 72 h;
-- medir 7 días.
-
-La medición debe conservar la variable creativa que se usó:
-
-- video: familia, hook, duración, audio/voz y CTA;
-- gráfica: familia visual, HERO, datos visibles y CTA.
-
-Separar siempre métricas de plataforma de mensajes, leads, visitas, negociaciones y ventas.
-
-Un solo resultado no crea una regla:
-
-`OBSERVACION → HIPOTESIS → TEST → PATRON_REPETIDO → APRENDIZAJE_VALIDADO`
-
-## Fuentes de autoridad
-
-- datos técnicos/comerciales de una unidad → `Vehiculos/PUENTE.md`;
-- creatividad/auditorías/motores → `AFL_AUTOS_CONTENT_SYSTEM`;
-- conversación/comercial → `AFL_AUTOS_COMERCIAL`;
-- análisis/datasets → `AFL_AUTOS_PLATFORM`;
-- originales/multimedia/RAW → Google Drive;
-- Home/coordinación/prompts → `AFL_AUTOS_OPERACION`.
-
-Antes de modificar un archivo existente, hacer fetch de la versión vigente.
-
-## Agenda local
-
-V4.1 conserva la clave `afl_autos_agenda_v2` en `localStorage`.
-
-La agenda es auxiliar y puede registrar tareas no sensibles. No equivale a automatización real y no sustituye fuentes privadas.
-
-## Si el chat principal se llena
-
-Usar **Más → Nuevo chat principal**. El coordinador reconstruye el estado leyendo las fuentes vigentes, no copiando meses de conversación.
-
-## Reglas críticas
-
-No publicar/guardar en este repo público:
-
-- VIN;
-- kilometraje/odómetro;
-- precios internos;
-- documentos;
-- datos personales;
-- leads/conversaciones privadas;
-- credenciales.
-
-Para contenido público aplicar:
+Y para contenido:
 
 `DATO_CONFIRMADO ≠ DATO_PUBLICABLE ≠ EVIDENCIA_VISUAL ≠ MOODBOARD ≠ PIEZA_APROBADA`
-
-El Home coordina y genera instrucciones; no sustituye las fuentes privadas.
