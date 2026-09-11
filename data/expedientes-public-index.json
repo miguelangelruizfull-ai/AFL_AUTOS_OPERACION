@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-09-11T10:59:00-06:00",
+  "source": {
+    "repository": "miguelangelruizfull-ai/Vehiculos",
+    "head": "cf1a87905f3a1bb739ac03e272c3ed57a2a23ee7",
+    "private_index": "index/EXPEDIENTES_INDEX.json"
+  },
+  "rule": "NAVEGACION_DERIVADA_NO_FUENTE_DE_VERDAD",
+  "expedientes": [
+    {
+      "key": "PENDIENTE_Chevrolet_Silverado_2016_2026-09-11",
+      "label": "Chevrolet Silverado 2016 Cabina Regular",
+      "estado": "PLAN_CAPTURA_LISTO / CAPTURA_PENDIENTE",
+      "siguiente_accion": "CAPTURA",
+      "puente_path": "vehiculos/PENDIENTE_Chevrolet_Silverado_2016_2026-09-11/PUENTE.md",
+      "puente_sha": "b4c38c3edcce65ff8a64c9f558a26a8600b1d747",
+      "drive_roots": [
+        {"role": "CANONICO", "directories": ["01_FOTOS_ORIGINALES", "02_VIDEOS_ORIGINALES", "02_FOTOS_PARA_ENVIAR", "03_FOTOS_RETOCADAS_PARA_ENVIAR"]}
+      ]
+    },
+    {
+      "key": "PENDIENTE_Ford_F150_2011_Texas_Edition_2026-09-10",
+      "label": "Ford F-150 2011",
+      "estado": "PAQUETE_CORREGIDO_V2 / PENDIENTE_APROBACION_MIGUEL",
+      "siguiente_accion": "REVISION_APROBACION",
+      "puente_path": "vehiculos/PENDIENTE_Ford_F150_2011_Texas_Edition_2026-09-10/PUENTE.md",
+      "puente_sha": "14f60fcc6eccc1b5afb28e3360c251858faefdb4",
+      "drive_roots": [
+        {"role": "CANONICO", "directories": ["02_FOTOS_PARA_ENVIAR", "03_VIDEOS_PARA_REEL", "04_FOTOS_RETOCADAS", "05_REELS_TIKTOK", "06_FLYERS_PORTADAS", "07_PUBLICACIONES_COPYS", "08_RESULTADOS"]}
+      ]
+    },
+    {
+      "key": "PENDIENTE_Ford_F150_FX4_2026-09-07",
+      "label": "Ford F-150 FX4 2013",
+      "estado": "MASTER_VIDEO_FINAL / FLYERS_VIGENTES",
+      "siguiente_accion": "06_PUBLICACIONES_COPYS",
+      "puente_path": "vehiculos/PENDIENTE_Ford_F150_FX4_2026-09-07/PUENTE.md",
+      "puente_sha": "11958400924a917e304eee064de8bc0957b761ef",
+      "drive_roots": [
+        {"role": "CANONICO", "directories": ["01_FOTOS_ORIGINALES", "02_FOTOS_PARA_ENVIAR", "03_VIDEO_ORIGINAL", "04_REELS_TIKTOK", "05_FLYERS", "06_PUBLICACIONES_COPYS", "07_LEADS_RESPUESTAS", "08_RESULTADOS"]}
+      ]
+    },
+    {
+      "key": "PENDIENTE_Jeep_Wrangler_2017_2026-09-10",
+      "label": "Jeep Wrangler 2017",
+      "estado": "PAQUETE_REDES_V1 / PENDIENTE_APROBACION_MIGUEL",
+      "siguiente_accion": "REVISION_APROBACION",
+      "puente_path": "vehiculos/PENDIENTE_Jeep_Wrangler_2017_2026-09-10/PUENTE.md",
+      "puente_sha": "ec49eb42840ca1900cba5a0feb6880b148280730",
+      "drive_roots": [
+        {"role": "EXPEDIENTE_BASE", "directories": ["01_FOTOS_ORIGINALES", "02_FOTOS_PARA_ENVIAR", "03_VIDEO_ORIGINAL", "04_REELS_TIKTOK", "05_FLYERS", "06_PUBLICACIONES_COPYS", "07_LEADS_RESPUESTAS", "08_RESULTADOS"]},
+        {"role": "SESION_MES_PATRIO_MULTIRRED", "directories": ["01_FOTOS_ORIGINALES", "02_SELECCION_DERIVADA", "03_VIDEO_ORIGINAL", "04_REELS_TIKTOK", "05_FLYERS_PORTADAS_HISTORIAS", "06_PUBLICACIONES_COPYS"]}
+      ]
+    }
+  ]
+}
