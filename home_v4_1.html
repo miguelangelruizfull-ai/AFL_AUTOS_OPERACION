@@ -14,7 +14,7 @@
     <div>
       <p class="eyebrow">AFL AUTOS</p>
       <h1>¿Qué quieres hacer ahora?</h1>
-      <p class="muted">Elige una tarea. El Home dirige; las fuentes privadas conservan la verdad.</p>
+      <p class="muted">Elige un expediente y una tarea. El Home dirige; las fuentes privadas conservan la verdad.</p>
     </div>
     <span class="badge">V4.1 CANDIDATO</span>
   </header>
@@ -25,6 +25,25 @@
       <span>Ver agenda local</span>
     </button>
     <div class="todayMeta"><span id="todayWaiting">0 esperando</span><span id="todayMeasure">0 mediciones</span></div>
+  </section>
+
+  <section class="section projectPicker" id="projectPicker">
+    <div class="sectionHead">
+      <div><p class="eyebrow">Contexto</p><h2>Vehículo / proyecto</h2></div>
+      <span class="status" id="projectIndexStatus">Cargando expedientes...</span>
+    </div>
+    <label class="field"><span>Buscar expediente</span><input id="projectSearch" autocomplete="off" placeholder="Escribe Ford, Jeep, Silverado..."></label>
+    <div class="projectList" id="projectList"></div>
+    <div class="selectedProject hidden" id="selectedProject">
+      <div class="sectionHead">
+        <div><p class="eyebrow">Seleccionado</p><h3 id="selectedProjectLabel"></h3></div>
+        <button class="textBtn" id="clearProject" type="button">Quitar</button>
+      </div>
+      <p class="projectState" id="selectedProjectState"></p>
+      <p class="muted compact" id="selectedProjectNext"></p>
+      <div class="driveIndex" id="selectedDriveIndex"></div>
+      <p class="muted tiny">El índice solo ayuda a navegar. Antes de actuar, el chat debe leer el PUENTE.md vigente y verificar Drive cuando corresponda.</p>
+    </div>
   </section>
 
   <section class="section first">
@@ -47,8 +66,8 @@
     </div>
 
     <div class="formGrid">
-      <label class="field hidden" data-field="vehicle"><span>Vehículo / proyecto</span><input id="vehicle" placeholder="Ej. Ford F-150 2018 / Auditoría TikTok"></label>
-      <label class="field hidden" data-field="drive"><span>Drive / carpeta de trabajo</span><input id="drive" inputmode="url" placeholder="https://drive.google.com/drive/folders/..."></label>
+      <label class="field hidden" data-field="vehicle"><span>Vehículo / proyecto</span><input id="vehicle" placeholder="Selecciona arriba o escribe manualmente"></label>
+      <label class="field hidden" data-field="drive"><span>Drive / carpeta de trabajo</span><input id="drive" inputmode="url" placeholder="Opcional si seleccionaste un expediente indexado"></label>
       <label class="field hidden" data-field="channel"><span>Canal</span><select id="channel"><option value="">Selecciona</option><option>Facebook / Marketplace</option><option>Messenger</option><option>TikTok</option><option>WhatsApp</option><option>Llamada</option><option>Otro</option></select></label>
       <label class="field hidden" data-field="intent"><span>Intención</span><select id="intent"><option value="">Selecciona</option><option>PRECIO</option><option>UBICACION</option><option>DISPONIBILIDAD</option><option>MOTOR</option><option>DOCUMENTACION</option><option>FINANCIAMIENTO</option><option>CAMBIO_TOMA_A_CUENTA</option><option>CONTACTO</option><option>FOTOS_VIDEO</option><option>VISITA</option><option>OTRA_PREGUNTA</option></select></label>
       <label class="field wide hidden" data-field="message"><span>Pregunta / mensaje del prospecto</span><textarea id="message" placeholder="Pega solo lo necesario. Evita datos personales innecesarios."></textarea></label>
@@ -90,6 +109,7 @@
     <div class="compactText">
       <p><strong>Home:</strong> UX, routing y prompts.</p>
       <p><strong>Vehiculos/PUENTE.md:</strong> verdad vigente por unidad.</p>
+      <p><strong>Índice de expedientes:</strong> navegación derivada; nunca sustituye PUENTE.</p>
       <p><strong>Content System:</strong> creatividad y publicación.</p>
       <p><strong>Comercial:</strong> respuestas, flujos, leads, visita, seguimiento y cierre.</p>
       <p><strong>Platform:</strong> análisis y datasets sanitizados.</p>
