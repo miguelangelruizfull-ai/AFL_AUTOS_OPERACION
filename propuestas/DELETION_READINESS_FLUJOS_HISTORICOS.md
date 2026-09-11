@@ -1,76 +1,81 @@
 # AFL AUTOS — Deletion readiness / flujos históricos
 
-Estado: `LISTO_PARA_REVISION_DE_BORRADO / BORRADO_NO_AUTORIZADO`
+Estado: `BORRADO_AUTORIZADO_POR_MIGUEL / DEPURACION_EJECUTADA`
 
 Fuente: https://drive.google.com/drive/folders/1UrpzTd66QDpfxy4So5BEyQXWF1wKc7Rz
 
 Fecha: `2026-09-11`
 
-## Checklist
+## Resultado final verificado
 
-- [x] inventario físico reconciliado — `39 archivos / 0 carpetas`.
-- [x] diferencia `36 vs 39` explicada — 36 entradas de auditoría sustantiva + 2 capturas fuera de alcance + 1 PDF no utilizado en el primer corte.
-- [x] auditoría guardada — `AUDITORIA_FLUJOS_HISTORICOS.md`.
-- [x] ideas rescatables guardadas — `IDEAS_RESCATABLES.md`.
-- [x] errores/antipatrones guardados — `ERRORES_Y_ANTI_PATRONES.md`.
-- [x] Home objetivo guardado — `HOME_OBJETIVO.md`.
-- [x] decisiones migración guardadas — `MIGRATION_DECISIONS.md`.
-- [x] snapshot manifest reconciliado — `SOURCE_SNAPSHOT_FLUJOS_2026-09-11.md`.
-- [x] tabla de limpieza por entrada creada — `DRIVE_CLEANUP_DECISION_TABLE.md`.
-- [x] duplicados exactos reconfirmados por SHA-256 — 3 grupos.
-- [x] copia canónica elegida para cada grupo duplicado.
-- [x] lineage V10/JSON/ZIP documentado.
-- [x] `00_CONTROL_MAESTRO_AFL_AUTOS.pdf` revisado — `SUPERADO_POR_SISTEMA_ACTUAL`.
-- [x] información privada fuera de alcance identificada — dos capturas; `SEPARAR_DE_AFL`.
-- [x] información útil migrada — reglas/ideas materializadas en propuestas y Content System.
-- [x] referencias internas de duplicados revisadas — no se encontraron referencias a las copias redundantes; el index V10 sin sufijo sí está referenciado históricamente.
-- [x] RAW que debe conservarse identificado.
-- [x] candidatos exactos y superados identificados.
-- [ ] riesgo de enlaces Drive compartidos aceptado/verificado por Miguel — Drive marca los archivos como compartidos y la conexión no expone un historial exhaustivo de quién conserva URLs directas.
-- [ ] autorización explícita de Miguel para borrar archivos concretos.
+- Total antes: `39 archivos / 0 carpetas`.
+- Separados de AFL sin borrar: `2`.
+- Eliminados con autorización explícita de Miguel: `9`.
+- Total después en la carpeta histórica AFL: `28 archivos / 0 carpetas`.
+- Las dos capturas fuera de alcance fueron movidas a `MIGUEL_ARCHIVO_PERSONAL` y verificadas allí.
+- Las tres copias canónicas de los grupos duplicados permanecen presentes.
+- RAW, lineage y referencias protegidas permanecen presentes.
+- No se eliminó ningún archivo fuera de la lista autorizada.
 
-## Reconciliación 36 vs 39
+## Checklist de cierre
 
-Total directo actual: `39 archivos`.
+- [x] inventario físico reconciliado.
+- [x] hashes de los tres duplicados exactos reconfirmados antes del borrado.
+- [x] autorización explícita de Miguel recibida.
+- [x] Miguel aceptó expresamente el riesgo de pérdida de URLs directos antiguos.
+- [x] dos archivos fuera de alcance separados de AFL sin borrarlos.
+- [x] tres duplicados exactos eliminados y copias canónicas verificadas presentes.
+- [x] seis archivos superados eliminados.
+- [x] carpeta Drive listada después de la ejecución.
+- [x] RAW protegidos verificados presentes.
+- [x] lineage protegido verificado presente.
+- [x] referencias protegidas verificadas presentes.
+- [x] tabla final actualizada en `DRIVE_CLEANUP_DECISION_TABLE.md`.
 
-Las tres entradas que explican el alcance inicial de 36 son:
+## Eliminados — duplicados exactos
 
-- `Screenshot_20260821-135811_Chrome.png` — fuera de alcance / privacidad alta.
-- `Screenshot_20260821-135807_Chrome.png` — fuera de alcance / privacidad alta.
-- `00_CONTROL_MAESTRO_AFL_AUTOS.pdf` — estaba presente, pero fue expresamente excluido como fundamento del primer corte hasta revisión posterior.
+- `PREVIEW_LOTE_10 (1).png`.
+- `MOODBOARD_AFL_AUTOS_SEPTIEMBRE_MES_PATRIO-1.md`.
+- `index_afl_autos_operacion_comercial_v10 (1).html`.
 
-No son altas nuevas y no son carpetas.
+Hashes reconfirmados antes de la eliminación:
+- D01: `1b7611a7efd4e7c999eb5b673852c77d5cd1a834fd9db78f0bd6e54e25c08ee7`.
+- D02: `ef4e3d973704ff755fd04d88345d1e5baa5194fa83d03ffa8390bfd594411424`.
+- D03: `c894c959c63d36ef2d8739430aa2c1c6a8e3c16ed3fe0e1252b82952b09b14c1`.
 
-## PDF Control Maestro
+Copias canónicas verificadas presentes:
+- `PREVIEW_LOTE_10.png`.
+- `MOODBOARD_AFL_AUTOS_SEPTIEMBRE_MES_PATRIO.md`.
+- `index_afl_autos_operacion_comercial_v10.html`.
 
-Clasificación conceptual: `SUPERADO_POR_SISTEMA_ACTUAL`.
+## Eliminados — superados
 
-Acción de limpieza: `BORRADO_CANDIDATO_SUPERADO`.
+- `PRESENTACION_PONCHO_PLAN_SEMANAL.html`.
+- `07_CONTEXTO_MAESTRO.png`.
+- `02_INSTALACION.png`.
+- `01_INTRODUCCION.png`.
+- `00_PORTADA.png`.
+- `00_CONTROL_MAESTRO_AFL_AUTOS.pdf`.
 
-Motivo: la estructura Drive-centric, el esquema de versionado y las reglas operativas útiles ya están preservadas en repositorios y documentación materializada. No se identificó una autoridad operativa única pendiente de migrar desde el PDF.
+Todos estaban previamente clasificados como `BORRADO_CANDIDATO_SUPERADO` y su aprendizaje relevante había sido materializado antes de la autorización.
 
-## Duplicados exactos
+## Separados de AFL — NO borrados
 
-### D01
-- Conservar: `PREVIEW_LOTE_10.png`.
-- Candidato: `PREVIEW_LOTE_10 (1).png`.
-- SHA-256: `1b7611a7efd4e7c999eb5b673852c77d5cd1a834fd9db78f0bd6e54e25c08ee7`.
+- `Screenshot_20260821-135807_Chrome.png`.
+- `Screenshot_20260821-135811_Chrome.png`.
 
-### D02
-- Conservar: `MOODBOARD_AFL_AUTOS_SEPTIEMBRE_MES_PATRIO.md`.
-- Candidato: `MOODBOARD_AFL_AUTOS_SEPTIEMBRE_MES_PATRIO-1.md`.
-- SHA-256: `ef4e3d973704ff755fd04d88345d1e5baa5194fa83d03ffa8390bfd594411424`.
+Destino verificado:
 
-### D03
-- Conservar: `index_afl_autos_operacion_comercial_v10.html`.
-- Candidato: `index_afl_autos_operacion_comercial_v10 (1).html`.
-- SHA-256: `c894c959c63d36ef2d8739430aa2c1c6a8e3c16ed3fe0e1252b82952b09b14c1`.
+`MIGUEL_ARCHIVO_PERSONAL`
 
-Los contextos RAW del 5-Sep y el snapshot ZIP respaldan conservar el nombre V10 sin sufijo.
+Clasificación:
 
-## RAW / lineage a conservar
+`FUERA_DE_ALCANCE / PRIVACIDAD_ALTA / SEPARADO_VERIFICADO`
 
-### CONSERVAR_RAW
+No se describe su contenido.
+
+## RAW verificado presente
+
 - `BITACORA_DIARIA_AFL_AUTOS_02JUN_31AGO2026_V10.md`.
 - `AFL_AUTOS_DATOS_COMPLETOS_V10_31AGO2026.json`.
 - `AFL_AUTOS_DATOS_COMPLETOS_V10_31AGO2026 (1).json`.
@@ -78,10 +83,11 @@ Los contextos RAW del 5-Sep y el snapshot ZIP respaldan conservar el nombre V10 
 - `2026-09-05_195640_actualizacion-index-flyers-exportaciones_AJJNTR.md`.
 - `2026-09-05_183150_sistema-generador-flyers-lariat-drive_MYU8S5.md`.
 
-### CONSERVAR_LINEAGE
+## Lineage verificado presente
+
 - `MANUAL_USUARIO_AFL_AUTOS_V10.md`.
 - `indexv1.html`.
-- `index.html` de la carpeta histórica.
+- `index.html` histórico.
 - `index_afl_autos_operacion_comercial_v10.html`.
 - `index_afl_autos_operacion_comercial_v10 (2).html`.
 - `index_afl_autos_operacion_comercial_v10 (3).html`.
@@ -90,44 +96,25 @@ Los contextos RAW del 5-Sep y el snapshot ZIP respaldan conservar el nombre V10 
 - `AFL_AUTOS_RESPONDER_V1.html`.
 - `AFL_AUTOS_CONTENT_SALES_ENGINE_V4.html`.
 
-La tabla detallada conserva referencias adicionales que deben mantenerse como evidencia/referencia.
+## Referencias verificadas presentes
 
-## Fuera de alcance
+- `REPORTE_TRABAJO_AFL_AUTOS_JUNIO_AGOSTO_2026_V10.md`.
+- `PREVIEW_LOTE_10.png`.
+- `MOODBOARD_AFL_AUTOS_SEPTIEMBRE_MES_PATRIO.md`.
+- `AUDITORIA_META_EXPORT_30AGO2026_V10.md`.
+- `ACUERDOS_OPERACION_LOCAL_AFL_AUTOS_V10.md`.
+- `14_PREGUNTAS_FRECUENTES.md.png`.
+- `11_MEMORIA EDITORIAL.png`.
+- `10_PROSPECTOS_Y_CRM.png`.
+- `09_PUBLICACION.png`.
+- `08_PRODUCCION_CON_IA.png`.
+- `06_PRODUCCION_MULTIMEDIA.md.png`.
+- `05_CHECKLIST.md.png`.
 
-- `Screenshot_20260821-135807_Chrome.png`.
-- `Screenshot_20260821-135811_Chrome.png`.
+## Cierre
 
-Clasificación: `SEPARAR_DE_AFL / PRIVACIDAD_ALTA`.
+`BORRADO_AUTORIZADO_POR_MIGUEL / DEPURACION_EJECUTADA` se refiere únicamente a los nueve archivos realmente eliminados en esta ejecución.
 
-No describir, publicar, mover ni borrar sin autorización de Miguel.
+La carpeta histórica queda con `28 archivos / 0 carpetas` y sin más borrados autorizados.
 
-## Candidatos de borrado técnico
-
-### Exactos
-- `PREVIEW_LOTE_10 (1).png`.
-- `MOODBOARD_AFL_AUTOS_SEPTIEMBRE_MES_PATRIO-1.md`.
-- `index_afl_autos_operacion_comercial_v10 (1).html`.
-
-### Superados
-- `PRESENTACION_PONCHO_PLAN_SEMANAL.html`.
-- `07_CONTEXTO_MAESTRO.png`.
-- `02_INSTALACION.png`.
-- `01_INTRODUCCION.png`.
-- `00_PORTADA.png`.
-- `00_CONTROL_MAESTRO_AFL_AUTOS.pdf`.
-
-## Dependencia residual
-
-Las dependencias internas conocidas ya están resueltas para los candidatos anteriores. Sin embargo, Drive reporta estas entradas como compartidas y no existe en la conexión disponible un historial exhaustivo que pruebe que un URL directo nunca fue compartido externamente.
-
-Por esa razón el estado NO sube todavía a `LISTO_PARA_AUTORIZACION_DE_MIGUEL`.
-
-Miguel debe decidir si acepta que los URLs individuales de los candidatos dejen de funcionar si autoriza su borrado.
-
-## Autorización
-
-Estado actual:
-
-`AUTORIZACION_MIGUEL = PENDIENTE`
-
-Este documento no concede autorización de borrado.
+Cualquier depuración adicional requiere una nueva autorización explícita de Miguel.
