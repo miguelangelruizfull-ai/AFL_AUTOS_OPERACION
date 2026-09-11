@@ -2,151 +2,204 @@
 
 Este repositorio es la puerta de entrada operativa de AFL AUTOS. No sustituye los expedientes privados ni Drive.
 
+## Home V4.1
+
+El Home activo está en `index.html` y abre con una pregunta simple:
+
+`¿Qué quieres hacer ahora?`
+
+Primero puedes seleccionar un expediente existente y después una categoría/acción. El Home genera la instrucción; el chat trabajador consulta las fuentes privadas autorizadas.
+
+## Seleccionar expediente
+
+El Home carga un índice público sanitizado de expedientes.
+
+Al seleccionar una unidad muestra:
+
+- nombre;
+- estado resumido;
+- siguiente acción indexada;
+- directorios lógicos de Drive.
+
+Regla:
+
+`INDEX = NAVEGACION`
+
+`PUENTE.md = VERDAD`
+
+Antes de actuar sobre una unidad, el chat debe leer completo el `PUENTE.md` vigente y verificar Drive si corresponde.
+
+Para una unidad nueva usa **Vehículo → + Nuevo vehículo**.
+
 ## Flujo normal para un vehículo nuevo
 
-1. Crear/subir una carpeta nueva en la raíz operativa de vehículos nuevos de Drive.
-2. Abrir la herramienta web `index.html` publicada con GitHub Pages.
-3. Elegir **+ Nuevo vehículo**.
-4. Pegar el enlace de Drive.
-5. Usar **REVISAR PREVIO** para detectar campos básicos faltantes.
-6. Generar el prompt y abrir un chat nuevo.
-7. Ese chat identifica la unidad y crea/actualiza `PUENTE.md`, pero no selecciona ni retoca todavía.
-8. Cuando el vehículo esté identificado, usar **Estrategia + plan de captura**.
-9. Ese chat define la estrategia comercial visual, crea/reutiliza carpetas de originales y entrega checklist de fotos/videos con tiempos/movimientos.
-10. Miguel captura y sube el material.
-11. Abrir **Seleccionar material** para auditar la sesión y crear copias de mejores fotos/videos.
-12. Abrir **Lavar / retocar fotos** sobre la selección formal.
-13. Abrir **Producir redes**.
-14. Abrir **Revisión / aprobación** para comprobar el paquete producido. `PRODUCIDO` o `SUBIDO_A_DRIVE` no significa `APROBADO`.
-15. Miguel aprueba/publica cuando corresponda.
-16. Abrir **Publicación + medición** para registrar URL/hora base y checkpoints 24 h / 72 h / 7 días.
+1. Crear/subir la carpeta raíz de la nueva unidad en Drive.
+2. Abrir el Home.
+3. Elegir **Vehículo → + Nuevo vehículo**.
+4. Generar el prompt y abrir un chat trabajador.
+5. Ese chat identifica la unidad y crea/actualiza `PUENTE.md`.
+6. Elegir **Vehículo → Plan de captura**.
+7. El plan consulta los motores históricos de flyers y video para decidir qué tomas hacen falta.
+8. Miguel captura fotos/videos y los sube a las carpetas de originales.
+9. Elegir **Vehículo → Seleccionar material**.
+10. La selección identifica HERO, hooks y familias viables antes de editar.
+11. Elegir **Vehículo → Lavar / retocar** para las fotos seleccionadas.
+12. Ir a **Crear contenido** y elegir la ruta correcta.
+13. Usar **Revisión / aprobación** antes de considerar una pieza aprobada.
+14. Miguel publica cuando corresponda.
+15. Usar **Publicar / Medir** para URL y checkpoints 24 h / 72 h / 7 días.
 
-## Flujo V4 por etapas
+Flujo:
 
-`NUEVO VEHÍCULO → EXPEDIENTE → PLAN DE CAPTURA → MIGUEL GRABA/SUBE → SELECCIÓN → RETOQUE → PRODUCCIÓN → APROBACIÓN → PUBLICACIÓN → MEDICIÓN → CIERRE`
+`INGRESO → PLAN CAPTURA → CAPTURA → SELECCIÓN → RETOQUE → PRODUCCIÓN → APROBACIÓN → PUBLICACIÓN → MEDICIÓN`
 
-No todas las unidades requieren repetir todas las etapas. Si ya existe trabajo, verificarlo antes de saltar un módulo.
+## Crear contenido
 
-## Fuentes de autoridad
+V4.1 separa tres rutas:
 
-El Home V4 muestra el reparto de autoridad para evitar mezclar dominios:
+### Reel / TikTok
 
-- datos técnicos/comerciales de una unidad → `Vehiculos/PUENTE.md`;
-- creatividad, branding, formatos y campañas → `AFL_AUTOS_CONTENT_SYSTEM`;
-- análisis/datasets/metodología → `AFL_AUTOS_PLATFORM` cuando corresponda;
-- originales, multimedia y evidencia pesada → Google Drive;
-- flujo y coordinación → `AFL_AUTOS_OPERACION`.
+Usar cuando el objetivo principal sea video.
 
-Antes de modificar un archivo existente, el chat debe volver a leer/fetch la versión vigente.
+El prompt obliga a consultar:
 
-## Preflight V4
+- Motor Editorial TikTok;
+- familias editoriales;
+- hooks y CTA;
+- índice de videos históricos auditados;
+- guía de captura cuando falten tomas.
 
-El botón **REVISAR PREVIO** revisa localmente condiciones básicas del formulario.
+Debe definir `FAMILIA_EDITORIAL`, `HOOK_0_3S`, secuencia, duración, CTA y comparación histórica.
 
-Puede advertir cuando:
+TikTok y Facebook Reel se adaptan por red; no deben ser clones automáticos.
 
-- falta vehículo/proyecto;
-- no se pegó Drive;
-- un módulo de continuidad necesita un retorno/checkpoint y no existe;
-- hay que recordar la verificación de fuentes antes de escribir.
+### Flyer / historia / portada
 
-El preflight no consulta repositorios privados ni valida información técnica.
+Usar para piezas gráficas.
 
-## Si un chat trabajador termina
+El prompt obliga a consultar:
 
-Todo chat debe devolver un bloque `RETORNO_AL_COORDINADOR`.
+- estándar de flyers/portadas;
+- Motor Visual;
+- familias visuales;
+- errores históricos;
+- referencias positivas;
+- branding/campaña vigente.
 
-En Home V4:
+Si la foto no soporta una pieza adecuada:
 
-1. pegar el bloque en **RETORNO / respuesta / checkpoint anterior**;
-2. tocar **ANALIZAR RETORNO**;
-3. revisar los campos detectados y la ruta local sugerida;
-4. elegir **Procesar RETORNO** para generar el prompt del coordinador;
-5. el chat coordinador verifica las fuentes vigentes antes de aceptar cualquier cambio de estado.
+`BLOQUEADO_POR_FOTO / REQUIERE_MEJOR_HERO`
 
-El lector local no modifica GitHub/Drive ni declara estados.
+### Paquete completo de redes
 
-## Si un chat se llena o una tarea queda a medias
-
-Usar **Continuar hilo / tarea**.
-
-1. Copiar el bloque `RETORNO_AL_COORDINADOR` o el último checkpoint del chat anterior.
-2. Pegarlo en el campo correspondiente.
-3. Elegir **Continuar hilo / tarea**.
-4. Ejecutar **REVISAR PREVIO**.
-5. Generar el prompt.
-6. Abrir un chat nuevo y pegarlo.
-
-El Home V4 bloquea la generación de estos módulos cuando falta el retorno/checkpoint necesario.
-
-El chat nuevo debe verificar GitHub/Drive antes de continuar y no rehacer trabajo cerrado.
-
-Ver [`COORDINACION_Y_RETORNOS.md`](./COORDINACION_Y_RETORNOS.md).
+Usar solo cuando realmente se desea producir varios tipos de pieza. El flujo aplica el gate visual y el audiovisual de forma independiente.
 
 ## Revisión / aprobación
 
-V4 incorpora una etapa visible para paquetes producidos.
+La revisión ya no comprueba únicamente seguridad/datos. También compara cada pieza contra el motor histórico correspondiente.
 
-Usarla cuando ya existen piezas, pero todavía debe comprobarse:
+Estados posibles incluyen:
 
-- unidad correcta;
-- datos provenientes del expediente vigente;
-- datos además publicables;
-- ausencia de VIN/odómetro/precio no autorizado;
-- logo/foto real correctos;
-- ausencia de alteraciones físicas;
-- correcciones solicitadas por Miguel;
-- aprobación explícita de Miguel.
+- `LISTO_PARA_REVISION_MIGUEL`
+- `REQUIERE_CORRECCION`
+- `BLOQUEADO_POR_FOTO`
+- `BLOQUEADO_POR_MATERIAL`
+- `RECHAZADO_POR_MIGUEL / NO_PUBLICAR / REQUIERE_REDISENO`
+- `APROBADO_POR_MIGUEL` solo con confirmación expresa.
 
-Nunca inferir:
+Mantener:
 
-`PRODUCIDO → APROBADO`
+`PRODUCIDO ≠ SUBIDO ≠ APROBADO ≠ PROGRAMADO ≠ PUBLICADO ≠ MEDIDO`
 
-ni:
+## Continuidad y retornos
 
-`APROBADO → PUBLICADO`.
+En **Continuar / Hoy** están:
 
-## Agenda y recordatorios
+- Continuar vehículo;
+- Procesar retorno;
+- Continuar tarea;
+- Agenda local.
 
-La herramienta incluye una **Agenda operativa local** para tareas con fecha/etapa. La información queda en el navegador mediante `localStorage`.
+Para un retorno/checkpoint, pégalo solo en el campo que aparece para esa acción. El preflight es contextual: solo muestra faltantes/riesgos cuando hacen falta.
 
-V4 utiliza la clave `afl_autos_agenda_v2`. Si existe una agenda V3.1 guardada bajo `afl_autos_agenda_v1`, el Home intenta copiarla localmente a V2 la primera vez; no elimina la anterior.
+El chat nuevo debe verificar GitHub/Drive antes de continuar y no rehacer trabajo cerrado.
 
-La agenda puede registrar, entre otros:
+## Comercial
 
-- captura;
-- selección;
-- retoque;
-- producción;
-- aprobación;
-- corrección en plataforma;
-- publicación;
-- mediciones 24 h / 72 h / 7 d;
-- auditoría;
-- esperando a Miguel;
-- esperando otro chat.
+En **Responder / Lead** están las rutas hacia `AFL_AUTOS_COMERCIAL`:
 
-El botón **COPIAR PROMPT DE RECORDATORIOS** prepara las tareas pendientes para pegarlas en ChatGPT y solicitar recordatorios reales.
+- responder;
+- calificar;
+- mover a WhatsApp/llamada;
+- enviar fotos/video;
+- proponer visita;
+- seguimiento;
+- negociación;
+- cierre;
+- retorno comercial.
 
-La agenda local no equivale a una automatización y puede perderse al cambiar/borrar datos del navegador. Las fechas críticas también deben quedar registradas en fuentes privadas.
+El Home no guarda CRM ni conversaciones.
 
-Ver [`AGENDA_OPERATIVA.md`](./AGENDA_OPERATIVA.md).
+Flujo base:
 
-## Estructura Drive
+`PREGUNTA → RESPUESTA_DIRECTA → UNA_PREGUNTA_UTIL → SIGUIENTE_ACCION`
 
-Para vehículos nuevos consultar [`ESTRUCTURA_DRIVE_V2.md`](./ESTRUCTURA_DRIVE_V2.md).
+Cuando una respuesta depende de una unidad, manda su `PUENTE.md` vigente.
 
-Los vehículos históricos no se reorganizan automáticamente. Se reutilizan carpetas equivalentes para evitar duplicados.
+## Publicación y medición
+
+En **Publicar / Medir** puedes:
+
+- registrar publicación;
+- medir 24 h;
+- medir 72 h;
+- medir 7 días.
+
+La medición debe conservar la variable creativa que se usó:
+
+- video: familia, hook, duración, audio/voz y CTA;
+- gráfica: familia visual, HERO, datos visibles y CTA.
+
+Separar siempre métricas de plataforma de mensajes, leads, visitas, negociaciones y ventas.
+
+Un solo resultado no crea una regla:
+
+`OBSERVACION → HIPOTESIS → TEST → PATRON_REPETIDO → APRENDIZAJE_VALIDADO`
+
+## Fuentes de autoridad
+
+- datos técnicos/comerciales de una unidad → `Vehiculos/PUENTE.md`;
+- creatividad/auditorías/motores → `AFL_AUTOS_CONTENT_SYSTEM`;
+- conversación/comercial → `AFL_AUTOS_COMERCIAL`;
+- análisis/datasets → `AFL_AUTOS_PLATFORM`;
+- originales/multimedia/RAW → Google Drive;
+- Home/coordinación/prompts → `AFL_AUTOS_OPERACION`.
+
+Antes de modificar un archivo existente, hacer fetch de la versión vigente.
+
+## Agenda local
+
+V4.1 conserva la clave `afl_autos_agenda_v2` en `localStorage`.
+
+La agenda es auxiliar y puede registrar tareas no sensibles. No equivale a automatización real y no sustituye fuentes privadas.
 
 ## Si el chat principal se llena
 
-Elegir **Nuevo chat principal**. El nuevo coordinador reconstruye el estado leyendo las fuentes vigentes, no copiando meses de conversación.
+Usar **Más → Nuevo chat principal**. El coordinador reconstruye el estado leyendo las fuentes vigentes, no copiando meses de conversación.
 
 ## Reglas críticas
 
-No pegar en este repositorio público VIN, kilometraje/odómetro, precios internos, documentos, leads, conversaciones privadas ni enlaces que no deban quedar expuestos públicamente.
+No publicar/guardar en este repo público:
 
-Además:
+- VIN;
+- kilometraje/odómetro;
+- precios internos;
+- documentos;
+- datos personales;
+- leads/conversaciones privadas;
+- credenciales.
+
+Para contenido público aplicar:
 
 `DATO_CONFIRMADO ≠ DATO_PUBLICABLE ≠ EVIDENCIA_VISUAL ≠ MOODBOARD ≠ PIEZA_APROBADA`
 
