@@ -40,7 +40,7 @@ Ver [`docs/ARQUITECTURA.md`](./docs/ARQUITECTURA.md).
 
 Guía: [`docs/COMO_EMPEZAR.md`](./docs/COMO_EMPEZAR.md)
 
-## Módulos V1
+## Módulos V1 de la herramienta
 
 - Nuevo vehículo
 - Continuar vehículo
@@ -50,6 +50,20 @@ Guía: [`docs/COMO_EMPEZAR.md`](./docs/COMO_EMPEZAR.md)
 - Vendido / entrega
 - Cerrar / sincronizar chat
 - Nuevo chat principal
+
+## Prompts especializados versionados
+
+La carpeta [`prompts/`](./prompts/) conserva plantillas reutilizables. Incluye también procesos que no necesitan ser un botón diario de la herramienta, por ejemplo:
+
+- `TIKTOK_AUDITORIA.md` — auditoría histórica y Motor Editorial;
+- `CHAT_PRINCIPAL.md` — reemplazo limpio del chat coordinador;
+- `NUEVO_VEHICULO.md`;
+- `CONTINUAR_VEHICULO.md`;
+- `LAVAR_FOTOS.md`;
+- `PRODUCIR_REDES.md`;
+- `PUBLICACION_MEDICION.md`;
+- `VENDIDO_ENTREGA.md`;
+- `CIERRE_CHAT.md`.
 
 ## Estados
 
