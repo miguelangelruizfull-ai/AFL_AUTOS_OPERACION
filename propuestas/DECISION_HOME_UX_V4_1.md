@@ -2,35 +2,55 @@
 
 Fecha: `2026-09-11`
 
-Estado: `DECISION_DE_DISEÑO / IMPLEMENTACION_PENDIENTE`
+Estado: `IMPLEMENTADA_EN_INDEX / VALIDACION_CONTINUA`
+
+## Implementación actual
+
+La decisión ya fue promovida a `index.html` el 2026-09-11.
+
+La URL canónica del Home usa V4.1 y conserva:
+
+`FACILIDAD_V3 + PROTECCIONES_V4 + COMERCIAL_MODULAR + ESCALABILIDAD`
+
+Además incorpora:
+
+- selector de expedientes mediante índice público sanitizado;
+- contexto `EXPEDIENTE_KEY + PUENTE_PATH + SHA indexado + directorios lógicos`;
+- rutas separadas `Reel/TikTok`, `Flyer/Historia/Portada` y `Paquete completo`;
+- gates obligatorios conectados a auditorías históricas de flyers y TikTok;
+- plan de captura y selección orientados por familias/HERO/hooks;
+- revisión/aprobación contra el motor correspondiente;
+- medición ligada a variables creativas.
+
+`home_v4_1.html` queda como alias compatible. La fuente productiva es `index.html`.
 
 ## Contexto verificado
 
 Miguel confirma que el Home V3/V3.1 fue utilizado en operación real y resultó funcional. Hubo errores de entrada, pero pudieron corregirse rápidamente durante la producción.
 
-Miguel confirma que el Home V4 actual no fue el Home validado en esa prueba y que su experiencia visual resultó más larga y menos clara: al abrirlo no era evidente qué acción debía realizar.
+Miguel confirma que el Home V4 anterior no fue el Home validado en esa prueba y que su experiencia visual resultó más larga y menos clara: al abrirlo no era evidente qué acción debía realizar.
 
 Por tanto:
 
-`V3/V3.1 = REFERENCIA DE FACILIDAD_DE_USO`
+`V3/V3.1 = REFERENCIA_DE_FACILIDAD_DE_USO`
 
-`V4 = FUENTE_DE_MEJORAS_TECNICAS, NO REFERENCIA_DE_UX`
+`V4 = FUENTE_DE_MEJORAS_TECNICAS, NO_REFERENCIA_DE_UX`
 
-No se propone regresar técnicamente a V3. Se propone evolucionar V4 conservando sus protecciones útiles y recuperando la claridad de decisión del V3.
+No se regresó técnicamente a V3. Se evolucionó V4 conservando sus protecciones útiles y recuperando claridad de decisión.
 
 ## Principio de producto
 
 `COMPLEJO_POR_DENTRO / SIMPLE_POR_FUERA`
 
-El Home debe responder primero:
+El Home responde primero:
 
 `¿QUE QUIERO HACER AHORA?`
 
-No debe obligar a Miguel a entender primero repositorios, estados internos, reglas de autoridad o arquitectura.
+No obliga a Miguel a entender primero repositorios, estados internos, reglas de autoridad o arquitectura.
 
 Principio general vigente:
 
-`UN SOLO HOME / FUENTES SEPARADAS`
+`UN SOLO HOME / FUENTES_SEPARADAS`
 
 El Home es UX + router + generador de instrucciones. No es CRM, expediente técnico, base de datos ni fuente de verdad.
 
@@ -38,29 +58,25 @@ El Home es UX + router + generador de instrucciones. No es CRM, expediente técn
 
 - `AFL_AUTOS_OPERACION`: UX, Home, navegación, prompts, continuidad y agenda auxiliar.
 - `Vehiculos`: verdad técnica/comercial vigente por unidad mediante `PUENTE.md`.
-- `AFL_AUTOS_CONTENT_SYSTEM`: creatividad, branding, formatos, campañas y motores editoriales.
+- `AFL_AUTOS_CONTENT_SYSTEM`: creatividad, branding, formatos, campañas, auditorías y motores editoriales.
 - `AFL_AUTOS_COMERCIAL`: lógica comercial, respuestas, calificación, visita, seguimiento, negociación, cierre y aprendizaje sanitizado.
 - `AFL_AUTOS_PLATFORM`: métricas, datasets sanitizados, análisis y metodología.
 - Google Drive: RAW, multimedia, conversaciones privadas, exportaciones y evidencia pesada.
 
-## Qué conservar de V3/V3.1
+## Qué se conservó de V3/V3.1
 
 1. Entrada rápida orientada a acción.
 2. Centro de coordinación comprensible sin conocer la arquitectura interna.
 3. Selección directa de módulo.
 4. Formulario corto para generar prompt.
-5. Recomendación de siguiente paso.
-6. Agenda local auxiliar.
-7. Continuidad por retorno/checkpoint.
-8. Diseño móvil, oscuro y de botones grandes.
+5. Agenda local auxiliar.
+6. Continuidad por retorno/checkpoint.
+7. Diseño móvil, oscuro y de botones grandes.
 
-## Qué conservar de V4
-
-Estas funciones son valiosas y NO deben eliminarse:
+## Qué se conservó de V4
 
 - preflight;
-- lector de `RETORNO_AL_COORDINADOR`;
-- ruta sugerida después de un retorno;
+- retornos/checkpoints;
 - separación explícita de revisión/aprobación;
 - estados estrictos de producción, aprobación, publicación y medición;
 - agenda local V2 y migración desde V1;
@@ -68,53 +84,38 @@ Estas funciones son valiosas y NO deben eliminarse:
 - reglas de evidencia/publicabilidad;
 - bloqueos básicos cuando falta contexto obligatorio.
 
-La diferencia es de UX: estas funciones deben trabajar de forma contextual o detrás de la interfaz, no ocupar permanentemente la parte principal de la pantalla.
+La diferencia es de UX: estas funciones trabajan de forma contextual o detrás de la interfaz.
 
-## Problemas observados en V4 actual
+## Problemas del V4 anterior que se corrigieron
 
-### 1. Arquitectura visible antes de la acción
+### Arquitectura visible antes de la acción
 
-El bloque `Fuentes que mandan` es útil como documentación, pero no debe competir con la acción principal en la primera pantalla.
+`Fuentes que mandan` dejó de competir con la acción principal y pasó a `Más / Fuentes y seguridad`.
 
-Mover a:
+### Diagnósticos siempre visibles
 
-`Mas / Fuentes y seguridad`
+Preflight y continuidad se muestran solo cuando la tarea los necesita.
 
-o a un panel colapsable.
+### Demasiadas decisiones al mismo nivel
 
-### 2. Diagnósticos siempre visibles
+V4.1 aplica:
 
-`Lector local de RETORNO` y `Preflight` agregan longitud aunque la tarea elegida no los necesite.
+`CATEGORIA → ACCION → CAMPOS_NECESARIOS → RESULTADO`
 
-Nuevo criterio:
+Las nuevas capacidades se agregan en configuración, no como bloques permanentes de HTML.
 
-- retorno visible solo cuando se pega uno o se elige Continuar/Procesar retorno;
-- preflight ejecutado automáticamente al generar;
-- mostrar únicamente advertencias accionables;
-- permitir abrir el detalle técnico si Miguel lo necesita.
-
-### 3. Demasiadas decisiones al mismo nivel
-
-No seguir agregando tarjetas planas por cada función nueva.
-
-Con Comercial, esa estrategia produciría una pantalla cada vez más larga.
-
-Aplicar navegación progresiva:
-
-`CATEGORIA → ACCION → CAMPOS NECESARIOS → RESULTADO`
-
-## Primera pantalla objetivo
-
-La primera pantalla debe ser corta y orientada a tareas.
+## Primera pantalla implementada
 
 ### CONTINUAR / HOY
 
-Acceso prioritario a pendientes y continuidad real.
+- Continuar vehículo
+- Procesar retorno
+- Continuar tarea
+- Agenda local
 
 ### VEHICULO
 
 - Nuevo vehículo
-- Continuar vehículo
 - Plan de captura
 - Selección
 - Retoque
@@ -122,28 +123,22 @@ Acceso prioritario a pendientes y continuidad real.
 
 ### CREAR CONTENIDO
 
-- Producir redes
+- Reel / TikTok
+- Flyer / historia / portada
+- Paquete completo de redes
 - Revisión / aprobación
-- Flyer
-- Reel Facebook
-- TikTok
-- Historia
-- Portada
-- Copy / publicación
 - Vendido / entrega
 
 ### RESPONDER / LEAD
 
-- Responder comentario
-- Responder Messenger
-- Responder TikTok
-- Responder WhatsApp
-- Pregunta frecuente
+- Responder
 - Calificar lead
 - Mover a WhatsApp / llamada
 - Enviar fotos / video
 - Proponer visita
 - Seguimiento
+- Negociación
+- Cierre comercial
 - Registrar retorno comercial
 
 ### PUBLICAR / MEDIR
@@ -152,23 +147,33 @@ Acceso prioritario a pendientes y continuidad real.
 - Medición 24 h
 - Medición 72 h
 - Medición 7 días
-- Cierre de publicación
 
 ### MAS
 
-- Procesar retorno
-- Continuar hilo / auditoría
+- Cerrar / sincronizar chat
 - Nuevo chat principal
-- Exportaciones
-- Aprendizaje
+- Continuar auditoría TikTok
 - Fuentes y seguridad
-- Diagnóstico / preflight detallado
 
-La implementación visual no tiene que mostrar todas estas subacciones al mismo tiempo. Solo aparece el segundo nivel cuando se selecciona la categoría.
+## Selector de expedientes
+
+V4.1 añade un índice derivado para reducir errores de entrada.
+
+Flujo:
+
+`HOME → EXPEDIENTES_INDEX → EXPEDIENTE_SELECCIONADO → ACCION → PROMPT → PUENTE.md_VIGENTE`
+
+El índice público no contiene URLs/IDs privados de Drive ni verdad técnica sensible.
+
+Regla:
+
+`INDEX = NAVEGACION`
+
+`PUENTE.md = VERDAD`
 
 ## Integración de AFL_AUTOS_COMERCIAL
 
-El Home NO debe copiar la lógica comercial.
+El Home NO copia la lógica comercial.
 
 Flujo:
 
@@ -179,66 +184,71 @@ Flujo:
 → `Vehiculos/PUENTE.md` cuando la respuesta depende de una unidad
 → `RESPUESTA + UNA_PREGUNTA_UTIL + SIGUIENTE_ACCION`
 
-El Home público puede contener nombres de acciones y reglas de enrutamiento no sensibles. No debe contener verdad técnica, leads identificables ni conversaciones privadas.
-
-## Regla comercial visible en UX
-
-El usuario no debe seleccionar manualmente como verdad:
-
-- motor;
-- versión;
-- equipamiento;
-- documentación;
-- disponibilidad;
-- precio;
-- tracción.
-
-Cuando una acción necesite esos datos, el prompt debe ordenar consultar el `PUENTE.md` vigente.
+El Home público puede contener nombres de acciones y routing no sensible. No contiene leads identificables ni conversaciones privadas.
 
 ## Galería para prospectos
 
-Mantener como acción propia.
+Se mantiene como acción propia.
 
 `FOTOS_PARA_LEAD ≠ FOTOS_PARA_PUBLICACION`
 
-La acción debe dirigir a:
-
-- fotos seleccionadas/retocadas;
-- exclusión de VIN, odómetro, documentos y material sensible;
-- selección aproximada de 8–15 fotos útiles;
-- carpeta Drive clara;
-- enlace verificable;
-- registro de galería vigente en `PUENTE.md`.
+Debe usar fotos seleccionadas/retocadas, excluir material sensible, devolver un enlace Drive verificable y registrar la galería vigente en `PUENTE.md`.
 
 No crear una web pública por vehículo por defecto.
 
+## Auditorías históricas integradas al flujo
+
+La auditoría dejó de ser una biblioteca pasiva.
+
+### Piezas gráficas
+
+`PLAN_CAPTURA → SELECCION → PRODUCCION → REVISION → MEDICION`
+
+consulta o conserva decisiones derivadas de:
+
+- `FLYER_ENGINE.md`;
+- `FLYER_FAMILIES.md`;
+- `COMMON_ERRORS.md`;
+- `POSITIVE_REFERENCES.md`.
+
+### Reel / TikTok
+
+`PLAN_CAPTURA → SELECCION → PRODUCCION → REVISION → MEDICION`
+
+consulta o conserva decisiones derivadas de:
+
+- `EDITORIAL_ENGINE.md`;
+- `FORMAT_FAMILIES.md`;
+- `HOOKS_AND_CTA.md`;
+- `VIDEO_AUDIT_INDEX.md`;
+- `CAPTURE_GUIDE.md`.
+
+Si el material no soporta una salida adecuada, se bloquea en vez de forzar producción.
+
 ## Escalabilidad técnica
 
-No agregar nueva lógica mediante copias extensas de bloques HTML por cada función.
+Las acciones públicas/no sensibles se definen en:
 
-Preferir una definición central de acciones públicas/no sensibles con propiedades como:
+`config/home-v4-1-actions.js`
 
-- categoria;
+La definición central conserva propiedades como:
+
+- categoría;
 - id;
 - etiqueta;
-- descripción corta;
+- descripción;
 - campos requeridos;
-- módulo destino;
-- repositorios que el chat debe consultar;
-- plantilla/prompt base;
-- si necesita `PUENTE.md`;
-- si necesita retorno;
-- si necesita Drive.
+- prompt/módulo;
+- acción comercial;
+- instrucción específica.
 
-La interfaz debe renderizar acciones desde esa definición siempre que sea viable.
-
-Así una nueva capacidad futura puede agregarse sin rediseñar la pantalla completa.
+Así una capacidad futura puede agregarse sin rediseñar la pantalla completa.
 
 ## Regla de seguridad arquitectónica
 
-El Home público NO debe intentar leer directamente repositorios privados desde el navegador usando credenciales.
+El Home público NO intenta leer repositorios privados desde el navegador usando credenciales.
 
-El Home genera la instrucción; ChatGPT/conectores autorizados consultan las fuentes privadas cuando se ejecuta la tarea.
+El Home genera la instrucción; ChatGPT/conectores autorizados consultan fuentes privadas.
 
 No colocar tokens o credenciales GitHub/Drive en JavaScript público.
 
@@ -246,11 +256,7 @@ No colocar tokens o credenciales GitHub/Drive en JavaScript público.
 
 `localStorage = AYUDA_LOCAL`, nunca fuente de verdad.
 
-Puede conservar:
-
-- agenda auxiliar;
-- preferencias de interfaz no sensibles;
-- última categoría usada si aporta UX.
+Puede conservar agenda auxiliar y preferencias no sensibles.
 
 No conservar:
 
@@ -262,37 +268,26 @@ No conservar:
 - precios internos;
 - datos privados de leads.
 
-## Estrategia de implementación segura
+## Criterios de aceptación vigentes
 
-1. Reconciliar `AFL_AUTOS_COMERCIAL` contra el diseño histórico recuperado.
-2. Mantener `index.html` vigente sin cambios durante el diseño/prototipo.
-3. Crear candidato V4.1 separado para prueba móvil.
-4. Verificar paridad con funciones útiles de V3/V4.
-5. Probar tareas reales: producción, continuidad, respuesta comercial, visita y publicación/medición.
-6. Corregir fricción de entrada.
-7. Solo después de aprobación de Miguel, promover el candidato a `index.html`.
-
-## Criterios de aceptación
-
-La evolución se considera correcta si:
+La evolución se considera correcta mientras:
 
 - desde teléfono se entiende qué hacer sin leer arquitectura;
 - la primera acción útil requiere pocos toques;
 - Comercial puede crecer sin multiplicar tarjetas principales;
-- V4 conserva sus verificaciones, pero no domina visualmente la pantalla;
+- las protecciones de V4 permanecen sin dominar visualmente la pantalla;
 - no se almacena PII o verdad técnica en el Home;
-- un error de entrada puede corregirse rápidamente sin reiniciar todo el flujo;
-- las tareas existentes de producción siguen siendo posibles;
-- el sistema puede reconstruirse desde GitHub/Drive sin depender de memoria de chat.
+- un error de entrada puede corregirse rápidamente;
+- producción/continuidad/comercial/medición siguen siendo posibles;
+- el sistema puede reconstruirse desde GitHub/Drive sin depender de memoria de chat;
+- cada nueva producción consulta el aprendizaje histórico aplicable antes de improvisar.
 
-## Decisión
+## Decisión vigente
 
 No regresar a V3 como código de producción.
 
-No seguir ampliando visualmente el V4 actual con más bloques permanentes.
+No volver al Home V4 largo como referencia de UX.
 
-Construir una evolución `V4.1 UX` con:
+Mantener V4.1 y evolucionarlo de forma incremental:
 
-`FACILIDAD_V3 + PROTECCIONES_V4 + COMERCIAL_MODULAR + ESCALABILIDAD`
-
-Antes de reemplazar `index.html`, probar la nueva UX como candidato independiente.
+`FACILIDAD_V3 + PROTECCIONES_V4 + COMERCIAL_MODULAR + AUDITORIAS_ACTIVAS + ESCALABILIDAD`
