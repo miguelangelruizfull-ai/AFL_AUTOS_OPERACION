@@ -2,22 +2,28 @@
 
 Usar **después** de que Miguel termine la sesión y suba las fotos/videos originales.
 
-Completar:
-
-- `DRIVE_RAIZ:`
-- `VEHICULO:`
-- `FECHA:`
-- `NOTAS:`
-
 ## Antes de actuar
 
 1. Leer completo `PUENTE.md` vigente.
 2. Leer `PLAN_CAPTURA.md` vigente si existe.
-3. Revisar TODO el material nuevo de `01_FOTOS_ORIGINALES` y `02_VIDEOS_ORIGINALES` o sus carpetas equivalentes registradas.
-4. No volver a pedir tomas antes de comprobar qué sí se capturó.
-5. No borrar ni mover originales.
+3. Leer `AFL_AUTOS_CONTENT_SYSTEM/START_HERE.md` y `STATUS_RULES.md`.
+4. Para selección de fotos destinada a piezas gráficas consultar:
+   - `formats/FLYER_ENGINE.md`;
+   - `formats/FLYER_FAMILIES.md`;
+   - `library/flyer_audit/COMMON_ERRORS.md`;
+   - `library/flyer_audit/POSITIVE_REFERENCES.md`.
+5. Para selección de video destinada a Facebook Reel/TikTok consultar:
+   - `networks/tiktok/EDITORIAL_ENGINE.md`;
+   - `networks/tiktok/FORMAT_FAMILIES.md`;
+   - `networks/tiktok/HOOKS_AND_CTA.md`;
+   - `networks/tiktok/VIDEO_AUDIT_INDEX.md`.
+6. Revisar TODO el material nuevo de las carpetas de originales/equivalentes registradas.
+7. No volver a pedir tomas antes de comprobar qué sí se capturó.
+8. No borrar ni mover originales.
 
-## Auditoría
+La auditoría histórica ayuda a seleccionar; no reemplaza la verdad técnica del `PUENTE.md`.
+
+## Auditoría del material
 
 Inventariar:
 
@@ -29,7 +35,8 @@ Inventariar:
 - defectuosos;
 - sensibles;
 - material de otra unidad;
-- cobertura real frente al checklist.
+- cobertura real frente al `PLAN_CAPTURA.md`;
+- familias visuales/editoriales que el material realmente puede sostener.
 
 Clasificar cada archivo relevante como:
 
@@ -44,7 +51,7 @@ Clasificar cada archivo relevante como:
 
 Si las nuevas tomas aportan evidencia suficiente para versión, tracción, equipamiento u otros campos PENDIENTES, actualizar `PUENTE.md` con la fuente concreta. Si no es suficiente, mantener PENDIENTE.
 
-Nunca usar apariencia aislada como confirmación de versión.
+Nunca usar apariencia aislada, filename, prompt, flyer o video histórico como confirmación técnica.
 
 ## Carpetas de selección
 
@@ -53,18 +60,19 @@ Para unidades nuevas V2, crear si no existen:
 - `03_FOTOS_SELECCIONADAS`
 - `04_VIDEOS_SELECCIONADOS`
 
-Si el vehículo ya tiene equivalentes históricos como `02_FOTOS_PARA_ENVIAR`, `03_VIDEOS_PARA_REEL` u otros, reutilizar esos equivalentes y documentarlo. No duplicar solo por cambiar nombres.
+Si el vehículo ya tiene equivalentes históricos, reutilizarlos y documentarlo. No duplicar solo por cambiar nombres.
 
 **Copiar**, no mover, los archivos seleccionados.
 
-## Selección fotográfica
+## Selección fotográfica orientada a pieza
 
-Elegir únicamente las mejores fotos útiles para venta, normalmente **8–15** según la calidad y la unidad. Debe existir variedad real, no repeticiones casi iguales.
+Elegir únicamente las mejores fotos útiles para venta, normalmente **8–15** según calidad y cobertura.
 
-Priorizar cuando existan:
+La selección debe identificar explícitamente:
 
-- HERO;
-- frontal 3/4;
+- `HERO_FLYER` — mejor foto para feed/portada si existe;
+- `HERO_HISTORIA` — composición vertical útil si existe;
+- exterior 3/4;
 - perfil;
 - trasera;
 - interior;
@@ -73,33 +81,75 @@ Priorizar cuando existan:
 - rin/neumático;
 - área de carga/cajuela según aplique.
 
+Para `HERO_FLYER`, evaluar contra el Motor Visual:
+
+- vehículo dominante;
+- fondo limpio/controlable;
+- espacio para texto;
+- recorte posible sin deformar ni ocultar la unidad;
+- ausencia de elementos ajenos que compitan;
+- lectura fuerte en pantalla pequeña.
+
+Si ninguna foto alcanza el estándar, registrar:
+
+`BLOQUEADO_POR_FOTO / REQUIERE_MEJOR_HERO`
+
+y señalar la toma concreta que falta. No elegir una foto débil solo para cumplir.
+
 Excluir VIN, odómetro, documentos y cualquier dato sensible.
 
-## Selección de videos
+## Selección de video orientada a familia editorial
 
-Elegir clips que permitan editar piezas distintas después. Normalmente **5–10 clips** buenos son preferibles a muchos clips débiles.
+No elegir clips solo porque “se ven bien”. Primero identificar qué familias editoriales del Motor TikTok/Reel puede sostener el material real.
 
-Priorizar:
+Para cada familia viable registrar:
 
-- mejor apertura/hook visual;
-- exterior principal;
-- recorrido/movimiento;
-- interior;
-- motor/sonido si aplica;
-- detalle distintivo;
-- cierre/CTA visual cuando exista.
+- `FAMILIA_EDITORIAL`;
+- `HOOK_0_3S` disponible;
+- clips candidatos para apertura;
+- secuencia principal;
+- interior/detalle/motor/función cuando aplique;
+- cierre visual;
+- audio útil disponible;
+- tomas faltantes.
+
+Priorizar clips que permitan:
+
+- entender rápido la unidad o función;
+- construir el hook elegido;
+- mostrar una secuencia coherente;
+- evitar cierres largos de logo/flyer;
+- evitar ficha técnica visual innecesaria;
+- adaptar TikTok y Facebook Reel sin hacer clones automáticos.
+
+Si no existe material suficiente para una familia/hook razonable, registrar:
+
+`BLOQUEADO_POR_MATERIAL / REQUIERE_MEJOR_SELECCION_O_CAPTURA`
+
+y especificar exactamente qué clip falta.
 
 No producir Reel/TikTok todavía.
+
+## Comparación histórica obligatoria
+
+Antes de cerrar la selección:
+
+- para fotos: comparar el HERO contra al menos una referencia positiva compatible y revisar `COMMON_ERRORS.md`;
+- para video: revisar al menos un caso del `VIDEO_AUDIT_INDEX.md` de familia similar cuando exista;
+- registrar qué error histórico se está evitando;
+- no copiar métricas, datos o overlays históricos como verdad actual.
 
 ## Evaluación de suficiencia
 
 Responder por separado:
 
 - ¿alcanza para Facebook post?
+- ¿alcanza para flyer feed?
+- ¿alcanza para historia/portada?
 - ¿alcanza para Facebook Reel?
 - ¿alcanza para TikTok?
-- ¿alcanza para Historias?
-- ¿alcanza para flyer/portadas?
+- ¿qué familia editorial soporta cada video posible?
+- ¿qué hook real puede construirse con el material actual?
 
 Si falta algo, indicar exactamente qué toma adicional tendría mayor impacto. No mandar a repetir toda la sesión.
 
@@ -110,14 +160,20 @@ Actualizar `PUENTE.md` con:
 - conteo final;
 - carpetas de selección;
 - archivos principales;
-- HERO;
+- `HERO_FLYER` / `HERO_HISTORIA` cuando existan;
+- familias editoriales viables;
+- clips de hook disponibles;
 - pendientes resueltos/no resueltos;
-- cobertura de sesión;
+- bloqueos de calidad;
 - siguiente paso.
 
 ## Estado final
 
+Si el material es suficiente:
+
 `MATERIAL_AUDITADO / SELECCION_CREADA / PENDIENTE_RETOQUE`
+
+Si falta una toma crítica, conservar el estado real y registrar el bloqueo correspondiente.
 
 El siguiente módulo normal es:
 
