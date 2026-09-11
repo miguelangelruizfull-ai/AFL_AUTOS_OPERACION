@@ -4,7 +4,7 @@ Centro de operación público y móvil de AFL AUTOS.
 
 ## Propósito
 
-Este repositorio funciona como **lanzador de trabajo**. Permite iniciar un vehículo nuevo, continuar una unidad, retocar fotos, producir redes, registrar una publicación, medir resultados, cerrar un chat o arrancar un nuevo chat principal sin depender de una conversación específica.
+Este repositorio funciona como **lanzador de trabajo**. Permite iniciar un vehículo nuevo, crear su estrategia de captura, seleccionar material, retocar fotos, producir redes, registrar una publicación, medir resultados, cerrar un chat o arrancar un nuevo chat principal sin depender de una conversación específica.
 
 No sustituye los repositorios privados ni Google Drive.
 
@@ -28,21 +28,26 @@ La web es responsive, no requiere servidor y genera prompts localmente en el nav
 
 Ver [`docs/ARQUITECTURA.md`](./docs/ARQUITECTURA.md).
 
-## Inicio rápido
+## Inicio rápido V2
 
-1. Abre la herramienta web.
-2. Pulsa **+ Nuevo vehículo**.
-3. Pega el enlace de Drive.
-4. Completa fecha/prioridad/notas.
-5. Pulsa **GENERAR PROMPT**.
-6. Copia el prompt a un chat nuevo.
-7. Cuando termine el checkpoint, usa **¿Qué hago ahora?** para elegir el siguiente módulo.
+1. **+ Nuevo vehículo** → identificar y crear/actualizar expediente.
+2. **Estrategia + plan de captura** → decidir cómo vender visualmente esa unidad, crear carpetas de originales y generar checklist con tomas/tiempos.
+3. Miguel captura fotos/videos y los sube.
+4. **Seleccionar material** → auditar la sesión y copiar los mejores archivos a carpetas de selección.
+5. **Lavar / retocar fotos** → trabajar únicamente sobre la selección.
+6. **Producir redes** → Facebook/TikTok/historias/flyers/portadas/copies.
+7. Miguel aprueba/publica.
+8. **Publicación + medición** → URLs y 24 h / 72 h / 7 días.
 
 Guía: [`docs/COMO_EMPEZAR.md`](./docs/COMO_EMPEZAR.md)
 
-## Módulos V1 de la herramienta
+Estructura Drive V2: [`docs/ESTRUCTURA_DRIVE_V2.md`](./docs/ESTRUCTURA_DRIVE_V2.md)
+
+## Módulos V2 de la herramienta
 
 - Nuevo vehículo
+- Estrategia + plan de captura
+- Seleccionar material
 - Continuar vehículo
 - Lavar / retocar fotos
 - Producir redes
@@ -53,17 +58,19 @@ Guía: [`docs/COMO_EMPEZAR.md`](./docs/COMO_EMPEZAR.md)
 
 ## Prompts especializados versionados
 
-La carpeta [`prompts/`](./prompts/) conserva plantillas reutilizables. Incluye también procesos que no necesitan ser un botón diario de la herramienta, por ejemplo:
+La carpeta [`prompts/`](./prompts/) conserva plantillas reutilizables:
 
-- `TIKTOK_AUDITORIA.md` — auditoría histórica y Motor Editorial;
-- `CHAT_PRINCIPAL.md` — reemplazo limpio del chat coordinador;
-- `NUEVO_VEHICULO.md`;
-- `CONTINUAR_VEHICULO.md`;
-- `LAVAR_FOTOS.md`;
-- `PRODUCIR_REDES.md`;
-- `PUBLICACION_MEDICION.md`;
-- `VENDIDO_ENTREGA.md`;
-- `CIERRE_CHAT.md`.
+- `NUEVO_VEHICULO.md`
+- `PLAN_CAPTURA.md`
+- `SELECCIONAR_MATERIAL.md`
+- `CONTINUAR_VEHICULO.md`
+- `LAVAR_FOTOS.md`
+- `PRODUCIR_REDES.md`
+- `PUBLICACION_MEDICION.md`
+- `VENDIDO_ENTREGA.md`
+- `CIERRE_CHAT.md`
+- `CHAT_PRINCIPAL.md`
+- `TIKTOK_AUDITORIA.md`
 
 ## Estados
 
@@ -72,6 +79,10 @@ Consultar [`docs/ESTADOS.md`](./docs/ESTADOS.md).
 Regla central:
 
 `CREACIÓN ≠ SUBIDA ≠ APROBACIÓN ≠ PROGRAMACIÓN ≠ PUBLICACIÓN ≠ MEDICIÓN`
+
+Y el flujo de materia prima queda separado:
+
+`ORIGINALES ≠ SELECCIÓN ≠ RETOQUE ≠ PIEZA FINAL`
 
 ## Seguridad del repo público
 
@@ -90,7 +101,7 @@ Los enlaces o datos que se pegan en `index.html` se usan para construir el promp
 
 Ver [`docs/REGLAS_DRIVE_GITHUB.md`](./docs/REGLAS_DRIVE_GITHUB.md).
 
-## Ejemplos V1
+## Ejemplos V1/V2
 
 - [`Ford F-150 2011 Texas Edition`](./ejemplos/FORD_F150_2011_TEXAS_EDITION.md)
 - [`Jeep Wrangler 2017`](./ejemplos/JEEP_WRANGLER_2017.md)
