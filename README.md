@@ -2,208 +2,200 @@
 
 Centro de operación público y móvil de AFL AUTOS.
 
-## Estado actual del Home
+## Home activo
 
-`index.html` usa **V3.1 funcional** como base UX probada.
+`index.html` usa **V3.2 Flujo Guiado**, construido sobre la UX probada de V3.1.
 
-Criterio vigente:
+Criterio:
 
-`V3.1 = HOME ACTIVO / UX PROBADA`
+`V3.1 = BASE UX`
 
-`V4.1 = CANDIDATO / LABORATORIO / NO CANONICO`
+`V3.2 = FLUJO GUIADO ACTIVO`
 
-V3.1 evolucionó de forma pequeña para incorporar revisión visual y aprendizaje sin convertirse en base de datos creativa.
+`V4/V4.1 = LABORATORIO / NO CANONICO`
 
-## Principio
-
-`UN SOLO HOME / FUENTES SEPARADAS`
-
-El Home coordina y genera instrucciones. No es CRM, expediente técnico ni fuente durable de aprendizaje creativo.
-
-La autoridad durable del aprendizaje visual es:
-
-`AFL_AUTOS_CONTENT_SYSTEM`
-
-## URL
+URL:
 
 `https://miguelangelruizfull-ai.github.io/AFL_AUTOS_OPERACION/`
 
-Archivo canónico: [`index.html`](./index.html).
+## Principio
 
-## Qué conserva V3.1
+`COMPLEJO POR DENTRO / SIMPLE POR FUERA`
 
-- centro de coordinación ligero;
-- entrada directa por módulos;
-- formulario corto;
-- Nuevo vehículo;
-- Plan de captura;
-- Seleccionar material;
-- Lavar / retocar;
-- Producir redes;
-- Continuar vehículo;
-- Procesar retorno;
-- Continuar hilo / tarea;
-- Publicación + medición;
-- Vendido / entrega;
-- Cerrar / sincronizar;
-- Nuevo chat principal;
-- agenda local `afl_autos_agenda_v1`;
-- recomendaciones de siguiente etapa;
-- flujo móvil probado.
+`UN SOLO HOME / FUENTES SEPARADAS`
 
-## Nuevo ciclo de aprendizaje visual
+El Home ya no exige que Miguel elija manualmente el módulo normal. Selecciona un expediente, muestra el tablero de progreso y prepara la siguiente instrucción.
 
-V3.1 añade un módulo pequeño:
+## Flujo principal V3.2
 
-**Revisar diseño / Registrar aprendizaje**
+```text
+SELECCIONAR VEHICULO
+→ TABLERO
+→ AHORA
+→ CONTINUAR
+→ CHAT TRABAJADOR
+→ RETORNO_AL_COORDINADOR
+→ PEGAR RETORNO
+→ TABLERO ACTUALIZADO
+→ SIGUIENTE ACCION
+```
 
-Permite generar un prompt con:
+## Semáforo
 
-- vehículo/proyecto;
-- Drive;
-- pieza/versión;
-- decisión de Miguel: aprobar / corregir / rechazar;
-- qué no gustó;
-- qué sí conservar;
-- referencia visual opcional;
-- comentario de Miguel.
+- verde — terminado/verificado para navegación;
+- amarillo — acción actual;
+- azul — esperando a Miguel;
+- rojo — bloqueo, rechazo o contradicción;
+- gris — todavía no corresponde.
 
-El Home solo construye el prompt. No guarda ese feedback como fuente de verdad en `localStorage`.
+Regla permanente:
 
-Flujo:
-
-`PRODUCIR → REVISAR → APROBAR/CORREGIR/RECHAZAR → REGISTRAR_APRENDIZAJE → SIGUIENTE_PRODUCCION`
-
-Regla:
-
-`CASO_PARTICULAR ≠ REGLA_GENERAL ≠ APRENDIZAJE_VALIDADO`
-
-## Dirección visual activa
-
-La producción gráfica debe consultar en `AFL_AUTOS_CONTENT_SYSTEM`:
-
-- `formats/ACTIVE_VISUAL_DIRECTION.md`;
-- `formats/FLYERS_PORTADAS.md`;
-- `formats/FLYER_ENGINE.md`;
-- `formats/FLYER_FAMILIES.md`;
-- `library/flyer_audit/REFERENCE_STATUS.md`;
-- `COMMON_ERRORS.md`;
-- referencias aprobadas por Miguel cuando existan;
-- `NEGATIVE_CASES.md` y `VISUAL_FEEDBACK_LOG.md`.
-
-Regla creativa:
-
-`REFERENCIA_POSITIVA_APROBADA_POR_MIGUEL > REFERENCIA_HISTORICA_NO_VALIDADA`
-
-Ninguna referencia visual es fuente técnica del vehículo.
-
-## Producción
-
-`prompts/PRODUCIR_REDES.md` exige dirección visual activa y aprendizaje vigente antes de producir flyers, feed, historias o portadas.
-
-Entre otras reglas:
-
-- vehículo protagonista;
-- `NO ICONOS`;
-- máximo 2–4 datos confirmados/publicables;
-- jerarquía moderna/editorial;
-- composiciones específicas por formato;
-- evitar apariencia de plantilla genérica;
-- no producir una variante llamada `premium` sin una dirección realmente distinta y más sólida;
-- no publicar automáticamente.
-
-## Revisión y aprendizaje
-
-- `prompts/REVISION_APROBACION.md` — revisión de pieza real y decisión explícita de Miguel.
-- `prompts/REVISAR_DISENO_APRENDIZAJE.md` — persiste feedback en Content System.
-
-Decisiones:
-
-- `APROBADO_POR_MIGUEL`
-- `REQUIERE_CORRECCION`
-- `RECHAZADO_POR_MIGUEL / NO_PUBLICAR / REQUIERE_REDISENO`
-
-Una pieza producida/subida no queda aprobada por inferencia.
-
-## Fuentes de autoridad
-
-- `AFL_AUTOS_OPERACION` — Home, coordinación, prompts y continuidad.
-- `Vehiculos` — verdad técnica/comercial por unidad mediante `PUENTE.md`.
-- `AFL_AUTOS_CONTENT_SYSTEM` — creatividad, dirección visual, referencias, auditorías y aprendizaje.
-- `AFL_AUTOS_COMERCIAL` — respuestas, calificación, visita, seguimiento, negociación y cierre.
-- `AFL_AUTOS_PLATFORM` — análisis, datasets sanitizados y métricas.
-- Google Drive — RAW, multimedia y evidencia pesada.
-
-Para cualquier unidad:
-
-`INDEX = NAVEGACION`
+`TABLERO = NAVEGACION`
 
 `PUENTE.md = VERDAD`
 
-## Flujo operativo
+## Índice público
 
-`INGRESO → PLAN_CAPTURA → CAPTURA → SELECCION → RETOQUE → PRODUCCION → REVISION/APRENDIZAJE → APROBACION → PUBLICACION → MEDICION`
+El Home carga `data/expedientes-public-index.json` para mostrar expedientes y siguiente acción sin exponer los enlaces privados de Drive.
 
-Mantener estrictamente:
+El índice no sustituye al `PUENTE.md`. El chat trabajador siempre debe hacer fetch del PUENTE vigente antes de escribir.
 
-`PRODUCIDO ≠ SUBIDO ≠ APROBADO ≠ PROGRAMADO ≠ PUBLICADO ≠ MEDIDO`
+## Retorno estructurado
 
-## Auditorías históricas activas
+V3.2 entiende campos adicionales como:
 
-### Flyers / historias / portadas
+- `EXPEDIENTE_KEY`;
+- `PUENTE_PATH`;
+- `PASO_TERMINADO`;
+- `BLOQUEADO`;
+- `ESPERANDO_MIGUEL`;
+- `ACCION_MIGUEL`;
+- `LINK_PRINCIPAL`;
+- `SIGUIENTE_PASO`.
 
-La auditoría de 100 piezas sigue activa como evidencia visual histórica. Las referencias históricas no se consideran aprobadas por Miguel salvo registro explícito.
+El Home puede conservar el último retorno y enlaces de acceso como estado local de navegación. No convierte esos datos locales en verdad durable.
 
-Si la foto no soporta una pieza adecuada:
+Prompt base:
 
-`BLOQUEADO_POR_FOTO / REQUIERE_MEJOR_HERO`
+`prompts/CONTINUAR_GUIADO.md`
 
-### TikTok / Facebook Reel
+## FAST PATH creativo
 
-La producción debe consultar Motor Editorial, familias, hooks/CTA y `VIDEO_AUDIT_INDEX.md`.
+Producción normal:
 
-Si el material no soporta una pieza adecuada:
+`PUENTE.md + AFL_AUTOS_CONTENT_SYSTEM/runtime/CONTENT_RUNTIME.md + MATERIAL REAL`
 
-`BLOQUEADO_POR_MATERIAL / REQUIERE_MEJOR_SELECCION_O_CAPTURA`
+Las auditorías, motores completos, logs y casos se consultan bajo demanda cuando hay contradicción, bloqueo, auditoría, rediseño importante o una regla ausente en el runtime.
 
-Los históricos orientan creatividad; nunca sustituyen al `PUENTE.md` para datos de la unidad.
+Prompts actualizados:
 
-## Comercial
+- `prompts/PRODUCIR_REDES.md`;
+- `prompts/REVISION_APROBACION.md`;
+- `prompts/REVISAR_DISENO_APRENDIZAJE.md`;
+- `prompts/PUBLICACION_MEDICION.md`.
 
-Flujo base:
+## Revisión de Miguel
 
-`PREGUNTA → RESPUESTA_DIRECTA → UNA_PREGUNTA_UTIL → SIGUIENTE_ACCION`
+Cuando corresponde, Home muestra la decisión:
 
-Estados:
+- `APROBADO_POR_MIGUEL`;
+- `REQUIERE_CORRECCION`;
+- `RECHAZADO_POR_MIGUEL / NO_PUBLICAR / REQUIERE_REDISENO`.
 
-`INTERACCION ≠ CONVERSACION ≠ LEAD_CALIFICADO ≠ VISITA ≠ NEGOCIACION ≠ VENTA`
+El feedback durable sigue viviendo en `AFL_AUTOS_CONTENT_SYSTEM`.
 
-El Home público no debe almacenar leads, conversaciones o PII.
+## Referencias creativas externas
+
+Existe una bandeja privada en Drive para que Miguel suba flyers, capturas y videos de competencia/inspiración.
+
+El Home público NO contiene su URL. Puede guardarse como atajo local del navegador.
+
+Prompt:
+
+`prompts/ANALIZAR_REFERENCIA_CREATIVA.md`
+
+Autoridad creativa:
+
+`AFL_AUTOS_CONTENT_SYSTEM/library/external_references/README.md`
+
+Se extraen patrones de composición, jerarquía, hook, ritmo, edición, efectos y CTA. No se clonan branding, fotografías, textos completos, campañas o layouts distintivos de terceros.
+
+## Video moderno
+
+Content System conserva una biblioteca activa:
+
+`networks/tiktok/EDITING_EFFECTS_LIBRARY.md`
+
+Incluye cortes, speed ramps, motion text, transiciones y recursos de audio como opciones de prueba, no como plantilla universal.
+
+## Publicación y medición
+
+Después de una publicación confirmada:
+
+`PUBLICADO_CONFIRMADO_POR_MIGUEL → MEDICION_24H → MEDICION_72H → MEDICION_7D`
+
+Separar métricas de plataforma de:
+
+`MENSAJE → WHATSAPP/LLAMADA → LEAD → VISITA → NEGOCIACION → VENTA`
+
+## Agenda
+
+La agenda local conserva exactamente la clave:
+
+`afl_autos_agenda_v1`
+
+No fue migrada ni sustituida. Sigue siendo auxiliar y no una fuente de verdad.
+
+## Modo avanzado
+
+Los módulos históricos siguen disponibles bajo **Más opciones / modo avanzado** para:
+
+- nuevo vehículo;
+- plan de captura;
+- selección;
+- retoque;
+- producción;
+- revisión;
+- retorno manual;
+- hilo interrumpido;
+- publicación/medición;
+- vendido/entrega;
+- referencias externas;
+- nuevo coordinador.
+
+El objetivo es que el flujo normal no dependa de elegirlos manualmente.
+
+## Fuentes de autoridad
+
+- unidad/datos técnicos → `Vehiculos/PUENTE.md`;
+- creatividad/aprendizaje → `AFL_AUTOS_CONTENT_SYSTEM`;
+- comercial → `AFL_AUTOS_COMERCIAL`;
+- análisis/métricas → `AFL_AUTOS_PLATFORM`;
+- RAW/multimedia → Drive;
+- coordinación/prompts → `AFL_AUTOS_OPERACION`.
 
 ## Seguridad
 
 No guardar en este repositorio público:
 
-- VIN;
-- millas/kilómetros u odómetro;
+- VIN completo;
+- millas/kilómetros;
 - precios internos;
 - documentos;
-- datos personales;
+- PII;
 - conversaciones privadas;
-- credenciales.
+- credenciales;
+- enlaces privados de Drive como parte del índice público.
 
-Para contenido público aplicar:
+Mantener:
+
+`PRODUCIDO ≠ SUBIDO ≠ APROBADO ≠ PROGRAMADO ≠ PUBLICADO ≠ MEDIDO`
 
 `DATO_CONFIRMADO ≠ DATO_PUBLICABLE ≠ EVIDENCIA_VISUAL ≠ MOODBOARD ≠ PIEZA_APROBADA`
 
-## Prototipos conservados
-
-`home_v4_1.html`, `assets/home-v4-1.*` y `config/home-v4-1-actions.js` permanecen como laboratorio no canónico. No sustituyen `index.html`.
-
 ## Guías
 
-- [`docs/COMO_EMPEZAR.md`](./docs/COMO_EMPEZAR.md)
-- [`docs/ARQUITECTURA.md`](./docs/ARQUITECTURA.md)
-- [`docs/COORDINACION_Y_RETORNOS.md`](./docs/COORDINACION_Y_RETORNOS.md)
-- [`docs/ESTADOS.md`](./docs/ESTADOS.md)
-- [`propuestas/DECISION_HOME_UX_V4_1.md`](./propuestas/DECISION_HOME_UX_V4_1.md)
+- `docs/COMO_EMPEZAR.md`
+- `docs/ARQUITECTURA.md`
+- `docs/COORDINACION_Y_RETORNOS.md`
+- `docs/ESTADOS.md`
