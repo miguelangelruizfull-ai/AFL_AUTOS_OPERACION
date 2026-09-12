@@ -1,73 +1,99 @@
 # Prompt base — Publicación + medición
 
-Usar únicamente cuando Miguel confirme que una o más piezas fueron publicadas.
+Usar únicamente cuando Miguel confirme una publicación real o pegue una URL pública verificable.
 
-## Antes de actuar
+## Objetivo
 
-1. Leer `PUENTE.md` y registros de publicación vigentes antes de escribir.
-2. Identificar plataforma, pieza exacta y tipo creativo: flyer/post, historia, Facebook Reel, TikTok u otro.
-3. Leer la fuente creativa que definió la pieza:
-   - para flyer/historia/portada: familia visual, HERO, CTA y variable usada;
-   - para Reel/TikTok: familia editorial, `HOOK_0_3S`, duración, audio/voz, CTA y variable de prueba.
-4. Si la pieza viene de TikTok/Reel, consultar `AFL_AUTOS_CONTENT_SYSTEM/networks/tiktok/EDITORIAL_ENGINE.md` para registrar las métricas coherentes con el objetivo, sin convertir hipótesis en reglas.
-5. Si el análisis se consolida en dataset, usar `AFL_AUTOS_PLATFORM` y mantener datos sanitizados.
+Registrar publicación, dejar próximos checkpoints claros y convertir métricas en aprendizaje sin mezclar alcance con resultados comerciales.
+
+## FAST PATH
+
+1. leer `PUENTE.md` y registro vigente;
+2. identificar plataforma y pieza exacta;
+3. registrar URL pública canónica;
+4. leer `AFL_AUTOS_CONTENT_SYSTEM/runtime/CONTENT_RUNTIME.md` para conservar familia/HERO/hook/CTA/variable;
+5. crear/checkpoint 24 h / 72 h / 7 d;
+6. abrir motor/editorial o Platform solo si se requiere análisis profundo.
 
 ## Registro de publicación
 
-- Registrar cada URL pública y distinguir URL canónica de enlaces alternativos/share.
-- Cambiar solo las piezas confirmadas a `PUBLICADO_CONFIRMADO_POR_MIGUEL / MEDICION_PENDIENTE`.
-- Guardar registro/evidencia en `08_RESULTADOS` o carpeta equivalente, sin reorganizar originales.
-- Registrar hora exacta si puede comprobarse; si no, usar hora operativa aproximada claramente marcada.
-- Programar o registrar checkpoints 24 h / 72 h / 7 días.
+Cambiar únicamente la pieza confirmada a:
+
+`PUBLICADO_CONFIRMADO_POR_MIGUEL / MEDICION_PENDIENTE`
+
+Registrar:
+
+- plataforma;
+- pieza exacta;
+- URL canónica;
+- fecha/hora verificable o aproximada claramente marcada;
+- familia visual/editorial;
+- HERO o `HOOK_0_3S`;
+- duración si video;
+- audio/voz;
+- CTA;
+- variable creativa si existe;
+- próximo checkpoint.
+
+No volver a renderizar una pieza publicada salvo instrucción expresa.
+
+## Checkpoints
+
+### 24 h
+
+Objetivo: señal temprana.
+
+### 72 h
+
+Objetivo: estabilización inicial y comparación.
+
+### 7 d
+
+Objetivo: cierre de observación, comparación comercial y decisión de aprendizaje.
+
+Si el Home/agenda crea recordatorios locales, siguen siendo auxiliares; la verdad durable queda en registros/PUENTE/Platform.
 
 ## Qué medir
 
-Medir por plataforma y por pieza.
+### Reel / TikTok
 
-### TikTok / Facebook Reel
+Cuando la plataforma lo permita:
 
-Cuando la plataforma lo permita registrar:
-
-- vistas;
+- vistas / alcance;
+- retención inicial;
 - tiempo medio de reproducción;
-- retención/completado;
+- completado;
 - likes/reacciones;
 - comentarios;
 - compartidos;
-- guardados cuando existan;
-- visitas al perfil/página cuando estén disponibles;
-- mensajes atribuibles explícitamente;
-- keyword si la pieza utilizó una.
-
-Relacionar los datos con:
-
-- familia editorial;
-- hook 0–3 s;
-- duración;
-- voz/audio;
-- CTA;
-- variable creativa probada.
-
-### Flyer / post / historia
-
-Registrar lo que la plataforma realmente ofrezca y separar:
-
-- alcance/impresiones;
-- interacciones;
-- mensajes o clics disponibles;
-- respuesta comercial verificable.
+- guardados;
+- visitas al perfil/página;
+- mensajes atribuibles;
+- keyword usada si aplica.
 
 Relacionar con:
 
+- familia;
+- hook 0–3 s;
+- duración;
+- edición/efecto principal probado;
+- voz/audio;
+- CTA.
+
+### Flyer / post / historia
+
+- alcance/impresiones;
+- interacciones;
+- clics/mensajes disponibles;
 - familia visual;
 - HERO;
 - cantidad de datos visibles;
 - CTA;
-- campaña si aplica.
+- campaña.
 
-## Comercial
+## Comercial — separado
 
-Separar métricas de plataforma de:
+Registrar por separado:
 
 - mensajes;
 - WhatsApp;
@@ -77,16 +103,42 @@ Separar métricas de plataforma de:
 - negociaciones;
 - ventas.
 
-No atribuir una visita o venta a una pieza sin evidencia real del recorrido.
+No atribuir visita/venta a una pieza sin evidencia del recorrido.
+
+## Preguntas y comentarios como señal editorial/comercial
+
+Cuando existan comentarios reales, registrar de forma sanitizada patrones como:
+
+- precio;
+- ubicación;
+- versión;
+- disponibilidad;
+- motor;
+- documentación;
+- cambio/financiamiento;
+- intención de visita.
+
+No guardar PII en repos públicos.
+
+Estos patrones pueden alimentar Content System/Comercial sin convertir un comentario aislado en regla.
 
 ## Aprendizaje
 
-En cada checkpoint indicar si el resultado aporta:
-
 `OBSERVACION → HIPOTESIS → TEST → PATRON_REPETIDO → APRENDIZAJE_VALIDADO`
 
-Un solo resultado no convierte una decisión creativa en regla universal.
+Un resultado alto no convierte automáticamente hook, duración, música, flyer o efecto en plantilla universal.
 
-Actualizar GitHub/Platform solo con aprendizaje sanitizado y devolver commits, URLs, métricas registradas y próximas mediciones.
+Si se consolida análisis/dataset, usar `AFL_AUTOS_PLATFORM` con datos sanitizados.
 
-No volver a renderizar piezas ya publicadas salvo instrucción expresa de Miguel.
+## Retorno guiado
+
+Devolver:
+
+- `PASO_TERMINADO: PUBLICACION` o checkpoint medido;
+- URL principal;
+- métricas registradas;
+- `SIGUIENTE_PASO: MEDICION_24H / MEDICION_72H / MEDICION_7D / CIERRE`;
+- fecha del siguiente checkpoint;
+- `LINK_PRINCIPAL`;
+- aprendizaje preliminar;
+- contradicciones/riesgos.
