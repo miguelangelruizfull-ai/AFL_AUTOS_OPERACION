@@ -4,138 +4,253 @@ Principio general:
 
 `UN SOLO HOME / FUENTES SEPARADAS`
 
+Principio UX:
+
+`COMPLEJO POR DENTRO / SIMPLE POR FUERA`
+
 ## AFL_AUTOS_OPERACION — público
 
-Función: puerta de entrada, Home V3.1, generador de prompts, manual, coordinación y flujo operativo.
+Función: puerta de entrada, Home V3.2, coordinación, prompts sanitizados, índice público y continuidad guiada.
 
-Puede contener:
-- procedimientos;
-- prompts sanitizados;
-- estados;
-- ejemplos sin datos sensibles;
-- herramienta HTML pública.
+V3.2 se apoya en la UX simple de V3.1 y añade:
 
-No contiene expedientes maestros, multimedia pesada, CRM ni la base durable del aprendizaje creativo.
+- selector de expediente;
+- tablero/semáforo;
+- tarjeta `AHORA`;
+- parser de `RETORNO_AL_COORDINADOR`;
+- botón `CONTINUAR`;
+- decisión de Miguel integrada;
+- atajos locales;
+- modo avanzado;
+- acceso a análisis de referencias externas sin exponer su Drive privado.
 
-Home V3.1 puede capturar feedback visual como campos temporales para generar un prompt, pero no lo persiste como fuente de verdad en `localStorage`.
+Regla:
+
+`HOME = NAVEGACION / COORDINACION`
+
+`HOME ≠ FUENTE DE VERDAD`
+
+### localStorage
+
+Puede guardar únicamente auxiliares locales como:
+
+- expediente seleccionado;
+- último retorno pegado;
+- atajos de material;
+- `LINK_PRINCIPAL`;
+- inbox privado como atajo del navegador;
+- agenda.
+
+No puede ser autoridad sobre:
+
+- datos técnicos;
+- aprobación;
+- publicación;
+- medición;
+- venta;
+- feedback durable;
+- aprendizaje.
+
+Claves:
+
+- flujo guiado: `afl_autos_guided_v32`;
+- agenda histórica preservada: `afl_autos_agenda_v1`.
+
+## Índices
+
+### Privado
+
+`Vehiculos/index/EXPEDIENTES_INDEX.json`
+
+Puede contener enlaces operativos privados y más detalle.
+
+### Público
+
+`AFL_AUTOS_OPERACION/data/expedientes-public-index.json`
+
+Solo navegación sanitizada:
+
+- key;
+- label;
+- estado resumido;
+- siguiente acción;
+- flags;
+- path/SHA de PUENTE;
+- nombres de directorios, no URLs privadas.
+
+Regla:
+
+`INDEX = NAVEGACION`
+
+`PUENTE.md = VERDAD`
 
 ## Vehiculos — privado
 
 Función: fuente de verdad técnica/comercial de cada unidad.
 
-Archivo central por unidad: `PUENTE.md`.
-
-Aquí viven CONFIRMADO / PENDIENTE / INTERNO, enlaces operativos y trazabilidad por vehículo.
-
-Cuando corresponda, también puede existir `PLAN_CAPTURA.md` para documentar estrategia y checklist específico de la sesión.
-
-Una pieza visual, incluso aprobada por Miguel, nunca sustituye `PUENTE.md` como fuente técnica.
-
-## AFL_AUTOS_CONTENT_SYSTEM — privado
-
-Función: autoridad creativa transversal y fuente durable del aprendizaje visual.
+Archivo central: `PUENTE.md`.
 
 Aquí viven:
 
-- branding;
-- `formats/ACTIVE_VISUAL_DIRECTION.md`;
-- formatos y familias;
-- Motor Visual;
-- campañas/moodboards;
-- referencias aprobadas/rechazadas/históricas;
-- `VISUAL_FEEDBACK_LOG.md`;
+- CONFIRMADO / PENDIENTE / INTERNO;
+- estado real;
+- enlaces de Drive;
+- pieza exacta;
+- aprobación/publicación cuando exista evidencia;
+- punto de continuidad.
+
+Si Home, retorno o índice contradicen PUENTE, el trabajador debe verificar y resolver; no avanzar por la navegación local a ciegas.
+
+## AFL_AUTOS_CONTENT_SYSTEM — privado
+
+Función: autoridad creativa transversal y aprendizaje visual/editorial.
+
+### FAST PATH
+
+Archivo operativo:
+
+`runtime/CONTENT_RUNTIME.md`
+
+Resume únicamente reglas activas para producción/revisión diaria.
+
+No reemplaza:
+
+- dirección visual;
+- engines;
+- auditorías;
 - casos;
-- experimentos;
-- hooks/CTA;
-- motores editoriales;
-- aprendizajes.
+- logs.
+
+Fórmula:
+
+`PUENTE + CONTENT_RUNTIME + MATERIAL REAL = RUTA NORMAL`
+
+`AUDITORIAS / ENGINES / CASOS = PROFUNDIDAD BAJO DEMANDA`
+
+### Visual
+
+Autoridad profunda:
+
+- `formats/ACTIVE_VISUAL_DIRECTION.md`;
+- formatos/familias;
+- Motor Visual;
+- auditoría de flyers;
+- referencias aprobadas/rechazadas;
+- feedback/casos.
 
 Ciclo:
 
-`PRODUCCION → REVISION_MIGUEL → APRENDIZAJE → DIRECCION_VISUAL_ACTIVA → SIGUIENTE_PRODUCCION`
+`PRODUCCION → REVISION_MIGUEL → APRENDIZAJE → DIRECCION/RUNTIME → SIGUIENTE_PRODUCCION`
 
-Mantener:
+### Audiovisual
 
-`CASO_PARTICULAR ≠ REGLA_GENERAL ≠ APRENDIZAJE_VALIDADO`
+Autoridad profunda:
 
-La dirección activa no debe convertirse en historial infinito. Los casos/feedback permanecen en biblioteca/casos y solo los aprendizajes realmente transversales pasan a `ACTIVE_VISUAL_DIRECTION.md`.
+- `networks/tiktok/EDITORIAL_ENGINE.md`;
+- `FORMAT_FAMILIES.md`;
+- `HOOKS_AND_CTA.md`;
+- `EDITING_EFFECTS_LIBRARY.md`;
+- `VIDEO_AUDIT_INDEX.md`;
+- `CAPTURE_GUIDE.md`.
 
-Clasificación de referencias:
+Los efectos modernos son recursos de prueba, no una plantilla universal.
 
-- `REFERENCIA_POSITIVA_APROBADA_POR_MIGUEL`
-- `REFERENCIA_NEGATIVA_RECHAZADA_POR_MIGUEL`
-- `REFERENCIA_HISTORICA_NO_VALIDADA`
+### Referencias externas
 
-Las referencias aprobadas por Miguel tienen mayor peso creativo que referencias históricas no aprobadas, pero ninguna confirma datos del vehículo.
+Proceso:
+
+`library/external_references/README.md`
+
+Multimedia externa permanece en Drive. GitHub conserva únicamente clasificación/análisis/aprendizaje sanitizado.
+
+`REFERENCIA_EXTERNA ≠ EVIDENCIA_TECNICA`
+
+No se clona identidad, fotografías, textos completos, campañas o layouts distintivos de terceros.
 
 ## AFL_AUTOS_COMERCIAL — privado
 
-Función: autoridad de atención, conversión y aprendizaje comercial sanitizado.
+Función: atención, conversión y aprendizaje comercial sanitizado.
 
-Aquí viven reglas comerciales, respuestas por intención, flujos Messenger/WhatsApp, calificación, visita, seguimiento, cierre, scripts, objeciones y plantillas sanitizadas.
+Flujo base:
 
-No sustituye `Vehiculos/PUENTE.md`: precio, disponibilidad, motor, documentación y demás datos variables se resuelven desde el expediente vigente.
+`PREGUNTA → RESPUESTA_DIRECTA → UNA_PREGUNTA_UTIL → SIGUIENTE_ACCION`
 
-RAW, capturas, exportaciones y conversaciones privadas permanecen en el Drive comercial; este repositorio no debe convertirse en almacén de PII.
+Estados:
+
+`INTERACCION ≠ CONVERSACION ≠ LEAD_CALIFICADO ≠ VISITA ≠ NEGOCIACION ≠ VENTA`
+
+Comentarios/preguntas de redes pueden aportar patrones sanitizados de intención, pero PII/RAW permanecen fuera del repositorio.
 
 ## AFL_AUTOS_PLATFORM — privado
 
-Función: análisis, datasets sanitizados, metodología y evidencia reproducible.
+Función: análisis, datasets, schemas y evidencia reproducible.
+
+Debe recibir mediciones sanitizadas, nunca conversaciones identificables.
+
+Checkpoints de contenido:
+
+`PUBLICADO → 24H → 72H → 7D → APRENDIZAJE`
+
+Separar rendimiento editorial de resultados comerciales.
 
 ## Google Drive
 
-Función: originales, fotos, videos, masters, evidencia pesada y resultados visuales.
+Función: originales, fotos, videos, masters, derivados, resultados, RAW y referencias externas pesadas.
 
-Para unidades nuevas:
+Para unidades:
 
 `ORIGINALES → SELECCION → RETOQUE → PRODUCCION → RESULTADOS`
 
-Para material comercial privado:
+Para referencias externas existe una raíz privada separada de los expedientes de vehículo.
 
-`RAW_PRIVADO ≠ APRENDIZAJE_SANITIZADO`
+Esto evita confundir inspiración con evidencia técnica.
 
-Las muestras/contact sheets históricas pueden ser `REFERENCIA_VISUAL / EVIDENCIA_DE_DISENO`, nunca fuente técnica.
+## Retorno entre chats
 
-Ver [`ESTRUCTURA_DRIVE_V2.md`](./ESTRUCTURA_DRIVE_V2.md).
+Formato ampliado compatible con V3.2:
+
+- trabajo;
+- vehículo/proyecto;
+- expediente key;
+- PUENTE path;
+- etapa;
+- paso terminado;
+- resultado;
+- link principal;
+- estado final;
+- bloqueado;
+- esperando Miguel;
+- acción Miguel;
+- pendientes;
+- siguiente paso;
+- siguiente módulo;
+- riesgos.
+
+El Home parsea esos campos para navegación local.
+
+El trabajador persiste el estado durable donde corresponda.
 
 ## Secuencia operativa
 
-`INGRESO/IDENTIFICACION → PLAN_CAPTURA → CAPTURA_REAL → SELECCION → RETOQUE → PRODUCCION → REVISION/APRENDIZAJE → APROBACION → PUBLICACION → MEDICION`
+`INGRESO → PLAN_CAPTURA → CAPTURA → SELECCION → RETOQUE → PRODUCCION → REVISION/APRENDIZAJE → APROBACION → PUBLICACION → MEDICION → CIERRE`
 
-La identificación no debe convertirse automáticamente en producción. La producción no debe convertirse automáticamente en aprobación.
+## Regla de aprendizaje
 
-## Ciclo visual desde Home V3.1
+`OBSERVACION → HIPOTESIS → TEST → PATRON_REPETIDO → APRENDIZAJE_VALIDADO`
 
-1. **Producir redes** genera una instrucción que consulta la dirección visual activa y aprendizaje vigente.
-2. Miguel revisa la pieza.
-3. **Revisar diseño / Registrar aprendizaje** genera una instrucción con aprobar/corregir/rechazar y feedback.
-4. El chat trabajador persiste el feedback en `AFL_AUTOS_CONTENT_SYSTEM`.
-5. Solo una instrucción transversal/generalizable modifica `ACTIVE_VISUAL_DIRECTION.md`.
-6. La próxima producción consulta esa dirección automáticamente.
-
-El Home no guarda el feedback durable.
-
-## Flujo comercial
-
-`INTERACCION → CONVERSACION → LEAD_CALIFICADO → VISITA → NEGOCIACION → VENTA`
-
-Los estados no son equivalentes y cada lead activo debe conservar una `SIGUIENTE_ACCION`.
+`CASO_PARTICULAR ≠ REGLA_GENERAL ≠ APRENDIZAJE_VALIDADO`
 
 ## Estados de contenido
 
-Mantener:
-
 `PRODUCIDO ≠ SUBIDO ≠ APROBADO ≠ PROGRAMADO ≠ PUBLICADO ≠ MEDIDO`
 
-Un rechazo visual puede registrarse como:
+## Resolución de contradicciones
 
-`RECHAZADO_POR_MIGUEL / NO_PUBLICAR / REQUIERE_REDISENO`
+- datos/estado de unidad → `Vehiculos`;
+- atención/conversión → `AFL_AUTOS_COMERCIAL`;
+- creatividad/dirección/aprendizaje → `AFL_AUTOS_CONTENT_SYSTEM`;
+- análisis/metodología → `AFL_AUTOS_PLATFORM`;
+- multimedia/RAW → Drive;
+- navegación/coordinación → `AFL_AUTOS_OPERACION`.
 
-## Regla de resolución de contradicciones
-
-- Datos de una unidad → manda `Vehiculos`.
-- Atención/conversión → manda `AFL_AUTOS_COMERCIAL`.
-- Creatividad/dirección/aprendizaje visual → manda `AFL_AUTOS_CONTENT_SYSTEM`.
-- Análisis/metodología → manda `AFL_AUTOS_PLATFORM`.
-- Multimedia/evidencia pesada/RAW → manda Drive.
-- `AFL_AUTOS_OPERACION` coordina, pero no reemplaza esas fuentes.
+Antes de modificar un archivo existente: fetch vigente, porque existen chats concurrentes.
