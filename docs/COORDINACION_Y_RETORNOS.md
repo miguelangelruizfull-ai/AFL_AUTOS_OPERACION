@@ -2,59 +2,170 @@
 
 ## Objetivo
 
-Evitar copiar conversaciones completas y evitar que el coordinador dependa de la memoria de un chat.
+Evitar copiar conversaciones completas y evitar que Miguel tenga que interpretar manualmente qué sigue después de cada chat.
 
-## Regla
+## Principio V3.2
 
-Cada chat especializado debe trabajar una sola etapa, persistir su estado en GitHub/Drive y terminar con un bloque corto llamado:
+`CHAT TRABAJADOR → RETORNO_AL_COORDINADOR → HOME → SIGUIENTE ACCION`
 
-`RETORNO_AL_COORDINADOR`
+El retorno es el puente entre chats y también una entrada estructurada para el Home.
 
-Ese bloque es el único texto que Miguel necesita copiar al chat coordinador en la mayoría de los casos.
-
-## Formato estándar
+## Formato estándar V3.2
 
 ```md
 ## RETORNO_AL_COORDINADOR
 TRABAJO:
 VEHÍCULO/PROYECTO:
+EXPEDIENTE_KEY:
+PUENTE_PATH:
 ETAPA EJECUTADA:
+PASO_TERMINADO:
 RESULTADO:
 DRIVE:
+LINK_PRINCIPAL:
 GITHUB:
 COMMITS:
 ESTADO FINAL:
+BLOQUEADO: SI/NO
+ESPERANDO_MIGUEL: SI/NO
+ACCION_MIGUEL:
 PENDIENTES:
 FECHAS/CHECKPOINTS:
+SIGUIENTE_PASO:
 SIGUIENTE MÓDULO:
 CONTRADICCIONES/RIESGOS:
 ```
 
-Si un campo no aplica, escribir `NO APLICA`. No inventar datos para completar el formato.
+Si un campo no aplica: `NO APLICA`. No inventar datos, estados, links, fechas o commits.
 
-## Cómo continuar en otro chat
+## Compatibilidad
 
-Si el chat trabajador se llena o se bloquea:
+El Home V3.2 también acepta retornos antiguos que solo tengan:
 
-1. copiar su último `RETORNO_AL_COORDINADOR` o checkpoint;
-2. abrir `AFL_AUTOS_OPERACION`;
-3. elegir **Continuar hilo / tarea**;
-4. pegar el checkpoint en el campo correspondiente;
-5. generar el prompt;
-6. pegarlo en un chat nuevo.
+- trabajo;
+- vehículo/proyecto;
+- etapa;
+- resultado;
+- Drive;
+- GitHub;
+- commits;
+- estado final;
+- pendientes;
+- fechas/checkpoints;
+- siguiente módulo;
+- contradicciones/riesgos.
 
-El chat nuevo debe validar las fuentes vigentes antes de continuar.
+Los campos nuevos mejoran automatización, pero no invalidan un retorno histórico.
 
-## Pendientes con fecha
+## Qué hace el Home
 
-Las fechas operativas importantes deben quedar también en una fuente persistente privada cuando corresponda:
+Al pegar el retorno:
 
-- vehículo: `PUENTE.md` / archivo de publicación/resultado;
-- contenido: registro de coordinación del Content System;
-- mediciones: archivo de resultados/plan de medición.
+1. intenta asociar `EXPEDIENTE_KEY`;
+2. extrae `SIGUIENTE_PASO` o `SIGUIENTE MÓDULO`;
+3. detecta `BLOQUEADO`;
+4. detecta `ESPERANDO_MIGUEL`;
+5. muestra `ACCION_MIGUEL`;
+6. conserva `LINK_PRINCIPAL` localmente para acceso rápido;
+7. actualiza el semáforo local;
+8. prepara el próximo prompt.
 
-La agenda del HTML es una ayuda local del dispositivo, no la fuente de verdad.
+El Home NO escribe el estado durable del vehículo.
 
-## Recordatorios automáticos
+`RETORNO = NAVEGACION / HANDOFF`
 
-La herramienta web pública no ejecuta tareas programadas por sí sola. Puede generar un prompt con los pendientes fechados para pegarlo en ChatGPT y pedir que cree recordatorios/mediciones. Solo debe declararse `PROGRAMADO` cuando la programación se haya creado realmente.
+`PUENTE = VERDAD`
+
+## Qué debe hacer el chat trabajador antes de devolver el retorno
+
+- persistir cambios reales en la fuente canónica correspondiente;
+- actualizar `PUENTE.md` cuando cambió el estado de la unidad;
+- subir/verificar derivados cuando corresponda;
+- hacer fetch vigente antes de modificar un archivo existente;
+- distinguir resultado real de propuesta;
+- no marcar publicación/medición/aprobación sin evidencia.
+
+## LINK_PRINCIPAL
+
+Cuando Miguel deba revisar algo, devolver el enlace más útil y específico disponible:
+
+- pieza exacta;
+- carpeta de flyers;
+- Reel/TikTok final;
+- carpeta de resultados;
+- otro recurso necesario para la decisión.
+
+No devolver un link genérico si existe uno más directo.
+
+## ESPERANDO_MIGUEL
+
+Usar `SI` cuando el sistema no debe seguir sin decisión humana, por ejemplo:
+
+- aprobar/corregir/rechazar pieza;
+- confirmar publicación;
+- confirmar precio/publicabilidad;
+- confirmar una contradicción;
+- elegir entre alternativas realmente comerciales.
+
+`ACCION_MIGUEL` debe ser concreta y breve.
+
+## BLOQUEADO
+
+Usar `SI` cuando existe una condición objetiva que impide continuar, por ejemplo:
+
+- falta material;
+- falta HERO usable;
+- contradicción de expediente;
+- artefacto aprobado no localizado;
+- falta evidencia requerida;
+- fuente canónica no disponible.
+
+No usar bloqueo para una simple preferencia opcional.
+
+## Continuar en el mismo chat
+
+V3.2 ya no exige abrir un chat nuevo por cada microetapa.
+
+Continuar el chat actual mientras:
+
+- siga manejable;
+- la tarea siga siendo del mismo dominio;
+- no haya riesgo de confundir contextos.
+
+Abrir chat nuevo cuando:
+
+- el anterior se llenó/saturó;
+- cambia radicalmente el trabajo;
+- una auditoría larga requiere aislamiento;
+- existe una razón de seguridad/claridad.
+
+## Continuidad guiada
+
+Prompt canónico:
+
+`prompts/CONTINUAR_GUIADO.md`
+
+El Home genera un prompt corto con:
+
+- expediente;
+- path de PUENTE;
+- paso sugerido;
+- último estado de retorno cuando exista.
+
+El trabajador vuelve a verificar PUENTE antes de actuar.
+
+## Fechas y mediciones
+
+Las fechas importantes quedan en la fuente durable correspondiente.
+
+La agenda local solo ayuda a recordar.
+
+Checkpoints de contenido:
+
+`PUBLICADO → 24H → 72H → 7D`
+
+Solo declarar `PROGRAMADO` si una automatización/recordatorio real fue creada.
+
+## Regla final
+
+El objetivo del retorno no es documentar todo lo que pensó el chat. Es permitir que el siguiente paso sea inequívoco, verificable y rápido.
