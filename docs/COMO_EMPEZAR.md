@@ -4,7 +4,7 @@ Este repositorio es la puerta de entrada operativa de AFL AUTOS. No sustituye `V
 
 ## Home activo
 
-El Home canónico es **V3.1**:
+El Home canónico es **V3.2 Flujo Guiado**, construido sobre la UX simple de V3.1:
 
 `index.html`
 
@@ -12,150 +12,212 @@ URL:
 
 `https://miguelangelruizfull-ai.github.io/AFL_AUTOS_OPERACION/`
 
-V3.1 es la base UX probada. V4/V4.1 se conservan como aprendizaje/prototipo y no sustituyen al Home activo.
+V4/V4.1 siguen como laboratorio y no sustituyen al Home activo.
 
-## Uso rápido
+## Uso normal
 
-1. Elige el módulo en Home V3.1.
-2. Completa únicamente los campos necesarios.
-3. Genera el prompt.
-4. En el chat trabajador, antes de escribir, verificar GitHub/Drive vigentes.
-5. Para una unidad existente, leer completo su `PUENTE.md`.
-6. Al terminar, devolver `RETORNO_AL_COORDINADOR`.
+1. Selecciona el vehículo/proyecto.
+2. Lee la tarjeta **AHORA**.
+3. Pulsa **CONTINUAR — COPIAR PROMPT**.
+4. Trabaja en ChatGPT.
+5. Cuando termine, copia `RETORNO_AL_COORDINADOR`.
+6. Pégalo en **Terminó el chat anterior**.
+7. Pulsa **PROCESAR RETORNO**.
+8. El tablero cambia y muestra la siguiente acción.
 
-## Flujo normal
+Objetivo:
 
-`NUEVO VEHICULO → PLAN_CAPTURA → CAPTURA → SELECCION → RETOQUE → PRODUCCION → REVISION/APRENDIZAJE → APROBACION → PUBLICACION → MEDICION`
+`SELECCIONAR → CONTINUAR → TRABAJAR → PEGAR RETORNO → CONTINUAR`
 
-No saltar etapas solo porque exista un archivo en Drive.
+No debería ser necesario decidir manualmente qué módulo sigue durante el flujo normal.
+
+## Semáforo
+
+- verde — etapa anterior completada para navegación;
+- amarillo — haz esto ahora;
+- azul — esperando una decisión de Miguel;
+- rojo — bloqueo, rechazo o contradicción;
+- gris — todavía no corresponde.
+
+Estas luces son una representación operativa.
+
+`TABLERO = NAVEGACION`
+
+`PUENTE.md = VERDAD`
+
+## Vehículos existentes
+
+El selector usa `data/expedientes-public-index.json`.
+
+El índice contiene únicamente navegación sanitizada. No contiene enlaces privados de Drive.
+
+Al pulsar **VER PUENTE**, se abre el archivo canónico de la unidad. El chat trabajador debe leer/fetch el PUENTE vigente antes de modificar nada.
+
+## Atajos locales
+
+Puedes guardar en el navegador un enlace a material/Drive para la unidad.
+
+También el `LINK_PRINCIPAL` devuelto por un chat puede quedar como acceso rápido local.
+
+Esos enlaces locales:
+
+- facilitan navegación;
+- no se suben automáticamente al repositorio público;
+- no sustituyen el PUENTE.
+
+## Retorno estructurado
+
+V3.2 entiende el formato histórico y campos nuevos:
+
+```text
+## RETORNO_AL_COORDINADOR
+TRABAJO:
+VEHÍCULO/PROYECTO:
+EXPEDIENTE_KEY:
+PUENTE_PATH:
+ETAPA EJECUTADA:
+PASO_TERMINADO:
+RESULTADO:
+DRIVE:
+LINK_PRINCIPAL:
+GITHUB:
+COMMITS:
+ESTADO FINAL:
+BLOQUEADO: SI/NO
+ESPERANDO_MIGUEL: SI/NO
+ACCION_MIGUEL:
+PENDIENTES:
+FECHAS/CHECKPOINTS:
+SIGUIENTE_PASO:
+SIGUIENTE MÓDULO:
+CONTRADICCIONES/RIESGOS:
+```
+
+El Home usa estos campos para navegación; no los convierte en verdad durable por sí mismo.
+
+## Flujo operativo
+
+`INGRESO → PLAN_CAPTURA → CAPTURA → SELECCION → RETOQUE → PRODUCCION → REVISION/APRENDIZAJE → APROBACION → PUBLICACION → MEDICION → CIERRE`
+
+## FAST PATH de contenido
+
+Producción/revisión cotidiana:
+
+1. `PUENTE.md`;
+2. `AFL_AUTOS_CONTENT_SYSTEM/runtime/CONTENT_RUNTIME.md`;
+3. pieza/material real;
+4. prompt específico.
+
+Abrir auditorías, motores completos y logs solo si:
+
+- hay contradicción;
+- el runtime no cubre el caso;
+- existe bloqueo;
+- se está rediseñando;
+- se analiza una referencia externa;
+- se hace auditoría;
+- se prepara un test formal.
+
+Esto evita releer 10–15 archivos para una tarea normal.
 
 ## Producción visual
 
-Al usar **Producir redes**, el prompt del Home obliga a consultar:
+Reglas rápidas:
 
-- `AFL_AUTOS_CONTENT_SYSTEM/START_HERE.md`;
-- `STATUS_RULES.md`;
-- `formats/ACTIVE_VISUAL_DIRECTION.md`;
-- formatos/motores aplicables;
-- `library/flyer_audit/REFERENCE_STATUS.md`;
-- referencias aprobadas por Miguel cuando existan;
-- errores/casos negativos relevantes.
-
-Reglas activas para piezas gráficas:
-
+- fotografía preparada antes de pieza final;
+- `ORIGINAL → SELECCION → RETOQUE → LAVADO_VISUAL_SI_APLICA → PIEZA_FINAL`;
 - vehículo protagonista;
 - `NO ICONOS`;
 - 2–4 datos confirmados/publicables máximo;
 - jerarquía contemporánea/editorial;
-- composiciones distintas según formato;
-- evitar apariencia de plantilla genérica;
-- una variante `premium` debe demostrar una dirección realmente diferente;
-- referencias visuales nunca son fuente técnica.
+- composición específica por formato;
+- evitar plantilla genérica;
+- no usar `premium` como sustituto de una dirección real;
+- no modificar físicamente la unidad.
 
-## Revisar diseño / Registrar aprendizaje
+## Video / Reel / TikTok
 
-Después de producir una pieza, Miguel puede usar este módulo nuevo de V3.1.
+El runtime resume familias y hooks activos.
 
-Campos:
+Para edición moderna existe:
 
-- vehículo/proyecto;
-- Drive;
-- pieza o versión;
-- decisión: aprobar / corregir / rechazar;
+`AFL_AUTOS_CONTENT_SYSTEM/networks/tiktok/EDITING_EFFECTS_LIBRARY.md`
+
+Incluye recursos de prueba como:
+
+- cuts a beat;
+- speed ramps moderados;
+- punch-in;
+- match cuts;
+- transiciones por movimiento;
+- motion text;
+- subtítulos;
+- sonido real/SFX;
+- audio con ducking.
+
+Regla:
+
+`HOOK / VEHICULO / CLARIDAD > EFECTO`
+
+## Revisar diseño
+
+Cuando el tablero queda azul o la etapa es revisión, el Home muestra:
+
+- pieza/versión;
+- aprobar/corregir/rechazar;
 - qué no gustó;
-- qué sí conservar;
-- referencia visual opcional;
-- comentario de Miguel.
+- qué conservar;
+- referencia opcional;
+- comentario.
 
-El Home no guarda ese feedback en `localStorage`. Solo genera un prompt para persistirlo en `AFL_AUTOS_CONTENT_SYSTEM`.
+La persistencia durable sigue en `AFL_AUTOS_CONTENT_SYSTEM`.
 
-Decisiones válidas:
+## Referencias de competencia / inspiración
 
-- `APROBADO_POR_MIGUEL`
-- `REQUIERE_CORRECCION`
-- `RECHAZADO_POR_MIGUEL / NO_PUBLICAR / REQUIERE_REDISENO`
+Existe una bandeja privada en Drive para subir:
 
-Flujo:
+- flyers;
+- capturas;
+- videos.
 
-`PRODUCIR → REVISAR → APROBAR/CORREGIR/RECHAZAR → REGISTRAR_APRENDIZAJE → SIGUIENTE_PRODUCCION`
+El Home público no expone la URL. Puede guardarse como atajo local.
 
-Regla de aprendizaje:
+Después usar:
 
-`CASO_PARTICULAR ≠ REGLA_GENERAL ≠ APRENDIZAJE_VALIDADO`
+`prompts/ANALIZAR_REFERENCIA_CREATIVA.md`
 
-## Fuente durable del aprendizaje visual
+Se extraen patrones de composición, jerarquía, hooks, ritmo, edición y CTA. No se clonan piezas o identidad de terceros.
 
-Vive en `AFL_AUTOS_CONTENT_SYSTEM`, especialmente:
+## Publicación y medición
 
-- `formats/ACTIVE_VISUAL_DIRECTION.md` — dirección creativa actualmente activa, no historial infinito;
-- `library/flyer_audit/REFERENCE_STATUS.md` — referencias aprobadas/rechazadas/históricas;
-- `library/flyer_audit/VISUAL_FEEDBACK_LOG.md` — feedback durable;
-- `cases/` — casos particulares;
-- `NEGATIVE_CASES.md` — patrones/casos que conviene evitar.
+Usar `prompts/PUBLICACION_MEDICION.md` después de una publicación confirmada.
 
-Una pieza histórica visualmente útil no equivale a aprobación de Miguel.
+Checkpoints:
 
-## Plan de captura
+- 24 h;
+- 72 h;
+- 7 d.
 
-`prompts/PLAN_CAPTURA.md` consulta aprendizaje visual/editorial para definir HERO, familias, hooks y tomas necesarias.
+Separar métricas de plataforma de mensajes, WhatsApp, llamadas, leads, visitas y ventas.
 
-## Selección
+## Modo avanzado
 
-`prompts/SELECCIONAR_MATERIAL.md` evalúa si el material realmente soporta flyer, historia, Reel o TikTok y puede registrar bloqueos antes de producir.
+Los módulos manuales siguen disponibles bajo **Más opciones / modo avanzado** para excepciones, nuevo vehículo, auditorías o diagnóstico.
 
-## Revisión / aprobación
+No deben ser la ruta normal.
 
-`prompts/REVISION_APROBACION.md` revisa la pieza real contra la dirección visual y motores correspondientes.
+## Agenda
 
-No inferir:
+La agenda conserva la clave histórica:
 
-`PRODUCIDO → APROBADO`
+`afl_autos_agenda_v1`
 
-ni:
-
-`APROBADO → PUBLICADO`
-
-## Medición
-
-`prompts/PUBLICACION_MEDICION.md` conserva familia, HERO, hook, duración, CTA y variable creativa para aprender de resultados sin convertir un caso en regla universal.
-
-## Continuidad
-
-Usa:
-
-- **Continuar vehículo** para retomar desde `PUENTE.md`;
-- **Procesar RETORNO** cuando otro chat terminó;
-- **Continuar hilo / tarea** cuando un chat se llenó o una auditoría quedó a medias;
-- agenda local para pendientes auxiliares.
-
-La agenda mantiene la clave V3.1 `afl_autos_agenda_v1`. No se usa para guardar feedback visual como fuente de verdad.
-
-## Índices
-
-El repositorio conserva `data/expedientes-public-index.json` y `Vehiculos` conserva su índice privado.
-
-Actualmente son infraestructura disponible para navegación/automatización futura; Home V3.1 no depende de ellos.
-
-Regla permanente:
-
-`INDEX = NAVEGACION`
-
-`PUENTE.md = VERDAD`
-
-## Comercial
-
-`AFL_AUTOS_COMERCIAL` sigue activo como módulo privado aunque V3.1 no muestre todas sus rutas como botones.
-
-Flujo:
-
-`PREGUNTA → RESPUESTA_DIRECTA → UNA_PREGUNTA_UTIL → SIGUIENTE_ACCION`
-
-No guardar conversaciones, teléfonos o leads identificables en este repositorio público.
+Sigue siendo local y auxiliar.
 
 ## Fuentes de autoridad
 
 - unidad/datos técnicos → `Vehiculos/PUENTE.md`;
-- creatividad/dirección visual/aprendizaje → `AFL_AUTOS_CONTENT_SYSTEM`;
+- creatividad/dirección/aprendizaje → `AFL_AUTOS_CONTENT_SYSTEM`;
 - conversación/comercial → `AFL_AUTOS_COMERCIAL`;
 - análisis/métricas → `AFL_AUTOS_PLATFORM`;
 - originales/RAW → Drive;
@@ -163,9 +225,9 @@ No guardar conversaciones, teléfonos o leads identificables en este repositorio
 
 ## Reglas críticas
 
-Antes de modificar un archivo existente, hacer fetch de su versión vigente.
+Antes de modificar un archivo existente, hacer fetch vigente.
 
-No publicar ni guardar aquí:
+No publicar/guardar en este repositorio público:
 
 - VIN completo;
 - millas/kilómetros;
@@ -173,12 +235,11 @@ No publicar ni guardar aquí:
 - documentos;
 - PII;
 - conversaciones privadas;
-- credenciales.
+- credenciales;
+- enlaces privados de Drive dentro del índice público.
 
 Mantener:
 
 `PRODUCIDO ≠ SUBIDO ≠ APROBADO ≠ PROGRAMADO ≠ PUBLICADO ≠ MEDIDO`
-
-Y para contenido:
 
 `DATO_CONFIRMADO ≠ DATO_PUBLICABLE ≠ EVIDENCIA_VISUAL ≠ MOODBOARD ≠ PIEZA_APROBADA`
