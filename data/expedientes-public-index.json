@@ -1,22 +1,47 @@
 {
-  "schema_version": "1.0",
-  "generated_at": "2026-09-11T10:59:00-06:00",
+  "schema_version": "2.0",
+  "generated_at": "2026-09-11T22:34:00-06:00",
   "source": {
     "repository": "miguelangelruizfull-ai/Vehiculos",
-    "head": "dc0433a7f3d681dbcafae522e8e2e80f1a1d6d31",
+    "head": "fbf969e318b2fa4569974430d762eb341f02d0fc",
     "private_index": "index/EXPEDIENTES_INDEX.json"
   },
   "rule": "NAVEGACION_DERIVADA_NO_FUENTE_DE_VERDAD",
   "expedientes": [
     {
+      "key": "PENDIENTE_Chevrolet_Colorado_2016_2026-09-11",
+      "label": "Chevrolet Colorado 2016 roja cabina y media",
+      "estado": "PUENTE_REQUIERE_RECONCILIACION / V1_Y_V2_VISUALMENTE_RECHAZADAS / NO_PUBLICAR",
+      "siguiente_accion": "RECONCILIAR_PUENTE_VISUAL",
+      "flags": ["REQUIERE_RECONCILIACION", "NO_PUBLICAR"],
+      "puente_path": "vehiculos/PENDIENTE_Chevrolet_Colorado_2016_2026-09-11/PUENTE.md",
+      "puente_sha": "b23d11773685342e64baf6fdd8cc5b954fe49bb5",
+      "drive_roots": [
+        {"role": "CANONICO", "directories": ["01_FOTOS_ORIGINALES", "02_VIDEOS_ORIGINALES", "03_FOTOS_SELECCIONADAS", "04_VIDEOS_SELECCIONADOS", "05_FOTOS_RETOCADAS", "06_PAQUETE_REDES", "07_PAQUETE_REDES_V2_PREMIUM"]}
+      ]
+    },
+    {
       "key": "PENDIENTE_Chevrolet_Silverado_2016_2026-09-11",
       "label": "Chevrolet Silverado 2016 Cabina Regular",
-      "estado": "PLAN_CAPTURA_LISTO / CAPTURA_PENDIENTE / FLYER_V2_RECHAZADO",
+      "estado": "PLAN_CAPTURA_LISTO / CARPETAS_ORIGINALES_LISTAS / CAPTURA_PENDIENTE",
       "siguiente_accion": "CAPTURA",
+      "flags": [],
       "puente_path": "vehiculos/PENDIENTE_Chevrolet_Silverado_2016_2026-09-11/PUENTE.md",
-      "puente_sha": "b8ed9008b64f843655e387dccda4bc6e172e691a",
+      "puente_sha": "78ed280d607484aa3032b2cc97df538880e45276",
       "drive_roots": [
         {"role": "CANONICO", "directories": ["01_FOTOS_ORIGINALES", "02_VIDEOS_ORIGINALES", "02_FOTOS_PARA_ENVIAR", "03_FOTOS_RETOCADAS_PARA_ENVIAR", "05_FLYERS"]}
+      ]
+    },
+    {
+      "key": "PENDIENTE_Chevrolet_Silverado_Texas_Edition_Gris_2026-09-11",
+      "label": "Chevrolet Silverado Texas Edition Gris",
+      "estado": "V1_REQUIERE_CORRECCION / V2_APROBADO / ARTEFACTO_V2_NO_LOCALIZADO / AUDIOVISUAL_BLOQUEADO",
+      "siguiente_accion": "VERIFICAR_ARTEFACTO_V2_EN_DRIVE",
+      "flags": ["ESPERANDO_VERIFICACION_ARTEFACTO", "AUDIOVISUAL_BLOQUEADO"],
+      "puente_path": "vehiculos/PENDIENTE_Chevrolet_Silverado_Texas_Edition_Gris_2026-09-11/PUENTE.md",
+      "puente_sha": "0b03d6d45320290d6281cb260de96e1220e53da2",
+      "drive_roots": [
+        {"role": "CANONICO", "directories": ["05_FLYERS"]}
       ]
     },
     {
@@ -24,6 +49,7 @@
       "label": "Ford F-150 2011",
       "estado": "PAQUETE_CORREGIDO_V2 / PENDIENTE_APROBACION_MIGUEL",
       "siguiente_accion": "REVISION_APROBACION",
+      "flags": ["ESPERANDO_MIGUEL"],
       "puente_path": "vehiculos/PENDIENTE_Ford_F150_2011_Texas_Edition_2026-09-10/PUENTE.md",
       "puente_sha": "14f60fcc6eccc1b5afb28e3360c251858faefdb4",
       "drive_roots": [
@@ -35,6 +61,7 @@
       "label": "Ford F-150 FX4 2013",
       "estado": "MASTER_VIDEO_FINAL / FLYERS_VIGENTES",
       "siguiente_accion": "06_PUBLICACIONES_COPYS",
+      "flags": [],
       "puente_path": "vehiculos/PENDIENTE_Ford_F150_FX4_2026-09-07/PUENTE.md",
       "puente_sha": "11958400924a917e304eee064de8bc0957b761ef",
       "drive_roots": [
@@ -44,8 +71,9 @@
     {
       "key": "PENDIENTE_Jeep_Wrangler_2017_2026-09-10",
       "label": "Jeep Wrangler 2017",
-      "estado": "PAQUETE_REDES_V1 / PENDIENTE_APROBACION_MIGUEL",
+      "estado": "PAQUETE_REDES_PRODUCIDO / SUBIDO_A_DRIVE / PENDIENTE_APROBACION_MIGUEL",
       "siguiente_accion": "REVISION_APROBACION",
+      "flags": ["ESPERANDO_MIGUEL"],
       "puente_path": "vehiculos/PENDIENTE_Jeep_Wrangler_2017_2026-09-10/PUENTE.md",
       "puente_sha": "ec49eb42840ca1900cba5a0feb6880b148280730",
       "drive_roots": [
