@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "status": "ESTRUCTURA_ACTIVA_TRADUCCION_COMPLETA_PENDIENTE",
+  "default": "ES",
+  "languages": {
+    "ES": {
+      "label": "Español",
+      "cta": "¿Quieres continuar por WhatsApp para enviarte más información y fotos, y coordinar una visita?"
+    },
+    "EN": {
+      "label": "English",
+      "cta": "Would you like to continue on WhatsApp so we can send you more information and photos, and arrange a visit?"
+    },
+    "AR": {
+      "label": "Arabic",
+      "cta": "CTA_ARABIC_V1"
+    }
+  },
+  "rule": "TRADUCIR_SALIDA_AL_CLIENTE_NO_LOGICA_INTERNA"
+}
