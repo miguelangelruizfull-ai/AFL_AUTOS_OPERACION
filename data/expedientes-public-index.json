@@ -1,23 +1,23 @@
 {
-  "schema_version": "2.0",
-  "generated_at": "2026-09-12T18:51:00-06:00",
+  "schema_version": "2.1",
+  "generated_at": "2026-09-13T12:42:00-06:00",
   "source": {
     "repository": "miguelangelruizfull-ai/Vehiculos",
-    "head": "923c286bc45dff68eaf0dbc0dddc1e15a679c6db",
-    "private_index": "index/EXPEDIENTES_INDEX.json"
+    "private_index": "index/EXPEDIENTES_INDEX.json",
+    "note": "Navegación pública reconciliada desde PUENTE.md vigentes; sin URLs privadas."
   },
   "rule": "NAVEGACION_DERIVADA_NO_FUENTE_DE_VERDAD",
   "expedientes": [
     {
       "key": "PENDIENTE_Chevrolet_Colorado_2016_2026-09-11",
       "label": "Chevrolet Colorado 2016 roja cabina y media",
-      "estado": "PUENTE_REQUIERE_RECONCILIACION / V1_Y_V2_VISUALMENTE_RECHAZADAS / NO_PUBLICAR",
-      "siguiente_accion": "RECONCILIAR_PUENTE_VISUAL",
-      "flags": ["REQUIERE_RECONCILIACION", "NO_PUBLICAR"],
+      "estado": "V3_PRODUCIDO / SUBIDO_A_DRIVE / PENDIENTE_APROBACION_MIGUEL / NO_PUBLICAR",
+      "siguiente_accion": "REVISION_APROBACION_V3",
+      "flags": ["ESPERANDO_MIGUEL", "NO_PUBLICAR"],
       "puente_path": "vehiculos/PENDIENTE_Chevrolet_Colorado_2016_2026-09-11/PUENTE.md",
-      "puente_sha": "b23d11773685342e64baf6fdd8cc5b954fe49bb5",
+      "puente_sha": "932f46a22ba264d22de7182f12fb37f676057351",
       "drive_roots": [
-        {"role": "CANONICO", "directories": ["01_FOTOS_ORIGINALES", "02_VIDEOS_ORIGINALES", "03_FOTOS_SELECCIONADAS", "04_VIDEOS_SELECCIONADOS", "05_FOTOS_RETOCADAS", "06_PAQUETE_REDES", "07_PAQUETE_REDES_V2_PREMIUM"]}
+        {"role": "CANONICO", "directories": ["01_FOTOS_ORIGINALES", "02_VIDEOS_ORIGINALES", "03B_FOTOS_RESELECCIONADAS_V2_2026-09-12", "05_FOTOS_RETOCADAS", "05C_BASE_V3_2026-09-12", "08_PAQUETE_REDES_V3_2026-09-12"]}
       ]
     },
     {
@@ -35,11 +35,11 @@
     {
       "key": "PENDIENTE_Chevrolet_Silverado_Texas_Edition_Gris_2026-09-11",
       "label": "Chevrolet Silverado Texas Edition Gris",
-      "estado": "V1_REQUIERE_CORRECCION / V2_APROBADO / ARTEFACTO_V2_NO_LOCALIZADO / AUDIOVISUAL_BLOQUEADO",
-      "siguiente_accion": "VERIFICAR_ARTEFACTO_V2_EN_DRIVE",
-      "flags": ["ESPERANDO_VERIFICACION_ARTEFACTO", "AUDIOVISUAL_BLOQUEADO"],
+      "estado": "V1_RECHAZADO / V2_Y_REDISENO_APROBADOS_POR_MIGUEL / ARTEFACTOS_APROBADOS_NO_LOCALIZADOS / AUDIOVISUAL_BLOQUEADO",
+      "siguiente_accion": "LOCALIZAR_Y_VALIDAR_ARTEFACTO_APROBADO",
+      "flags": ["ESPERANDO_VERIFICACION_ARTEFACTO", "AUDIOVISUAL_BLOQUEADO", "NO_PUBLICAR_AUTOMATICAMENTE"],
       "puente_path": "vehiculos/PENDIENTE_Chevrolet_Silverado_Texas_Edition_Gris_2026-09-11/PUENTE.md",
-      "puente_sha": "0b03d6d45320290d6281cb260de96e1220e53da2",
+      "puente_sha": "614531f7bbeab6a6983457ff3712b63a48173d03",
       "drive_roots": [
         {"role": "CANONICO", "directories": ["05_FLYERS"]}
       ]
@@ -47,31 +47,55 @@
     {
       "key": "PENDIENTE_Ford_F150_2011_Texas_Edition_2026-09-10",
       "label": "Ford F-150 2011",
-      "estado": "PAQUETE_CORREGIDO_V2 / PENDIENTE_APROBACION_MIGUEL",
-      "siguiente_accion": "REVISION_APROBACION",
-      "flags": ["ESPERANDO_MIGUEL"],
+      "estado": "PAQUETE_CORREGIDO_V2 / APROBADO_POR_MIGUEL / PUBLICADO_CONFIRMADO / MEDICION_24H_EJECUTADA / NAVEGACION_A_72H",
+      "siguiente_accion": "MEDICION_V2_72H",
+      "flags": ["PUBLICADO_CONFIRMADO", "MEDICION_EN_CURSO"],
       "puente_path": "vehiculos/PENDIENTE_Ford_F150_2011_Texas_Edition_2026-09-10/PUENTE.md",
-      "puente_sha": "14f60fcc6eccc1b5afb28e3360c251858faefdb4",
+      "puente_sha": "0797d71df21e96ff67eabbc0f9d6fcc59a4432d3",
       "drive_roots": [
-        {"role": "CANONICO", "directories": ["02_FOTOS_PARA_ENVIAR", "03_VIDEOS_PARA_REEL", "04_FOTOS_RETOCADAS", "05_REELS_TIKTOK", "06_FLYERS_PORTADAS", "07_PUBLICACIONES_COPYS", "08_RESULTADOS"]}
+        {"role": "CANONICO", "directories": ["02_FOTOS_PARA_ENVIAR", "03_VIDEOS_PARA_REEL", "03_FOTOS_LAVADAS_RETOCADAS", "04_FOTOS_RETOCADAS", "05_REELS_TIKTOK", "06_FLYERS_PORTADAS", "07_PUBLICACIONES_COPYS", "08_RESULTADOS"]}
       ]
     },
     {
       "key": "PENDIENTE_Ford_F150_FX4_2026-09-07",
       "label": "Ford F-150 FX4 2013",
-      "estado": "FEED_V2_RECHAZADO_POR_MIGUEL / NO_PUBLICAR / REQUIERE_REDISENO",
-      "siguiente_accion": "REDISENO_V3",
-      "flags": ["NO_PUBLICAR", "REQUIERE_REDISENO", "RECHAZO_VISUAL_CONFIRMADO"],
+      "estado": "FEED_V3_PRODUCIDO / SUBIDO_A_DRIVE / APROBADO_POR_MIGUEL / NO_PUBLICADO / FORMATOS_RESTANTES_PENDIENTES",
+      "siguiente_accion": "ADAPTAR_DIRECCION_V3_A_FORMATOS_RESTANTES",
+      "flags": ["APROBADO_POR_MIGUEL", "NO_PUBLICADO"],
       "puente_path": "vehiculos/PENDIENTE_Ford_F150_FX4_2026-09-07/PUENTE.md",
-      "puente_sha": "d61ca6934a2985677a8ac8aea66b596210a1aeef",
+      "puente_sha": "f8925ce5b9abe7c413d235cbf7e86a8c5e3916dd",
       "drive_roots": [
         {"role": "CANONICO", "directories": ["01_FOTOS_ORIGINALES", "NUEVA_SESION_2026-09-12_FOTOS", "03_VIDEO_ORIGINAL", "NUEVA_SESION_2026-09-12_VIDEOS", "02_FOTOS_PARA_ENVIAR", "04_REELS_TIKTOK", "05_FLYERS", "06_PUBLICACIONES_COPYS", "07_LEADS_RESPUESTAS", "08_RESULTADOS"]}
       ]
     },
     {
+      "key": "PENDIENTE_Ford_F250_2017_2026-09-12",
+      "label": "Ford F-250 XL 2017 cabina regular",
+      "estado": "RECONOCIMIENTO_VISUAL_E_INVENTARIO_COMPLETADOS / VEHICULO_IDENTIFICADO / SIN_SELECCION / SIN_RETOQUE / SIN_PRODUCCION",
+      "siguiente_accion": "ESTRATEGIA_PLAN_CAPTURA",
+      "flags": [],
+      "puente_path": "vehiculos/PENDIENTE_Ford_F250_2017_2026-09-12/PUENTE.md",
+      "puente_sha": "af67c276b8728d4e8213847b1bf1b13ce647b2c7",
+      "drive_roots": [
+        {"role": "FUENTE", "directories": []}
+      ]
+    },
+    {
+      "key": "PENDIENTE_International_4300_2017_2026-09-12",
+      "label": "AFL-0034 International caja seca",
+      "estado": "RECONOCIMIENTO_VISUAL_E_INVENTARIO_COMPLETADOS / IDENTIFICACION_PARCIALMENTE_CONFIRMADA / SIN_SELECCION / SIN_RETOQUE / SIN_PRODUCCION",
+      "siguiente_accion": "ESTRATEGIA_PLAN_CAPTURA",
+      "flags": ["IDENTIFICACION_PARCIAL"],
+      "puente_path": "vehiculos/PENDIENTE_International_4300_2017_2026-09-12/PUENTE.md",
+      "puente_sha": "e6e366e389e219fa280f60d14738be8966a60071",
+      "drive_roots": [
+        {"role": "FUENTE", "directories": []}
+      ]
+    },
+    {
       "key": "PENDIENTE_Jeep_Wrangler_2017_2026-09-10",
       "label": "Jeep Wrangler 2017",
-      "estado": "PAQUETE_REDES_PRODUCIDO / SUBIDO_A_DRIVE / PENDIENTE_APROBACION_MIGUEL",
+      "estado": "PAQUETE_REDES_PRODUCIDO / SUBIDO_A_DRIVE / PENDIENTE_APROBACION_MIGUEL / 12_V1_ANTERIORES_PENDIENTES_APROBACION",
       "siguiente_accion": "REVISION_APROBACION",
       "flags": ["ESPERANDO_MIGUEL"],
       "puente_path": "vehiculos/PENDIENTE_Jeep_Wrangler_2017_2026-09-10/PUENTE.md",
