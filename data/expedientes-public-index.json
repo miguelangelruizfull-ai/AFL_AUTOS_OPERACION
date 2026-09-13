@@ -1,9 +1,9 @@
 {
   "schema_version": "2.0",
-  "generated_at": "2026-09-12T17:42:00-06:00",
+  "generated_at": "2026-09-12T18:51:00-06:00",
   "source": {
     "repository": "miguelangelruizfull-ai/Vehiculos",
-    "head": "03577ecbc1fabad3c6204f60b5a678790dc646dc",
+    "head": "923c286bc45dff68eaf0dbc0dddc1e15a679c6db",
     "private_index": "index/EXPEDIENTES_INDEX.json"
   },
   "rule": "NAVEGACION_DERIVADA_NO_FUENTE_DE_VERDAD",
@@ -59,11 +59,11 @@
     {
       "key": "PENDIENTE_Ford_F150_FX4_2026-09-07",
       "label": "Ford F-150 FX4 2013",
-      "estado": "PLAN_CAPTURA_LISTO / CARPETAS_ORIGINALES_LISTAS / CAPTURA_PENDIENTE",
-      "siguiente_accion": "CAPTURA",
-      "flags": ["CAPTURA_PENDIENTE"],
+      "estado": "FEED_V2_RECHAZADO_POR_MIGUEL / NO_PUBLICAR / REQUIERE_REDISENO",
+      "siguiente_accion": "REDISENO_V3",
+      "flags": ["NO_PUBLICAR", "REQUIERE_REDISENO", "RECHAZO_VISUAL_CONFIRMADO"],
       "puente_path": "vehiculos/PENDIENTE_Ford_F150_FX4_2026-09-07/PUENTE.md",
-      "puente_sha": "a443f4a01ada17fea52a9d3f12fa44a2b69544c5",
+      "puente_sha": "d61ca6934a2985677a8ac8aea66b596210a1aeef",
       "drive_roots": [
         {"role": "CANONICO", "directories": ["01_FOTOS_ORIGINALES", "NUEVA_SESION_2026-09-12_FOTOS", "03_VIDEO_ORIGINAL", "NUEVA_SESION_2026-09-12_VIDEOS", "02_FOTOS_PARA_ENVIAR", "04_REELS_TIKTOK", "05_FLYERS", "06_PUBLICACIONES_COPYS", "07_LEADS_RESPUESTAS", "08_RESULTADOS"]}
       ]
