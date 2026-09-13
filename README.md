@@ -130,13 +130,19 @@ Incluye cortes, speed ramps, motion text, transiciones y recursos de audio como 
 
 ## Publicación y medición
 
-Después de una publicación confirmada:
+Después de una publicación confirmada, el checkpoint normal queda simplificado a:
 
-`PUBLICADO_CONFIRMADO_POR_MIGUEL → MEDICION_24H → MEDICION_72H → MEDICION_7D`
+`PUBLICADO_CONFIRMADO_POR_MIGUEL → MEDICION_7D → CIERRE_DE_APRENDIZAJE`
+
+`MEDICION_24H` y `MEDICION_72H` quedan retiradas del flujo normal a partir de `2026-09-13`. Los registros históricos se conservan, pero no generan nuevos checkpoints operativos.
+
+La fuente preferida para la medición semanal son exportables privados de Meta/Messenger/WhatsApp y métricas de plataforma depositados en Drive. El flujo debe leer nuevos exportables, sanitizar resultados y actualizar las fuentes correspondientes sin exigir copiar/pegar métricas manualmente.
 
 Separar métricas de plataforma de:
 
 `MENSAJE → WHATSAPP/LLAMADA → LEAD → VISITA → NEGOCIACION → VENTA`
+
+Ver `docs/INGESTA_EXPORTABLES_META_SEMANAL.md`.
 
 ## Agenda
 
@@ -199,3 +205,4 @@ Mantener:
 - `docs/ARQUITECTURA.md`
 - `docs/COORDINACION_Y_RETORNOS.md`
 - `docs/ESTADOS.md`
+- `docs/INGESTA_EXPORTABLES_META_SEMANAL.md`
