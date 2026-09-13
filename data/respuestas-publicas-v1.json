@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-09-13T15:20:00-06:00",
+  "source": "AFL_AUTOS_COMERCIAL / derivado sanitizado para Home público",
+  "rule": "RESPUESTA_PUBLICA_DERIVADA_NO_FUENTE_DE_VERDAD_DE_UNIDAD",
+  "goal": "RESPONDER -> CALIFICAR -> VISITA -> NEGOCIACION -> VENTA",
+  "items": [
+    {
+      "intent": "UBICACION",
+      "label": "Ubicación",
+      "auto_safe": true,
+      "requires_vehicle_source": false,
+      "response": "Estamos en Carretera Tecamachalco–Quecholac, Entronque El Salado, Tecamachalco, Puebla.",
+      "question": "¿Qué día te gustaría venir?",
+      "next_action": "PROPONER_VISITA"
+    },
+    {
+      "intent": "HORARIO",
+      "label": "Horario",
+      "auto_safe": true,
+      "requires_vehicle_source": false,
+      "response": "Nuestro horario es de lunes a sábado, de 8:00 a 21:00.",
+      "question": "¿Qué día te gustaría venir?",
+      "next_action": "PROPONER_VISITA"
+    },
+    {
+      "intent": "FINANCIAMIENTO",
+      "label": "Financiamiento",
+      "auto_safe": true,
+      "requires_vehicle_source": false,
+      "response": "Por el momento trabajamos únicamente venta de contado; no manejamos financiamiento.",
+      "question": "¿Te interesa verla para compra de contado?",
+      "next_action": "CALIFICAR_O_VISITA"
+    },
+    {
+      "intent": "CAMBIO_TOMA_A_CUENTA",
+      "label": "Cambio / toma a cuenta",
+      "auto_safe": true,
+      "requires_vehicle_source": false,
+      "response": "No tomamos vehículos a cuenta; trabajamos únicamente venta.",
+      "question": "¿La estás buscando para compra de contado?",
+      "next_action": "CALIFICAR"
+    },
+    {
+      "intent": "CONTACTO",
+      "label": "Contacto / WhatsApp",
+      "auto_safe": true,
+      "requires_vehicle_source": false,
+      "response": "Puedo ayudarte por aquí y, si quieres avanzar, podemos continuar por WhatsApp o llamada.",
+      "question": "¿Qué vehículo te interesa?",
+      "next_action": "IDENTIFICAR_UNIDAD"
+    },
+    {
+      "intent": "VISITA",
+      "label": "Visita",
+      "auto_safe": true,
+      "requires_vehicle_source": false,
+      "response": "Claro, puedes visitarnos en Carretera Tecamachalco–Quecholac, Entronque El Salado, Tecamachalco, Puebla.",
+      "question": "¿Qué día te gustaría venir?",
+      "next_action": "VISITA_PROPUESTA"
+    },
+    {
+      "intent": "PRECIO",
+      "label": "Precio",
+      "auto_safe": false,
+      "requires_vehicle_source": true,
+      "response": "Te confirmo el precio vigente de esa unidad para darte información correcta.",
+      "question": "¿Es {VEHICULO} la que estás viendo?",
+      "next_action": "CONSULTAR_PUENTE_PRECIO"
+    },
+    {
+      "intent": "DISPONIBILIDAD",
+      "label": "Disponibilidad",
+      "auto_safe": false,
+      "requires_vehicle_source": true,
+      "response": "Te confirmo la disponibilidad vigente de esa unidad antes de asegurártela.",
+      "question": "¿Es {VEHICULO} la que estás viendo?",
+      "next_action": "CONSULTAR_PUENTE_DISPONIBILIDAD"
+    },
+    {
+      "intent": "MOTOR",
+      "label": "Motor / tracción / especificación",
+      "auto_safe": false,
+      "requires_vehicle_source": true,
+      "response": "Te confirmo esa especificación en la ficha vigente de la unidad para no darte un dato incorrecto.",
+      "question": "¿Es {VEHICULO} la que estás viendo?",
+      "next_action": "CONSULTAR_PUENTE_ESPECIFICACION"
+    },
+    {
+      "intent": "DOCUMENTACION",
+      "label": "Documentación",
+      "auto_safe": false,
+      "requires_vehicle_source": true,
+      "response": "Te confirmo la documentación vigente de esa unidad antes de darte el dato.",
+      "question": "¿Es {VEHICULO} la que estás viendo?",
+      "next_action": "CONSULTAR_PUENTE_DOCUMENTACION"
+    },
+    {
+      "intent": "FOTOS_VIDEO",
+      "label": "Fotos / video",
+      "auto_safe": false,
+      "requires_vehicle_source": true,
+      "response": "Sí puedo ayudarte con material de la unidad; primero confirmo cuál es para enviarte únicamente fotos o video vigentes y aprobados.",
+      "question": "¿Es {VEHICULO} la que te interesa?",
+      "next_action": "LOCALIZAR_GALERIA_APROBADA"
+    },
+    {
+      "intent": "NEGOCIACION",
+      "label": "Negociación / cuál es lo menos",
+      "auto_safe": false,
+      "requires_vehicle_source": true,
+      "response": "Esa parte la revisamos directamente para darte una respuesta válida sobre la unidad.",
+      "question": "¿Te interesa venir a verla al lote?",
+      "next_action": "ESCALAR_HUMANO_NEGOCIACION"
+    },
+    {
+      "intent": "OTRA_PREGUNTA",
+      "label": "Otra pregunta",
+      "auto_safe": false,
+      "requires_vehicle_source": true,
+      "response": "Te confirmo ese dato antes de responder para no darte información incorrecta.",
+      "question": "¿Qué unidad estás viendo?",
+      "next_action": "IDENTIFICAR_INTENCION_Y_FUENTE"
+    }
+  ]
+}
