@@ -25,9 +25,9 @@ Antes de usar un exportable para métricas, leads, aprendizaje o datasets se deb
 
 - `PAGINA_AFL_AUTOS_RAW`;
 - `PERFIL_PERSONAL_RAW`;
-- `ORIGEN_POR_CONFIRMAR`.
+- `PENDIENTE_CLASIFICAR_RAW`.
 
-`PERFIL_PERSONAL_RAW` y `ORIGEN_POR_CONFIRMAR` no deben mezclarse con métricas ni aprendizaje oficial de la página AFL AUTOS.
+`PERFIL_PERSONAL_RAW` y `PENDIENTE_CLASIFICAR_RAW` no deben mezclarse con métricas ni aprendizaje oficial de la página AFL AUTOS.
 
 Flujo obligatorio:
 
