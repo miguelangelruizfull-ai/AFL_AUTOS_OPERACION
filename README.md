@@ -4,13 +4,15 @@ Centro de operación público y móvil de AFL AUTOS.
 
 ## Home activo
 
-`index.html` usa **V3.2 Flujo Guiado**, construido sobre la UX probada de V3.1.
+`index.html` abre **V3.3**, evolución de privacidad/UX sobre el flujo guiado V3.2.
 
 Criterio:
 
 `V3.1 = BASE UX`
 
-`V3.2 = FLUJO GUIADO ACTIVO`
+`V3.2 = FLUJO GUIADO BASE`
+
+`V3.3 = HOME PUBLICO ACTIVO / PRIVACIDAD REFORZADA`
 
 `V4/V4.1 = LABORATORIO / NO CANONICO`
 
@@ -24,9 +26,9 @@ URL:
 
 `UN SOLO HOME / FUENTES SEPARADAS`
 
-El Home ya no exige que Miguel elija manualmente el módulo normal. Selecciona un expediente, muestra el tablero de progreso y prepara la siguiente instrucción.
+El Home no exige que Miguel elija manualmente el módulo normal. Selecciona un expediente, muestra el tablero de progreso y prepara la siguiente instrucción.
 
-## Flujo principal V3.2
+## Flujo principal
 
 ```text
 SELECCIONAR VEHICULO
@@ -62,7 +64,7 @@ El índice no sustituye al `PUENTE.md`. El chat trabajador siempre debe hacer fe
 
 ## Retorno estructurado
 
-V3.2 entiende campos adicionales como:
+El flujo entiende campos como:
 
 - `EXPEDIENTE_KEY`;
 - `PUENTE_PATH`;
@@ -128,7 +130,7 @@ Content System conserva una biblioteca activa:
 
 Incluye cortes, speed ramps, motion text, transiciones y recursos de audio como opciones de prueba, no como plantilla universal.
 
-## Publicación y medición
+## Publicación, Meta y medición
 
 Después de una publicación confirmada, el checkpoint normal queda simplificado a:
 
@@ -136,13 +138,25 @@ Después de una publicación confirmada, el checkpoint normal queda simplificado
 
 `MEDICION_24H` y `MEDICION_72H` quedan retiradas del flujo normal a partir de `2026-09-13`. Los registros históricos se conservan, pero no generan nuevos checkpoints operativos.
 
-La fuente preferida para la medición semanal son exportables privados de Meta/Messenger/WhatsApp y métricas de plataforma depositados en Drive. El flujo debe leer nuevos exportables, sanitizar resultados y actualizar las fuentes correspondientes sin exigir copiar/pegar métricas manualmente.
+La fuente preferida para la medición semanal son exportables privados de Meta/Messenger/WhatsApp y métricas de plataforma depositados en Drive. El flujo debe leer nuevos exportables, validar origen, sanitizar resultados y actualizar las fuentes correspondientes sin exigir copiar/pegar métricas manualmente.
+
+El Home público no consume ZIP/JSON RAW. La distribución es:
+
+- métricas/datasets sanitizados → `AFL_AUTOS_PLATFORM`;
+- aprendizaje comercial → `AFL_AUTOS_COMERCIAL`;
+- aprendizaje creativo reusable → `AFL_AUTOS_CONTENT_SYSTEM`;
+- hechos de unidad → `Vehiculos/PUENTE.md` cuando correspondan;
+- estado/navegación → `AFL_AUTOS_OPERACION`;
+- RAW/originales → Drive privado.
 
 Separar métricas de plataforma de:
 
 `MENSAJE → WHATSAPP/LLAMADA → LEAD → VISITA → NEGOCIACION → VENTA`
 
-Ver `docs/INGESTA_EXPORTABLES_META_SEMANAL.md`.
+Ver:
+
+- `docs/INGESTA_SEMANAL_META.md`;
+- `docs/CONTRATO_META_JSON_HOME.md`.
 
 ## Agenda
 
@@ -167,6 +181,7 @@ Los módulos históricos siguen disponibles bajo **Más opciones / modo avanzado
 - publicación/medición;
 - vendido/entrega;
 - referencias externas;
+- ingesta Meta/datos;
 - nuevo coordinador.
 
 El objetivo es que el flujo normal no dependa de elegirlos manualmente.
@@ -191,7 +206,8 @@ No guardar en este repositorio público:
 - PII;
 - conversaciones privadas;
 - credenciales;
-- enlaces privados de Drive como parte del índice público.
+- enlaces privados de Drive como parte del índice público;
+- IP o EXIF sensible extraído de exportaciones.
 
 Mantener:
 
@@ -205,4 +221,5 @@ Mantener:
 - `docs/ARQUITECTURA.md`
 - `docs/COORDINACION_Y_RETORNOS.md`
 - `docs/ESTADOS.md`
-- `docs/INGESTA_EXPORTABLES_META_SEMANAL.md`
+- `docs/INGESTA_SEMANAL_META.md`
+- `docs/CONTRATO_META_JSON_HOME.md`
