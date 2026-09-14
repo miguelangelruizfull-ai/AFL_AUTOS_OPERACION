@@ -14,7 +14,7 @@ La bandeja privada de Drive mantiene separados:
 
 ## Regla canónica de origen para exportables Meta
 
-Todo exportable entra primero como RAW y debe conservarse sin modificar.
+Todo exportable entra primero como RAW y debe conservarse sin modificar mientras siga siendo la fuente necesaria para validación.
 
 Antes de usar un archivo para métricas, aprendizaje, leads o actualización de repositorios se debe validar su origen.
 
@@ -37,6 +37,21 @@ Regla corta:
 
 `RAW → IDENTIFICAR_ORIGEN → VALIDAR → PROCESAR → SANITIZAR → APRENDIZAJE/METRICAS`
 
+## JSON y media
+
+Las exportaciones Meta pueden aportar texto de publicaciones, fechas, hashtags, relaciones publicación-media, fotografías, videos y métricas. También pueden contener EXIF, IP u otros metadatos privados.
+
+El parser debe separar ambos grupos antes de generar cualquier salida durable:
+
+- reutilizable: texto/caption, fecha, hashtags, tipo de publicación, relación con media, dimensiones técnicas no sensibles y métricas verificables;
+- privado/no promocionable: IP, EXIF sensible, PII, conversaciones completas, credenciales e identificadores personales innecesarios.
+
+Contrato detallado:
+
+`docs/CONTRATO_META_JSON_HOME.md`
+
+## Distribución por fuente de autoridad
+
 El proceso semanal debe detectar archivos nuevos, validar origen, obtener métricas verificables, generar un resumen sanitizado y actualizar las fuentes durables que correspondan.
 
 Destinos:
@@ -44,8 +59,17 @@ Destinos:
 - métricas y datasets agregados → `AFL_AUTOS_PLATFORM`;
 - aprendizaje comercial → `AFL_AUTOS_COMERCIAL`;
 - cambios de navegación o proceso → `AFL_AUTOS_OPERACION`;
+- aprendizaje creativo reusable → `AFL_AUTOS_CONTENT_SYSTEM`;
 - datos específicos de una unidad → `Vehiculos/PUENTE.md` solo cuando la evidencia corresponda;
-- archivos originales → Drive privado.
+- archivos originales y RAW → Drive privado.
+
+El Home no consume el RAW directamente. Solo recibe estado sanitizado, conteos, bloqueos y siguiente acción.
+
+## Compatibilidad comercial
+
+Cuando una exportación permita derivar un evento comercial sin PII, normalizarlo al esquema sanitizado de `respuestas-public-v12.html` cuando sea posible: canal, fecha, unidad, intención, estado, tipo de respuesta, siguiente acción, visita y resultado observable.
+
+Si un campo no puede demostrarse, permanece `NO_IDENTIFICADA`, `PENDIENTE` o `null`. No inferir datos comerciales a partir de una publicación sin evidencia.
 
 No mover archivos originales a repos públicos.
 
