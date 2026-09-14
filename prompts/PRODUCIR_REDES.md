@@ -104,9 +104,11 @@ Antes de `PRODUCIDO` comprobar:
 
 **Historias** — `IDENTIDAD/HERO → DIFERENCIADOR → ACCION`.
 
-## Gate audiovisual
+## Gate audiovisual competitivo — obligatorio
 
-Antes de `PRODUCIDO` registrar:
+Antes de marcar un TikTok o Facebook/Instagram Reel como `PRODUCIDO`, no basta con que la selección de tomas, estrategia, copy y secuencia sean correctos. La pieza final debe alcanzar un nivel audiovisual competitivo y actual para video corto.
+
+Registrar como mínimo:
 
 - `FAMILIA_EDITORIAL`;
 - objetivo;
@@ -114,21 +116,73 @@ Antes de `PRODUCIDO` registrar:
 - secuencia;
 - duración;
 - CTA principal;
-- variable creativa si existe test.
+- variable creativa si existe test;
+- estrategia de audio;
+- criterio de ritmo/edición;
+- referencia positiva aprobada por Miguel cuando exista.
 
-Reglas:
+### Estándar mínimo de salida
 
-- vehículo, función o acción real comprensible en 0–3 s;
+- vehículo, función o acción real comprensible desde el primer impacto; buscar hook fuerte especialmente en 0–2 s y validarlo a 0–3 s;
 - una idea principal al inicio;
 - no abrir con ficha técnica;
+- edición con intención: cortes, cambios de plano y progresión suficientes para evitar sensación plana o de montaje crudo;
+- ritmo adecuado a la plataforma y a la unidad;
+- texto/motion text breve, legible en móvil, jerarquizado y sincronizado con la narrativa cuando aporte información o hook;
+- audio resuelto: música/fondo, audio útil de fuente y/o voz en off cuando la pieza la necesite; no entregar un audiovisual final que se sienta vacío por falta de tratamiento sonoro;
+- efectos actuales permitidos y recomendados cuando mejoren hook, ritmo o énfasis: punch-ins, zooms sutiles, speed ramps moderados, transiciones breves, motion text y acentos sonoros;
+- color, contraste, encuadre y nitidez tratados de forma suficiente sin falsear físicamente el vehículo;
 - CTA único;
-- TikTok y Facebook Reel adaptados por red;
+- TikTok y Facebook/Instagram Reel deben adaptarse por red; no entregar automáticamente el mismo montaje sin justificarlo;
 - no copiar overlays históricos como datos vigentes;
-- usar `EDITING_EFFECTS_LIBRARY.md` para elevar ritmo/modernidad cuando aporte valor;
-- efectos/transiciones sirven al vehículo y al hook, no son decoración obligatoria;
 - no aplicar una plantilla idéntica a todas las unidades.
 
-Si el material no soporta la familia/hook:
+### Regla de competitividad
+
+Los efectos no son un checklist decorativo ni deben agregarse solo por moda. Sin embargo, la ausencia de efectos llamativos NO justifica una pieza plana: el resultado debe demostrar ritmo, intención editorial, audio funcional, acabado moderno y capacidad de detener el scroll.
+
+Si la pieza se percibe como simple, lenta, sin acabado, sin audio útil, sin ritmo suficiente o como ensamblaje básico de clips + texto, aunque la información sea correcta:
+
+`REQUIERE_MEJORA_AUDIOVISUAL / NO_CERRAR_COMO_PRODUCIDO`.
+
+Consultar `AFL_AUTOS_CONTENT_SYSTEM/networks/tiktok/EDITING_EFFECTS_LIBRARY.md` para elevar la edición sin sacrificar fidelidad ni claridad comercial.
+
+### Referencias positivas audiovisuales
+
+Cuando Miguel identifique un TikTok, Reel, portada o pieza visual propia como aprobada para aprendizaje, tratarla como `REFERENCIA_POSITIVA_APROBADA_POR_MIGUEL`.
+
+Se puede aprender de:
+
+- selección y duración de tomas;
+- ritmo;
+- hook;
+- estructura narrativa;
+- tratamiento de texto;
+- transiciones;
+- motion text;
+- energía;
+- música/SFX/voz;
+- CTA;
+- nivel de acabado.
+
+No copiar automáticamente la pieza ni trasladar datos técnicos, precio, versión o equipamiento a otra unidad. `PUENTE.md` sigue siendo la autoridad del vehículo.
+
+### Check final audiovisual
+
+Antes de `PRODUCIDO`, responder internamente:
+
+- ¿detiene el scroll desde el inicio?;
+- ¿tiene ritmo suficiente para la plataforma?;
+- ¿se siente actual y profesional?;
+- ¿el audio está resuelto?;
+- ¿el texto está jerarquizado y no estorba?;
+- ¿la edición enfatiza el vehículo y no los efectos?;
+- ¿TikTok y Reel están realmente adaptados por red?;
+- ¿el nivel final compite visualmente con contenido automotriz actual?
+
+Si alguna falla materialmente, corregir antes de cerrar la etapa.
+
+Si el material no soporta la familia/hook o el estándar competitivo:
 
 `BLOQUEADO_POR_MATERIAL / REQUIERE_MEJOR_SELECCION_O_CAPTURA`.
 
@@ -144,7 +198,7 @@ No clonar logotipos, fotografías, textos completos, campañas o layouts distint
 
 A. verificar material real;
 B. definir familia/objetivo;
-C. producir Reel/TikTok adaptados por red cuando haya video suficiente;
+C. producir Reel/TikTok adaptados por red cuando haya video suficiente y superar el gate audiovisual competitivo;
 D. producir feed/historia/portadas con composición propia;
 E. redactar copies específicos;
 F. subir derivados versionados;
