@@ -35,6 +35,7 @@ Consultar según el problema:
 
 ### Audiovisual
 
+- `rules/AUDIOVISUAL_COMPETITIVE_PRODUCTION.md`;
 - `networks/tiktok/EDITORIAL_ENGINE.md`;
 - `networks/tiktok/FORMAT_FAMILIES.md`;
 - `networks/tiktok/HOOKS_AND_CTA.md`;
@@ -106,6 +107,12 @@ Antes de `PRODUCIDO` comprobar:
 
 ## Gate audiovisual competitivo — obligatorio
 
+**AUTORIZACION_MIGUEL:** `APROBADA / REGLA_ACTIVA / 2026-09-14`.
+
+Fuente canónica de detalle:
+
+`AFL_AUTOS_CONTENT_SYSTEM/rules/AUDIOVISUAL_COMPETITIVE_PRODUCTION.md`
+
 Antes de marcar un TikTok o Facebook/Instagram Reel como `PRODUCIDO`, no basta con que la selección de tomas, estrategia, copy y secuencia sean correctos. La pieza final debe alcanzar un nivel audiovisual competitivo y actual para video corto.
 
 Registrar como mínimo:
@@ -150,6 +157,10 @@ Consultar `AFL_AUTOS_CONTENT_SYSTEM/networks/tiktok/EDITING_EFFECTS_LIBRARY.md` 
 ### Referencias positivas audiovisuales
 
 Cuando Miguel identifique un TikTok, Reel, portada o pieza visual propia como aprobada para aprendizaje, tratarla como `REFERENCIA_POSITIVA_APROBADA_POR_MIGUEL`.
+
+Drive de referencias aprobadas:
+
+`https://drive.google.com/drive/folders/1KEmNxYgcuJBGnkDiQq8K5e801ZqvLWU2`
 
 Se puede aprender de:
 
