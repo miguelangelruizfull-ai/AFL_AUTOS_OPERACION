@@ -1,7 +1,21 @@
 # AFL AUTOS — Enrutamiento de cuentas y almacenamiento
 
-Estado: `ACTIVE / AUTORIZADO_POR_MIGUEL`
+Estado: `ACTIVE / TEMPORAL_HASTA_CIERRE_MIGRACION / AUTORIZADO_POR_MIGUEL`
 Fecha: `2026-09-14`
+
+## Alcance temporal
+
+Esta regla existe para resolver la dispersión actual entre cuentas mientras termina la migración, depuración y actualización de AFL AUTOS.
+
+Mientras `MIGRACION_DRIVE = ACTIVA`, el enrutamiento de cuentas es obligatorio para cualquier acción sobre Drive.
+
+Cuando la migración cierre y exista una estructura operativa consolidada, esta regla debe pasar a `LEGACY / SOLO_EXCEPCIONES` y el Home debe dejar de pedir cambios de cuenta en el flujo normal.
+
+Objetivo de salida:
+
+`UNA RUTA OPERATIVA CLARA / FUENTES CANONICAS DEFINIDAS / CAMBIO_DE_CUENTA SOLO_POR_EXCEPCION`
+
+No convertir la complejidad temporal de la migración en arquitectura permanente.
 
 ## Objetivo
 
@@ -37,7 +51,7 @@ El Home público debe usar roles y no exponer correos personales:
 
 El chat trabajador, dentro del entorno autorizado, debe resolver el correo real de cada rol y confirmar propietario/permisos antes de ejecutar o pedir una acción manual.
 
-## Gate obligatorio por acción
+## Gate obligatorio por acción — mientras migración esté activa
 
 Para cualquier barrido, movimiento, copia, eliminación o escritura, devolver o registrar:
 
@@ -67,7 +81,7 @@ ENLACE:
 
 No dar una instrucción destructiva sin haber confirmado propietario y destino/respaldo cuando aplique.
 
-## Política de almacenamiento
+## Política de almacenamiento durante la migración
 
 Prioridad:
 
@@ -80,7 +94,7 @@ Prioridad:
 7. no crear cuentas nuevas únicamente para eludir límites de almacenamiento;
 8. escalar almacenamiento solo cuando el volumen operativo real lo justifique.
 
-## Regla de producción
+## Regla de producción mientras migración esté activa
 
 La producción no debe detenerse buscando archivos dispersos entre cuentas.
 
@@ -94,13 +108,37 @@ Antes de `PRODUCIR_REDES`, el entorno autorizado debe resolver:
 
 Si hay cambio de cuenta necesario, indicarlo antes de iniciar producción.
 
+Cuando la migración cierre, `PRODUCIR_REDES` debe consumir directamente las fuentes canónicas consolidadas y este gate de cambio de cuenta queda solo para excepciones reales.
+
 ## Home público
 
 El Home no debe publicar correos de cuenta, enlaces privados ni rutas internas.
 
-Los prompts generados por el Home deben incluir la instrucción de resolver `CUENTA_ACTUAL / CUENTA_PROPIETARIA / CUENTA_REQUERIDA / CAMBIO_DE_CUENTA` dentro del entorno autorizado.
+Mientras `MIGRACION_DRIVE = ACTIVA`, los prompts generados por el Home deben incluir la instrucción de resolver `CUENTA_ACTUAL / CUENTA_PROPIETARIA / CUENTA_REQUERIDA / CAMBIO_DE_CUENTA` dentro del entorno autorizado.
+
+Después del cierre formal de migración, retirar este requisito del flujo normal del Home y conservarlo únicamente como manejo de excepciones.
 
 El retorno sanitizado puede indicar roles de cuenta. Si Miguel necesita una acción manual, el chat privado debe proporcionar el correo exacto verificado junto con el enlace correspondiente.
+
+## Criterios de cierre de migración
+
+No retirar el modo temporal hasta que se confirme:
+
+- fuentes canónicas definidas para operación, vehículos, contenido, comercial y métricas;
+- material activo localizado sin búsqueda entre cuentas;
+- duplicados críticos depurados;
+- `POR_CLASIFICAR` reducido a pendientes reales;
+- propietarios y permisos de las carpetas activas normalizados;
+- Home y prompts apuntando a fuentes consolidadas;
+- producción normal sin necesidad de cambiar manualmente entre cuentas.
+
+Al cumplirlos:
+
+`MIGRACION_DRIVE = CERRADA`
+
+Y la regla cambia a:
+
+`ENRUTAMIENTO_DE_CUENTAS = SOLO_EXCEPCIONES`
 
 ## Regla de seguridad
 
