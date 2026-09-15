@@ -1,6 +1,6 @@
 {
   "schema_version": "3.0",
-  "generated_at": "2026-09-13T17:20:00-06:00",
+  "generated_at": "2026-09-15T10:13:00-06:00",
   "rule": "NAVEGACION_PUBLICA_SANITIZADA",
   "expedientes": [
     {
@@ -23,6 +23,13 @@
       "estado": "REDISENO_APROBADO / VALIDACION_PENDIENTE / AUDIOVISUAL_BLOQUEADO",
       "siguiente_accion": "VALIDAR_ARTEFACTO_APROBADO",
       "flags": ["ESPERANDO_VERIFICACION", "BLOQUEADO"]
+    },
+    {
+      "key": "PENDIENTE_Ford_Explorer_Limited_2017_2026-09-15",
+      "label": "Ford Explorer Limited 2017",
+      "estado": "MATERIAL_EXISTENTE_LOCALIZADO / AUDITORIA_VISUAL_PENDIENTE / SIN_NUEVA_PRODUCCION",
+      "siguiente_accion": "AUDITAR_MATERIAL_EXISTENTE_Y_CERRAR_FICHA",
+      "flags": ["NO_PUBLICAR"]
     },
     {
       "key": "PENDIENTE_Ford_F150_2011_Texas_Edition_2026-09-10",
