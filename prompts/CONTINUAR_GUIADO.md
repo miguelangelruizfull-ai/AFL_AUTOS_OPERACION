@@ -26,6 +26,11 @@ Objetivo: continuar un vehículo/proyecto desde su estado real con el mínimo n�
 8. No inferir `APROBADO`, `PUBLICADO`, `MEDIDO`, `VISITA` o `VENTA`.
 9. Si la siguiente acción depende de Miguel, devolver `ESPERANDO_MIGUEL: SI` y `ACCION_MIGUEL` concreta.
 10. Si existe una pieza/carpeta que Miguel debe revisar, devolver `LINK_PRINCIPAL`.
+11. Si la etapa toca Google Drive —lectura, barrido, copia, movimiento, escritura, eliminación, ingesta o producción dependiente de archivos— aplicar `docs/DRIVE_ACCOUNT_ROUTING.md` antes de actuar.
+12. Resolver explícitamente `CUENTA_ACTUAL`, `CUENTA_PROPIETARIA`, `CUENTA_REQUERIDA` y `CAMBIO_DE_CUENTA` antes de pedir a Miguel una acción manual.
+13. No asumir que acceso compartido equivale a propiedad o permiso de eliminación.
+14. Si hace falta cambiar de cuenta, indicarlo antes de dar el enlace o la instrucción.
+15. Para almacenamiento, priorizar material activo/canónico en Drive, documentación/reglas en GitHub y RAW histórico pesado en almacenamiento privado o local cuando ya no necesite permanecer online. `POR_CLASIFICAR` no es almacén permanente.
 
 ## Estados guiados
 
@@ -37,9 +42,34 @@ El trabajador puede devolver:
 - `BLOQUEADO: SI/NO`;
 - `ESPERANDO_MIGUEL: SI/NO`;
 - `ACCION_MIGUEL`;
-- `LINK_PRINCIPAL`.
+- `LINK_PRINCIPAL`;
+- `CUENTA_ACTUAL`;
+- `CUENTA_PROPIETARIA`;
+- `CUENTA_REQUERIDA`;
+- `CAMBIO_DE_CUENTA: SI/NO`;
+- `MOTIVO_CAMBIO_CUENTA`;
+- `ACCION_DRIVE`;
+- `ESTADO_VALIDACION_DRIVE`.
 
 Estos campos orientan el Home. No sustituyen `PUENTE.md`.
+
+## Regla para acciones manuales de Miguel
+
+Cuando Miguel deba mover, borrar, descargar, revisar o cambiar permisos en Drive, responder en este orden:
+
+```text
+CUENTA ACTUAL:
+CUENTA PROPIETARIA:
+CUENTA REQUERIDA:
+CAMBIO DE CUENTA: SI/NO
+MOTIVO:
+CARPETA/ARCHIVO:
+ACCIÓN:
+ESTADO:
+ENLACE:
+```
+
+En el Home público usar roles de cuenta. En el chat privado/autorizado, cuando sea necesario para que Miguel actúe, resolver y mostrar el correo exacto verificado.
 
 ## Retorno obligatorio
 
@@ -55,6 +85,13 @@ ETAPA EJECUTADA:
 PASO_TERMINADO:
 RESULTADO:
 DRIVE:
+CUENTA_ACTUAL:
+CUENTA_PROPIETARIA:
+CUENTA_REQUERIDA:
+CAMBIO_DE_CUENTA: SI/NO
+MOTIVO_CAMBIO_CUENTA:
+ACCION_DRIVE:
+ESTADO_VALIDACION_DRIVE:
 LINK_PRINCIPAL:
 GITHUB:
 COMMITS:
@@ -69,4 +106,4 @@ SIGUIENTE MÓDULO:
 CONTRADICCIONES/RIESGOS:
 ```
 
-Si algo no aplica: `NO APLICA`. No inventar enlaces, commits, estados ni fechas.
+Si algo no aplica: `NO APLICA`. No inventar enlaces, commits, estados, fechas, propietarios ni permisos.
