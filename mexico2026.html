@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0d1216">
+<title>AFL AUTOS — México 2026 · Modo Rápido</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0d1216;color:#f4f7f8;font:15px system-ui,-apple-system,Segoe UI,sans-serif}.w{max-width:980px;margin:auto;padding:16px}.c{background:#171d22;border:1px solid #2b363d;border-radius:14px;padding:15px;margin:12px 0}.hero{border-top:4px solid #d6aa3a}.tag{display:inline-block;padding:5px 8px;border:1px solid #44515a;border-radius:999px;margin:3px 4px 3px 0;color:#cbd5da;font-size:12px}.m{color:#9fb0ba}.grid,.row,.actions,.checks{display:grid;gap:9px}.grid{grid-template-columns:repeat(3,1fr)}.row{grid-template-columns:1fr 1fr}.actions{grid-template-columns:repeat(3,1fr)}.checks{grid-template-columns:repeat(5,1fr)}label{display:block;color:#aebbc2;font-size:12px;margin:8px 0 4px}input,select,textarea,button,a{width:100%;padding:10px;border-radius:9px;border:1px solid #344149;background:#0e1317;color:#f4f7f8;font:inherit}textarea{min-height:88px;resize:vertical}button,a{cursor:pointer;text-align:center;text-decoration:none}.p{background:#d6aa3a;color:#18120a;font-weight:800}.b{background:#16344f}.ghost{background:#10161a}.tip{background:#202831;border-radius:10px;padding:10px;color:#c6d0d5}.ok{border-left:4px solid #72a34a}.warn{border-left:4px solid #d6aa3a}.output{min-height:360px;font:13px ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap}.check{display:flex;gap:7px;align-items:center;background:#10161a;border:1px solid #344149;border-radius:9px;padding:9px}.check input{width:auto}.mix{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.mix div{background:#10161a;border:1px solid #344149;border-radius:9px;padding:10px;text-align:center}.mix b{display:block;font-size:20px;color:#e4c46b}.small{font-size:12px}@media(max-width:760px){.row,.grid,.actions,.checks,.mix{grid-template-columns:1fr}}
+</style>
+</head>
+<body><main class="w">
+<section class="c hero">
+<h1>AFL AUTOS — México 2026</h1>
+<h2>Modo Rápido · Producción</h2>
+<p class="m">De lote no clasificado a prompt de producción para TikTok, Reel, flyer, post e historias. Prioriza impacto + conversión sin saltarse identidad, privacidad ni fuente de verdad.</p>
+<span class="tag">RUIDO</span><span class="tag">CONVERSIÓN</span><span class="tag">TENDENCIA ACTUAL</span><span class="tag">RETOQUE CONSERVADOR</span>
+</section>
+<section class="c warn"><b>Privacidad</b><p class="m">Esta página pública no contiene correos, teléfonos ni enlaces privados precargados. Lo que escribas se usa únicamente para construir el texto del prompt en tu navegador; no es fuente de verdad y no se envía desde esta página.</p></section>
+<section class="c">
+<h2>1. Cargar lote rápido</h2>
+<div class="row"><div><label>Vehículo / proyecto</label><input id="vehicle" placeholder="Ej. Ford F-550 Super Duty 2019"></div><div><label>Carpeta origen Drive / POR_CLASIFICAR</label><input id="source" placeholder="Pega el enlace privado aquí"></div></div>
+<div class="row"><div><label>Precio autorizado</label><input id="price" placeholder="Ej. $640,000 MXN"></div><div><label>Teléfono / CTA privado</label><input id="phone" placeholder="Opcional; no se guarda"></div></div>
+<div class="row"><div><label>Logo autorizado</label><select id="logo"><option value="SI">Sí</option><option value="NO">No</option><option value="RESOLVER">Resolver desde fuentes vigentes</option></select></div><div><label>Carpeta destino</label><input id="destination" value="Creatividad aprobada"></div></div>
+<label>Notas / hechos confirmados / restricciones</label><textarea id="notes" placeholder="Datos confirmados, detalles especiales, qué no debe inventarse, etc."></textarea>
+</section>
+<section class="c">
+<h2>2. Objetivo</h2>
+<div class="row"><div><label>Objetivo principal</label><select id="objective"><option value="RUIDO">Hacer ruido / alcance</option><option value="CONVERSION">Conversión</option><option value="VISITAS">Conseguir visitas</option><option value="MENSAJES">Conseguir mensajes</option><option value="BRANDING">Presencia de marca</option><option value="MES_PATRIO">Mes patrio</option></select></div><div><label>CTA principal</label><select id="cta"><option value="VISITA">Visita</option><option value="WHATSAPP">WhatsApp</option><option value="LLAMADA">Llamada</option><option value="COMENTAR">Comentar</option><option value="INBOX">Inbox</option></select></div></div>
+<h3>Mezcla sugerida</h3><div id="mix" class="mix"></div><p class="m small">Es punto de partida. El trabajador puede ajustar la mezcla después de revisar material real y tendencia vigente.</p>
+</section>
+<section class="c">
+<h2>3. Producción rápida</h2>
+<div class="checks"><label class="check"><input type="checkbox" class="platform" value="TIKTOK" checked> TikTok</label><label class="check"><input type="checkbox" class="platform" value="REEL" checked> Reel</label><label class="check"><input type="checkbox" class="platform" value="FLYER"> Flyer</label><label class="check"><input type="checkbox" class="platform" value="POST"> Post</label><label class="check"><input type="checkbox" class="platform" value="HISTORIAS"> Historias</label></div>
+<div class="row"><div><label>Mostrar precio</label><select id="showPrice"><option value="SI">Sí</option><option value="NO">No</option><option value="SOLO_SI_CONFIRMADO">Solo si está confirmado</option></select></div><div><label>Voz en off</label><select id="voice"><option value="A_VECES">A veces / decidir por material</option><option value="SI">Sí</option><option value="NO">No</option><option value="DOBLE_VERSION">Con y sin voz del mismo master</option></select></div></div>
+<div class="row"><div><label>Estilo base</label><select id="style"><option value="AUTO">Automático por objetivo + tendencia</option><option value="MIXTO">Mixto</option><option value="VIRAL">Viral</option><option value="COMERCIAL">Comercial</option><option value="PREMIUM">Premium</option><option value="PATRIOTICO">Patriótico</option></select></div><div><label>Retoque / lavado visual</label><select id="retouch"><option value="CONSERVADOR_PERMITIDO">Conservador permitido</option><option value="NO_RETOCAR">No retocar</option><option value="DECIDIR_POR_MATERIAL">Decidir por material</option></select></div></div>
+</section>
+<section class="c"><h2>4. Tendencia actual — obligatoria</h2><div class="tip ok">El prompt exige investigar tendencias vigentes al momento de producir: TikTok México, Reels, automotriz, audio, hooks, efectos y hashtags. No fija una canción vieja como regla permanente.</div><div class="grid" style="margin-top:9px"><div class="tip">Mínimo 3 audios candidatos</div><div class="tip">Verificar uso comercial</div><div class="tip">Elegir formato + hook, no solo música</div></div></section>
+<section class="c">
+<h2>5. Generar</h2>
+<div class="actions"><button id="generate" class="p">GENERAR PROMPT RÁPIDO</button><button id="copy" class="b">COPIAR</button><button id="clear" class="ghost">LIMPIAR</button></div>
+<label>Prompt listo para el chat trabajador</label><textarea id="output" class="output" readonly></textarea><div id="status" class="m">Listo.</div>
+<div class="actions" style="margin-top:9px"><a class="p" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">ABRIR CHATGPT</a><a class="ghost" href="home-public-v33.html">VOLVER AL HOME</a></div>
+</section>
+<section class="c"><h2>6. Aprendizaje</h2><p class="m">El prompt exige registrar aprobación/rechazo, hook, CTA, estilo y resultados únicamente en las fuentes privadas/sanitizadas correctas. Una pieza aprobada no se convierte sola en referencia futura.</p></section>
+<footer class="m">AFL AUTOS · HOME = navegación/coordinación · PUENTE = verdad de unidad · RAW = Drive privado.</footer>
+</main>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const mixes={RUIDO:{VIRAL:45,PATRIOTICO:25,COMERCIAL:30,PREMIUM:0},CONVERSION:{VIRAL:20,PATRIOTICO:10,COMERCIAL:50,PREMIUM:20},VISITAS:{VIRAL:20,PATRIOTICO:10,COMERCIAL:50,PREMIUM:20},MENSAJES:{VIRAL:25,PATRIOTICO:5,COMERCIAL:55,PREMIUM:15},BRANDING:{VIRAL:0,PATRIOTICO:20,COMERCIAL:35,PREMIUM:45},MES_PATRIO:{VIRAL:30,PATRIOTICO:40,COMERCIAL:30,PREMIUM:0}};
+function esc(v){return String(v||'').trim()}
+function selectedPlatforms(){const a=[...document.querySelectorAll('.platform:checked')].map(x=>x.value);return a.length?a:['TIKTOK','REEL']}
+function renderMix(){const m=mixes[$('objective').value]||mixes.RUIDO;$('mix').innerHTML=Object.entries(m).filter(([,v])=>v>0).map(([k,v])=>'<div><b>'+v+'%</b>'+k+'</div>').join('')}
+function mixText(){const m=mixes[$('objective').value]||mixes.RUIDO;return Object.entries(m).filter(([,v])=>v>0).map(([k,v])=>v+'% '+k).join(' + ')}
+function line(label,value){return value?'\n'+label+': '+value:''}
+function prompt(){const vehicle=esc($('vehicle').value)||'PENDIENTE_RECONOCIMIENTO';const source=esc($('source').value)||'NO PEGADA — localizar solo si el entorno autorizado puede resolverla sin adivinar';const price=esc($('price').value);const phone=esc($('phone').value);const notes=esc($('notes').value);const destination=esc($('destination').value)||'Creatividad aprobada';const platforms=selectedPlatforms().join(' / ');return `# AFL AUTOS — MODO RÁPIDO MÉXICO 2026
+
+VEHÍCULO/PROYECTO: ${vehicle}
+CARPETA_ORIGEN_DRIVE: ${source}
+CARPETA_DESTINO_OBJETIVO: ${destination}
+OBJETIVO_PRINCIPAL: ${$('objective').value}
+PLATAFORMAS: ${platforms}
+CTA_PRINCIPAL: ${$('cta').value}
+MOSTRAR_PRECIO: ${$('showPrice').value}
+VOZ_EN_OFF: ${$('voice').value}
+ESTILO_BASE: ${$('style').value}
+RETOQUE: ${$('retouch').value}
+USAR_LOGO: ${$('logo').value}
+MEZCLA_INICIAL: ${mixText()}${line('PRECIO_AUTORIZADO',price)}${line('CTA_PRIVADO/TELÉFONO',phone)}${line('NOTAS_CONFIRMADAS',notes)}
+
+## MISIÓN
+Producción rápida para ruido + conversión sin recorrer etapas pesadas que no sean necesarias. Usa el material real de la carpeta indicada y ejecuta el siguiente bloque lógico real. No inventes datos, no publiques automáticamente y no mezcles vehículos, expedientes o carpetas históricas.
+
+## GATE ROOT / DRIVE — OBLIGATORIO
+Antes de leer, mover o escribir en Drive resuelve dentro del entorno autorizado:
+CUENTA_ACTUAL → CUENTA_PROPIETARIA → CUENTA_REQUERIDA → CARPETA_REAL → PERMISOS → ACCIÓN.
+Aplica docs/DRIVE_ACCOUNT_ROUTING.md. Acceso no implica propiedad ni permiso de eliminación. No pidas cambio de cuenta si lectura/escritura ya es suficiente.
+
+## FUENTE DE VERDAD
+1. Si existe expediente inequívoco del vehículo, fetch/lee PUENTE.md vigente antes de persistir estado.
+2. Si NO existe expediente confirmado, NO inventes EXPEDIENTE_KEY para acelerar.
+3. Material RAW/original = Drive privado.
+4. Creatividad activa = CONTENT_RUNTIME vigente + material real + hechos confirmados.
+5. Home/este prompt = coordinación, no verdad durable.
+
+## PREGUNTAS MÍNIMAS
+No preguntes datos que puedas obtener de Drive, GitHub, PUENTE, runtime o del material. Pregunta a Miguel únicamente si falta un dato imprescindible para publicar/producir sin inventarlo.
+
+## RECONOCIMIENTO RÁPIDO
+Inventaría exclusivamente el lote vigente y revisa visualmente fotos/videos. Determina:
+- clips útiles / débiles / repetidos;
+- orientación y duración;
+- mejor hook 0–3 s;
+- tomas HERO/portada;
+- detalles que detienen scroll;
+- si soporta TikTok dinámico, Reel comercial o ambos;
+- si requiere voz, texto, música o combinación;
+- si una foto necesita lavado/retoque conservador;
+- qué datos se confirman visualmente y cuáles siguen pendientes.
+No copies especificaciones desde flyers/referencias externas.
+
+## TENDENCIA ACTUAL — INVESTIGACIÓN OBLIGATORIA
+Antes de decidir audio/estructura, consulta información pública vigente EN ESE MOMENTO para México y contenido automotriz/video corto. Evalúa:
+- TikTok México;
+- Instagram/Facebook Reels;
+- audios en crecimiento;
+- hooks y estructuras actuales;
+- edición/efectos/transiciones útiles;
+- hashtags actuales;
+- oportunidad cultural/temporal (incluido México/mes patrio cuando corresponda).
+No uses memoria ni una canción histórica como sustituto de investigación fresca.
+
+Entrega mínimo 3 audios candidatos con:
+AUDIO / ARTISTA / POR_QUÉ_FUNCIONA / MOMENTO_DEL_AUDIO / TIKTOK / REELS / USO_COMERCIAL_VERIFICADO.
+Si la cuenta comercial no puede usar el audio ganador, propone alternativa equivalente de biblioteca comercial. La tendencia debe servir al vehículo; no forzar memes, romanticismo, comedia o patriotismo si debilitan la pieza.
+
+## MEZCLA CREATIVA
+Usa como punto de partida: ${mixText()}.
+Ajústala solo si material + tendencia vigente justifican el cambio. Explica la mezcla final en una línea.
+
+## PRODUCCIÓN VIDEO
+Para TikTok/Reel:
+- vehículo/acción real desde el primer impacto;
+- hook especialmente fuerte 0–2 s y validado 0–3 s;
+- una idea principal al inicio;
+- edición contemporánea y profesional;
+- progresión visual, cortes al beat, punch-ins/speed ramps/transiciones solo cuando aporten;
+- audio funcional y sound design cuando sume;
+- motion text breve y legible;
+- CTA único;
+- adaptación real TikTok vs Reel.
+Si VOZ_EN_OFF = DOBLE_VERSION, crea un solo VIDEO MAESTRO y deriva versión A con voz + música y versión B sin voz con música + texto, evitando rehacer edición innecesariamente.
+
+## FLYER / POST / PORTADA
+Selecciona primero la mejor foto HERO. Antes de cerrar una pieza aplica:
+ORIGINAL → SELECCIÓN → RETOQUE → LAVADO_VISUAL_SI_APLICA → VALIDACIÓN_FIDELIDAD → PIEZA.
+No alterar color, rines, llantas, accesorios, carrocería, altura, interior, proporciones ni ocultar daños reales.
+Dirección activa: vehículo protagonista, moderna/editorial, NO ICONOS, poco texto, 2–4 datos confirmados/publicables, CTA secundario, sin plantilla genérica.
+Si ninguna foto pasa el gate HERO, marca BLOQUEADO_POR_MATERIAL en vez de diseñar sobre una foto mala.
+
+## COPY / HASHTAGS / CTA
+Genera copy específico por plataforma, corto, con hook + hecho confirmado + CTA. Hashtags: 5–8 relevantes, no relleno. Si el precio se muestra, debe ser el autorizado. No inventar disponibilidad, financiamiento, versión/equipo, capacidad, kilometraje, documentación ni estado mecánico.
+
+## HISTORIAS
+Si aplica, genera 1–3 historias: IDENTIDAD/HERO → DIFERENCIADOR → ACCIÓN, con zonas seguras y CTA directo.
+
+## DESTINO Y ARCHIVOS
+Conserva originales intactos. Los derivados deben ir separados. Resuelve la carpeta real "${destination}" y sus subcarpetas VIDEO / POST / FLYER / HISTORIAS / COPY / PORTADAS solo si la cuenta/permisos lo permiten. No sobrescribas, no elimines y no declares SUBIDO/GUARDADO sin comprobarlo.
+
+## APRENDIZAJE
+Después de decisión real de Miguel registra, en la fuente correspondiente y de forma sanitizada:
+- aprobado / corregido / rechazado;
+- hook;
+- CTA;
+- estilo/mezcla;
+- audio/estructura;
+- resultados medidos cuando existan.
+Una pieza aprobada NO se convierte automáticamente en referencia futura. CASO_PARTICULAR ≠ REGLA_GENERAL.
+
+## ENTREGA
+Devuelve de forma compacta:
+FUENTE_VALIDADA:
+INVENTARIO:
+MATERIAL_SELECCIONADO:
+HOOK_0_3S:
+TENDENCIA_DETECTADA:
+FORMATO_EN_TENDENCIA:
+AUDIOS_CANDIDATOS:
+AUDIO_ELEGIDO:
+MEZCLA_CREATIVA_FINAL:
+ORDEN_DE_CLIPS:
+TEXTOS_EN_PANTALLA:
+GUION_VOZ_OFF:
+EFECTOS/EDICION:
+HERO_FOTO:
+COPY_TIKTOK:
+COPY_REEL:
+COPY_POST:
+HISTORIAS:
+HASHTAGS:
+CTA:
+DERIVADOS_CREADOS:
+DESTINO_VERIFICADO:
+BLOQUEADO: SI/NO
+ACCION_MIGUEL:
+RIESGOS/DATOS_NO_CONFIRMADOS:
+SIGUIENTE_PASO:
+
+No publiques automáticamente.`}
+async function copyOut(){const t=$('output').value;if(!t){$('status').textContent='Primero genera el prompt.';return}try{await navigator.clipboard.writeText(t);$('status').textContent='Prompt copiado.'}catch(e){$('output').focus();$('output').select();$('status').textContent='Seleccionado; usa Copiar.'}}
+$('objective').onchange=renderMix;$('generate').onclick=()=>{$('output').value=prompt();$('status').textContent='Prompt generado. Revisa y copia.'};$('copy').onclick=copyOut;$('clear').onclick=()=>{['vehicle','source','price','phone','notes'].forEach(id=>$(id).value='');$('destination').value='Creatividad aprobada';$('output').value='';$('status').textContent='Limpio.'};renderMix();
+</script></body></html>
