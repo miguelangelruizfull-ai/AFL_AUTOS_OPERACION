@@ -26,11 +26,12 @@ Objetivo: continuar un vehículo/proyecto desde su estado real con el mínimo n�
 8. No inferir `APROBADO`, `PUBLICADO`, `MEDIDO`, `VISITA` o `VENTA`.
 9. Si la siguiente acción depende de Miguel, devolver `ESPERANDO_MIGUEL: SI` y `ACCION_MIGUEL` concreta.
 10. Si existe una pieza/carpeta que Miguel debe revisar, devolver `LINK_PRINCIPAL`.
-11. Si la etapa toca Google Drive —lectura, barrido, copia, movimiento, escritura, eliminación, ingesta o producción dependiente de archivos— aplicar `docs/DRIVE_ACCOUNT_ROUTING.md` antes de actuar.
-12. Resolver explícitamente `CUENTA_ACTUAL`, `CUENTA_PROPIETARIA`, `CUENTA_REQUERIDA` y `CAMBIO_DE_CUENTA` antes de pedir a Miguel una acción manual.
+11. Mientras `MIGRACION_DRIVE = ACTIVA`, si la etapa toca Google Drive —lectura, barrido, copia, movimiento, escritura, eliminación, ingesta o producción dependiente de archivos— aplicar `docs/DRIVE_ACCOUNT_ROUTING.md` antes de actuar.
+12. Mientras la migración siga activa, resolver explícitamente `CUENTA_ACTUAL`, `CUENTA_PROPIETARIA`, `CUENTA_REQUERIDA` y `CAMBIO_DE_CUENTA` antes de pedir a Miguel una acción manual.
 13. No asumir que acceso compartido equivale a propiedad o permiso de eliminación.
 14. Si hace falta cambiar de cuenta, indicarlo antes de dar el enlace o la instrucción.
-15. Para almacenamiento, priorizar material activo/canónico en Drive, documentación/reglas en GitHub y RAW histórico pesado en almacenamiento privado o local cuando ya no necesite permanecer online. `POR_CLASIFICAR` no es almacén permanente.
+15. Para almacenamiento durante la migración, priorizar material activo/canónico en Drive, documentación/reglas en GitHub y RAW histórico pesado en almacenamiento privado o local cuando ya no necesite permanecer online. `POR_CLASIFICAR` no es almacén permanente.
+16. Cuando `MIGRACION_DRIVE = CERRADA`, retirar el enrutamiento de cuentas del flujo normal y conservarlo solo para excepciones reales de propiedad/permisos.
 
 ## Estados guiados
 
@@ -55,7 +56,7 @@ Estos campos orientan el Home. No sustituyen `PUENTE.md`.
 
 ## Regla para acciones manuales de Miguel
 
-Cuando Miguel deba mover, borrar, descargar, revisar o cambiar permisos en Drive, responder en este orden:
+Mientras `MIGRACION_DRIVE = ACTIVA`, cuando Miguel deba mover, borrar, descargar, revisar o cambiar permisos en Drive, responder en este orden:
 
 ```text
 CUENTA ACTUAL:
@@ -105,5 +106,7 @@ SIGUIENTE_PASO:
 SIGUIENTE MÓDULO:
 CONTRADICCIONES/RIESGOS:
 ```
+
+Mientras la migración esté activa, completar los campos de cuenta cuando la etapa toque Drive. Si no toca Drive o la migración ya cerró, usar `NO APLICA` salvo que exista una excepción real de permisos.
 
 Si algo no aplica: `NO APLICA`. No inventar enlaces, commits, estados, fechas, propietarios ni permisos.
