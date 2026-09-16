@@ -55,6 +55,23 @@ ENTRADA
 → APRENDIZAJE
 ```
 
+## Ingesta temporal Home V3.6
+
+Miguel autorizó un piloto temporal para cargar material desde el Home y comprobar el flujo completo hasta Production Studio.
+
+Reglas del coordinador:
+
+1. el Home público solo expone el acceso de carga que Miguel autorizó explícitamente;
+2. la instrucción detallada de movimiento vive en la fuente privada vigente de plataforma;
+3. el ejecutor debe identificar la unidad antes de mover material;
+4. si la identidad es suficiente, mover el lote a la unidad canónica en producción y verificar origen + destino;
+5. `MOVER`, no borrar; no usar `copiar → borrar` si Drive permite movimiento directo;
+6. si la identidad no es suficiente, no mover ni borrar;
+7. después del movimiento, actualizar Vehicle Hub / `SYNC_PUENTE` cuando corresponda;
+8. si Miguel pidió producir, crear la solicitud en estado pendiente y enrutar a Production Studio;
+9. no inferir `APROBADO_MIGUEL` y no publicar automáticamente;
+10. el retorno público nunca incluye enlaces privados, IDs de Drive, VIN completo, PII ni el destino privado de producción.
+
 ## Producción de redes — orden por plataforma
 
 Cuando el pedido incluya video social, no producir un único video genérico y clonarlo.
@@ -112,21 +129,22 @@ Las referencias externas o entregadas por Miguel se almacenan en Drive privado b
 
 Los resultados aprobados de AFL y su medición se almacenan separadamente como aprendizaje visual. Solo un patrón repetido y medido puede convertirse en regla general del runtime.
 
-## Home V3.5 / portal temporal
+## Home V3.6 / portal temporal
 
 Mientras se define el dominio definitivo, el Home público puede exponer únicamente los accesos rápidos que Miguel autorice explícitamente. Todos los enlaces externos deben abrir en pestaña nueva con `target=_blank` o `<base target=_blank>` y `rel=noopener noreferrer` cuando corresponda.
 
-El Home V3.5 mantiene:
+El Home V3.6 mantiene:
 
 - navegación por expediente sanitizado;
 - progreso y siguiente paso;
 - procesamiento del retorno;
 - generación de siguiente chat;
 - accesos rápidos a carpetas de carga autorizadas;
+- botón de ingesta y preparación de producción;
 - vista de `docs/ESTRUCTURA_ACTUAL.md`;
 - catálogo `data/md-catalog.json` para generar prompts de consulta rápida.
 
-No publicar tokens, credenciales, PII ni VIN completo aunque Miguel autorice exposición de enlaces de trabajo.
+No publicar tokens, credenciales, PII, VIN completo ni destinos privados de producción aunque Miguel autorice exposición de enlaces de carga.
 
 ## Regla de mantenimiento de estructura
 
@@ -148,7 +166,7 @@ Cuando Miguel pida ver un `.md`, `.json` o una fuente del catálogo:
 - no responder desde memoria si la fuente está identificada;
 - mostrar primero estado/fecha cuando exista;
 - señalar contradicciones con la fuente de verdad correspondiente;
-- para `PUENTE.md`, usar el expediente seleccionado y leer `Vehiculos/vehiculos/<EXPEDIENTE_KEY>/PUENTE.md`.
+- para `PUENTE.md`, usar el expediente seleccionado y leer la fuente exacta vigente.
 
 ## Retorno obligatorio
 
