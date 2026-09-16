@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "updated_at": "2026-09-16",
   "sources": [
     {
@@ -44,6 +44,36 @@
       "label": "Coordinador Principal",
       "repository": "miguelangelruizfull-ai/AFL_AUTOS_OPERACION",
       "path": "prompts/COORDINADOR_PRINCIPAL.md"
+    },
+    {
+      "id": "quick-leads-prompt",
+      "label": "Consulta rápida de leads — prompt canónico",
+      "repository": "miguelangelruizfull-ai/AFL_AUTOS_OPERACION",
+      "path": "prompts/CONSULTA_RAPIDA_LEADS.md"
+    },
+    {
+      "id": "quick-leads-guide",
+      "label": "Consulta rápida de leads — reglas operativas",
+      "repository": "miguelangelruizfull-ai/AFL_AUTOS_OPERACION",
+      "path": "docs/CONSULTA_RAPIDA_LEADS.md"
+    },
+    {
+      "id": "active-publications",
+      "label": "Índice sanitizado de publicaciones activas",
+      "repository": "miguelangelruizfull-ai/AFL_AUTOS_OPERACION",
+      "path": "data/publicaciones-activas-v1.json"
+    },
+    {
+      "id": "commercial-rules",
+      "label": "Reglas comerciales vigentes",
+      "repository": "miguelangelruizfull-ai/AFL_AUTOS_COMERCIAL",
+      "path": "rules/REGLAS_COMERCIALES.md"
+    },
+    {
+      "id": "commercial-sources",
+      "label": "Fuentes de verdad comerciales",
+      "repository": "miguelangelruizfull-ai/AFL_AUTOS_COMERCIAL",
+      "path": "rules/FUENTES_DE_VERDAD.md"
     },
     {
       "id": "recommend-today",
