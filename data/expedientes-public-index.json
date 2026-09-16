@@ -27,9 +27,9 @@
     {
       "key": "PENDIENTE_Ford_Explorer_Limited_2017_2026-09-15",
       "label": "Ford Explorer Limited 2017",
-      "estado": "PRODUCIDO / SUBIDO_A_DRIVE / PENDIENTE_IDENTIDAD / PENDIENTE_APROBACION_MIGUEL / NO_PUBLICAR",
-      "siguiente_accion": "RECONCILIAR_IDENTIDAD_ANTES_DE_PUBLICAR",
-      "flags": ["ESPERANDO_MIGUEL", "NO_PUBLICAR", "PENDIENTE_IDENTIDAD"]
+      "estado": "IDENTIDAD_RECONCILIADA / V1_OSCURA_EXCLUIDA / REPRODUCCION_REQUERIDA / NO_PUBLICAR",
+      "siguiente_accion": "REPRODUCIR_HISTORIAS_CON_MATERIAL_BLANCO",
+      "flags": ["NO_PUBLICAR", "REPRODUCCION_REQUERIDA"]
     },
     {
       "key": "PENDIENTE_Ford_F150_2011_Texas_Edition_2026-09-10",
