@@ -1,6 +1,6 @@
 {
-  "schema_version": "3.0",
-  "generated_at": "2026-09-15T10:30:00-06:00",
+  "schema_version": "3.1",
+  "generated_at": "2026-09-16",
   "rule": "NAVEGACION_PUBLICA_SANITIZADA",
   "expedientes": [
     {
@@ -27,15 +27,15 @@
     {
       "key": "PENDIENTE_Ford_Explorer_Limited_2017_2026-09-15",
       "label": "Ford Explorer Limited 2017",
-      "estado": "AUDITORIA_COBERTURA_REALIZADA / MATERIAL_SUFICIENTE_PARA_SELECCION / SIN_PRODUCCION",
-      "siguiente_accion": "SELECCION_COMERCIAL",
-      "flags": ["NO_PUBLICAR"]
+      "estado": "PRODUCIDO / SUBIDO_A_DRIVE / PENDIENTE_IDENTIDAD / PENDIENTE_APROBACION_MIGUEL / NO_PUBLICAR",
+      "siguiente_accion": "RECONCILIAR_IDENTIDAD_ANTES_DE_PUBLICAR",
+      "flags": ["ESPERANDO_MIGUEL", "NO_PUBLICAR", "PENDIENTE_IDENTIDAD"]
     },
     {
       "key": "PENDIENTE_Ford_F150_2011_Texas_Edition_2026-09-10",
       "label": "Ford F-150 2011",
       "estado": "PUBLICADO_CONFIRMADO / MEDICION_EN_CURSO",
-      "siguiente_accion": "MEDICION_V2_72H",
+      "siguiente_accion": "MEDICION_7D",
       "flags": ["PUBLICADO_CONFIRMADO", "MEDICION_EN_CURSO"]
     },
     {
