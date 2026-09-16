@@ -11,7 +11,7 @@ Estado: `ACTIVA / HOME_V3.5`
 
 ## Arquitectura principal
 
-- `Vehicle Hub V1.1` → ficha privada/editable del vehículo.
+- `Vehicle Hub V1.2` → ficha privada/editable del vehículo.
 - `Production Studio V1.2` → decisión y producción por canal.
 - `Home Operaciones V3.5` → navegación, retorno al coordinador, siguiente chat, accesos rápidos y consulta de archivos.
 - `Content Engine V4` → respaldo/legacy; no es el flujo canónico diario.
