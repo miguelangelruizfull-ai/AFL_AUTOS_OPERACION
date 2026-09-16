@@ -83,3 +83,43 @@ CONTRADICCION_DETECTADA:
 ```
 
 La `RESPUESTA_RAPIDA` debe ser corta y lista para copiar en WhatsApp/Inbox.
+
+## Cierre obligatorio — siguiente movimiento
+
+Después de la respuesta al lead, añadir un bloque separado para Miguel. No mezclar estas opciones dentro del mensaje destinado al prospecto.
+
+Formato:
+
+```text
+SIGUIENTE MOVIMIENTO
+
+1. RESPONDER / CONTINUAR LEAD
+   Seguir en este mismo chat con la siguiente respuesta comercial.
+
+2. PERSISTIR / CORREGIR FUENTE
+   Actualizar PUENTE, índice de publicaciones o regla durable si se detectó información nueva o una corrección.
+
+3. ABRIR PRODUCTOR / EJECUTOR
+   Cuando ya exista una acción concreta fuera de Consulta Rápida.
+
+4. VOLVER A COORDINADOR / ROOT
+   Cuando haga falta decidir módulo, revisar arquitectura o cambiar de área.
+
+RECOMENDADO AHORA: <número + motivo breve>
+NUEVO_CHAT_RECOMENDADO: SI/NO
+```
+
+Las cuatro opciones pueden especializarse según el caso real. Si una no aplica, sustituirla por una acción más útil; no mostrar opciones irrelevantes solo para completar el formato.
+
+Si `NUEVO_CHAT_RECOMENDADO: SI`, incluir:
+
+```text
+TITULO_CHAT:
+ROL/MODULO:
+MOTIVO:
+PROMPT_INICIAL:
+```
+
+Si `NUEVO_CHAT_RECOMENDADO: NO`, indicar `CONTINUAR_EN_ESTE_CHAT`.
+
+No abrir nuevo chat por rutina. Recomendarlo solo por cambio de módulo, especialización, aislamiento de contexto o trabajo largo. Miguel conserva la decisión final.
