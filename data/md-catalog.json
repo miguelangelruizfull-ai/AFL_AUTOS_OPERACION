@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-09-16",
+  "sources": [
+    {
+      "id": "estructura",
+      "label": "Estructura actual AFL AUTOS",
+      "repository": "miguelangelruizfull-ai/AFL_AUTOS_OPERACION",
+      "path": "docs/ESTRUCTURA_ACTUAL.md",
+      "public_preview": "docs/ESTRUCTURA_ACTUAL.md"
+    },
+    {
+      "id": "sistema",
+      "label": "Sistema actual — ROOT",
+      "repository": "miguelangelruizfull-ai/ROOT_ECOSISTEMA",
+      "path": "docs/AFL_AUTOS_SISTEMA_ACTUAL.md"
+    },
+    {
+      "id": "adapter",
+      "label": "Adapter AFL AUTOS — ROOT",
+      "repository": "miguelangelruizfull-ai/ROOT_ECOSISTEMA",
+      "path": "adapters/AFL_AUTOS.md"
+    },
+    {
+      "id": "focus",
+      "label": "Foco actual ROOT",
+      "repository": "miguelangelruizfull-ai/ROOT_ECOSISTEMA",
+      "path": "control/CURRENT_FOCUS.md"
+    },
+    {
+      "id": "project-state",
+      "label": "Estado técnico PLATFORM",
+      "repository": "miguelangelruizfull-ai/AFL_AUTOS_PLATFORM",
+      "path": "control/PROJECT_STATE.json"
+    },
+    {
+      "id": "content-runtime",
+      "label": "Reglas creativas activas",
+      "repository": "miguelangelruizfull-ai/AFL_AUTOS_CONTENT_SYSTEM",
+      "path": "runtime/CONTENT_RUNTIME.md"
+    },
+    {
+      "id": "coordinator",
+      "label": "Coordinador Principal",
+      "repository": "miguelangelruizfull-ai/AFL_AUTOS_OPERACION",
+      "path": "prompts/COORDINADOR_PRINCIPAL.md"
+    },
+    {
+      "id": "recommend-today",
+      "label": "Qué hacemos hoy",
+      "repository": "miguelangelruizfull-ai/AFL_AUTOS_OPERACION",
+      "path": "prompts/RECOMENDAR_PRODUCCION_HOY.md"
+    },
+    {
+      "id": "vehicle-schema",
+      "label": "Schema vehículo privado",
+      "repository": "miguelangelruizfull-ai/AFL_AUTOS_PLATFORM",
+      "path": "schemas/vehicle_private_master.schema.json"
+    },
+    {
+      "id": "production-schema",
+      "label": "Schema orden de producción",
+      "repository": "miguelangelruizfull-ai/AFL_AUTOS_PLATFORM",
+      "path": "schemas/production_request.schema.json"
+    },
+    {
+      "id": "vehicle-puente",
+      "label": "PUENTE del vehículo seleccionado",
+      "repository": "miguelangelruizfull-ai/Vehiculos",
+      "path_template": "vehiculos/{EXPEDIENTE_KEY}/PUENTE.md",
+      "requires_vehicle": true
+    }
+  ]
+}
