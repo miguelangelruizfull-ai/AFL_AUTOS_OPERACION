@@ -94,6 +94,30 @@ Prioridad:
 7. no crear cuentas nuevas únicamente para eludir límites de almacenamiento;
 8. escalar almacenamiento solo cuando el volumen operativo real lo justifique.
 
+## Actualización temporal — respaldos legacy de repositorios — 2026-09-16
+
+Estado: `EN_CARGA / POR_CLASIFICAR / NO_CANONICO`
+
+Durante la liberación de almacenamiento de la cuenta anterior, los respaldos ZIP históricos de repositorios AFL AUTOS fueron retirados de su ubicación previa y se están cargando en una carpeta privada de `CUENTA_OPERATIVA` marcada para clasificación posterior.
+
+La URL privada de Drive no se registra en este repositorio público. Debe resolverse únicamente dentro del entorno autorizado.
+
+Validación observada al `2026-09-16`:
+
+- `generador-afl-autos-main.zip` — visible;
+- `generador-afl-autos-repo-web-main(2).zip` — visible;
+- `AFL_AUTOS_V5-main.zip` — visible;
+- `AFL_AUTOS-main.zip` — pendiente de aparecer/completar carga.
+
+Reglas temporales:
+
+- esta carpeta privada es `POR_CLASIFICAR` y no debe tratarse como fuente de verdad;
+- no descomprimir, migrar ni fusionar automáticamente estos ZIP;
+- no publicar el enlace privado ni IDs de Drive en Home, repositorios públicos o retornos sanitizados;
+- al completarse la carga, validar los cuatro archivos antes de cualquier depuración adicional;
+- la clasificación definitiva debe respetar la fuente de verdad vigente de cada repositorio;
+- cuando se defina el destino canónico, sustituir este registro temporal por el estado final sanitizado.
+
 ## Regla de producción mientras migración esté activa
 
 La producción no debe detenerse buscando archivos dispersos entre cuentas.
