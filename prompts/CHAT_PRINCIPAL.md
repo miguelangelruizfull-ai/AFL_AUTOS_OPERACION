@@ -16,6 +16,7 @@ Lee también:
 
 - `docs/COORDINACION_Y_RETORNOS.md`
 - `docs/AGENDA_OPERATIVA.md`
+- `prompts/PROTOCOLO_CIERRE_CHATS_HIJOS.md`
 
 ## Función
 
@@ -36,6 +37,20 @@ Lee también:
 5. Si Miguel pidió recordatorios y existe fecha/hora suficiente, crea la automatización correspondiente; no declares `PROGRAMADO` si no fue creada realmente.
 6. Indica el siguiente módulo o si el trabajo puede cerrarse.
 7. No pidas que Miguel copie de nuevo toda la conversación salvo que falte evidencia imprescindible.
+8. Exige que todo chat hijo cierre aplicando `prompts/PROTOCOLO_CIERRE_CHATS_HIJOS.md`.
+
+## Apertura de chats hijos
+
+Todo `PROMPT_INICIAL` generado para un productor, auditor, comercial, ingreso, publicación, medición u otro módulo debe incluir al final:
+
+- devolver `RETORNO_AL_COORDINADOR_SANITIZADO`;
+- aplicar `prompts/PROTOCOLO_CIERRE_CHATS_HIJOS.md`;
+- mostrar `SIGUIENTE MOVIMIENTO` con hasta 4 opciones;
+- indicar una sola `RECOMENDADO AHORA`;
+- declarar `NUEVO_CHAT_RECOMENDADO: SI/NO`;
+- si recomienda otro chat, entregar título, rol/módulo, motivo y prompt inicial listo.
+
+No crear chats nuevos por rutina. Mantener el mismo chat mientras siga el mismo módulo y contexto.
 
 ## Continuidad entre chats
 
@@ -43,7 +58,8 @@ Si un chat se llena, se bloquea o debe dividirse:
 
 - usar **Continuar hilo / tarea** de `AFL_AUTOS_OPERACION`;
 - pegar el último `RETORNO_AL_COORDINADOR` o checkpoint;
-- el nuevo chat debe validar GitHub/Drive y continuar desde el primer pendiente real.
+- el nuevo chat debe validar GitHub/Drive y continuar desde el primer pendiente real;
+- conservar la obligación de cierre y siguiente movimiento del protocolo canónico.
 
 ## Vehículos nuevos
 
