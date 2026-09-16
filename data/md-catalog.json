@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1",
+  "schema_version": "1.2",
   "updated_at": "2026-09-16",
   "sources": [
     {
@@ -44,6 +44,12 @@
       "label": "Coordinador Principal",
       "repository": "miguelangelruizfull-ai/AFL_AUTOS_OPERACION",
       "path": "prompts/COORDINADOR_PRINCIPAL.md"
+    },
+    {
+      "id": "child-chat-close-protocol",
+      "label": "Protocolo de cierre y siguiente movimiento de chats hijos",
+      "repository": "miguelangelruizfull-ai/AFL_AUTOS_OPERACION",
+      "path": "prompts/PROTOCOLO_CIERRE_CHATS_HIJOS.md"
     },
     {
       "id": "quick-leads-prompt",
