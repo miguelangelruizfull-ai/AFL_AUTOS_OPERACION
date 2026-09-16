@@ -29,6 +29,28 @@ Estado: `ACTIVA / HOME_V3.6`
 
 El índice `data/publicaciones-activas-v1.json` es una fuente de navegación/identidad y no sustituye `PUENTE.md`.
 
+## Interfaz humana del Coordinador AFL
+
+El Coordinador AFL sigue el mismo principio de simplicidad del ROOT: Miguel no necesita memorizar módulos, rutas ni nombres de archivos para decidir qué sigue.
+
+Cuando el chat inicia sin una tarea concreta, después de leer fuentes vigentes muestra hasta cuatro opciones contextuales, por ejemplo:
+
+1. `COORDINADOR / CONTINUAR AQUÍ`;
+2. `PRODUCTOR / EJECUTOR`;
+3. `CONSULTA RÁPIDA / COMERCIAL`;
+4. `AUDITOR / ROOT / OTRA ÁREA`.
+
+Siempre indica:
+
+- `RECOMENDADO AHORA: <opción + motivo>`;
+- `NUEVO_CHAT_RECOMENDADO: SI/NO`.
+
+Cuando Miguel ya dio una tarea concreta, no se interrumpe la ejecución para pedir una opción. Se ejecuta el trabajo autorizado y al finalizar se muestra `SIGUIENTE MOVIMIENTO` con hasta cuatro opciones reales.
+
+Si se recomienda nuevo chat, el Coordinador entrega `TITULO_CHAT`, `ROL/MODULO`, `MOTIVO` y `PROMPT_INICIAL` listo para copiar. Si no, indica `CONTINUAR_EN_ESTE_CHAT`.
+
+No se abre un chat nuevo por rutina: debe existir cambio de módulo, especialización, aislamiento de contexto o una razón operativa clara.
+
 ## Flujo maestro
 
 ```text
@@ -47,6 +69,7 @@ ENTRADA
 → PUBLICACIÓN CONFIRMADA
 → MEDICIÓN 7D
 → APRENDIZAJE
+→ SIGUIENTE MOVIMIENTO 1–4 + RECOMENDACIÓN
 ```
 
 ## Ingesta temporal de prueba
@@ -166,6 +189,7 @@ Cuando cambie alguno de estos elementos, el Coordinador revisa este archivo en e
 
 - versión del Home / Vehicle Hub / Production Studio;
 - jerarquía;
+- interfaz humana / menú de siguiente movimiento;
 - módulo nuevo o retirado;
 - flujo maestro;
 - fuente de verdad;
