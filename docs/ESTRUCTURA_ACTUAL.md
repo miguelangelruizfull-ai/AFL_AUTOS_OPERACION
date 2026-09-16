@@ -14,6 +14,7 @@ Estado: `ACTIVA / HOME_V3.6`
 - `Vehicle Hub V1.2` → ficha privada/editable del vehículo.
 - `Production Studio V1.2` → decisión y producción por canal.
 - `Home Operaciones V3.6` → navegación, retorno al coordinador, siguiente chat, accesos rápidos, consulta de archivos e ingesta temporal de material por clasificar.
+- `Consulta Rápida Leads V1` → resolución captura/publicación → índice sanitizado → `EXPEDIENTE_KEY` → `PUENTE.md` → reglas comerciales → respuesta corta.
 - `Content Engine V4` → respaldo/legacy; no es el flujo canónico diario.
 
 ## Fuentes de verdad
@@ -25,6 +26,8 @@ Estado: `ACTIVA / HOME_V3.6`
 - coordinación / prompts / Home público → `AFL_AUTOS_OPERACION`;
 - arquitectura global → `ROOT_ECOSISTEMA`;
 - RAW / multimedia / referencias / entregables → Drive privado.
+
+El índice `data/publicaciones-activas-v1.json` es una fuente de navegación/identidad y no sustituye `PUENTE.md`.
 
 ## Flujo maestro
 
@@ -136,6 +139,27 @@ El Home puede exponer únicamente los accesos rápidos autorizados explícitamen
 
 Home V3.6 conserva la consulta de fuentes vigentes mediante prompts que obligan a leer GitHub conectado en vez de responder desde memoria.
 
+Para leads, el flujo canónico es:
+
+```text
+CAPTURA / PUBLICACIÓN ACTUAL
+→ data/publicaciones-activas-v1.json
+→ EXPEDIENTE_KEY
+→ PUENTE.md VIGENTE
+→ AFL_AUTOS_COMERCIAL
+→ RESPUESTA_RÁPIDA
+```
+
+Reglas:
+
+- `CONTEXTO_PREVIO ≠ IDENTIDAD_DE_UNIDAD`;
+- `PUBLICACIÓN ≠ PRECIO ACTUAL CONFIRMADO`;
+- el índice no almacena PII ni reemplaza datos variables del vehículo;
+- si publicación y `PUENTE.md` contradicen un dato, detener la afirmación con `CONTRADICCION_DETECTADA`;
+- una publicación confirmada/pausada/vendida/archivada debe actualizar el índice en el mismo cierre operativo;
+- el prompt canónico está en `prompts/CONSULTA_RAPIDA_LEADS.md`;
+- las reglas detalladas están en `docs/CONSULTA_RAPIDA_LEADS.md`.
+
 ## Regla de mantenimiento
 
 Cuando cambie alguno de estos elementos, el Coordinador revisa este archivo en el mismo bloque de trabajo:
@@ -147,6 +171,7 @@ Cuando cambie alguno de estos elementos, el Coordinador revisa este archivo en e
 - fuente de verdad;
 - acceso de carga rápida;
 - catálogo de archivos consultables;
+- índice sanitizado de publicaciones;
 - regla transversal de producción.
 
 Los estados particulares de cada vehículo continúan en su `PUENTE.md`; no se duplican aquí.
