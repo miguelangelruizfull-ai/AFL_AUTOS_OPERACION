@@ -32,6 +32,7 @@ Objetivo: continuar un vehículo/proyecto desde su estado real con el mínimo n�
 14. Si hace falta cambiar de cuenta, indicarlo antes de dar el enlace o la instrucción.
 15. Para almacenamiento durante la migración, priorizar material activo/canónico en Drive, documentación/reglas en GitHub y RAW histórico pesado en almacenamiento privado o local cuando ya no necesite permanecer online. `POR_CLASIFICAR` no es almacén permanente.
 16. Cuando `MIGRACION_DRIVE = CERRADA`, retirar el enrutamiento de cuentas del flujo normal y conservarlo solo para excepciones reales de propiedad/permisos.
+17. Antes del cierre final, leer y aplicar `prompts/PROTOCOLO_CIERRE_CHATS_HIJOS.md`.
 
 ## Estados guiados
 
@@ -106,6 +107,8 @@ SIGUIENTE_PASO:
 SIGUIENTE MÓDULO:
 CONTRADICCIONES/RIESGOS:
 ```
+
+Después del retorno aplicar también el bloque de `SIGUIENTE MOVIMIENTO`, `RECOMENDADO AHORA` y `NUEVO_CHAT_RECOMENDADO` definido en `prompts/PROTOCOLO_CIERRE_CHATS_HIJOS.md`.
 
 Mientras la migración esté activa, completar los campos de cuenta cuando la etapa toque Drive. Si no toca Drive o la migración ya cerró, usar `NO APLICA` salvo que exista una excepción real de permisos.
 
