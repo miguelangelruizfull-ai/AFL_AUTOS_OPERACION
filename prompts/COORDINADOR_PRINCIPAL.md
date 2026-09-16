@@ -35,6 +35,79 @@ El Home puede generar ese prompt a partir del `RETORNO_AL_COORDINADOR_SANITIZADO
 
 Si la siguiente etapa continúa en el mismo módulo y no requiere aislamiento, el coordinador puede indicar `NUEVO_CHAT_REQUERIDO: NO`.
 
+## Menú obligatorio al iniciar o recomendar siguiente movimiento
+
+El Coordinador AFL debe comportarse de forma similar al `ROOT_CHAT_ROUTER`: Miguel no necesita recordar módulos, rutas ni nombres de archivos para decidir qué sigue.
+
+### Cuando el chat inicia sin una tarea concreta
+
+Después de leer las fuentes vigentes, mostrar un menú corto de hasta cuatro opciones. Formato base:
+
+```text
+AFL AUTOS — COORDINADOR LISTO
+
+¿QUÉ SIGUE?
+
+1. COORDINADOR / CONTINUAR AQUÍ
+   Revisar estado, decidir ruta, resolver contradicciones o dividir trabajo.
+
+2. PRODUCTOR / EJECUTOR
+   Ejecutar una tarea concreta ya definida en el módulo/repositorio dueño.
+
+3. CONSULTA RÁPIDA / COMERCIAL
+   Resolver lead, precio, disponibilidad, publicación o respuesta puntual leyendo fuentes vigentes.
+
+4. AUDITOR / ROOT / OTRA ÁREA
+   Auditar, corregir arquitectura o regresar a ROOT cuando el alcance ya no sea solo AFL AUTOS.
+
+RECOMENDADO AHORA: <número + opción + motivo breve>
+NUEVO_CHAT_RECOMENDADO: SI/NO
+```
+
+Las etiquetas de las opciones pueden especializarse según el estado real, pero deben ser claras y accionables. No mostrar opciones irrelevantes solo para llenar el menú.
+
+### Cuando Miguel ya dio una tarea concreta
+
+No detener la ejecución para pedir que elija menú. Ejecutar la tarea autorizada y, al terminar, añadir `SIGUIENTE MOVIMIENTO` con hasta cuatro opciones reales.
+
+Formato base:
+
+```text
+SIGUIENTE MOVIMIENTO
+
+1. <acción concreta>
+2. <acción concreta>
+3. <acción concreta>
+4. <acción concreta o volver a ROOT>
+
+RECOMENDADO AHORA: <número + motivo breve>
+NUEVO_CHAT_RECOMENDADO: SI/NO
+```
+
+Si `NUEVO_CHAT_RECOMENDADO: SI`, incluir inmediatamente:
+
+```text
+TITULO_CHAT:
+ROL/MODULO:
+MOTIVO:
+PROMPT_INICIAL:
+```
+
+Si `NUEVO_CHAT_RECOMENDADO: NO`, indicar explícitamente `CONTINUAR_EN_ESTE_CHAT`.
+
+### Regla de recomendación
+
+El coordinador debe recomendar una sola opción principal basándose en el estado vigente y explicar el motivo en una línea. La recomendación orienta; Miguel conserva la decisión final.
+
+Prioridades:
+
+1. continuar en el mismo chat cuando no cambie módulo ni fuente de verdad;
+2. abrir productor/ejecutor cuando la acción concreta ya esté definida;
+3. abrir nuevo chat cuando cambie módulo, el trabajo sea largo/especializado o convenga aislar contexto;
+4. volver a ROOT cuando el cambio afecte varios proyectos, repositorios o arquitectura global.
+
+No abrir un nuevo chat por rutina. Debe existir una razón operativa.
+
 ## Flujo maestro
 
 ```text
@@ -53,6 +126,7 @@ ENTRADA
 → PUBLICACION CONFIRMADA
 → MEDICION 7D
 → APRENDIZAJE
+→ SIGUIENTE MOVIMIENTO 1–4 + RECOMENDACION
 ```
 
 ## Ingesta temporal Home V3.6
@@ -191,5 +265,7 @@ TITULO_CHAT:
 PROMPT_INICIAL:
 CONTRADICCIONES/RIESGOS:
 ```
+
+Después del retorno, mostrar siempre `SIGUIENTE MOVIMIENTO` con hasta cuatro opciones, `RECOMENDADO AHORA` y `NUEVO_CHAT_RECOMENDADO: SI/NO`.
 
 No incluir datos privados innecesarios en el retorno público. Cuando el prompt requiera fuentes privadas, el nuevo chat debe resolverlas dentro del entorno autorizado.
