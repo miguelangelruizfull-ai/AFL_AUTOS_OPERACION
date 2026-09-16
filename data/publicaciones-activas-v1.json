@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "updated_at": "2026-09-16",
+  "rule": "INDICE_SANITIZADO_DE_IDENTIDAD_NO_FUENTE_DE_VERDAD_DE_UNIDAD",
+  "coverage": "PUBLICACIONES_VIGENTES_DOCUMENTADAS_EN_FUENTES_DURABLES",
+  "authority_order": [
+    "CONTEXTO_ACTUAL_MIGUEL",
+    "PUBLICACIONES_ACTIVAS",
+    "PUENTE_VIGENTE",
+    "AFL_AUTOS_COMERCIAL",
+    "ROOT_ECOSISTEMA"
+  ],
+  "privacy": {
+    "forbidden": [
+      "PII_LEADS",
+      "CONVERSACIONES_PRIVADAS",
+      "TELEFONOS_PROSPECTOS",
+      "VIN_COMPLETO",
+      "IDS_PRIVADOS_DRIVE",
+      "RUTAS_PRIVADAS",
+      "CREDENCIALES"
+    ]
+  },
+  "publicaciones": [
+    {
+      "PUBLICACION_KEY": "FB_GENERIC_F150_2011_V2_2026-09-12",
+      "plataforma": "FACEBOOK",
+      "fecha": "2026-09-12",
+      "estado": "ACTIVA",
+      "vehiculo": "Ford F-150",
+      "anio": 2011,
+      "version": null,
+      "EXPEDIENTE_KEY": "PENDIENTE_Ford_F150_2011_Texas_Edition_2026-09-10",
+      "publicacion_o_pieza_relacionada": "Paquete corregido V2 / enlace genérico Facebook",
+      "copy_publico_vigente": "Usar únicamente copy V2 vigente referenciado por PUENTE; no reutilizar Texas Edition.",
+      "precio_mostrado_publicacion": null,
+      "ESTADO_PRECIO": "PENDIENTE_CONFIRMACION",
+      "disponibilidad_publica_conocida": null,
+      "CTA_autorizado": "Responder en canal; WhatsApp 2491151388 solo si facilita verificación o siguiente acción concreta.",
+      "telefono_comercial_autorizado": "2491151388",
+      "observaciones_publicas": "No afirmar Texas Edition. Precio pendiente/no confirmado en PUENTE.",
+      "referencia_PUENTE": "vehiculos/PENDIENTE_Ford_F150_2011_Texas_Edition_2026-09-10/PUENTE.md"
+    },
+    {
+      "PUBLICACION_KEY": "FB_FEED_F150_2011_V2_2026-09-12",
+      "plataforma": "FACEBOOK",
+      "fecha": "2026-09-12",
+      "estado": "ACTIVA",
+      "vehiculo": "Ford F-150",
+      "anio": 2011,
+      "version": null,
+      "EXPEDIENTE_KEY": "PENDIENTE_Ford_F150_2011_Texas_Edition_2026-09-10",
+      "publicacion_o_pieza_relacionada": "FLYER_FEED_F150_2011_CORREGIDO_V2.jpg",
+      "copy_publico_vigente": "Usar únicamente copy V2 vigente referenciado por PUENTE; no reutilizar Texas Edition.",
+      "precio_mostrado_publicacion": null,
+      "ESTADO_PRECIO": "PENDIENTE_CONFIRMACION",
+      "disponibilidad_publica_conocida": null,
+      "CTA_autorizado": "Responder en canal; WhatsApp 2491151388 solo si facilita verificación o siguiente acción concreta.",
+      "telefono_comercial_autorizado": "2491151388",
+      "observaciones_publicas": "Publicación V2 confirmada por Miguel. Precio no confirmado.",
+      "referencia_PUENTE": "vehiculos/PENDIENTE_Ford_F150_2011_Texas_Edition_2026-09-10/PUENTE.md"
+    },
+    {
+      "PUBLICACION_KEY": "FB_REEL_F150_2011_V2_2026-09-12",
+      "plataforma": "FACEBOOK_REEL",
+      "fecha": "2026-09-12",
+      "estado": "ACTIVA",
+      "vehiculo": "Ford F-150",
+      "anio": 2011,
+      "version": null,
+      "EXPEDIENTE_KEY": "PENDIENTE_Ford_F150_2011_Texas_Edition_2026-09-10",
+      "publicacion_o_pieza_relacionada": "FACEBOOK_REEL_F150_2011_CORREGIDO_V2.mp4",
+      "copy_publico_vigente": "Usar únicamente copy V2 vigente referenciado por PUENTE; no reutilizar Texas Edition.",
+      "precio_mostrado_publicacion": null,
+      "ESTADO_PRECIO": "PENDIENTE_CONFIRMACION",
+      "disponibilidad_publica_conocida": null,
+      "CTA_autorizado": "Responder en canal; WhatsApp 2491151388 solo si facilita verificación o siguiente acción concreta.",
+      "telefono_comercial_autorizado": "2491151388",
+      "observaciones_publicas": "Publicación V2 confirmada por Miguel. No inferir versión desde calcomanía visible.",
+      "referencia_PUENTE": "vehiculos/PENDIENTE_Ford_F150_2011_Texas_Edition_2026-09-10/PUENTE.md"
+    },
+    {
+      "PUBLICACION_KEY": "TIKTOK_F150_2011_V2_2026-09-12",
+      "plataforma": "TIKTOK",
+      "fecha": "2026-09-12",
+      "estado": "ACTIVA",
+      "vehiculo": "Ford F-150",
+      "anio": 2011,
+      "version": null,
+      "EXPEDIENTE_KEY": "PENDIENTE_Ford_F150_2011_Texas_Edition_2026-09-10",
+      "publicacion_o_pieza_relacionada": "TIKTOK_F150_2011_CORREGIDO_V2.mp4",
+      "copy_publico_vigente": "Usar únicamente copy V2 vigente referenciado por PUENTE; no reutilizar Texas Edition.",
+      "precio_mostrado_publicacion": null,
+      "ESTADO_PRECIO": "PENDIENTE_CONFIRMACION",
+      "disponibilidad_publica_conocida": null,
+      "CTA_autorizado": "Usar siguiente acción comercial vigente; no inventar teléfono/CTA de la pieza.",
+      "telefono_comercial_autorizado": null,
+      "observaciones_publicas": "Publicación V2 confirmada por Miguel. Precio no confirmado.",
+      "referencia_PUENTE": "vehiculos/PENDIENTE_Ford_F150_2011_Texas_Edition_2026-09-10/PUENTE.md"
+    }
+  ],
+  "maintenance": {
+    "on_publicacion_confirmada": "AGREGAR_O_ACTUALIZAR_REGISTRO",
+    "on_pausa": "estado=PAUSADA",
+    "on_venta": "estado=VENDIDA",
+    "on_archivo": "estado=ARCHIVADA",
+    "on_new_vehicle_data": "ACTUALIZAR_PUENTE_NO_DUPLICAR_EN_INDICE"
+  }
+}
