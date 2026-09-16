@@ -1,8 +1,8 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "updated_at": "2026-09-16",
   "rule": "INDICE_SANITIZADO_DE_IDENTIDAD_NO_FUENTE_DE_VERDAD_DE_UNIDAD",
-  "coverage": "PUBLICACIONES_VIGENTES_DOCUMENTADAS_EN_FUENTES_DURABLES",
+  "coverage": "PUBLICACIONES_VIGENTES_DOCUMENTADAS_EN_FUENTES_DURABLES_MAS_OBSERVACIONES_PENDIENTES_DE_VINCULO",
   "authority_order": [
     "CONTEXTO_ACTUAL_MIGUEL",
     "PUBLICACIONES_ACTIVAS",
@@ -99,11 +99,32 @@
       "referencia_PUENTE": "vehiculos/PENDIENTE_Ford_F150_2011_Texas_Edition_2026-09-10/PUENTE.md"
     }
   ],
+  "pendientes_vinculo": [
+    {
+      "PUBLICACION_KEY": "META_JEEP_JL_2018_OBSERVADA_2026-09-16",
+      "plataforma": "META_PUBLICACION_ASOCIADA_A_LEAD",
+      "fecha": "2026-09-16",
+      "estado_registro": "PENDIENTE_VINCULO_CANONICO",
+      "identidad_observada": [
+        "Jeep Rubicon JL 2018",
+        "Jeep Wrangler JL 2018"
+      ],
+      "CONTRADICCION_DETECTADA": "La evidencia durable disponible usa Rubicon JL 2018 y el ejemplo operativo aportado por Miguel usa Wrangler JL 2018. No crear expediente ni fijar versión hasta resolver la identidad exacta.",
+      "EXPEDIENTE_KEY": null,
+      "precio_referencia_aportado_por_miguel": 565000,
+      "moneda": "MXN",
+      "ESTADO_PRECIO": "REFERENCIA",
+      "disponibilidad_publica_conocida": null,
+      "uso_permitido": "Puede orientar la respuesta actual/futura como precio de referencia sujeto a confirmación solo cuando la publicación actual identifique inequívocamente esta misma unidad. No usar para autoenvío Meta ni como precio confirmado.",
+      "referencia_PUENTE": null
+    }
+  ],
   "maintenance": {
     "on_publicacion_confirmada": "AGREGAR_O_ACTUALIZAR_REGISTRO",
     "on_pausa": "estado=PAUSADA",
     "on_venta": "estado=VENDIDA",
     "on_archivo": "estado=ARCHIVADA",
-    "on_new_vehicle_data": "ACTUALIZAR_PUENTE_NO_DUPLICAR_EN_INDICE"
+    "on_new_vehicle_data": "ACTUALIZAR_PUENTE_NO_DUPLICAR_EN_INDICE",
+    "on_unlinked_publication": "REGISTRAR_EN_PENDIENTES_VINCULO_Y_NO_INVENTAR_EXPEDIENTE"
   }
 }
