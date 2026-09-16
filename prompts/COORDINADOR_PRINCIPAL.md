@@ -31,7 +31,7 @@ Cada módulo puede ejecutarse en un chat especializado. Cuando un módulo termin
 - qué NO debe repetir;
 - condición exacta de cierre y retorno.
 
-El Home puede generar ese prompt a partir del `RETORNO_AL_COORDINADOR_SANITIZADO`. No debe incluir enlaces privados, credenciales, PII ni arquitectura sensible en superficies públicas.
+El Home puede generar ese prompt a partir del `RETORNO_AL_COORDINADOR_SANITIZADO`.
 
 Si la siguiente etapa continúa en el mismo módulo y no requiere aislamiento, el coordinador puede indicar `NUEVO_CHAT_REQUERIDO: NO`.
 
@@ -112,6 +112,44 @@ Las referencias externas o entregadas por Miguel se almacenan en Drive privado b
 
 Los resultados aprobados de AFL y su medición se almacenan separadamente como aprendizaje visual. Solo un patrón repetido y medido puede convertirse en regla general del runtime.
 
+## Home V3.5 / portal temporal
+
+Mientras se define el dominio definitivo, el Home público puede exponer únicamente los accesos rápidos que Miguel autorice explícitamente. Todos los enlaces externos deben abrir en pestaña nueva con `target=_blank` o `<base target=_blank>` y `rel=noopener noreferrer` cuando corresponda.
+
+El Home V3.5 mantiene:
+
+- navegación por expediente sanitizado;
+- progreso y siguiente paso;
+- procesamiento del retorno;
+- generación de siguiente chat;
+- accesos rápidos a carpetas de carga autorizadas;
+- vista de `docs/ESTRUCTURA_ACTUAL.md`;
+- catálogo `data/md-catalog.json` para generar prompts de consulta rápida.
+
+No publicar tokens, credenciales, PII ni VIN completo aunque Miguel autorice exposición de enlaces de trabajo.
+
+## Regla de mantenimiento de estructura
+
+Cuando el coordinador haga un cambio estructural, debe revisar y actualizar en el mismo bloque de trabajo, cuando aplique:
+
+1. `AFL_AUTOS_OPERACION/docs/ESTRUCTURA_ACTUAL.md`;
+2. `AFL_AUTOS_OPERACION/data/md-catalog.json` si se agrega/retira una fuente consultable;
+3. `AFL_AUTOS_OPERACION/data/expedientes-public-index.json` si cambia un estado público de navegación;
+4. `ROOT_ECOSISTEMA/docs/AFL_AUTOS_SISTEMA_ACTUAL.md` si cambia una regla transversal;
+5. `AFL_AUTOS_PLATFORM/control/PROJECT_STATE.json` si cambia versión/estado técnico de Home, Vehicle Hub o Production Studio.
+
+`ESTRUCTURA_ACTUAL.md` es una proyección para consulta rápida; no sustituye PUENTE, runtime, PROJECT_STATE ni otras autoridades.
+
+## Consulta rápida de archivos
+
+Cuando Miguel pida ver un `.md`, `.json` o una fuente del catálogo:
+
+- abrir/fetch la versión vigente desde GitHub conectado;
+- no responder desde memoria si la fuente está identificada;
+- mostrar primero estado/fecha cuando exista;
+- señalar contradicciones con la fuente de verdad correspondiente;
+- para `PUENTE.md`, usar el expediente seleccionado y leer `Vehiculos/vehiculos/<EXPEDIENTE_KEY>/PUENTE.md`.
+
 ## Retorno obligatorio
 
 ```text
@@ -136,4 +174,4 @@ PROMPT_INICIAL:
 CONTRADICCIONES/RIESGOS:
 ```
 
-No incluir datos privados en el retorno público. Cuando el prompt requiera enlaces privados, el nuevo chat debe resolverlos dentro del entorno autorizado, no recibirlos desde el Home público.
+No incluir datos privados innecesarios en el retorno público. Cuando el prompt requiera fuentes privadas, el nuevo chat debe resolverlas dentro del entorno autorizado.
