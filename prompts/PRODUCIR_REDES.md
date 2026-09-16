@@ -1,6 +1,6 @@
 # Prompt base — Producir redes
 
-Objetivo: producir una pieza/publicación de calidad sin obligar a releer toda la auditoría histórica en cada ejecución.
+Objetivo: producir un paquete de venta profesional, actual y trazable sin releer toda la auditoría histórica ni exponer fuentes privadas.
 
 ## FAST PATH — ruta normal
 
@@ -8,220 +8,154 @@ Antes de producir una unidad existente:
 
 1. leer `Vehiculos/.../PUENTE.md` vigente;
 2. leer `AFL_AUTOS_CONTENT_SYSTEM/runtime/CONTENT_RUNTIME.md`;
-3. revisar únicamente el material real seleccionado/retocado necesario para la pieza;
-4. producir con las reglas activas;
-5. abrir fuentes profundas solo si aparece una contradicción, bloqueo, rediseño importante o información que el runtime no resuelva.
+3. revisar únicamente material real seleccionado/retocado necesario;
+4. resolver `GATE DE PRODUCCION`;
+5. hacer pulso ligero de tendencia actual del día cuando exista web y aporte valor;
+6. producir por formato/plataforma;
+7. abrir fuentes profundas solo ante contradicción, bloqueo, rediseño mayor, rechazo repetido o test formal.
 
-No es necesario leer `START_HERE`, todos los engines, auditorías, feedback logs y casos en cada tarea normal si `CONTENT_RUNTIME.md` ya contiene la regla activa.
+## Gate de producción — obligatorio
 
-## Ruta profunda — usar solo cuando haga falta
+Si la instrucción actual no lo define, preguntar a Miguel antes de producir:
 
-Consultar según el problema:
+1. `OBJETIVO PRINCIPAL` — vender/mensaje, WhatsApp/llamada, visita, alcance, interacción o prueba creativa;
+2. `¿MOSTRAMOS PRECIO? SI / NO`;
+3. `TELEFONO CTA: NINGUNO / 1 / 2 / AMBOS`;
+4. `DURACION` — si no está definida, proponer la recomendada según material/plataforma/tendencia;
+5. `CTA` — recomendar posición/estructura; si hay teléfono, el video de venta debe cerrar con CTA legible.
 
-### Gráfico
+Los números autorizados y reglas de precio viven en el repositorio privado `AFL_AUTOS_COMERCIAL`; no duplicarlos en este repositorio público.
 
-- `docs/EVIDENCE_AND_PUBLICATION_RULES.md`;
-- `docs/BRAND_ASSETS.md`;
-- `formats/ACTIVE_VISUAL_DIRECTION.md`;
-- `formats/FLYERS_PORTADAS.md`;
-- `formats/FLYER_ENGINE.md`;
-- `formats/FLYER_FAMILIES.md`;
-- `library/flyer_audit/COMMON_ERRORS.md`;
-- `library/flyer_audit/REFERENCE_STATUS.md`;
-- `POSITIVE_REFERENCES.md`;
-- `NEGATIVE_CASES.md`;
-- `VISUAL_FEEDBACK_LOG.md`;
-- campaña/moodboard aplicable.
+## Verdad y privacidad
 
-### Audiovisual
+- `PUENTE.md` manda sobre datos de la unidad;
+- no inventar precio, motor, versión, equipamiento, documentación o disponibilidad;
+- no publicar VIN completo;
+- no publicar odómetro/millas/kilómetros;
+- no exponer rutas privadas, enlaces privados de Drive, PII, conversaciones o credenciales en este repositorio;
+- no convertir nombre de archivo, flyer, referencia o tendencia en fuente técnica;
+- no publicar automáticamente;
+- originales intactos; derivados versionados.
 
-- `rules/AUDIOVISUAL_COMPETITIVE_PRODUCTION.md`;
-- `networks/tiktok/EDITORIAL_ENGINE.md`;
-- `networks/tiktok/FORMAT_FAMILIES.md`;
-- `networks/tiktok/HOOKS_AND_CTA.md`;
-- `networks/tiktok/EDITING_EFFECTS_LIBRARY.md`;
-- `networks/tiktok/VIDEO_AUDIT_INDEX.md`;
-- `networks/tiktok/CAPTURE_GUIDE.md`.
+## Gate fotográfico
 
-Abrir esta ruta profunda cuando:
+Antes de flyer, portada, historia, feed, Marketplace, catálogo o foto final:
 
-- haya contradicción;
-- la foto/material no soporte la pieza;
-- Miguel pida auditoría/justificación;
-- se esté probando una dirección nueva;
-- se procese una referencia externa;
-- un diseño falle repetidamente;
-- el runtime no cubra el caso.
+`ORIGINAL → SELECCION → RETOQUE CONSERVADOR → VALIDACION_FIDELIDAD → PIEZA_FINAL`
 
-## Regla creativa
-
-`REFERENCIA_POSITIVA_APROBADA_POR_MIGUEL > DIRECCION_ACTIVA > REFERENCIA_HISTORICA_NO_VALIDADA`
-
-Ninguna referencia confirma datos técnicos.
-
-## Gate fotográfico obligatorio
-
-Antes de cualquier flyer, portada, historia o feed final:
-
-`ORIGINAL → SELECCION → RETOQUE → LAVADO_VISUAL_SI_APLICA → VALIDACION_FIDELIDAD → PIEZA_FINAL`
-
-- el retoque de la foto seleccionada es obligatorio;
-- si hay suciedad superficial visible, aplicar lavado visual;
+- lavado visual únicamente superficial y conservador cuando aplique;
 - no ocultar daños reales;
 - no cambiar color, rines, llantas, accesorios, carrocería, altura, interior o proporciones;
-- conservar originales y derivados por separado.
+- si la foto no soporta la pieza: `BLOQUEADO_POR_FOTO / REQUIERE_MEJOR_HERO`.
 
-Si la foto no soporta la pieza:
+## Inspección física paralela
 
-`BLOQUEADO_POR_FOTO / REQUIERE_MEJOR_HERO`.
+Durante foto/video registrar observaciones útiles para operación física: faltantes, limpieza, pieza rota, detalle cosmético o elemento a revisar.
+
+`OBSERVACION_VISUAL ≠ DIAGNOSTICO_MECANICO`
+
+Toda observación de IA queda `REQUIERE_CONFIRMACION` hasta validación humana. No ocultar el detalle mediante retoque.
 
 ## Gate gráfico
 
 Antes de `PRODUCIDO` comprobar:
 
-- vehículo como HERO inequívoco;
-- aproximadamente 60–85 % de protagonismo perceptual cuando sea razonable;
-- logo oficial una sola vez;
-- jerarquía `VEHICULO → MARCA/MODELO/AÑO → DIFERENCIADOR → CTA → LOGO`;
-- `NO ICONOS`;
-- máximo 2–4 datos confirmados/publicables;
-- CTA único y secundario;
-- espacio negativo suficiente;
-- lectura móvil;
-- apariencia contemporánea/editorial;
-- composición propia por formato;
-- no plantilla genérica;
-- no usar `premium` como etiqueta para fingir una diferencia inexistente.
+- vehículo HERO inequívoco;
+- logo oficial;
+- jerarquía clara;
+- `NO ICONOS` salvo cambio explícito de dirección;
+- máximo 2–4 datos confirmados/publicables en pieza principal;
+- CTA coherente con el gate;
+- lectura móvil y espacio suficiente;
+- diseño propio por formato;
+- no plantilla genérica.
 
-### Formatos
+## Gate audiovisual
 
-**Feed 4:5** — HERO dominante, título compacto, aire y 2–4 datos.
+Antes de cerrar TikTok/Reel:
 
-**Historia 9:16** — diseñar verticalmente desde origen, respetar zonas seguras.
+- hook fuerte desde 0–2 s cuando el concepto lo permita;
+- una idea principal;
+- audio resuelto;
+- ritmo/editorial con intención;
+- texto breve y legible;
+- efectos actuales solo cuando mejoren la pieza;
+- CTA definido;
+- adaptación real por plataforma;
+- no ensamblaje plano de clips + texto.
 
-**Portada Facebook Reel** — miniatura simple, vehículo + modelo/configuración + texto breve.
+### Tendencia del día
 
-**Portada TikTok** — adaptar a cuadrícula/overlays; no clonar automáticamente la portada Reel.
+Cuando exista web, consultar señales actuales relevantes de TikTok/Reels/edición el mismo día de producción. La tendencia puede orientar hook, audio, duración, ritmo, transición y lenguaje de edición.
 
-**Historias** — `IDENTIDAD/HERO → DIFERENCIADOR → ACCION`.
+`TENDENCIA ≠ PLANTILLA`
 
-## Gate audiovisual competitivo — obligatorio
+No copiar campañas, identidad o layouts distintivos de terceros.
 
-**AUTORIZACION_MIGUEL:** `APROBADA / REGLA_ACTIVA / 2026-09-14`.
+### Audio
 
-Fuente canónica de detalle:
+Prioridad:
 
-`AFL_AUTOS_CONTENT_SYSTEM/rules/AUDIOVISUAL_COMPETITIVE_PRODUCTION.md`
+1. tendencia/audio apropiado y utilizable;
+2. música/base compatible;
+3. voz en off si aporta;
+4. tratamiento original de audio si no existe una opción adecuada.
 
-Antes de marcar un TikTok o Facebook/Instagram Reel como `PRODUCIDO`, no basta con que la selección de tomas, estrategia, copy y secuencia sean correctos. La pieza final debe alcanzar un nivel audiovisual competitivo y actual para video corto.
+Sincronizar audio con cortes y acciones visibles.
 
-Registrar como mínimo:
+## Paquete de venta — estándar de agencia
 
-- `FAMILIA_EDITORIAL`;
-- objetivo;
-- `HOOK_0_3S`;
-- secuencia;
-- duración;
-- CTA principal;
-- variable creativa si existe test;
-- estrategia de audio;
-- criterio de ritmo/edición;
-- referencia positiva aprobada por Miguel cuando exista.
+Según material y objetivo producir los elementos que apliquen:
 
-### Estándar mínimo de salida
+### Marketplace
+- HERO/portada;
+- 12–20 fotos útiles retocadas y ordenadas;
+- título;
+- descripción;
+- precio según gate;
+- CTA.
 
-- vehículo, función o acción real comprensible desde el primer impacto; buscar hook fuerte especialmente en 0–2 s y validarlo a 0–3 s;
-- una idea principal al inicio;
-- no abrir con ficha técnica;
-- edición con intención: cortes, cambios de plano y progresión suficientes para evitar sensación plana o de montaje crudo;
-- ritmo adecuado a la plataforma y a la unidad;
-- texto/motion text breve, legible en móvil, jerarquizado y sincronizado con la narrativa cuando aporte información o hook;
-- audio resuelto: música/fondo, audio útil de fuente y/o voz en off cuando la pieza la necesite; no entregar un audiovisual final que se sienta vacío por falta de tratamiento sonoro;
-- efectos actuales permitidos y recomendados cuando mejoren hook, ritmo o énfasis: punch-ins, zooms sutiles, speed ramps moderados, transiciones breves, motion text y acentos sonoros;
-- color, contraste, encuadre y nitidez tratados de forma suficiente sin falsear físicamente el vehículo;
-- CTA único;
-- TikTok y Facebook/Instagram Reel deben adaptarse por red; no entregar automáticamente el mismo montaje sin justificarlo;
-- no copiar overlays históricos como datos vigentes;
-- no aplicar una plantilla idéntica a todas las unidades.
+### WhatsApp directo
+- 6–10 fotos seleccionadas/retocadas;
+- video breve o walkaround;
+- ficha resumida;
+- flyer/portada cuando aporte;
+- CTA según gate.
 
-### Regla de competitividad
+### Catálogo WhatsApp
+- 6–8 fotos representativas y consistentes;
+- datos resumidos confirmados;
+- precio solo si está autorizado.
 
-Los efectos no son un checklist decorativo ni deben agregarse solo por moda. Sin embargo, la ausencia de efectos llamativos NO justifica una pieza plana: el resultado debe demostrar ritmo, intención editorial, audio funcional, acabado moderno y capacidad de detener el scroll.
+### Facebook
+- feed/post;
+- galería cuando aporte;
+- Reel adaptado;
+- portada;
+- copy.
 
-Si la pieza se percibe como simple, lenta, sin acabado, sin audio útil, sin ritmo suficiente o como ensamblaje básico de clips + texto, aunque la información sea correcta:
+### TikTok
+- versión 9:16 específica;
+- pulso de tendencia del día cuando sea verificable;
+- hook/ritmo/audio/efectos adaptados;
+- CTA coherente.
 
-`REQUIERE_MEJORA_AUDIOVISUAL / NO_CERRAR_COMO_PRODUCIDO`.
-
-Consultar `AFL_AUTOS_CONTENT_SYSTEM/networks/tiktok/EDITING_EFFECTS_LIBRARY.md` para elevar la edición sin sacrificar fidelidad ni claridad comercial.
-
-### Referencias positivas audiovisuales
-
-Cuando Miguel identifique un TikTok, Reel, portada o pieza visual propia como aprobada para aprendizaje, tratarla como `REFERENCIA_POSITIVA_APROBADA_POR_MIGUEL`.
-
-Drive de referencias aprobadas:
-
-`https://drive.google.com/drive/folders/1KEmNxYgcuJBGnkDiQq8K5e801ZqvLWU2`
-
-Se puede aprender de:
-
-- selección y duración de tomas;
-- ritmo;
-- hook;
-- estructura narrativa;
-- tratamiento de texto;
-- transiciones;
-- motion text;
-- energía;
-- música/SFX/voz;
-- CTA;
-- nivel de acabado.
-
-No copiar automáticamente la pieza ni trasladar datos técnicos, precio, versión o equipamiento a otra unidad. `PUENTE.md` sigue siendo la autoridad del vehículo.
-
-### Check final audiovisual
-
-Antes de `PRODUCIDO`, responder internamente:
-
-- ¿detiene el scroll desde el inicio?;
-- ¿tiene ritmo suficiente para la plataforma?;
-- ¿se siente actual y profesional?;
-- ¿el audio está resuelto?;
-- ¿el texto está jerarquizado y no estorba?;
-- ¿la edición enfatiza el vehículo y no los efectos?;
-- ¿TikTok y Reel están realmente adaptados por red?;
-- ¿el nivel final compite visualmente con contenido automotriz actual?
-
-Si alguna falla materialmente, corregir antes de cerrar la etapa.
-
-Si el material no soporta la familia/hook o el estándar competitivo:
-
-`BLOQUEADO_POR_MATERIAL / REQUIERE_MEJOR_SELECCION_O_CAPTURA`.
-
-## Referencias externas / competencia
-
-Si Miguel adjunta una referencia nueva, NO mezclar su análisis profundo dentro de la producción normal.
-
-Usar `prompts/ANALIZAR_REFERENCIA_CREATIVA.md` y `AFL_AUTOS_CONTENT_SYSTEM/library/external_references/README.md` para extraer patrones y adaptar de forma original a AFL AUTOS.
-
-No clonar logotipos, fotografías, textos completos, campañas o layouts distintivos ajenos.
+### Ficha resumida
+Usar solo datos confirmados/publicables: año/marca/modelo, motor/tracción/transmisión cuando estén confirmados, documentación publicable, diferenciadores, precio según gate y CTA.
 
 ## Producción
 
 A. verificar material real;
-B. definir familia/objetivo;
-C. producir Reel/TikTok adaptados por red cuando haya video suficiente y superar el gate audiovisual competitivo;
-D. producir feed/historia/portadas con composición propia;
-E. redactar copies específicos;
-F. subir derivados versionados;
+B. resolver gate;
+C. definir objetivo/familia;
+D. producir por plataforma;
+E. redactar copys específicos;
+F. subir derivados versionados al almacenamiento autorizado;
 G. verificar archivos;
-H. actualizar `PUENTE.md` con estado y enlace de revisión.
-
-No usar VIN, odómetro, precio no autorizado ni datos pendientes.
-
-No publicar automáticamente.
+H. actualizar `PUENTE.md` con estado y referencia de revisión sin exponer enlaces privados en superficies públicas.
 
 Estado máximo sin confirmación de Miguel:
 
-`PRODUCIDO / SUBIDO_A_DRIVE / PENDIENTE_APROBACION_MIGUEL`.
+`PRODUCIDO / SUBIDO_A_DRIVE / PENDIENTE_APROBACION_MIGUEL / NO_PUBLICAR`.
 
-Al terminar devolver `RETORNO_AL_COORDINADOR` con `LINK_PRINCIPAL`, `ESPERANDO_MIGUEL` y `SIGUIENTE_PASO` cuando corresponda.
+Al terminar devolver `RETORNO_AL_COORDINADOR` con estado, `ESPERANDO_MIGUEL` y `SIGUIENTE_PASO`. Los enlaces privados solo se muestran en contexto autorizado, nunca se publican en el Home o repositorio público.
