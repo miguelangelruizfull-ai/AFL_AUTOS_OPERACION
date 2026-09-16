@@ -26,7 +26,7 @@ URL:
 
 `UN SOLO HOME / FUENTES SEPARADAS`
 
-El Home no exige que Miguel elija manualmente el módulo normal. Selecciona un expediente, muestra el tablero de progreso y prepara la siguiente instrucción.
+El Home público no expone fuentes privadas. La producción privada puede usar herramientas separadas en `AFL_AUTOS_PLATFORM`, pero las reglas de coordinación permanecen aquí y las autoridades de datos no cambian.
 
 ## Flujo principal
 
@@ -41,6 +41,20 @@ SELECCIONAR VEHICULO
 → TABLERO ACTUALIZADO
 → SIGUIENTE ACCION
 ```
+
+## Producción diaria / ¿qué hacemos hoy?
+
+Cuando Miguel no llegue con un formato decidido, usar:
+
+`prompts/RECOMENDAR_PRODUCCION_HOY.md`
+
+La recomendación debe cruzar cuando exista evidencia suficiente:
+
+`INVENTARIO + MATERIAL + RECENCIA/FRECUENCIA + RESULTADOS + OBJETIVO COMERCIAL + PULSO ACTUAL`
+
+La salida propone 1–3 acciones concretas. Si Miguel aprueba una, entonces pasa a producción normal mediante `prompts/PRODUCIR_REDES.md`.
+
+La interfaz privada de selección/órdenes vive en `AFL_AUTOS_PLATFORM/apps/production-studio/`; este repositorio público no expone sus JSON privados, VIN completos ni enlaces de Drive.
 
 ## Semáforo
 
@@ -89,8 +103,9 @@ Producción normal:
 
 Las auditorías, motores completos, logs y casos se consultan bajo demanda cuando hay contradicción, bloqueo, auditoría, rediseño importante o una regla ausente en el runtime.
 
-Prompts actualizados:
+Prompts activos:
 
+- `prompts/RECOMENDAR_PRODUCCION_HOY.md`;
 - `prompts/PRODUCIR_REDES.md`;
 - `prompts/REVISION_APROBACION.md`;
 - `prompts/REVISAR_DISENO_APRENDIZAJE.md`;
@@ -105,6 +120,12 @@ Cuando corresponde, Home muestra la decisión:
 - `RECHAZADO_POR_MIGUEL / NO_PUBLICAR / REQUIERE_REDISENO`.
 
 El feedback durable sigue viviendo en `AFL_AUTOS_CONTENT_SYSTEM`.
+
+Para órdenes de producción privadas usar además:
+
+`RECOMENDADO → APROBADO_MIGUEL → EN_PRODUCCION → COMPLETADO`
+
+Ese estado no sustituye el estado de cada pieza ni el PUENTE del vehículo.
 
 ## Referencias creativas externas
 
@@ -138,7 +159,7 @@ Después de una publicación confirmada, el checkpoint normal queda simplificado
 
 `MEDICION_24H` y `MEDICION_72H` quedan retiradas del flujo normal a partir de `2026-09-13`. Los registros históricos se conservan, pero no generan nuevos checkpoints operativos.
 
-La fuente preferida para la medición semanal son exportables privados de Meta/Messenger/WhatsApp y métricas de plataforma depositados en Drive. El flujo debe leer nuevos exportables, validar origen, sanitizar resultados y actualizar las fuentes correspondientes sin exigir copiar/pegar métricas manualmente.
+La fuente preferida para medición son exportables privados de Meta/Messenger/WhatsApp y métricas de plataforma depositados en Drive. El flujo debe validar origen, sanitizar resultados y actualizar las fuentes correspondientes sin exigir copiar/pegar métricas manualmente.
 
 El Home público no consume ZIP/JSON RAW. La distribución es:
 
