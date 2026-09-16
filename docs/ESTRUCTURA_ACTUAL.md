@@ -1,9 +1,9 @@
 # AFL AUTOS — ESTRUCTURA ACTUAL
 
 Última actualización: 2026-09-16
-Estado: `ACTIVA / HOME_V3.5`
+Estado: `ACTIVA / HOME_V3.6`
 
-> Este archivo es una proyección operativa para consulta rápida. No sustituye las fuentes de verdad de cada repositorio. Debe actualizarse en el mismo cambio cuando se modifique la arquitectura, el flujo maestro o el catálogo de módulos.
+> Esta es una proyección operativa sanitizada. No sustituye las fuentes de verdad privadas ni el `PUENTE.md` de cada unidad.
 
 ## Jerarquía
 
@@ -13,18 +13,18 @@ Estado: `ACTIVA / HOME_V3.5`
 
 - `Vehicle Hub V1.2` → ficha privada/editable del vehículo.
 - `Production Studio V1.2` → decisión y producción por canal.
-- `Home Operaciones V3.5` → navegación, retorno al coordinador, siguiente chat, accesos rápidos y consulta de archivos.
+- `Home Operaciones V3.6` → navegación, retorno al coordinador, siguiente chat, accesos rápidos, consulta de archivos e ingesta temporal de material por clasificar.
 - `Content Engine V4` → respaldo/legacy; no es el flujo canónico diario.
 
 ## Fuentes de verdad
 
-- vehículo / datos variables → `Vehiculos/vehiculos/<EXPEDIENTE_KEY>/PUENTE.md`
-- creatividad / producción → `AFL_AUTOS_CONTENT_SYSTEM/runtime/CONTENT_RUNTIME.md`
-- comercial → `AFL_AUTOS_COMERCIAL`
-- estado / Homes privados / métricas sanitizadas → `AFL_AUTOS_PLATFORM`
-- coordinación / prompts / Home público → `AFL_AUTOS_OPERACION`
-- arquitectura global → `ROOT_ECOSISTEMA`
-- RAW / multimedia / referencias / entregables → Drive privado
+- vehículo / datos variables → `PUENTE.md` del expediente vigente;
+- creatividad / producción → `AFL_AUTOS_CONTENT_SYSTEM`;
+- comercial → `AFL_AUTOS_COMERCIAL`;
+- estado / Homes privados / métricas sanitizadas → `AFL_AUTOS_PLATFORM`;
+- coordinación / prompts / Home público → `AFL_AUTOS_OPERACION`;
+- arquitectura global → `ROOT_ECOSISTEMA`;
+- RAW / multimedia / referencias / entregables → Drive privado.
 
 ## Flujo maestro
 
@@ -45,6 +45,32 @@ ENTRADA
 → MEDICIÓN 7D
 → APRENDIZAJE
 ```
+
+## Ingesta temporal de prueba
+
+Home V3.6 expone temporalmente un acceso autorizado por Miguel al buzón de material por clasificar.
+
+Flujo:
+
+```text
+MIGUEL SUBE LOTE
+→ EJECUTOR LEE INSTRUCCIÓN PRIVADA VIGENTE
+→ IDENTIFICA UNIDAD CON EVIDENCIA
+→ SI ES SUFICIENTE: MUEVE EL LOTE A LA UNIDAD CANÓNICA DE PRODUCCIÓN
+→ VERIFICA ORIGEN + DESTINO
+→ VEHICLE HUB / SYNC_PUENTE
+→ SOLICITUD DE PRODUCCIÓN PENDIENTE
+→ PRODUCTION STUDIO
+```
+
+Reglas:
+
+- mover, no borrar;
+- no usar `copiar → borrar` si Drive permite movimiento directo;
+- si la identidad no es suficiente, no mover nada;
+- no inventar VIN/VIN6 ni identidad;
+- el destino privado de producción no se expone desde el Home público;
+- el retorno sanitizado no incluye enlaces privados, IDs de Drive, VIN completo ni PII.
 
 ## Producción social vigente
 
@@ -98,67 +124,28 @@ La ficha puede mantener:
 - gate de producción;
 - copy/base comercial;
 - atributos JSON;
-- carpeta principal Drive;
-- fotos para enviar;
-- todas las fotos;
-- videos;
-- producción;
-- resultados.
+- accesos privados a material y resultados.
 
 Al editar datos variables: `GUARDAR JSON → GENERAR SYNC_PUENTE → COORDINADOR ACTUALIZA PUENTE`.
 
-No poner tokens GitHub en el navegador.
+## Accesos temporales del Home
 
-## Accesos de carga temporal autorizados por Miguel
-
-Estos enlaces se exponen temporalmente en el Home público para agilizar operación mientras se define dominio/portal definitivo. Los permisos de Drive siguen controlando el acceso real.
-
-- Nuevo material AFL → https://drive.google.com/drive/folders/1dib-Q7iFTyJesmr5xGApTqGLB_jho22Y
-- Referencias — imágenes → https://drive.google.com/drive/folders/1sx8jZ74FhLfxOLd2hVevdkol944D2qEI
-- Referencias — videos → https://drive.google.com/drive/folders/18Wb8QpX4DxCLTHJKljdkoaYspJN-aqX7
-- Referencias — edición/tendencia → https://drive.google.com/drive/folders/1yrok4XmvkdKcKwWRWkzKzRxnq7xF-CwR
-- Resultados visuales aprobados → https://drive.google.com/drive/folders/1YqboL47gaw8Gp6GirHGVJ24n2_ITrdqw
-- Aprendizaje medido → https://drive.google.com/drive/folders/1H4XJni6GcMoL4mug18BGhtCl6REIybhl
-- Logos AFL → https://drive.google.com/drive/folders/1wYAsHihHXbg5eV6mpw-1IsRKPfhTBNad
-
-## Archivos que normalmente puedes pedirme desde chat
-
-- `ROOT_ECOSISTEMA/docs/AFL_AUTOS_SISTEMA_ACTUAL.md`
-- `ROOT_ECOSISTEMA/adapters/AFL_AUTOS.md`
-- `ROOT_ECOSISTEMA/control/CURRENT_FOCUS.md`
-- `AFL_AUTOS_PLATFORM/control/PROJECT_STATE.json`
-- `AFL_AUTOS_PLATFORM/schemas/vehicle_private_master.schema.json`
-- `AFL_AUTOS_PLATFORM/schemas/production_request.schema.json`
-- `AFL_AUTOS_CONTENT_SYSTEM/runtime/CONTENT_RUNTIME.md`
-- `AFL_AUTOS_OPERACION/prompts/COORDINADOR_PRINCIPAL.md`
-- `AFL_AUTOS_OPERACION/prompts/RECOMENDAR_PRODUCCION_HOY.md`
-- `AFL_AUTOS_OPERACION/docs/ESTRUCTURA_ACTUAL.md`
-- `Vehiculos/vehiculos/<EXPEDIENTE_KEY>/PUENTE.md`
+El Home puede exponer únicamente los accesos rápidos autorizados explícitamente por Miguel. Los permisos de Drive siguen controlando el acceso real. El destino canónico de producción permanece privado.
 
 ## Consulta rápida desde el Home
 
-El Home V3.5 permite seleccionar una fuente y genera un prompt como:
-
-```text
-AFL AUTOS — CONSULTA_RAPIDA_FUENTE
-
-FUENTE: AFL_AUTOS_CONTENT_SYSTEM/runtime/CONTENT_RUNTIME.md
-
-Usa GitHub conectado y abre la versión vigente exacta de esta fuente. No respondas desde memoria. Muéstrame un resumen operativo y, si te lo pido, el contenido completo. Señala fecha/estado y contradicciones con otras fuentes vigentes.
-```
-
-Para `PUENTE.md`, el Home usa el vehículo seleccionado y genera la ruta lógica del expediente.
+Home V3.6 conserva la consulta de fuentes vigentes mediante prompts que obligan a leer GitHub conectado en vez de responder desde memoria.
 
 ## Regla de mantenimiento
 
-Cuando cambie alguno de estos elementos, el Coordinador debe actualizar este archivo en el mismo bloque de trabajo:
+Cuando cambie alguno de estos elementos, el Coordinador revisa este archivo en el mismo bloque de trabajo:
 
 - versión del Home / Vehicle Hub / Production Studio;
 - jerarquía;
 - módulo nuevo o retirado;
 - flujo maestro;
 - fuente de verdad;
-- carpeta de carga rápida;
+- acceso de carga rápida;
 - catálogo de archivos consultables;
 - regla transversal de producción.
 
