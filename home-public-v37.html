@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101418">
+<base target="_blank">
+<title>AFL AUTOS — Centro de Operación V3.7</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#101418;color:#f4f7f8;font:15px system-ui,-apple-system,Segoe UI,sans-serif}.w{max-width:1120px;margin:auto;padding:16px}.c{background:#171d22;border:1px solid #2b363d;border-radius:14px;padding:15px;margin:12px 0}.hero{border-top:4px solid #d6aa3a}h1,h2,h3{margin:.2em 0 .6em}.m{color:#9fb0ba}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.row{display:grid;grid-template-columns:1fr 1fr;gap:9px}.actions{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:10px}.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}label{display:block;color:#9fb0ba;font-size:12px;margin:7px 0 4px}input,select,textarea,button,a{width:100%;padding:10px;border-radius:9px;border:1px solid #344149;background:#0e1317;color:#f4f7f8;font:inherit}button,a{cursor:pointer;text-align:center;text-decoration:none}.p{background:#d6aa3a;color:#18120a;font-weight:800}.b{background:#16344f}.g{background:#1b3b2c}.tip{background:#202831;border-radius:10px;padding:10px;color:#c6d0d5}.alert{background:#3b2d16;padding:9px;border-radius:9px;margin-top:8px}.red{background:#3b2020}.step{padding:9px;border:1px solid #344149;border-radius:10px}.now{border-color:#d6aa3a}.done{opacity:.62}.mono{white-space:pre-wrap;min-height:130px}.preview{white-space:pre-wrap;max-height:430px;overflow:auto;background:#0d1115;border:1px solid #303b43;border-radius:10px;padding:12px}.badge{display:inline-block;padding:3px 8px;border:1px solid #53626c;border-radius:999px;font-size:12px}.warn{border-left:4px solid #d6aa3a}@media(max-width:800px){.grid,.row,.actions,.quick{grid-template-columns:1fr}}
+</style>
+</head>
+<body><main class="w">
+<section class="c hero">
+<h1>AFL AUTOS — Centro de Operación V3.7</h1>
+<p class="m">Portal temporal de trabajo. Los enlaces externos abren en una pestaña nueva.</p>
+<div class="tip"><strong>Jerarquía:</strong> MIGUEL → ROOT → COORDINADOR AFL → MÓDULO → EJECUTOR</div>
+</section>
+
+<section class="c warn">
+<h2>Estado actual del sistema</h2>
+<p><span class="badge">Vehicle Hub V1.2</span> <span class="badge">Production Studio V1.2</span> <span class="badge">Home V3.7</span></p>
+<p class="m">Entrada temporal → identificación verificable → movimiento seguro a producción → Vehicle Hub / SYNC_PUENTE → solicitud pendiente → Production Studio → revisión Miguel. No se publica automáticamente.</p>
+</section>
+
+<section class="c">
+<h2>Accesos rápidos / subir archivos</h2>
+<p class="m">Miguel autorizó temporalmente estos accesos desde el Home. Los permisos de Drive siguen controlando el acceso real.</p>
+<div class="quick">
+<a class="p" href="https://drive.google.com/drive/folders/1RER49_MrNmAZ6qUws7d2Nr2FSerdPA4D" rel="noopener noreferrer">SUBIR → POR CLASIFICAR</a>
+<a class="b" href="https://drive.google.com/drive/folders/1sx8jZ74FhLfxOLd2hVevdkol944D2qEI" rel="noopener noreferrer">REFERENCIAS IMÁGENES</a>
+<a class="b" href="https://drive.google.com/drive/folders/18Wb8QpX4DxCLTHJKljdkoaYspJN-aqX7" rel="noopener noreferrer">REFERENCIAS VIDEOS</a>
+<a class="b" href="https://drive.google.com/drive/folders/1yrok4XmvkdKcKwWRWkzKzRxnq7xF-CwR" rel="noopener noreferrer">EDICIÓN / TENDENCIA</a>
+<a class="g" href="https://drive.google.com/drive/folders/1YqboL47gaw8Gp6GirHGVJ24n2_ITrdqw" rel="noopener noreferrer">RESULTADOS APROBADOS</a>
+<a class="g" href="https://drive.google.com/drive/folders/1H4XJni6GcMoL4mug18BGhtCl6REIybhl" rel="noopener noreferrer">APRENDIZAJE MEDIDO</a>
+<a class="b" href="https://drive.google.com/drive/folders/1wYAsHihHXbg5eV6mpw-1IsRKPfhTBNad" rel="noopener noreferrer">LOGOS AFL</a>
+<a class="p" href="respuestas.html" rel="noopener noreferrer">RESPONDER LEAD</a>
+<a href="https://chatgpt.com/" rel="noopener noreferrer">ABRIR CHATGPT</a>
+</div>
+</section>
+
+<section class="c warn">
+<h2>0. Ingesta rápida → preparar producción</h2>
+<p class="m">Sube primero el lote en <b>SUBIR → POR CLASIFICAR</b>. Después usa este botón. El ejecutor debe identificar la unidad, mover el lote sin borrarlo, verificar destino y preparar la solicitud de producción.</p>
+<div class="actions"><button id="ingest" class="p">INGESTAR Y PREPARAR PRODUCCIÓN — COPIAR</button><a class="b" href="https://chatgpt.com/" rel="noopener noreferrer">ABRIR NUEVO CHAT</a></div>
+</section>
+
+<section class="c">
+<h2>1. Vehículo / proyecto</h2>
+<div class="row"><div><label>Unidad activa</label><select id="vehicle"><option>Cargando…</option></select></div><div><label>Acción</label><button id="reload">ACTUALIZAR ÍNDICE</button></div></div>
+<div id="meta" class="tip">Selecciona una unidad.</div>
+</section>
+
+<section class="c"><h2>2. Progreso</h2><div id="progress" class="grid"></div><div id="alert"></div></section>
+
+<section class="c">
+<h2>3. Continuar / Coordinador</h2>
+<div id="next" class="tip">Selecciona una unidad.</div>
+<div class="actions"><button id="continue" class="p">CONTINUAR — COPIAR</button><button id="coord">COORDINADOR AFL — COPIAR</button><a class="b" href="https://chatgpt.com/" rel="noopener noreferrer">ABRIR NUEVO CHAT</a></div>
+</section>
+
+<section class="c">
+<h2>4. Retorno del chat</h2>
+<label>RETORNO_AL_COORDINADOR_SANITIZADO</label>
+<textarea id="handoff" class="mono" placeholder="Pega aquí el retorno del módulo/ejecutor."></textarea>
+<div class="actions"><button id="process" class="p">PROCESAR RETORNO</button><button id="nextChat">GENERAR SIGUIENTE CHAT</button><button id="clear">LIMPIAR LOCAL</button></div>
+<div id="returnStatus" class="m">Sin retorno procesado.</div>
+<label>Título siguiente chat</label><input id="chatTitle" readonly>
+<label>Prompt siguiente chat</label><textarea id="chatPrompt" class="mono" readonly></textarea>
+<div class="actions"><button id="copyChat" class="p">COPIAR PROMPT</button><a class="b" href="https://chatgpt.com/" rel="noopener noreferrer">ABRIR CHATGPT</a></div>
+</section>
+
+<section class="c">
+<h2>5. Módulos manuales</h2>
+<div class="grid">
+<button class="mode" data-mode="NUEVO_VEHICULO">Nuevo vehículo</button>
+<button class="mode" data-mode="PLAN_CAPTURA">Plan captura</button>
+<button class="mode" data-mode="SELECCIONAR_MATERIAL">Seleccionar material</button>
+<button class="mode" data-mode="RETOQUE">Retoque</button>
+<button class="mode" data-mode="PRODUCIR_REDES">Producir redes</button>
+<button class="mode" data-mode="REVISION">Revisión</button>
+<button class="mode" data-mode="PUBLICACION_MEDICION">Publicación / medición</button>
+<button class="mode" data-mode="VENDIDO_ENTREGA">Vendido / entrega</button>
+<button class="mode" data-mode="ANALIZAR_REFERENCIA">Analizar referencia</button>
+</div>
+<label>Nota opcional</label><textarea id="notes"></textarea>
+<div class="actions"><button id="advanced" class="p">GENERAR MÓDULO — COPIAR</button></div>
+</section>
+
+<section class="c warn">
+<h2>6. Comercial / leads</h2>
+<p class="m">Abre el asistente para comentario → respuesta pública → inbox → seguimiento. Incluye aprendizaje Meta sanitizado y alta de nuevo vehículo mediante JSON exportable. Los nombres, teléfonos y conversaciones privadas no se escriben en este repositorio público.</p>
+<div class="actions"><a class="p" href="respuestas.html" rel="noopener noreferrer">ABRIR ASISTENTE DE RESPUESTAS</a><a class="b" href="https://chatgpt.com/" rel="noopener noreferrer">ABRIR CHAT</a></div>
+<div class="tip">Nuevo vehículo: captura datos → importa/exporta JSON → genera prompt para ROOT. ROOT resuelve la fuente dueña y valida antes de persistir.</div>
+</section>
+
+<section class="c">
+<h2>7. Estructura actual</h2>
+<p class="m">Vista sanitizada de la estructura operativa. Las fuentes privadas siguen resolviéndose únicamente dentro del entorno autorizado.</p>
+<div class="actions"><button id="refreshStructure">ACTUALIZAR VISTA</button><a href="docs/ESTRUCTURA_ACTUAL.md">ABRIR .MD EN NUEVA PESTAÑA</a></div>
+<div id="structure" class="preview">Cargando estructura…</div>
+</section>
+
+<section class="c">
+<h2>8. Pedirme un archivo por chat</h2>
+<p class="m">Selecciona la fuente. El Home genera un prompt para leer la versión vigente desde GitHub.</p>
+<label>Archivo / fuente</label><select id="mdSource"><option>Cargando catálogo…</option></select>
+<div class="actions"><button id="buildMd" class="p">GENERAR PROMPT DE CONSULTA</button><button id="copyMd">COPIAR PROMPT</button><a class="b" href="https://chatgpt.com/" rel="noopener noreferrer">ABRIR CHATGPT</a></div>
+<textarea id="mdPrompt" class="mono" readonly></textarea>
+</section>
+
+<section class="c"><h2>Instrucción preparada</h2><textarea id="output" class="mono" readonly></textarea><div class="actions"><button id="copy" class="p">COPIAR</button></div><div id="status" class="m">Listo.</div></section>
+<footer class="m">El Home solo expone accesos designados por Miguel. Nunca debe publicar credenciales, tokens, PII, VIN completo ni destinos privados de producción.</footer>
+</main>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);const KEY='afl_home_public_v37';const INDEX='data/expedientes-public-index.json';const CATALOG='data/md-catalog.json';
+let items=[],selected=null,state={},mode='',catalog=[];
+const steps=[['EXPEDIENTE','Expediente'],['CAPTURA','Captura'],['SELECCION','Selección'],['RETOQUE','Retoque'],['PRODUC','Producción'],['REVISION','Revisión'],['PUBLIC','Publicación'],['MEDICION','Medición'],['CIERRE','Cierre']];
+const norm=s=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toUpperCase();
+function loadState(){try{state=JSON.parse(localStorage.getItem(KEY)||'{}')}catch{state={}}}
+function saveState(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch{}}
+function local(){if(!selected)return{};state.v=state.v||{};state.v[selected.key]=state.v[selected.key]||{};return state.v[selected.key]}
+function parse(t){const o={};String(t||'').split(/\r?\n/).forEach(l=>{const m=l.match(/^\s*([^:]{2,60}):\s*(.*)$/);if(m)o[norm(m[1]).replace(/[^A-Z0-9]+/g,'_').replace(/^_|_$/g,'')]=m[2].trim()});return o}
+function info(){if(!selected)return{action:'Selecciona un vehículo',state:'',step:0,wait:false,block:false};const r=local().parsed||{},a=r.SIGUIENTE_PASO||r.SIGUIENTE_MODULO||selected.siguiente_accion||'CONTINUAR',s=r.ESTADO_FINAL||selected.estado||'',all=norm(a+' '+s+' '+(selected.flags||[]).join(' '));let n=0;if(/CAPTURA|GRABAR/.test(all))n=1;if(/SELECCION/.test(all))n=2;if(/RETOQUE|LAVADO/.test(all))n=3;if(/PRODUC|FLYER|REEL|TIKTOK/.test(all))n=4;if(/REVISION|APROBACION|VALIDAR/.test(all))n=5;if(/PUBLICACION|PUBLICAR/.test(all))n=6;if(/MEDICION/.test(all))n=7;if(/CIERRE|VENDIDO|ENTREGA/.test(all))n=8;return{action:a,state:s,step:n,wait:all.includes('ESPERANDO_MIGUEL')||all.includes('PENDIENTE_APROBACION'),block:all.includes('BLOQUEADO')||all.includes('NO_PUBLICAR')}}
+function render(){const i=info();$('meta').innerHTML=selected?'<b>'+selected.label+'</b><br>'+selected.estado+'<br>Siguiente: '+selected.siguiente_accion:'Selecciona una unidad.';$('next').textContent=i.action;$('progress').innerHTML=steps.map((s,n)=>'<div class="step '+(n<i.step?'done':n===i.step?'now':'')+'"><b>'+s[1]+'</b></div>').join('');$('alert').innerHTML=(i.block?'<div class="alert red">Existe bloqueo/restricción: validar antes de publicar.</div>':'')+(i.wait?'<div class="alert">La siguiente acción depende de Miguel.</div>':'')}
+async function cp(t){if(!t)return;try{await navigator.clipboard.writeText(t);$('status').textContent='Copiado.'}catch{$('status').textContent='No se pudo copiar automáticamente.'}}
+const retorno='\n\n## RETORNO_AL_COORDINADOR_SANITIZADO\nTRABAJO:\nMODULO:\nVEHÍCULO/PROYECTO:\nEXPEDIENTE_KEY:\nETAPA EJECUTADA:\nPASO_TERMINADO:\nRESULTADO:\nESTADO FINAL:\nBLOQUEADO: SI/NO\nESPERANDO_MIGUEL: SI/NO\nACCION_MIGUEL:\nPENDIENTES:\nSIGUIENTE_PASO:\nSIGUIENTE_MODULO:\nNUEVO_CHAT_REQUERIDO: SI/NO\nTITULO_CHAT:\nPROMPT_INICIAL:\nCONTRADICCIONES/RIESGOS:';
+const privacy='\n\nPRIVACIDAD: resuelve Drive y fuentes privadas dentro del entorno autorizado. No devuelvas enlaces privados, IDs de Drive, rutas sensibles, VIN completo, PII ni credenciales. No publiques automáticamente.';
+function ingestPrompt(){return '# AFL AUTOS — INGESTA_Y_PREPARAR_PRODUCCION\n\nAUTORIZACION_MIGUEL: PROCESAR EL LOTE NUEVO DEL BUZON TEMPORAL Y PREPARARLO PARA PRODUCCION.\n\n1. Usa GitHub conectado y busca en AFL_AUTOS_PLATFORM la instrucción privada vigente titulada “AFL AUTOS — INGESTA POR CLASIFICAR”. Léela completa antes de actuar.\n2. Usa Drive conectado y resuelve el buzón temporal autorizado por Miguel. Procesa únicamente el lote nuevo que corresponda.\n3. Identifica la unidad con evidencia verificable. No inventes VIN, VIN6, año, versión ni identidad.\n4. Si la identidad es suficiente, mueve el lote al destino canónico definido por la instrucción privada. MOVER, NO BORRAR. Verifica origen y destino después de la operación.\n5. Si la identidad no es suficiente, no muevas ni borres nada; devuelve BLOQUEADO con la evidencia faltante.\n6. Sin repetir etapas terminadas, actualiza el estado durable/Vehicle Hub y genera SYNC_PUENTE cuando corresponda.\n7. Miguel quiere producir: crea o actualiza la solicitud de producción en estado PENDIENTE y enruta al Production Studio. No marques APROBADO_MIGUEL por inferencia.\n8. Si cambia de módulo, genera TITULO_CHAT + PROMPT_INICIAL para Production Studio.\n9. No publiques automáticamente.'+privacy+retorno}
+function guided(){if(!selected)return '# AFL AUTOS — NUEVO VEHÍCULO'+privacy+retorno;const i=info();return '# AFL AUTOS — CONTINUAR GUIADO\n\nVEHÍCULO/PROYECTO: '+selected.label+'\nEXPEDIENTE_KEY: '+selected.key+'\nPASO SUGERIDO: '+i.action+'\nESTADO ÍNDICE: '+i.state+'\n\n1. Lee/fetch primero el PUENTE vigente del expediente; manda sobre este resumen.\n2. Lee la autoridad del módulo correspondiente.\n3. Ejecuta solo el siguiente bloque lógico real y no repitas trabajo terminado.\n4. Si cambia SIGUIENTE_MODULO, genera TITULO_CHAT + PROMPT_INICIAL.\n5. Si es producción social: tendencia TikTok → TikTok → portada/copy/historia → tendencia Reel/Meta → Reel → portada/copy/post/historia.'+privacy+retorno}
+function coordinator(){return '# AFL AUTOS — COORDINADOR PRINCIPAL\n\nJERARQUIA: MIGUEL → ROOT → COORDINADOR AFL → MODULO → EJECUTOR\n\nLee el Coordinador Principal y las fuentes de verdad vigentes. Coordina, enruta, evita duplicación y genera nuevo chat cuando cambie de módulo.'+privacy+retorno}
+function modulePrompt(){const v=selected?selected.label:'NO INDICADO',k=selected?selected.key:'NO APLICA';let extra='';if(mode==='PRODUCIR_REDES')extra='\n\nPIPELINE SOCIAL OBLIGATORIO:\nTENDENCIA TIKTOK → TIKTOK → PORTADA/COPY/HISTORIA → TENDENCIA REEL/META → REEL → PORTADA/COPY/POST/HISTORIA. Investiga posicionamiento por plataforma con señales actuales verificables. TikTok y Reel no se clonan automáticamente.';return '# AFL AUTOS — '+(mode||'CONTINUAR')+'\n\nVEHÍCULO/PROYECTO: '+v+'\nEXPEDIENTE_KEY: '+k+'\nNOTAS: '+($('notes').value.trim()||'SIN NOTAS')+'\n\nLee PUENTE y autoridad del módulo antes de actuar. Ejecuta solo esta etapa.'+extra+privacy+retorno}
+function buildNextChat(){const r=parse($('handoff').value);const mod=r.SIGUIENTE_MODULO||r.MODULO||'CONTINUAR_GUIADO',veh=r.VEHICULO_PROYECTO||(selected?selected.label:'AFL AUTOS'),key=r.EXPEDIENTE_KEY||(selected?selected.key:'NO APLICA'),next=r.SIGUIENTE_PASO||'CONTINUAR',st=r.ESTADO_FINAL||'CONSULTAR FUENTE VIGENTE';const requested=norm(r.NUEVO_CHAT_REQUERIDO||'').includes('SI')||Boolean(r.SIGUIENTE_MODULO);$('chatTitle').value=requested?(r.TITULO_CHAT||('AFL — '+veh+' — '+mod)):'CONTINUAR EN EL MISMO CHAT';$('chatPrompt').value=requested?(r.PROMPT_INICIAL||('# AFL AUTOS — '+mod+'\n\nVEHÍCULO/PROYECTO: '+veh+'\nEXPEDIENTE_KEY: '+key+'\nESTADO RECIBIDO: '+st+'\nSIGUIENTE PASO: '+next+'\n\nLee primero la fuente vigente correspondiente. No repitas trabajo terminado. Ejecuta únicamente este módulo.'+privacy+retorno)):guided();$('returnStatus').textContent=requested?'Nuevo chat preparado.':'Continuar en el mismo chat.'}
+async function loadIndex(){try{const r=await fetch(INDEX+'?t='+Date.now(),{cache:'no-store'}),j=await r.json();items=j.expedientes||[];$('vehicle').innerHTML='<option value="">Selecciona…</option>'+items.map(x=>'<option value="'+x.key+'">'+x.label+'</option>').join('');if(state.selected&&items.some(x=>x.key===state.selected)){$('vehicle').value=state.selected;selected=items.find(x=>x.key===state.selected)}render()}catch{$('vehicle').innerHTML='<option>Índice no disponible</option>'}}
+async function loadStructure(){try{$('structure').textContent=await (await fetch('docs/ESTRUCTURA_ACTUAL.md?t='+Date.now(),{cache:'no-store'})).text()}catch{$('structure').textContent='No se pudo cargar la estructura.'}}
+async function loadCatalog(){try{const j=await (await fetch(CATALOG+'?t='+Date.now(),{cache:'no-store'})).json();catalog=j.sources||[];$('mdSource').innerHTML=catalog.map(x=>'<option value="'+x.id+'">'+x.label+'</option>').join('')}catch{$('mdSource').innerHTML='<option>Catálogo no disponible</option>'}}
+function buildMdPrompt(){const src=catalog.find(x=>x.id===$('mdSource').value);if(!src)return;let path=src.path||src.path_template||'';if(src.requires_vehicle){if(!selected){$('mdPrompt').value='Selecciona primero un vehículo.';return}path=path.replace('{EXPEDIENTE_KEY}',selected.key)}$('mdPrompt').value='# AFL AUTOS — CONSULTA_RAPIDA_FUENTE\n\nREPOSITORIO: '+src.repository+'\nARCHIVO: '+path+'\n\nUsa GitHub conectado y lee/fetch la versión vigente exacta de este archivo. No respondas desde memoria. Si hay contradicción con otra fuente vigente, señálala antes de recomendar acciones.'}
+$('vehicle').onchange=()=>{selected=items.find(x=>x.key===$('vehicle').value)||null;state.selected=selected?selected.key:'';saveState();render()};$('reload').onclick=loadIndex;$('ingest').onclick=()=>{const t=ingestPrompt();$('output').value=t;cp(t)};$('continue').onclick=()=>{const t=guided();$('output').value=t;cp(t)};$('coord').onclick=()=>{const t=coordinator();$('output').value=t;cp(t)};$('process').onclick=()=>{const p=parse($('handoff').value);if(selected){local().parsed=p;saveState()}render();buildNextChat()};$('nextChat').onclick=buildNextChat;$('clear').onclick=()=>{if(selected){delete local().parsed;saveState()}$('handoff').value='';$('chatTitle').value='';$('chatPrompt').value='';$('returnStatus').textContent='Limpio.'};$('copyChat').onclick=()=>cp($('chatPrompt').value);document.querySelectorAll('.mode').forEach(b=>b.onclick=()=>{mode=b.dataset.mode;document.querySelectorAll('.mode').forEach(x=>x.classList.remove('p'));b.classList.add('p')});$('advanced').onclick=()=>{const t=modulePrompt();$('output').value=t;cp(t)};$('refreshStructure').onclick=loadStructure;$('buildMd').onclick=buildMdPrompt;$('copyMd').onclick=()=>cp($('mdPrompt').value);$('copy').onclick=()=>cp($('output').value);
+loadState();loadIndex();loadStructure();loadCatalog();
+</script></body></html>
