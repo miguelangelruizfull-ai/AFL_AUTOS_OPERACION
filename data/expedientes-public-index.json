@@ -100,10 +100,12 @@
     {
       "key": "PENDIENTE_Volkswagen_Tiguan_SE_2018_2026-09-20",
       "label": "Volkswagen Tiguan SE 2018",
-      "estado": "VEHICULO_IDENTIFICADO / EXPEDIENTE_CREADO / PLAN_CAPTURA_PENDIENTE / NO_PUBLICAR",
-      "siguiente_accion": "ESTRATEGIA_PLAN_CAPTURA",
+      "estado": "PLAN_CAPTURA_LISTO / CARPETAS_ORIGINALES_LISTAS / CAPTURA_PENDIENTE / NO_PUBLICAR",
+      "siguiente_accion": "CAPTURA_COMPLEMENTARIA",
       "flags": [
-        "NO_PUBLICAR"
+        "ESPERANDO_MIGUEL",
+        "NO_PUBLICAR",
+        "CAPTURA_PENDIENTE"
       ]
     }
   ]
