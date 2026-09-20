@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AFL AUTOS — Asistente de Respuestas V1.1</title>
+<style>
+:root{--bg:#0e1116;--card:#171c23;--line:#2a323d;--text:#f6f8fb;--muted:#9ca7b5;--accent:#e5b94f;--ok:#48c889;--warn:#ffbf69;--blue:#65a9ff;--bad:#ff7474}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}header{position:sticky;top:0;z-index:4;background:#0e1116ee;border-bottom:1px solid var(--line);padding:13px 15px}.wrap{max-width:1040px;margin:auto}.brand{display:flex;justify-content:space-between;align-items:center;gap:10px}.brand h1{font-size:18px;margin:0}.brand small{color:var(--muted)}main{padding:15px}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:13px}.card h2,.card h3{margin:0 0 10px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}label{display:block;color:var(--muted);font-size:12px;margin:0 0 5px}input,select,textarea,button{width:100%;padding:11px;border:1px solid var(--line);border-radius:10px;background:#10151b;color:var(--text);font:inherit}textarea{min-height:90px;resize:vertical}button{cursor:pointer;background:#232a33}button.primary{background:var(--accent);border-color:transparent;color:#17130b;font-weight:800}button.ok{background:#163527;border-color:#24583e}button.blue{background:#17324f;border-color:#28527c}.out{white-space:pre-wrap;background:#0c1116;border:1px dashed #3b4654;border-radius:10px;padding:12px;min-height:76px;overflow-wrap:anywhere}.badge{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:4px 8px;color:var(--muted);font-size:12px}.notice{background:#2a2417;border:1px solid #5c4a24;border-radius:10px;padding:10px;color:#f0dca8;margin:9px 0}.notice.info{background:#142638;border-color:#28527c;color:#cfe7ff}.good{color:var(--ok)}.bad{color:var(--bad)}.muted{color:var(--muted)}.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:8px}.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}.step{background:#10151b;border:1px solid var(--line);border-radius:10px;padding:10px;font-size:12px}.row-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}.row-actions3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}.learn{display:flex;flex-wrap:wrap;gap:6px}.pill{padding:5px 8px;border-radius:999px;border:1px solid var(--line);font-size:12px;color:#d7dde5}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.kpi{background:#10151b;border:1px solid var(--line);border-radius:10px;padding:10px}.kpi b{display:block;font-size:22px}.kpi span{font-size:11px;color:var(--muted)}.bar{display:flex;gap:7px;flex-wrap:wrap}.bar .pill b{color:var(--accent)}.divider{height:1px;background:var(--line);margin:13px 0}.file{position:relative;overflow:hidden}.file input{position:absolute;inset:0;opacity:0;cursor:pointer}.small{font-size:12px;line-height:1.45}.route{border-left:3px solid var(--blue);padding-left:10px}.hidden{display:none!important}@media(max-width:760px){.grid3,.grid4,.kpis{grid-template-columns:1fr 1fr}}@media(max-width:520px){.grid2,.grid3,.grid4,.quick,.flow,.row-actions,.row-actions3,.kpis{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap brand"><div><h1>AFL AUTOS — Asistente de Respuestas</h1><small>Comentario → público → privado → seguimiento · Meta sanitizado + alta de vehículo JSON</small></div><span class="badge">V1.3 · HOME</span></div></header>
+<main class="wrap">
+<div class="card">
+<div class="row-actions">
+<a href="home-public-v37.html" style="display:block;text-align:center;text-decoration:none;padding:11px;border:1px solid var(--line);border-radius:10px;background:#232a33;color:var(--text)">← HOME AFL AUTOS</a>
+<a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer" style="display:block;text-align:center;text-decoration:none;padding:11px;border:1px solid var(--line);border-radius:10px;background:#17324f;color:var(--text)">ABRIR CHAT</a>
+</div>
+<p class="muted small" style="margin-bottom:0">Módulo público sanitizado. Los datos que captures se procesan localmente en el navegador; no convierte este repositorio en base de leads ni en fuente de verdad del vehículo.</p>
+</div>
+
+<div class="card">
+<h2>Pulso Meta histórico sanitizado</h2>
+<p class="muted small">Fuente: META_2026-09-14 procesada en histórico Meta sanitizado autorizado. Sirve para priorizar preguntas frecuentes; no confirma precio, disponibilidad, identidad ni especificaciones actuales.</p>
+<div class="kpis">
+<div class="kpi"><b>424</b><span>conversaciones</span></div>
+<div class="kpi"><b>1,892</b><span>mensajes</span></div>
+<div class="kpi"><b>1,047</b><span>mensajes de clientes</span></div>
+<div class="kpi"><b>PII 0</b><span>índice reutilizable sanitizado</span></div>
+</div>
+<div class="bar" style="margin-top:10px">
+<span class="pill"><b>234</b> disponibilidad</span><span class="pill"><b>154</b> precio</span><span class="pill"><b>33</b> fotos/media</span><span class="pill"><b>28</b> ubicación</span><span class="pill"><b>12</b> financiamiento</span><span class="pill"><b>12</b> contacto</span><span class="pill"><b>11</b> especificaciones</span><span class="pill"><b>5</b> toma a cuenta</span><span class="pill"><b>5</b> negociación</span>
+</div>
+<div class="notice info">Aplicación práctica: disponibilidad, precio, fotos y ubicación concentran la atención. La herramienta prioriza respuesta directa, una sola siguiente acción y evita reutilizar datos históricos como vigentes.</div>
+</div>
+
+<div class="card">
+<h2>1. Unidad</h2>
+<div class="grid3">
+<div><label>ID / referencia</label><input id="vid" placeholder="AFL-0009"></div>
+<div><label>Vehículo</label><input id="vehicle" value="Ford F-150 Lariat 2018"></div>
+<div><label>Estado</label><select id="availability"><option value="pending">Confirmar antes de afirmar</option><option value="available">Disponible confirmado</option><option value="sold">Vendido</option></select></div>
+</div>
+<div class="grid3" style="margin-top:8px">
+<div><label>Precio vigente confirmado</label><input id="price" placeholder="$510,000 MXN"></div>
+<div><label>Política de precio público</label><select id="pricePolicy"><option value="private">NO mostrar: mandar inbox</option><option value="authorized">Mostrar solo con autorización específica</option></select></div>
+<div><label>Ubicación pública corta</label><input id="location" value="Tecamachalco, Puebla"></div>
+</div>
+<div class="grid3" style="margin-top:8px">
+<div><label>Google Maps</label><input id="maps" value="https://maps.app.goo.gl/dwKi3Lvw2yCmPBgS8?g_st=ac"></div>
+<div><label>Contacto comercial autorizado</label><input id="contact" placeholder="Opcional"></div>
+<div><label>Venta internacional</label><select id="international"><option value="mexico">Solo venta en México</option><option value="manual">Resolver manualmente</option></select></div>
+</div>
+<div class="grid2" style="margin-top:8px">
+<div><label>Motor confirmado</label><input id="engine" placeholder="Solo si está confirmado"></div>
+<div><label>Documentación confirmada</label><input id="docs" placeholder="Solo si está confirmada"></div>
+</div>
+</div>
+
+<div class="card">
+<h2>2. Comentario</h2>
+<textarea id="comment" placeholder="Ej. ¿Cuánto? / Dirección por favor / Lariat / Precio / ¿Aceptan cambios? / ¿La envían a Perú?"></textarea>
+<div class="quick"><button data-q="Cuánto">Cuánto</button><button data-q="Precio">Precio</button><button data-q="Dirección por favor">Dirección</button><button data-q="Lariat">Modelo/versión</button><button data-q="¿Financiamiento?">Financiamiento</button><button data-q="¿Aceptan carro a cuenta?">Cambio</button><button data-q="¿Está disponible?">Disponible</button><button data-q="¿La pueden enviar a Perú?">Internacional</button></div>
+<button id="generate" class="primary" style="margin-top:10px">Generar respuesta</button>
+<div id="intent" class="notice" style="display:none"></div>
+</div>
+
+<div class="card">
+<h2>3. Respuesta pública</h2>
+<div id="publicOut" class="out">Pega un comentario y toca Generar respuesta.</div>
+<div class="row-actions"><button id="copyPublic" class="ok">Copiar respuesta pública</button><button id="variant">Otra variante</button></div>
+</div>
+
+<div class="card">
+<h2>4. Mensaje privado</h2>
+<div id="privateOut" class="out">Aquí aparecerá el mensaje para enviar después de responder públicamente.</div>
+<div class="row-actions"><button id="copyPrivate" class="ok">Copiar mensaje privado</button><button id="copyCrm">Copiar registro CRM</button></div>
+</div>
+
+<div class="card">
+<h2>5. Siguiente acción</h2>
+<div id="nextOut" class="out">La herramienta propondrá la siguiente acción comercial.</div>
+</div>
+
+<div class="card">
+<h3>Aprendizaje aplicado</h3>
+<p class="muted">Meta histórico aporta frecuencia de intención; la conversación vigente aporta la acción. No se copian compradores ni chats privados.</p>
+<div class="learn"><span class="pill">Disponibilidad</span><span class="pill">Precio por privado</span><span class="pill">Fotos/media</span><span class="pill">Ubicación + Maps</span><span class="pill">Financiamiento</span><span class="pill">Contacto</span><span class="pill">Especificaciones</span></div>
+<div class="notice">Reglas AFL: no inventar precio, disponibilidad, motor, versión, documentación o equipamiento. Venta de contado; no financiamiento; no tomar vehículos a cuenta. En comentarios públicos, el precio se mueve a inbox salvo autorización específica. Si el prospecto escribe solo el modelo/versión, confirmar y enviar fotos por privado. Para solicitudes fuera de México, aclarar que AFL AUTOS vende en México y no prometer envío internacional.</div>
+</div>
+
+<div class="card">
+<h3>Flujo recomendado</h3>
+<div class="flow"><div class="step"><b>1. Responder</b><br><span class="muted">Resolver intención</span></div><div class="step"><b>2. Privado</b><br><span class="muted">Tomar iniciativa</span></div><div class="step"><b>3. Informar</b><br><span class="muted">Fotos/video/datos</span></div><div class="step"><b>4. Calificar</b><br><span class="muted">Una pregunta útil</span></div><div class="step"><b>5. Visita</b><br><span class="muted">Proponer siguiente paso</span></div></div>
+</div>
+
+<div class="card" id="newVehicleCard">
+<h2>Nuevo vehículo — importar / exportar JSON</h2>
+<p class="muted small">Este bloque prepara el paquete para el repo dueño <b>FUENTE_DUENA_VEHICULOS</b> y genera el prompt del chat de ingreso. No escribe directamente en GitHub ni convierte el JSON en fuente de verdad.</p>
+<div class="grid4">
+<div><label>Fecha</label><input id="nvDate" type="date"></div>
+<div><label>Marca</label><input id="nvBrand" placeholder="Ford"></div>
+<div><label>Modelo</label><input id="nvModel" placeholder="F-150"></div>
+<div><label>Año</label><input id="nvYear" inputmode="numeric" placeholder="2018"></div>
+</div>
+<div class="grid4" style="margin-top:8px">
+<div><label>Versión</label><input id="nvVersion" placeholder="Lariat"></div>
+<div><label>Color</label><input id="nvColor" placeholder="Blanca"></div>
+<div><label>VIN6</label><input id="nvVin6" maxlength="6" placeholder="Últimos 6; no VIN completo"></div>
+<div><label>Prioridad</label><select id="nvPriority"><option>NORMAL</option><option>ALTA</option><option>BAJA</option></select></div>
+</div>
+<div class="grid3" style="margin-top:8px">
+<div><label>Motor</label><input id="nvEngine" placeholder="PENDIENTE si no está confirmado"></div>
+<div><label>Transmisión</label><input id="nvTransmission" placeholder="PENDIENTE"></div>
+<div><label>Tracción</label><input id="nvTraction" placeholder="PENDIENTE"></div>
+</div>
+<div class="grid3" style="margin-top:8px">
+<div><label>Precio interno</label><input id="nvPrice" placeholder="Opcional"></div>
+<div><label>Disponibilidad</label><select id="nvAvailability"><option value="PENDIENTE">PENDIENTE</option><option value="DISPONIBLE">DISPONIBLE</option><option value="NO_DISPONIBLE">NO_DISPONIBLE</option></select></div>
+<div><label>Documentación</label><input id="nvDocs" placeholder="Ej. título, pedimento, factura"></div>
+</div>
+<div style="margin-top:8px"><label>Drive inicial privado</label><input id="nvDrive" placeholder="Pega la carpeta inicial del vehículo"></div>
+<div style="margin-top:8px"><label>Notas</label><textarea id="nvNotes" placeholder="Datos pendientes, contradicciones, material disponible, instrucciones de Miguel"></textarea></div>
+<div class="row-actions3">
+<label class="file"><button class="blue" type="button">Importar JSON</button><input id="nvImport" type="file" accept="application/json,.json"></label>
+<button id="nvGenerate" class="primary">Generar paquete JSON</button>
+<button id="nvDownload" class="ok">Exportar JSON</button>
+</div>
+<div class="row-actions3"><button id="nvCopyJson">Copiar JSON</button><button id="nvCopyPrompt">Copiar prompt de chat</button><button id="nvReset">Limpiar alta</button></div>
+<div class="divider"></div>
+<div class="route small"><b>Enrutamiento:</b> datos vigentes de la unidad → <code>Vehiculos</code>; prompt rector → <code>PROMPT_NUEVO_VEHICULO_VIGENTE</code>; comercial posterior → <code>AFL_AUTOS_COMERCIAL</code>; multimedia RAW → Drive privado.</div>
+<h3 style="margin-top:13px">JSON de salida</h3>
+<div id="nvJsonOut" class="out">Genera o importa un JSON.</div>
+<h3 style="margin-top:13px">Chat recomendado</h3>
+<div id="nvPromptOut" class="out">El prompt se generará junto con el JSON.</div>
+</div>
+</main>
+<script>
+let variant=0;
+const $=id=>document.getElementById(id);
+const val=id=>$(id).value.trim();
+const META_COUNTS={disponibilidad:234,precio:154,fotos:33,ubicacion:28,financiamiento:12,contacto:12,especificaciones:11,cambio:5,negociacion:5};
+function normalize(s){return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')}
+function detect(text){const t=normalize(text);
+ if(/peru|montreal|canada|estados unidos|usa|export|envio internacional|enviar.*fuera|ship to|ship.*montreal|traerlo para peru/.test(t))return 'internacional';
+ if(/precio|cuanto|cuesta|vale|costo|pidiendo/.test(t))return 'precio';
+ if(/direccion|ubicacion|donde|domicilio|localiza/.test(t))return 'ubicacion';
+ if(/financia|credito|mensualidad|enganche|abonos/.test(t))return 'financiamiento';
+ if(/cambio|cuenta|toman.*carro|reciben.*auto|vehiculo a cuenta/.test(t))return 'cambio';
+ if(/disponible|todavia|aun la tiene|aun esta/.test(t))return 'disponibilidad';
+ if(/foto|video|imagenes|fotos/.test(t))return 'fotos';
+ if(/motor|cilindro|v6|v8|litros|diesel|gasolina/.test(t))return 'motor';
+ if(/papeles|documentacion|titulo|pedimento|factura/.test(t))return 'documentacion';
+ if(/telefono|whatsapp|numero|contacto/.test(t))return 'contacto';
+ if(/km|kilometraje|millas|recorrido/.test(t))return 'kilometraje';
+ if(text.trim().length<=24)return 'interes';
+ return 'general';
+}
+function vehicleLabel(){return val('vehicle')||'esta unidad'}
+function pick(arr){return arr[variant%arr.length]}
+function metaHint(intent){const map={precio:'precio',ubicacion:'ubicacion',financiamiento:'financiamiento',cambio:'cambio',disponibilidad:'disponibilidad',fotos:'fotos',contacto:'contacto',motor:'especificaciones',documentacion:'especificaciones'};const k=map[intent];return k&&META_COUNTS[k]?` · Meta histórico: ${META_COUNTS[k]} señales de ${k}`:''}
+function build(){
+ const c=val('comment'); if(!c){$('intent').style.display='block';$('intent').textContent='Escribe o pega primero el comentario.';return}
+ const intent=detect(c), v=vehicleLabel(), price=val('price'), loc=val('location'), maps=val('maps'), engine=val('engine'), docs=val('docs'), contact=val('contact'), avail=val('availability'), pricePolicy=val('pricePolicy'), intl=val('international');
+ let pub='',priv='',next=''; let warn='';
+ if(intent==='internacional'){
+   pub=intl==='mexico'?`Hola. AFL AUTOS realiza la venta de esta unidad en México. Te mando por privado la información disponible.`:`Hola. Te escribo por privado para revisar el alcance de la operación de la ${v}.`;
+   priv=intl==='mexico'?`Hola. La ${v}${price?` tiene un precio vigente de ${price}`:''}. AFL AUTOS vende la unidad en México y no prometemos envío internacional. Si tienes posibilidad de venir a México, con gusto coordinamos la atención aquí.`:`Hola. Vi tu comentario por la ${v}. Voy a confirmar primero el alcance de la operación antes de prometer envío o entrega fuera de México.`;
+   next='Aclarar venta en México → no prometer logística internacional → continuar solo si el prospecto puede realizar la operación en México.';
+ } else if(intent==='precio'){
+   if(pricePolicy==='authorized'&&price){pub=pick([`Hola. La ${v} está en ${price}. Te mando por privado fotos, ubicación e información.`,`Hola. El precio autorizado de la ${v} es ${price}. Te escribo por privado con el material.`])}
+   else{pub=pick([`Hola. Te mando por privado el precio actualizado y la información de la ${v}.`,`Hola. Te escribo por inbox con el precio vigente y los datos de la ${v}.`])}
+   priv=`Hola. Vi tu comentario por la ${v}. ${price?`El precio vigente confirmado es ${price}. `:'Estoy verificando el precio vigente antes de darte una cifra incorrecta. '}${maps?`Ubicación: ${maps}. `:(loc?`Estamos en ${loc}. `:'')}¿Qué día te queda bien para venir a verla?`;
+   next=price?'Enviar precio por privado → ubicación → proponer visita.':'Confirmar precio en PUENTE/fuente vigente → responder por privado → proponer visita.'; if(!price)warn='Precio no cargado como confirmado.';
+ } else if(intent==='ubicacion'){
+   pub=loc?pick([`Estamos en ${loc}. Te mando por privado la ubicación exacta y la información de la ${v}.`,`Claro. Estamos en ${loc}; te escribo por privado con Maps y los datos de la unidad.`]):`Te mando por privado la ubicación exacta y la información de la ${v}.`;
+   priv=`Hola. Vi tu comentario por la ${v}. ${maps?`Aquí tienes la ubicación exacta: ${maps}`:(loc?`Estamos en ${loc}.`: 'Te confirmo la ubicación exacta antes de enviarla.')} ${price?`Si también necesitas el precio, el vigente confirmado es ${price}. `:''}¿Qué día te queda bien para venir a verla?`;
+   next='Enviar Maps → resolver precio si lo pidió → proponer visita.';
+ } else if(intent==='financiamiento'){
+   pub=`Por el momento la venta es únicamente de contado. Si te interesa la ${v}, te envío por privado la información disponible.`;
+   priv=`Hola. Vi tu comentario por la ${v}. Por el momento trabajamos únicamente venta de contado. Si esa modalidad te funciona, te envío fotos, ubicación y datos confirmados.`;
+   next='Confirmar que acepta contado → enviar información → evaluar visita.';
+ } else if(intent==='cambio'){
+   pub=`Por el momento no tomamos vehículos a cuenta. Si te interesa comprar la ${v} de contado, te envío la información por privado.`;
+   priv=`Hola. Vi tu comentario por la ${v}. Por el momento no tomamos vehículos a cuenta y la venta es de contado. Si te interesa así, te envío fotos y ubicación.`;
+   next='Confirmar modalidad de contado → enviar información → visita si continúa interesado.';
+ } else if(intent==='disponibilidad'){
+   if(avail==='available'){pub=`Sí, la ${v} está disponible. Te mando por privado fotos, información y ubicación.`;priv=`Hola. Vi tu comentario por la ${v}. Está disponible. Te envío la información y material. ${price?`Precio vigente: ${price}. `:''}¿Qué día te queda bien para venir a verla?`;next='Enviar material → precio/ubicación → proponer visita.'}
+   else if(avail==='sold'){pub=`Esta unidad ya aparece como vendida. Si gustas, te puedo orientar con otra opción disponible.`;priv=`Hola. Vi tu comentario por la ${v}. Esta unidad ya está vendida. Si me dices qué tipo de vehículo buscas, revisamos otra opción.`;next='No ofrecer la unidad → identificar necesidad → buscar alternativa.'}
+   else {pub=`Te confirmo la disponibilidad de la ${v} por privado antes de darte un dato incorrecto.`;priv=`Hola. Vi tu comentario por la ${v}. Estoy confirmando disponibilidad antes de darte información incorrecta. En cuanto la valide te paso fotos y datos.`;next='Confirmar disponibilidad en fuente vigente antes de avanzar.';warn='Disponibilidad no confirmada.'}
+ } else if(intent==='fotos'){
+   pub=`Claro. Te mando por privado las fotos de la ${v}.`;
+   priv=`Hola. Te comparto las fotos de la ${v}. ${price?'Si después quieres avanzar, también te paso precio y ubicación.':'Si después quieres avanzar, te confirmo precio y ubicación.'}`;
+   next='Enviar paquete corto de fotos → esperar reacción → después precio/ubicación → visita.';
+ } else if(intent==='motor'){
+   pub=engine?`Te mando por privado el dato confirmado del motor de la ${v} y la información completa.`:`Te confirmo por privado el motor de la ${v} para no darte un dato incorrecto.`;
+   priv=engine?`Hola. Vi tu comentario por la ${v}. El motor confirmado es ${engine}. ¿Quieres que te envíe también fotos y ubicación?`:`Hola. Vi tu comentario por la ${v}. Voy a confirmar el motor exacto antes de darte un dato incorrecto. También puedo enviarte fotos.`;
+   next=engine?'Enviar ficha/material → una pregunta útil → visita si hay interés.':'Verificar motor en PUENTE → responder → continuar seguimiento.'; if(!engine)warn='Motor no cargado como confirmado.';
+ } else if(intent==='documentacion'){
+   pub=docs?`Te mando por privado la documentación confirmada de la ${v} y la información disponible.`:`Te confirmo por privado la documentación de la ${v} para no darte información incorrecta.`;
+   priv=docs?`Hola. Vi tu comentario por la ${v}. La documentación confirmada es: ${docs}. Si gustas te envío también fotos y ubicación.`:`Hola. Vi tu comentario por la ${v}. Voy a confirmar exactamente la documentación antes de responderte. También puedo enviarte fotos.`;
+   next=docs?'Enviar ficha y material → proponer visita.':'Validar documentación → responder sin exponer documentos sensibles.';
+ } else if(intent==='contacto'){
+   pub=contact?`Claro. Te escribo por privado y te paso el contacto comercial autorizado de AFL AUTOS.`:`Claro. Te escribo por privado con la información y contacto comercial de AFL AUTOS.`;
+   priv=contact?`Hola. Vi tu comentario por la ${v}. El contacto comercial autorizado es ${contact}. También puedo enviarte fotos y ubicación.`:`Hola. Vi tu comentario por la ${v}. Te atiendo por aquí. ¿Qué quieres revisar primero: precio, fotos o ubicación?`;
+   next='Continuar conversación → identificar intención → enviar material → visita.';
+ } else if(intent==='kilometraje'){
+   pub=`Te confirmo por privado el kilometraje de la ${v} para no darte un dato incorrecto.`;
+   priv=`Hola. Vi tu comentario por la ${v}. Voy a confirmar el kilometraje exacto antes de darte el dato. Mientras tanto puedo enviarte fotos y ubicación.`;
+   next='Verificar kilometraje en fuente vigente → responder → registrar interés.'; warn='No usar kilometraje histórico/Marketplace como vigente.';
+ } else if(intent==='interes'){
+   pub=pick([`Sí, es la ${v}. Te mando las fotos por mensaje.`,`Correcto, ${v}. Te envío las fotos por privado.`,`Sí, es la ${v}. Te escribo por inbox con las fotos.`]);
+   priv=`Hola. Te comparto las fotos de la ${v} como quedamos. Si gustas, después te paso el precio actualizado y la ubicación para que puedas venir a verla.`;
+   next='Enviar fotos primero → esperar reacción → después precio/ubicación → proponer visita.';
+ } else {
+   pub=`Hola. Te escribo por privado para ayudarte con la información de la ${v}.`;
+   priv=`Hola. Vi tu comentario por la ${v}. ¿Qué quieres revisar primero: precio, ubicación o fotos?`;
+   next='Identificar intención → responder con dato confirmado → una sola siguiente acción.';
+ }
+ $('publicOut').textContent=pub; $('privateOut').textContent=priv; $('nextOut').textContent=next;
+ $('intent').style.display='block'; $('intent').innerHTML=`Intención detectada: <b>${intent.toUpperCase()}</b>${metaHint(intent)}${warn?`<br>${warn}`:''}`;
+ $('publicOut').dataset.intent=intent;
+}
+async function copyRaw(text){try{await navigator.clipboard.writeText(text)}catch{const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');ta.remove()}}
+async function copyText(id){return copyRaw($(id).textContent)}
+$('generate').onclick=()=>{variant=0;build()};
+$('variant').onclick=()=>{variant++;build()};
+$('copyPublic').onclick=()=>copyText('publicOut');
+$('copyPrivate').onclick=()=>copyText('privateOut');
+$('copyCrm').onclick=()=>{const intent=$('publicOut').dataset.intent||'general';const id=val('vid')||'SIN_ID';const v=vehicleLabel();const line=`Lead-FB | ${id} | ${v} | intención:${intent} | estado:CONVERSACION | siguiente:${$('nextOut').textContent}`;copyRaw(line);$('nextOut').textContent+='\n\nRegistro CRM copiado:\n'+line};
+document.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{$('comment').value=b.dataset.q;variant=0;build()});
+
+function slug(s){return normalize(s).replace(/[^a-z0-9]+/g,'_').replace(/^_|_$/g,'').toUpperCase()||'PENDIENTE'}
+function getNv(){
+ const vin=val('nvVin6').toUpperCase().replace(/[^A-Z0-9]/g,'').slice(-6); const date=val('nvDate')||new Date().toISOString().slice(0,10); const brand=val('nvBrand'), model=val('nvModel'), year=val('nvYear'), version=val('nvVersion');
+ const desc=[year,brand,model,version].filter(Boolean).map(slug).join('_');
+ const vehicleId=vin.length===6?`AFL-${vin}`:null;
+ const expediente=vehicleId?`${vehicleId}__${desc||'VEHICULO'}`:`PENDIENTE_${[brand,model,year,date].filter(Boolean).map(slug).join('_')||slug(date)}`;
+ return {
+  schema_version:'AFL_NUEVO_VEHICULO_V1',generated_at:new Date().toISOString(),
+  routing:{owner_repo:'FUENTE_DUENA_VEHICULOS',orchestration_repo:'miguelangelruizfull-ai/AFL_AUTOS_OPERACION',prompt_authority:'prompts/NUEVO_VEHICULO.md',identity_authority:'Vehiculos/docs/PROTOCOLO_VEHICULO_VIGENTE',next_module:'NUEVO_VEHICULO / INGRESO_E_IDENTIFICACION'},
+  vehicle:{vehicle_id:vehicleId,expediente_sugerido:expediente,marca:brand||null,modelo:model||null,anio:year||null,version:version||null,color:val('nvColor')||null,vin6:vehicleId?vin:null,motor:val('nvEngine')||'PENDIENTE',transmision:val('nvTransmission')||'PENDIENTE',traccion:val('nvTraction')||'PENDIENTE'},
+  commercial:{precio_interno:val('nvPrice')||null,estado_precio:val('nvPrice')?'APORTADO_POR_MIGUEL / VALIDAR_AL_PERSISTIR':'PENDIENTE',disponibilidad:val('nvAvailability'),documentacion:val('nvDocs')||'PENDIENTE'},
+  source:{drive_inicial_privado:val('nvDrive')||null,fecha:date,prioridad:val('nvPriority')},
+  gates:{buscar_expediente_existente_primero:true,no_publicar_vin_completo:true,no_inventar_id_afl_sin_vin6:true,no_borrar_originales:true,no_seleccionar_retocar_producir_en_esta_etapa:true,historico_no_es_vigente:true},
+  notes:val('nvNotes')||null
+ };
+}
+function buildNvPrompt(j){const name=[j.vehicle.anio,j.vehicle.marca,j.vehicle.modelo,j.vehicle.version].filter(Boolean).join(' ')||'VEHÍCULO PENDIENTE';return `TITULO_CHAT: AFL AUTOS — NUEVO VEHICULO — ${name}\n\nROL/MODULO: COORDINADOR AFL → NUEVO_VEHICULO / INGRESO_E_IDENTIFICACION\nREPOSITORIO_DUEÑO: FUENTE_DUENA_VEHICULOS\nAUTORIDADES: ROOT_ECOSISTEMA/adapters/AFL_AUTOS.md + Vehiculos/docs/PROTOCOLO_VEHICULO_VIGENTE + PROMPT_NUEVO_VEHICULO_VIGENTE\n\nOBJETIVO: Ingresa e identifica esta unidad. Busca primero un expediente existente en Vehiculos. Si existe, lee su PUENTE.md completo y actualízalo; si no existe, crea expediente pendiente conforme al protocolo. El JSON es entrada operativa, no sustituye evidencia ni fuente vigente. No seleccionar, retocar ni producir contenido en esta etapa. No exponer VIN completo, PII, credenciales ni rutas privadas en salidas públicas. Drive conserva RAW y multimedia pesada.\n\nJSON_ENTRADA:\n${JSON.stringify(j,null,2)}\n\nSALIDA: VEHICULO_IDENTIFICADO_O_PENDIENTE / EXPEDIENTE_CREADO_O_ACTUALIZADO / PLAN_CAPTURA_PENDIENTE. Devuelve RETORNO_AL_COORDINADOR_SANITIZADO y el siguiente módulo.`}
+function renderNv(){const j=getNv();$('nvJsonOut').textContent=JSON.stringify(j,null,2);$('nvPromptOut').textContent=buildNvPrompt(j);return j}
+function setNvFromJson(j){const v=j.vehicle||j.vehiculo||j;const c=j.commercial||j.comercial||{};const s=j.source||j.fuente||{};const pick=(...xs)=>xs.find(x=>x!==undefined&&x!==null&&String(x)!=='');
+ $('nvDate').value=String(pick(s.fecha,j.fecha,new Date().toISOString().slice(0,10))).slice(0,10);
+ $('nvBrand').value=pick(v.marca,v.brand,j.marca,''); $('nvModel').value=pick(v.modelo,v.model,j.modelo,''); $('nvYear').value=pick(v.anio,v.year,j.anio,''); $('nvVersion').value=pick(v.version,j.version,''); $('nvColor').value=pick(v.color,j.color,'');
+ let vin=String(pick(v.vin6,j.vin6,'')).replace(/[^A-Za-z0-9]/g,''); $('nvVin6').value=vin.slice(-6);
+ $('nvEngine').value=pick(v.motor,v.engine,j.motor,''); $('nvTransmission').value=pick(v.transmision,v.transmission,j.transmision,''); $('nvTraction').value=pick(v.traccion,v.traction,j.traccion,''); $('nvPrice').value=pick(c.precio_interno,c.precio,j.precio,''); $('nvDocs').value=pick(c.documentacion,c.docs,j.documentacion,''); $('nvDrive').value=pick(s.drive_inicial_privado,s.drive,j.drive,''); $('nvNotes').value=pick(j.notes,j.notas,'');
+ const av=pick(c.disponibilidad,j.disponibilidad,'PENDIENTE'); if([...$('nvAvailability').options].some(o=>o.value===av))$('nvAvailability').value=av;
+ const pr=pick(s.prioridad,j.prioridad,'NORMAL'); if([...$('nvPriority').options].some(o=>o.value===pr))$('nvPriority').value=pr; renderNv();
+}
+$('nvGenerate').onclick=renderNv;
+$('nvDownload').onclick=()=>{const j=renderNv();const blob=new Blob([JSON.stringify(j,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`${j.vehicle.expediente_sugerido||'NUEVO_VEHICULO'}.json`;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)};
+$('nvCopyJson').onclick=()=>copyText('nvJsonOut');
+$('nvCopyPrompt').onclick=()=>copyText('nvPromptOut');
+$('nvReset').onclick=()=>{['nvBrand','nvModel','nvYear','nvVersion','nvColor','nvVin6','nvEngine','nvTransmission','nvTraction','nvPrice','nvDocs','nvDrive','nvNotes'].forEach(id=>$(id).value='');$('nvAvailability').value='PENDIENTE';$('nvPriority').value='NORMAL';$('nvDate').value=new Date().toISOString().slice(0,10);$('nvJsonOut').textContent='Genera o importa un JSON.';$('nvPromptOut').textContent='El prompt se generará junto con el JSON.'};
+$('nvImport').onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{const j=JSON.parse(await f.text());setNvFromJson(j)}catch(err){$('nvJsonOut').textContent='JSON inválido: '+err.message}e.target.value=''};
+$('nvDate').value=new Date().toISOString().slice(0,10);
+</script>
+</body></html>
