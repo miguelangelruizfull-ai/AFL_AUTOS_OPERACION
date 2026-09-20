@@ -6,8 +6,8 @@
     {
       "key": "PENDIENTE_Chevrolet_Colorado_2016_2026-09-11",
       "label": "Chevrolet Colorado 2016 roja cabina y media",
-      "estado": "V3_PRODUCIDO / PENDIENTE_APROBACION_MIGUEL / NO_PUBLICAR",
-      "siguiente_accion": "REVISION_APROBACION_V3",
+      "estado": "V4_FEED_PRODUCIDO / FIDELIDAD_PASS / PENDIENTE_REVISION_MIGUEL / NO_PUBLICAR",
+      "siguiente_accion": "REVISION_APROBACION_V4",
       "flags": [
         "ESPERANDO_MIGUEL",
         "NO_PUBLICAR"
@@ -43,11 +43,11 @@
     {
       "key": "PENDIENTE_Ford_F150_2011_Texas_Edition_2026-09-10",
       "label": "Ford F-150 2011",
-      "estado": "PUBLICADO_CONFIRMADO / MEDICION_EN_CURSO",
+      "estado": "PUBLICADO_CONFIRMADO / MEDICION_7D_PENDIENTE / FECHA_CUMPLIDA",
       "siguiente_accion": "MEDICION_7D",
       "flags": [
         "PUBLICADO_CONFIRMADO",
-        "MEDICION_EN_CURSO"
+        "MEDICION_PENDIENTE"
       ]
     },
     {
@@ -79,10 +79,11 @@
     {
       "key": "PENDIENTE_Jeep_Wrangler_2017_2026-09-10",
       "label": "Jeep Wrangler 2017",
-      "estado": "PAQUETE_REDES_PRODUCIDO / PENDIENTE_APROBACION_MIGUEL",
-      "siguiente_accion": "REVISION_APROBACION",
+      "estado": "AUDIOVISUAL_V3_CORREGIDO / SUBIDO / PENDIENTE_APROBACION_MIGUEL / NO_PUBLICAR",
+      "siguiente_accion": "REVISION_APROBACION_AUDIOVISUAL_V3",
       "flags": [
-        "ESPERANDO_MIGUEL"
+        "ESPERANDO_MIGUEL",
+        "NO_PUBLICAR"
       ]
     },
     {
