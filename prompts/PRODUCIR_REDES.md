@@ -123,9 +123,13 @@ Según material y objetivo producir los elementos que apliquen:
 - CTA según gate.
 
 ### Catálogo WhatsApp
+- antes de redactar, consumir la regla canónica `WHATSAPP_CATALOGO` de `AFL_AUTOS_COMERCIAL`;
+- producir y mantener separados: `TITULO_PUBLICO`, `DESCRIPCION_ESTRATEGICA_PUBLICA` y `FICHA_TECNICA_INTERNA`;
+- la descripción pública no es una ficha técnica: debe usar posicionamiento + 2–4 diferenciadores confirmados/publicables + precio según gate + CTA único;
+- prohibido copiar a la descripción pública odómetro/millas/kilómetros, VIN, PII, datos sensibles o atributos sin confirmar;
 - 6–8 fotos representativas y consistentes;
-- datos resumidos confirmados;
-- precio solo si está autorizado.
+- si captura/revisión/aprobación siguen pendientes, conservar la ficha `OCULTA / NO_PUBLICAR_AUN`;
+- no publicar automáticamente.
 
 ### Facebook
 - feed/post;
