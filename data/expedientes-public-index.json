@@ -1,6 +1,6 @@
 {
   "schema_version": "3.1",
-  "generated_at": "2026-09-16",
+  "generated_at": "2026-09-20",
   "rule": "NAVEGACION_PUBLICA_SANITIZADA",
   "expedientes": [
     {
@@ -8,7 +8,10 @@
       "label": "Chevrolet Colorado 2016 roja cabina y media",
       "estado": "V3_PRODUCIDO / PENDIENTE_APROBACION_MIGUEL / NO_PUBLICAR",
       "siguiente_accion": "REVISION_APROBACION_V3",
-      "flags": ["ESPERANDO_MIGUEL", "NO_PUBLICAR"]
+      "flags": [
+        "ESPERANDO_MIGUEL",
+        "NO_PUBLICAR"
+      ]
     },
     {
       "key": "PENDIENTE_Chevrolet_Silverado_2016_2026-09-11",
@@ -22,28 +25,40 @@
       "label": "Chevrolet Silverado Texas Edition Gris",
       "estado": "REDISENO_APROBADO / VALIDACION_PENDIENTE / AUDIOVISUAL_BLOQUEADO",
       "siguiente_accion": "VALIDAR_ARTEFACTO_APROBADO",
-      "flags": ["ESPERANDO_VERIFICACION", "BLOQUEADO"]
+      "flags": [
+        "ESPERANDO_VERIFICACION",
+        "BLOQUEADO"
+      ]
     },
     {
       "key": "PENDIENTE_Ford_Explorer_Limited_2017_2026-09-15",
       "label": "Ford Explorer Limited 2017",
       "estado": "IDENTIDAD_RECONCILIADA / V1_OSCURA_EXCLUIDA / REPRODUCCION_REQUERIDA / NO_PUBLICAR",
       "siguiente_accion": "REPRODUCIR_HISTORIAS_CON_MATERIAL_BLANCO",
-      "flags": ["NO_PUBLICAR", "REPRODUCCION_REQUERIDA"]
+      "flags": [
+        "NO_PUBLICAR",
+        "REPRODUCCION_REQUERIDA"
+      ]
     },
     {
       "key": "PENDIENTE_Ford_F150_2011_Texas_Edition_2026-09-10",
       "label": "Ford F-150 2011",
       "estado": "PUBLICADO_CONFIRMADO / MEDICION_EN_CURSO",
       "siguiente_accion": "MEDICION_7D",
-      "flags": ["PUBLICADO_CONFIRMADO", "MEDICION_EN_CURSO"]
+      "flags": [
+        "PUBLICADO_CONFIRMADO",
+        "MEDICION_EN_CURSO"
+      ]
     },
     {
       "key": "PENDIENTE_Ford_F150_FX4_2026-09-07",
       "label": "Ford F-150 FX4 2013",
       "estado": "FEED_V3_APROBADO / FORMATOS_RESTANTES_PENDIENTES",
       "siguiente_accion": "ADAPTAR_DIRECCION_V3_A_FORMATOS_RESTANTES",
-      "flags": ["APROBADO_POR_MIGUEL", "NO_PUBLICADO"]
+      "flags": [
+        "APROBADO_POR_MIGUEL",
+        "NO_PUBLICADO"
+      ]
     },
     {
       "key": "PENDIENTE_Ford_F250_2017_2026-09-12",
@@ -57,14 +72,27 @@
       "label": "AFL-0034 International caja seca",
       "estado": "INVENTARIO_COMPLETADO / IDENTIFICACION_PARCIAL / SIN_PRODUCCION",
       "siguiente_accion": "ESTRATEGIA_PLAN_CAPTURA",
-      "flags": ["IDENTIFICACION_PARCIAL"]
+      "flags": [
+        "IDENTIFICACION_PARCIAL"
+      ]
     },
     {
       "key": "PENDIENTE_Jeep_Wrangler_2017_2026-09-10",
       "label": "Jeep Wrangler 2017",
       "estado": "PAQUETE_REDES_PRODUCIDO / PENDIENTE_APROBACION_MIGUEL",
       "siguiente_accion": "REVISION_APROBACION",
-      "flags": ["ESPERANDO_MIGUEL"]
+      "flags": [
+        "ESPERANDO_MIGUEL"
+      ]
+    },
+    {
+      "key": "AFL-142202__2016_GMC_CANYON",
+      "label": "GMC Canyon 2016 negra cabina extendida",
+      "estado": "INGESTA_CANONICA_VERIFICADA / PLAN_CAPTURA_PENDIENTE / NO_PUBLICAR",
+      "siguiente_accion": "ESTRATEGIA_PLAN_CAPTURA",
+      "flags": [
+        "NO_PUBLICAR"
+      ]
     }
   ]
 }
