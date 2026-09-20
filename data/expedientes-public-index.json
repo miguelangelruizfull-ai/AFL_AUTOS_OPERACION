@@ -90,10 +90,11 @@
     {
       "key": "AFL-142202__2016_GMC_CANYON",
       "label": "GMC Canyon 2016 negra cabina extendida",
-      "estado": "INGESTA_CANONICA_VERIFICADA / PLAN_CAPTURA_PENDIENTE / NO_PUBLICAR",
-      "siguiente_accion": "ESTRATEGIA_PLAN_CAPTURA",
+      "estado": "PLAN_CAPTURA_LISTO / CAPTURA_COMPLEMENTARIA_PENDIENTE / NO_PUBLICAR",
+      "siguiente_accion": "CAPTURA_COMPLEMENTARIA",
       "flags": [
-        "NO_PUBLICAR"
+        "NO_PUBLICAR",
+        "CAPTURA_PENDIENTE"
       ]
     }
   ]
