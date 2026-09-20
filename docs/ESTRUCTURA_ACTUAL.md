@@ -1,7 +1,7 @@
 # AFL AUTOS — ESTRUCTURA ACTUAL
 
-Última actualización: 2026-09-16
-Estado: `ACTIVA / HOME_V3.6`
+Última actualización: 2026-09-20
+Estado: `ACTIVA / HOME_V3.7`
 
 > Esta es una proyección operativa sanitizada. No sustituye las fuentes de verdad privadas ni el `PUENTE.md` de cada unidad.
 
@@ -13,8 +13,8 @@ Estado: `ACTIVA / HOME_V3.6`
 
 - `Vehicle Hub V1.2` → ficha privada/editable del vehículo.
 - `Production Studio V1.2` → decisión y producción por canal.
-- `Home Operaciones V3.6` → navegación, retorno al coordinador, siguiente chat, accesos rápidos, consulta de archivos e ingesta temporal de material por clasificar.
-- `Consulta Rápida Leads V1` → resolución captura/publicación → índice sanitizado → `EXPEDIENTE_KEY` → `PUENTE.md` → reglas comerciales → respuesta corta.
+- `Home Operaciones V3.7` → navegación, retorno al coordinador, siguiente chat, accesos rápidos, consulta de archivos e ingesta temporal de material por clasificar.
+- `Consulta Rápida Leads V1` → resolución captura/publicación → índice sanitizado → `EXPEDIENTE_KEY` → `PUENTE.md` → reglas comerciales → respuesta corta.\n- `Asistente de Respuestas V1.3` → respuesta pública/privada, seguimiento, aprendizaje Meta sanitizado y alta de nuevo vehículo mediante JSON exportable; no persiste PII en el repositorio público.
 - `Content Engine V4` → respaldo/legacy; no es el flujo canónico diario.
 
 ## Fuentes de verdad
@@ -74,7 +74,7 @@ ENTRADA
 
 ## Ingesta temporal de prueba
 
-Home V3.6 expone temporalmente un acceso autorizado por Miguel al buzón de material por clasificar.
+Home V3.7 expone temporalmente un acceso autorizado por Miguel al buzón de material por clasificar.
 
 Flujo:
 
@@ -160,7 +160,7 @@ El Home puede exponer únicamente los accesos rápidos autorizados explícitamen
 
 ## Consulta rápida desde el Home
 
-Home V3.6 conserva la consulta de fuentes vigentes mediante prompts que obligan a leer GitHub conectado en vez de responder desde memoria.
+Home V3.7 conserva la consulta de fuentes vigentes mediante prompts que obligan a leer GitHub conectado en vez de responder desde memoria.
 
 Para leads, el flujo canónico es:
 
