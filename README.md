@@ -4,7 +4,7 @@ Centro de operación público y móvil de AFL AUTOS.
 
 ## Home activo
 
-`index.html` abre **V3.3**, evolución de privacidad/UX sobre el flujo guiado V3.2.
+`index.html` abre **V3.7**, Home público vigente con coordinación, ingesta guiada y acceso al asistente comercial sanitizado.
 
 Criterio:
 
@@ -12,9 +12,9 @@ Criterio:
 
 `V3.2 = FLUJO GUIADO BASE`
 
-`V3.3 = HOME PUBLICO ACTIVO / PRIVACIDAD REFORZADA`
+`V3.3 = BASE DE PRIVACIDAD PUBLICA`
 
-`V4/V4.1 = LABORATORIO / NO CANONICO`
+`V3.7 = HOME PUBLICO ACTIVO / COMERCIAL + NUEVO VEHICULO JSON`\n\n`V4/V4.1 = LABORATORIO / NO CANONICO`
 
 URL:
 
