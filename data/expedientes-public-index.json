@@ -4,6 +4,15 @@
   "rule": "NAVEGACION_PUBLICA_SANITIZADA",
   "expedientes": [
     {
+      "key": "PENDIENTE_International_4300_2017_2026-09-12",
+      "label": "AFL-0034 International caja seca",
+      "estado": "INVENTARIO_COMPLETADO / IDENTIFICACION_PARCIAL / SIN_PRODUCCION",
+      "siguiente_accion": "ESTRATEGIA_PLAN_CAPTURA",
+      "flags": [
+        "IDENTIFICACION_PARCIAL"
+      ]
+    },
+    {
       "key": "PENDIENTE_Chevrolet_Colorado_2016_2026-09-11",
       "label": "Chevrolet Colorado 2016 roja cabina y media",
       "estado": "V4_FEED_PRODUCIDO / FIDELIDAD_PASS / PENDIENTE_REVISION_MIGUEL / NO_PUBLICAR",
@@ -69,12 +78,13 @@
       "flags": []
     },
     {
-      "key": "PENDIENTE_International_4300_2017_2026-09-12",
-      "label": "AFL-0034 International caja seca",
-      "estado": "INVENTARIO_COMPLETADO / IDENTIFICACION_PARCIAL / SIN_PRODUCCION",
-      "siguiente_accion": "ESTRATEGIA_PLAN_CAPTURA",
+      "key": "AFL-142202__2016_GMC_CANYON",
+      "label": "GMC Canyon 2016 negra cabina extendida",
+      "estado": "PLAN_CAPTURA_LISTO / CAPTURA_COMPLEMENTARIA_PENDIENTE / NO_PUBLICAR",
+      "siguiente_accion": "CAPTURA_COMPLEMENTARIA",
       "flags": [
-        "IDENTIFICACION_PARCIAL"
+        "NO_PUBLICAR",
+        "CAPTURA_PENDIENTE"
       ]
     },
     {
@@ -88,13 +98,12 @@
       ]
     },
     {
-      "key": "AFL-142202__2016_GMC_CANYON",
-      "label": "GMC Canyon 2016 negra cabina extendida",
-      "estado": "PLAN_CAPTURA_LISTO / CAPTURA_COMPLEMENTARIA_PENDIENTE / NO_PUBLICAR",
-      "siguiente_accion": "CAPTURA_COMPLEMENTARIA",
+      "key": "PENDIENTE_Volkswagen_Tiguan_SE_2018_2026-09-20",
+      "label": "Volkswagen Tiguan SE 2018",
+      "estado": "VEHICULO_IDENTIFICADO / EXPEDIENTE_CREADO / PLAN_CAPTURA_PENDIENTE / NO_PUBLICAR",
+      "siguiente_accion": "ESTRATEGIA_PLAN_CAPTURA",
       "flags": [
-        "NO_PUBLICAR",
-        "CAPTURA_PENDIENTE"
+        "NO_PUBLICAR"
       ]
     }
   ]
