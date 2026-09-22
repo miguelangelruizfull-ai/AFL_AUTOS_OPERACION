@@ -210,14 +210,14 @@ Pendiente:
 
 1. contrato JSON privado APV;
 2. diseño UI responsive móvil/escritorio — IMPLEMENTADO EN BETA;
-3. buscador global — IMPLEMENTADO SOBRE JSON IMPORTADO;
+3. buscador global — IMPLEMENTADO CON NAVEGACION PUBLICA SANITIZADA AUTOMATICA + PRIORIDAD DE PROYECCION PRIVADA PUENTE;
 4. integración de Nuevo Vehículo — BORRADOR/JSON LOCAL IMPLEMENTADO;
 5. resolución de carpetas Drive — UI/PROMPT IMPLEMENTADOS, CONECTOR AUTENTICADO PENDIENTE;
-6. ficha unificada — BETA IMPLEMENTADA;
+6. ficha unificada — BETA IMPLEMENTADA / NIVEL_DE_FUENTE_VISIBLE / PUENTE_PRIVADO_BRIDGE_IMPLEMENTADO;
 7. respuestas/leads/seguimiento — BETA LOCAL IMPLEMENTADA;
 8. acceso Demo UX y Content Lab — IMPLEMENTADO;
 9. integración de producción — PREPARACION DE PROMPT IMPLEMENTADA, EJECUCION CONECTADA PENDIENTE;
-10. pruebas antes de sustituir cualquier Home vigente.
+10. pruebas antes de sustituir cualquier Home vigente;\n11. lectura web directa autenticada de Vehiculos — PENDIENTE; mientras tanto usar docs/APV_VEHICULOS_BRIDGE.md.
 
 Hasta completar pruebas:
 
@@ -300,3 +300,22 @@ El pulso actual debe revisarse el mismo día cuando exista acceso web y aporte v
 Toda pieza de venta debe resolver `MOSTRAR_PRECIO = SI/NO`. Si Miguel no lo autorizó para esa pieza, preguntar. El sistema debe recomendar SI/NO según canal, objetivo y precio vigente confirmado.
 
 CTA debe recomendarse según objetivo y canal consumiendo reglas vigentes de `AFL_AUTOS_COMERCIAL`.
+
+
+## Integración Vehiculos / PUENTE — 2026-09-22
+
+Contrato: `docs/APV_VEHICULOS_BRIDGE.md`.
+
+Estado:
+
+`NAVEGACION_SANITIZADA_AUTOMATICA / PUENTE_PRIVADO_BRIDGE_IMPLEMENTADO / LECTURA_WEB_PRIVADA_DIRECTA_PENDIENTE`
+
+APV carga automáticamente `data/expedientes-public-index.json` únicamente como navegación sanitizada.
+
+Para verdad operativa:
+
+`EXPEDIENTES_INDEX → PUENTE.md → PROYECCION_PRIVADA_APV`
+
+La proyección privada se importa en el navegador y tiene prioridad sobre el registro público coincidente. APV muestra el nivel de fuente y conserva `puente_sha` + `synced_at` para trazabilidad.
+
+No se habilita lectura directa desde JavaScript público hacia el repositorio privado `Vehiculos`.
