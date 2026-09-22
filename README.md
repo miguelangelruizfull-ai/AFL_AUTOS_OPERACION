@@ -44,7 +44,7 @@ Identidad común:
 
 `VEHICLE_ID = CODIGO_VEHICULO = CODIGO_WHATSAPP = AFL-<VIN6>`
 
-Durante implementación, el Home vigente no se reemplaza hasta validar APV.
+Durante implementación, el Home vigente no se reemplaza hasta validar APV.\n\nBeta navegable: `apv/index.html`.
 
 ## Flujo principal
 
