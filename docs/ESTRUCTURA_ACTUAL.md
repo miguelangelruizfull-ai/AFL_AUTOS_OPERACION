@@ -1,7 +1,7 @@
 # AFL AUTOS — ESTRUCTURA ACTUAL
 
-Última actualización: 2026-09-20
-Estado: `ACTIVA / HOME_V3.7`
+Última actualización: 2026-09-21
+Estado: `ACTIVA / HOME_OPERACIONES_V4_BETA_CANONICA`
 
 > Esta es una proyección operativa sanitizada. No sustituye las fuentes de verdad privadas ni el `PUENTE.md` de cada unidad.
 
@@ -13,7 +13,7 @@ Estado: `ACTIVA / HOME_V3.7`
 
 - `Vehicle Hub V1.2` → ficha privada/editable del vehículo.
 - `Production Studio V1.2` → decisión y producción por canal.
-- `Home Operaciones V3.7` → navegación, retorno al coordinador, siguiente chat, accesos rápidos, consulta de archivos e ingesta temporal de material por clasificar.
+- `Home Operaciones V4` → interfaz unificada responsive para Operaciones, Respuestas, Seguimiento, Ficha/JSON, Producción, Drive, GitHub/Sistema, ROOT Console y modo avanzado. V3.7 queda preservado como rollback durante validación.
 - `Consulta Rápida Leads V1` → resolución captura/publicación → índice sanitizado → `EXPEDIENTE_KEY` → `PUENTE.md` → reglas comerciales → respuesta corta.\n- `Asistente de Respuestas V1.3` → respuesta pública/privada, seguimiento, aprendizaje Meta sanitizado y alta de nuevo vehículo mediante JSON exportable; no persiste PII en el repositorio público.
 - `Content Engine V4` → respaldo/legacy; no es el flujo canónico diario.
 
@@ -199,3 +199,16 @@ Cuando cambie alguno de estos elementos, el Coordinador revisa este archivo en e
 - regla transversal de producción.
 
 Los estados particulares de cada vehículo continúan en su `PUENTE.md`; no se duplican aquí.
+
+
+## Home Operaciones V4 — unificación 2026-09-21
+
+- Entrada canónica pública: `index.html → home-operaciones-v4.html`.
+- Unifica navegación operativa sin fusionar las fuentes de verdad.
+- La ficha permite validar/exportar JSON y generar `SYNC_PUENTE`; editar en navegador no modifica el PUENTE automáticamente.
+- Seguimiento conserva `afl_autos_agenda_v1` como caché/agenda auxiliar local.
+- Producción permite retorno manual y enrutamiento por módulos; aprobación de Miguel nunca se infiere.
+- Drive representa las tres cuentas y su estructura, pero no codifica nuevos enlaces/IDs privados en V4. Los accesos reales requieren capa privada/autenticada o configuración local autorizada.
+- ROOT Console se integra como puerta de retorno/enrutamiento, sin convertir este repo en fuente global.
+- Los HTML anteriores no se eliminan; permanecen como LEGACY/ROLLBACK hasta validación funcional explícita.
+- `UN SOLO HOME / FUENTES SEPARADAS` continúa siendo la regla.
