@@ -111,11 +111,12 @@
     {
       "key": "AFL-510418__2018_VOLKSWAGEN_ATLAS",
       "label": "Volkswagen Atlas SE 2018 guinda",
-      "estado": "IDENTIDAD_CONFIRMADA / VISUAL_ID_LISTA / CAPTURA_COMPLEMENTARIA_PENDIENTE / NO_PUBLICAR",
-      "siguiente_accion": "CONFIRMAR_PRECIO_Y_COMPLETAR_CAPTURA",
+      "estado": "IDENTIDAD_CONFIRMADA / VISUAL_ID_LISTA / CONTENIDO_V1_APROBADO / PRODUCCION_PENDIENTE / NO_PUBLICAR",
+      "siguiente_accion": "PRODUCIR_Y_REVISAR_TIKTOK_REEL_V1",
       "flags": [
         "VISUAL_ID_LISTA",
-        "CAPTURA_PENDIENTE",
+        "CONTENIDO_V1_APROBADO",
+        "PRODUCCION_PENDIENTE",
         "NO_PUBLICAR"
       ]
     }
