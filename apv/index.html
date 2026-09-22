@@ -56,6 +56,24 @@ button,input,select,textarea,a{font:inherit}.app{min-height:100vh;display:grid;g
 
 <section class="page" data-page="ficha">
   <div class="card gold" id="vehicleCard"><div class="muted">Selecciona un vehículo desde Inventario o Buscar.</div></div>
+  <div class="card" id="vehicleActionMenu">
+    <h3>¿Qué hacemos con este vehículo?</h3>
+    <p class="muted tiny">Menú contextual. PUENTE = verdad · Drive = material · Content System = autoridad creativa · Content Lab = laboratorio experimental.</p>
+    <div class="actions">
+      <button class="btn primary" id="vehicleContentBtn">1 · CREAR CONTENIDO</button>
+      <button class="btn" id="vehicleCaptureBtn">2 · PLAN DE CAPTURA</button>
+      <button class="btn blue" id="vehicleDriveBtn">3 · ABRIR DRIVE</button>
+      <button class="btn green" id="vehicleReadyMaterialBtn">LISTO MATERIAL ACTUALIZADO</button>
+      <button class="btn" id="vehicleFieldBtn">4 · TAREA DE CAMPO</button>
+      <button class="btn" id="vehicleFlyerBtn">5 · FLYER / HISTORIA / POST</button>
+      <button class="btn" id="vehicleWhatsBtn">6 · WHATSAPP / FICHA</button>
+      <button class="btn" id="vehiclePendingBtn">7 · PENDIENTES</button>
+      <button class="btn" id="vehicleNewBtn">9 · NUEVO VEHÍCULO</button>
+      <button class="btn" id="vehicleHomeBtn">0 · AFL AUTOS</button>
+      <button class="btn danger" id="vehicleRootBtn">ROOT · GLOBAL</button>
+    </div>
+    <div class="muted tiny" style="margin-top:9px">Cada producción resuelve precio SI/NO, CTA, duración, audio/voz, efectos y familia según material + objetivo + pulso actual.</div>
+  </div>
   <div class="tabs" id="vehicleTabs">
     <button class="btn" data-vtab="datos">Datos</button><button class="btn" data-vtab="material">Material</button><button class="btn" data-vtab="whatsapp">WhatsApp</button><button class="btn" data-vtab="comercial">Comercial</button><button class="btn" data-vtab="pendientes">Pendientes</button>
   </div>
@@ -166,6 +184,18 @@ function renderFollow(){const h=document.getElementById('followList'),r=leads.fi
 document.getElementById('copyProdPrompt').onclick=()=>{const v=currentVehicleFromSelect('prodVehicle'),mode=prodMode.value;cp('AFL AUTOS — '+mode+'\nVEHICLE_ID: '+(v?idOf(v):'NO INDICADO')+'\nLee PUENTE vigente, Content Runtime y material real. Respeta gates de aprobación y no publiques automáticamente.')};
 document.getElementById('driveIndexFile').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const j=JSON.parse(await f.text());driveIndex=Array.isArray(j)?{vehicles:j}:j;save(STORE.driveIndex,driveIndex);refreshDriveStatus();alert('Índice Drive privado importado: '+(driveIndex.vehicles||[]).length+' carpetas.')}catch(err){alert('Índice Drive inválido: '+err.message)}};
 document.getElementById('copyDriveSync').onclick=()=>cp('AFL AUTOS — APV SYNC DRIVE\nUsa la cuenta AFL autorizada. Lee 01_VEHICULOS y genera un JSON PRIVADO de índice APV sin modificar ni renombrar carpetas. Para cada carpeta devuelve vehicle_id o alias existente, folder_name, folder_url y subfolders detectadas. Marca legacy cuando no use AFL-<VIN6>. No publiques el JSON en GitHub; entrégamelo para importarlo en APV.');
+function requireCurrent(){if(!current){alert('Selecciona un vehículo primero.');return null}return current}
+document.getElementById('vehicleContentBtn').onclick=()=>{const v=requireCurrent();if(!v)return;cp('AFL AUTOS — CREAR CONTENIDO CON MATERIAL ACTUAL\nVEHICLE_ID: '+idOf(v)+'\nLee PUENTE vigente, material real, AFL_AUTOS_CONTENT_SYSTEM/runtime/CONTENT_RUNTIME.md y prompts/MENU_VEHICULO_POST_UPDATE.md. Usa AFL_AUTOS_CONTENT_LAB solo como laboratorio experimental. Si hay web y aporta valor, revisa hoy TikTok, Meta/Reels, audio/sonidos, edición y señales relevantes de CapCut. Propón 1–3 conceptos compatibles con el material actual: familia, hook, duración, secuencia, audio, voz en off SI/NO, efectos, CTA, precio SI/NO recomendado y faltantes. No publiques automáticamente.')};
+document.getElementById('vehicleCaptureBtn').onclick=()=>{const v=requireCurrent();if(!v)return;cp('AFL AUTOS — GENERAR / ACTUALIZAR PLAN DE CAPTURA\nVEHICLE_ID: '+idOf(v)+'\nLee PUENTE, revisa cobertura real actual y usa prompts/PLAN_CAPTURA.md. Cruza vehículo + forma de venderlo + material + piezas objetivo + pulso actual cuando aporte. Devuelve solo tomas faltantes, fotos/videos, duración sugerida de clips, hooks que habilitan, orden de campo y qué NO publicar.')};
+document.getElementById('vehicleDriveBtn').onclick=()=>document.getElementById('openDriveVehicle').click();
+document.getElementById('vehicleReadyMaterialBtn').onclick=()=>{const v=requireCurrent();if(!v)return;cp('LISTO MATERIAL ACTUALIZADO\nVEHICLE_ID: '+idOf(v)+'\nRevisa Drive canónico, clasifica Inbox/originales, detecta duplicados sin borrarlos, actualiza cobertura, PUENTE, índices y repos derivados que correspondan. Al terminar vuelve a mostrar MENU_VEHICULO_POST_UPDATE con RECOMENDADO AHORA.')};
+document.getElementById('vehicleFieldBtn').onclick=()=>{const v=requireCurrent();if(!v)return;cp('AFL AUTOS — TAREA DE CAMPO\nVEHICLE_ID: '+idOf(v)+'\nDesde PUENTE y material actual, dame checklist corto de campo: fotos, videos, datos, documentos/consultas, limpieza o detalles físicos pendientes. Para cada tarea indica qué desbloquea.')};
+document.getElementById('vehicleFlyerBtn').onclick=()=>{const v=requireCurrent();if(!v)return;cp('AFL AUTOS — FLYER / HISTORIA / POST\nVEHICLE_ID: '+idOf(v)+'\nLee PUENTE, Content Runtime y material real. Resuelve HERO, formato, objetivo, datos publicables, MOSTRAR_PRECIO SI/NO recomendado y CTA. Produce solo si el material pasa el gate visual. NO PUBLICAR automáticamente.')};
+document.getElementById('vehicleWhatsBtn').onclick=()=>{const v=requireCurrent();if(!v)return;cp('AFL AUTOS — FICHA / WHATSAPP / RESPUESTA COMERCIAL\nVEHICLE_ID: '+idOf(v)+'\nConsulta PUENTE vigente y AFL_AUTOS_COMERCIAL. Separa ficha interna, título público, descripción estratégica, respuesta rápida y material aprobado para enviar. No inventes datos ni publiques VIN/odómetro.')};
+document.getElementById('vehiclePendingBtn').onclick=()=>{if(!requireCurrent())return;currentTab='pendientes';renderVTab();go('ficha')};
+document.getElementById('vehicleNewBtn').onclick=()=>go('nuevo');
+document.getElementById('vehicleHomeBtn').onclick=()=>go('inicio');
+document.getElementById('vehicleRootBtn').onclick=()=>cp('ROOT INICIAR\nInicializa ROOT_ECOSISTEMA desde fuentes vigentes y muestra el menú ROOT global.');
 document.getElementById('copyMeasurePrompt').onclick=()=>cp('AFL AUTOS — PUBLICACION_MEDICION\nUsa PUBLICADO_CONFIRMADO → MEDICION_7D → CIERRE_DE_APRENDIZAJE. Cruza métricas de plataforma y resultado comercial sin PII.');
 document.getElementById('copyLabPrompt').onclick=()=>cp('ROOT ABRIR AFL AUTOS CONTENT LAB\nInicializa ROOT_ECOSISTEMA y abre AFL_AUTOS_CONTENT_LAB como laboratorio experimental; no lo trates como fuente de verdad.');
 document.getElementById('copyRootPrompt').onclick=()=>cp('ROOT INICIAR\nInicializa ROOT_ECOSISTEMA desde fuentes vigentes y muestra el menú ROOT.');
