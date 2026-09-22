@@ -254,3 +254,42 @@ APV debe mostrar al final de cada actualización de unidad:
 - acceso directo a la acción recomendada cuando la integración exista.
 
 Esta regla deriva de `Vehiculos/docs/PROTOCOLO_VEHICULO_V2.md`.
+
+
+## Menú contextual post-actualización
+
+Autoridad operativa:
+
+`prompts/MENU_VEHICULO_POST_UPDATE.md`
+
+Después de cada actualización o consulta de una unidad, APV debe poder ofrecer:
+
+1. crear contenido con material actual;
+2. generar/actualizar plan de captura;
+3. abrir Drive / revisar nuevo material / `LISTO MATERIAL ACTUALIZADO`;
+4. tarea de campo;
+5. flyer / historia / post;
+6. ficha / WhatsApp / respuesta comercial;
+7. pendientes / seguimiento;
+8. regresar al vehículo;
+9. inventario / nuevo vehículo;
+0. AFL AUTOS;
+ROOT. ROOT global.
+
+La recomendación creativa puede consultar `AFL_AUTOS_CONTENT_LAB` como laboratorio/insumo experimental, pero la autoridad creativa sigue en `AFL_AUTOS_CONTENT_SYSTEM`.
+
+Cuando se elige TikTok/Reel, el flujo debe decidir familia, hook, duración, audio, voz, efectos, CTA y material faltante a partir de:
+
+`OBJETIVO + VEHICULO + MATERIAL + PLATAFORMA + PULSO DEL DIA + APRENDIZAJE MEDIDO`
+
+El pulso actual debe revisarse el mismo día cuando exista acceso web y aporte valor. Incluye señales relevantes de TikTok, Meta/Reels y herramientas de edición como CapCut sin copiar plantillas distintivas.
+
+### Navegación reversible
+
+`ACCION → VEHICULO → INVENTARIO/NUEVO VEHICULO → AFL AUTOS → ROOT GLOBAL`
+
+### Gate de precio y CTA
+
+Toda pieza de venta debe resolver `MOSTRAR_PRECIO = SI/NO`. Si Miguel no lo autorizó para esa pieza, preguntar. El sistema debe recomendar SI/NO según canal, objetivo y precio vigente confirmado.
+
+CTA debe recomendarse según objetivo y canal consumiendo reglas vigentes de `AFL_AUTOS_COMERCIAL`.
