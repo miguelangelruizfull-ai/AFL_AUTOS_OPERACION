@@ -89,3 +89,14 @@ Esta etapa solo recomienda. Estado máximo:
 `RECOMENDADO / PENDIENTE_APROBACION_MIGUEL`
 
 No producir ni publicar automáticamente hasta que Miguel apruebe la propuesta o indique directamente qué producir.
+
+
+## Content Lab como insumo experimental
+
+Cuando aporte valor, la recomendación puede consultar `AFL_AUTOS_CONTENT_LAB` para hipótesis o pulso experimental actual.
+
+No tratar hallazgos del Lab como regla canónica sin promoción:
+
+`LAB → HIPOTESIS/EXPERIMENTO → VALIDACION → CONTENT_SYSTEM`
+
+Al pasar de recomendación a producción, aplicar `prompts/MENU_VEHICULO_POST_UPDATE.md` para resolver familia, precio, CTA, duración, audio/voz, efectos y navegación posterior.
