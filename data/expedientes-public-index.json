@@ -1,6 +1,6 @@
 {
   "schema_version": "3.1",
-  "generated_at": "2026-09-21",
+  "generated_at": "2026-09-22",
   "rule": "NAVEGACION_PUBLICA_SANITIZADA",
   "expedientes": [
     {
@@ -106,6 +106,18 @@
         "ESPERANDO_MIGUEL",
         "NO_PUBLICAR",
         "CAPTURA_PENDIENTE"
+      ]
+    },
+    {
+      "key": "AFL-510418__2018_VOLKSWAGEN_ATLAS",
+      "label": "Volkswagen Atlas SE 2018 guinda",
+      "estado": "IDENTIDAD_CONFIRMADA / VISUAL_ID_LISTA / CAPTURA_COMPLEMENTARIA_PENDIENTE / DATOS_TECNICOS_PENDIENTES / NO_PUBLICAR",
+      "siguiente_accion": "CAPTURA_COMPLEMENTARIA_Y_CONFIRMAR_DATOS_TECNICOS",
+      "flags": [
+        "VISUAL_ID_LISTA",
+        "CAPTURA_PENDIENTE",
+        "DATOS_TECNICOS_PENDIENTES",
+        "NO_PUBLICAR"
       ]
     }
   ]
