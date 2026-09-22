@@ -123,6 +123,7 @@ Las auditorías, motores completos, logs y casos se consultan bajo demanda cuand
 
 Prompts activos:
 
+- `prompts/MENU_VEHICULO_POST_UPDATE.md` — menú contextual después de cada consulta/actualización de unidad;
 - `prompts/RECOMENDAR_PRODUCCION_HOY.md`;
 - `prompts/PRODUCIR_REDES.md`;
 - `prompts/REVISION_APROBACION.md`;
