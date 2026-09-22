@@ -49,32 +49,42 @@ Corte 2026-09-22:
 
 ## Estructura Drive V2 canónica
 
+La autoridad de estructura física vive en `Vehiculos/docs/PROTOCOLO_VEHICULO_V2.md`.
+
 ```text
-CARPETA_RAIZ_VEHICULO
-├── 01_FOTOS_ORIGINALES
-├── 02_VIDEOS_ORIGINALES
-├── 03_FOTOS_SELECCIONADAS
-├── 04_VIDEOS_SELECCIONADOS
-├── 05_FOTOS_RETOCADAS
-├── 06_REELS_TIKTOK
-├── 07_FLYERS_PORTADAS
-├── 08_PUBLICACIONES_COPYS
-└── 09_RESULTADOS
+AFL-<VIN6>__AÑO_MARCA_MODELO/
+├── 00_INBOX
+├── 01_ORIGINALES_FOTOS
+├── 02_ORIGINALES_VIDEO
+├── 03_DOCUMENTOS_PRIVADOS
+├── 04_INSPECCION_FISICA
+├── 05_SELECCION
+├── 06_RETOQUE
+├── 07_PRODUCCION
+├── 08_APROBADOS_MIGUEL
+├── 09_ENTREGA_CLIENTE
+├── 10_RESULTADOS
+└── 99_HISTORICO
 ```
 
 ## Mapeo UX APV
 
-APV puede mostrar nombres simples sin alterar Drive:
+APV puede mostrar nombres simples sin alterar la estructura física:
 
-- Entradas fotos → `01_FOTOS_ORIGINALES`
-- Entradas video → `02_VIDEOS_ORIGINALES`
-- Selección fotos → `03_FOTOS_SELECCIONADAS`
-- Selección video → `04_VIDEOS_SELECCIONADOS`
-- Retoque → `05_FOTOS_RETOCADAS`
-- Videos finales → `06_REELS_TIKTOK`
-- Flyers / portadas → `07_FLYERS_PORTADAS`
-- Copys / fichas → `08_PUBLICACIONES_COPYS`
-- Resultados → `09_RESULTADOS`
+- Inbox / material nuevo → `00_INBOX`
+- Fotos originales → `01_ORIGINALES_FOTOS`
+- Videos originales → `02_ORIGINALES_VIDEO`
+- Documentos privados → `03_DOCUMENTOS_PRIVADOS`
+- Inspección física → `04_INSPECCION_FISICA`
+- Selección → `05_SELECCION`
+- Retoque → `06_RETOQUE`
+- Producción → `07_PRODUCCION`
+- Aprobados Miguel → `08_APROBADOS_MIGUEL`
+- Entrega cliente → `09_ENTREGA_CLIENTE`
+- Resultados → `10_RESULTADOS`
+- Histórico → `99_HISTORICO`
+
+Regla: `UX_SIMPLE != SEGUNDA_ESTRUCTURA_DRIVE`.
 
 ## Compatibilidad legacy
 
