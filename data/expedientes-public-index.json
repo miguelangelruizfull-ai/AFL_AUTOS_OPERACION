@@ -1,39 +1,39 @@
 {
-  "schema_version": "3.1",
+  "schema_version": "4.0",
   "generated_at": "2026-09-22",
-  "rule": "NAVEGACION_PUBLICA_SANITIZADA",
-  "expedientes": [
+  "rule": "PUBLIC_NAVIGATION_ONLY",
+  "vehicles": [
     {
-      "key": "PENDIENTE_International_4300_2017_2026-09-12",
-      "label": "AFL-0034 International caja seca",
-      "estado": "INVENTARIO_COMPLETADO / IDENTIFICACION_PARCIAL / SIN_PRODUCCION",
-      "siguiente_accion": "ESTRATEGIA_PLAN_CAPTURA",
+      "public_ref": "PUB-2607B901",
+      "label": "International 4300 2017 caja seca",
+      "status": "INVENTARIO_COMPLETADO / IDENTIFICACION_PARCIAL / SIN_PRODUCCION",
+      "next_action": "ESTRATEGIA_PLAN_CAPTURA",
       "flags": [
         "IDENTIFICACION_PARCIAL"
       ]
     },
     {
-      "key": "PENDIENTE_Chevrolet_Colorado_2016_2026-09-11",
+      "public_ref": "PUB-CD6F442A",
       "label": "Chevrolet Colorado 2016 roja cabina y media",
-      "estado": "V4_FEED_PRODUCIDO / FIDELIDAD_PASS / PENDIENTE_REVISION_MIGUEL / NO_PUBLICAR",
-      "siguiente_accion": "REVISION_APROBACION_V4",
+      "status": "V4_FEED_PRODUCIDO / FIDELIDAD_PASS / PENDIENTE_REVISION_MIGUEL / NO_PUBLICAR",
+      "next_action": "REVISION_APROBACION_V4",
       "flags": [
         "ESPERANDO_MIGUEL",
         "NO_PUBLICAR"
       ]
     },
     {
-      "key": "PENDIENTE_Chevrolet_Silverado_2016_2026-09-11",
+      "public_ref": "PUB-B1C31E7D",
       "label": "Chevrolet Silverado 2016 Cabina Regular",
-      "estado": "PLAN_CAPTURA_LISTO / CAPTURA_PENDIENTE",
-      "siguiente_accion": "CAPTURA",
+      "status": "PLAN_CAPTURA_LISTO / CAPTURA_PENDIENTE",
+      "next_action": "CAPTURA",
       "flags": []
     },
     {
-      "key": "PENDIENTE_Chevrolet_Silverado_Texas_Edition_Gris_2026-09-11",
+      "public_ref": "PUB-3C381E2A",
       "label": "Chevrolet Silverado Texas Edition Gris",
-      "estado": "REDISENO_APROBADO / ARTEFACTO_PENDIENTE_DE_LOCALIZAR / AUDIOVISUAL_BLOQUEADO / NO_PUBLICAR",
-      "siguiente_accion": "LOCALIZAR_ARTEFACTO_APROBADO",
+      "status": "REDISENO_APROBADO / ARTEFACTO_PENDIENTE_DE_LOCALIZAR / AUDIOVISUAL_BLOQUEADO / NO_PUBLICAR",
+      "next_action": "LOCALIZAR_ARTEFACTO_APROBADO",
       "flags": [
         "ESPERANDO_ARTEFACTO",
         "AUDIOVISUAL_BLOQUEADO",
@@ -41,20 +41,20 @@
       ]
     },
     {
-      "key": "PENDIENTE_Ford_Explorer_Limited_2017_2026-09-15",
+      "public_ref": "PUB-A15051FD",
       "label": "Ford Explorer Limited 2017",
-      "estado": "IDENTIDAD_RECONCILIADA / V1_OSCURA_EXCLUIDA / REPRODUCCION_REQUERIDA / NO_PUBLICAR",
-      "siguiente_accion": "REPRODUCIR_HISTORIAS_CON_MATERIAL_BLANCO",
+      "status": "IDENTIDAD_RECONCILIADA / V1_OSCURA_EXCLUIDA / REPRODUCCION_REQUERIDA / NO_PUBLICAR",
+      "next_action": "REPRODUCIR_HISTORIAS_CON_MATERIAL_BLANCO",
       "flags": [
         "NO_PUBLICAR",
         "REPRODUCCION_REQUERIDA"
       ]
     },
     {
-      "key": "PENDIENTE_Ford_F150_2011_Texas_Edition_2026-09-10",
+      "public_ref": "PUB-5115EA3F",
       "label": "Ford F-150 2011",
-      "estado": "V2_APROBADO_Y_PUBLICADO / MEDICION_7D_EJECUTADA / FEED_CORREGIDO_CON_METRICAS_VERIFICABLES / VINCULO_V2_PENDIENTE_RECONCILIAR",
-      "siguiente_accion": "RECONCILIAR_PUBLICACION_EXACTA_FEED_V2",
+      "status": "V2_APROBADO_Y_PUBLICADO / MEDICION_7D_EJECUTADA / FEED_CORREGIDO_CON_METRICAS_VERIFICABLES / VINCULO_V2_PENDIENTE_RECONCILIAR",
+      "next_action": "RECONCILIAR_PUBLICACION_EXACTA_FEED_V2",
       "flags": [
         "PUBLICADO_CONFIRMADO",
         "MEDICION_7D_EJECUTADA",
@@ -62,47 +62,47 @@
       ]
     },
     {
-      "key": "PENDIENTE_Ford_F150_FX4_2026-09-07",
+      "public_ref": "PUB-E2596E23",
       "label": "Ford F-150 FX4 2013",
-      "estado": "FEED_V3_APROBADO / NO_PUBLICADO / FORMATOS_RESTANTES_PENDIENTES",
-      "siguiente_accion": "ADAPTAR_DIRECCION_V3_A_FORMATOS_RESTANTES",
+      "status": "FEED_V3_APROBADO / NO_PUBLICADO / FORMATOS_RESTANTES_PENDIENTES",
+      "next_action": "ADAPTAR_DIRECCION_V3_A_FORMATOS_RESTANTES",
       "flags": [
         "APROBADO_POR_MIGUEL",
         "NO_PUBLICADO"
       ]
     },
     {
-      "key": "PENDIENTE_Ford_F250_2017_2026-09-12",
+      "public_ref": "PUB-C9912892",
       "label": "Ford F-250 XL 2017 cabina regular",
-      "estado": "INVENTARIO_COMPLETADO / SIN_PRODUCCION",
-      "siguiente_accion": "ESTRATEGIA_PLAN_CAPTURA",
+      "status": "INVENTARIO_COMPLETADO / SIN_PRODUCCION",
+      "next_action": "ESTRATEGIA_PLAN_CAPTURA",
       "flags": []
     },
     {
-      "key": "AFL-142202__2016_GMC_CANYON",
+      "public_ref": "PUB-FB75DF9C",
       "label": "GMC Canyon 2016 negra cabina extendida",
-      "estado": "PLAN_CAPTURA_LISTO / CAPTURA_COMPLEMENTARIA_PENDIENTE / NO_PUBLICAR",
-      "siguiente_accion": "CAPTURA_COMPLEMENTARIA",
+      "status": "PLAN_CAPTURA_LISTO / CAPTURA_COMPLEMENTARIA_PENDIENTE / NO_PUBLICAR",
+      "next_action": "CAPTURA_COMPLEMENTARIA",
       "flags": [
         "NO_PUBLICAR",
         "CAPTURA_PENDIENTE"
       ]
     },
     {
-      "key": "PENDIENTE_Jeep_Wrangler_2017_2026-09-10",
+      "public_ref": "PUB-9034DF41",
       "label": "Jeep Wrangler 2017",
-      "estado": "AUDIOVISUAL_V3_CORREGIDO / SUBIDO / PENDIENTE_APROBACION_MIGUEL / NO_PUBLICAR",
-      "siguiente_accion": "REVISION_APROBACION_AUDIOVISUAL_V3",
+      "status": "AUDIOVISUAL_V3_CORREGIDO / SUBIDO / PENDIENTE_APROBACION_MIGUEL / NO_PUBLICAR",
+      "next_action": "REVISION_APROBACION_AUDIOVISUAL_V3",
       "flags": [
         "ESPERANDO_MIGUEL",
         "NO_PUBLICAR"
       ]
     },
     {
-      "key": "PENDIENTE_Volkswagen_Tiguan_SE_2018_2026-09-20",
+      "public_ref": "PUB-693CF365",
       "label": "Volkswagen Tiguan SE 2018",
-      "estado": "PLAN_CAPTURA_LISTO / CARPETAS_ORIGINALES_LISTAS / CAPTURA_PENDIENTE / NO_PUBLICAR",
-      "siguiente_accion": "CAPTURA_COMPLEMENTARIA",
+      "status": "PLAN_CAPTURA_LISTO / CARPETAS_ORIGINALES_LISTAS / CAPTURA_PENDIENTE / NO_PUBLICAR",
+      "next_action": "CAPTURA_COMPLEMENTARIA",
       "flags": [
         "ESPERANDO_MIGUEL",
         "NO_PUBLICAR",
@@ -110,10 +110,10 @@
       ]
     },
     {
-      "key": "AFL-510418__2018_VOLKSWAGEN_ATLAS",
+      "public_ref": "PUB-DE1F772A",
       "label": "Volkswagen Atlas SE 2018 guinda",
-      "estado": "IDENTIDAD_CONFIRMADA / TIKTOK_REEL_V1_APROBADO / TIKTOK_PROGRAMACION_CONFIRMADA / META_REEL_V1_PROGRAMADO / PUBLICACION_CONTROLADA",
-      "siguiente_accion": "EJECUTAR_TIKTOK_Y_CONFIRMAR_PUBLICACION_META",
+      "status": "IDENTIDAD_CONFIRMADA / TIKTOK_REEL_V1_APROBADO / TIKTOK_PROGRAMACION_CONFIRMADA / META_REEL_V1_PROGRAMADO / PUBLICACION_CONTROLADA",
+      "next_action": "EJECUTAR_TIKTOK_Y_CONFIRMAR_PUBLICACION_META",
       "flags": [
         "CONTENIDO_V1_APROBADO",
         "TIKTOK_PROGRAMACION_CONFIRMADA",
