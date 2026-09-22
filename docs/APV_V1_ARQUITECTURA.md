@@ -242,3 +242,15 @@ Incluye:
 - conexiones privadas configurables solo en el navegador.
 
 No implementa todavía escritura directa autenticada en Drive/GitHub/Meta. Esas acciones permanecen pendientes y no se simulan.
+
+
+## Cierre de actualización de vehículo
+
+APV debe mostrar al final de cada actualización de unidad:
+
+- opciones numeradas de siguiente movimiento;
+- `RECOMENDADO AHORA`;
+- pendientes críticos de la unidad;
+- acceso directo a la acción recomendada cuando la integración exista.
+
+Esta regla deriva de `Vehiculos/docs/PROTOCOLO_VEHICULO_V2.md`.
