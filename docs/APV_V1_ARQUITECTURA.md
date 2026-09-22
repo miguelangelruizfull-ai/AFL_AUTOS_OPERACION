@@ -1,7 +1,7 @@
 # APV V1 — ARQUITECTURA OPERATIVA UNIFICADA
 
 Fecha: 2026-09-22
-Estado: `ARQUITECTURA_APROBADA / IMPLEMENTACION_PENDIENTE`
+Estado: `ARQUITECTURA_APROBADA / UI_BETA_V1_IMPLEMENTADA / INTEGRACIONES_AUTENTICADAS_PENDIENTES`
 
 ## Objetivo
 
@@ -202,14 +202,14 @@ Aprobado por Miguel el 2026-09-22.
 Pendiente:
 
 1. contrato JSON privado APV;
-2. diseño UI responsive móvil/escritorio;
-3. buscador global;
-4. integración de Nuevo Vehículo;
-5. resolución de carpetas Drive;
-6. ficha unificada;
-7. respuestas/leads/seguimiento;
-8. acceso Demo UX y Content Lab;
-9. integración de producción;
+2. diseño UI responsive móvil/escritorio — IMPLEMENTADO EN BETA;
+3. buscador global — IMPLEMENTADO SOBRE JSON IMPORTADO;
+4. integración de Nuevo Vehículo — BORRADOR/JSON LOCAL IMPLEMENTADO;
+5. resolución de carpetas Drive — UI/PROMPT IMPLEMENTADOS, CONECTOR AUTENTICADO PENDIENTE;
+6. ficha unificada — BETA IMPLEMENTADA;
+7. respuestas/leads/seguimiento — BETA LOCAL IMPLEMENTADA;
+8. acceso Demo UX y Content Lab — IMPLEMENTADO;
+9. integración de producción — PREPARACION DE PROMPT IMPLEMENTADA, EJECUCION CONECTADA PENDIENTE;
 10. pruebas antes de sustituir cualquier Home vigente.
 
 Hasta completar pruebas:
@@ -217,3 +217,28 @@ Hasta completar pruebas:
 `HOME_VIGENTE NO SE REEMPLAZA`
 
 `APV_V1 = CONSTRUCCION CONTROLADA`
+
+
+## Implementación UI beta — 2026-09-22
+
+Entrada:
+
+`apv/index.html`
+
+Incluye:
+
+- navegación responsive móvil/escritorio;
+- buscador global sobre JSON privados importados;
+- alta de nuevo vehículo con `AFL-<VIN6>`;
+- generación y descarga de JSON borrador;
+- previsualización local de fotos/videos;
+- inventario local;
+- ficha unificada;
+- estructura de material/Drive;
+- respuestas y leads locales;
+- seguimiento local;
+- preparación de prompts de producción y medición;
+- acceso a Demo UX, Content Lab, Home Operaciones V4 y ROOT;
+- conexiones privadas configurables solo en el navegador.
+
+No implementa todavía escritura directa autenticada en Drive/GitHub/Meta. Esas acciones permanecen pendientes y no se simulan.
