@@ -13,7 +13,7 @@ Estado: `ACTIVA / HOME_OPERACIONES_V4_BETA_CANONICA`
 
 - `Vehicle Hub V1.2` → ficha privada/editable del vehículo.
 - `Production Studio V1.2` → decisión y producción por canal.
-- `Home Operaciones V4` → interfaz unificada responsive para Operaciones, Respuestas, Seguimiento, Ficha/JSON, Producción, Drive, GitHub/Sistema, ROOT Console y modo avanzado. V3.7 queda preservado como rollback durante validación.
+- `Home Operaciones V4` → interfaz unificada responsive para Operaciones, Respuestas, Seguimiento, Ficha/JSON, Producción, AFL AUTOS Content Lab, Drive, GitHub/Sistema, ROOT Console y modo avanzado. V3.7 queda preservado como rollback durante validación.
 - `Consulta Rápida Leads V1` → resolución captura/publicación → índice sanitizado → `EXPEDIENTE_KEY` → `PUENTE.md` → reglas comerciales → respuesta corta.\n- `Asistente de Respuestas V1.3` → respuesta pública/privada, seguimiento, aprendizaje Meta sanitizado y alta de nuevo vehículo mediante JSON exportable; no persiste PII en el repositorio público.
 - `Content Engine V4` → respaldo/legacy; no es el flujo canónico diario.
 
@@ -212,3 +212,5 @@ Los estados particulares de cada vehículo continúan en su `PUENTE.md`; no se d
 - ROOT Console se integra como puerta de retorno/enrutamiento, sin convertir este repo en fuente global.
 - Los HTML anteriores no se eliminan; permanecen como LEGACY/ROLLBACK hasta validación funcional explícita.
 - `UN SOLO HOME / FUENTES SEPARADAS` continúa siendo la regla.
+
+- `AFL AUTOS Content Lab` queda visible desde Home V4 como laboratorio experimental; no es fuente de verdad. Sus resultados siguen la promoción `RESULTADO_OBSERVABLE → VALIDACION_MIGUEL → SANITIZACION → FUENTE_DUEÑA`.
