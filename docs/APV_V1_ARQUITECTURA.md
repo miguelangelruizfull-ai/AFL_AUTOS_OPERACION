@@ -77,20 +77,27 @@ La unidad permanece en estado provisional hasta validación.
 
 APV debe permitir localizar y abrir las carpetas del vehículo y cargar material nuevo o existente desde dispositivo hacia el almacenamiento privado autorizado.
 
-Estructura objetivo por vehículo:
+Estructura canónica en Drive por vehículo:
 
 ```text
-AFL-<VIN6>__<MARCA>_<MODELO>_<ANIO>
-├── 00_ENTRADAS
-├── 01_SELECCION
-├── 02_RETOQUE
-├── 03_VIDEOS
-├── 04_RESULTADOS
-├── 05_WHATSAPP
-├── 06_COMERCIAL
-├── 07_DOCUMENTACION
-└── 08_RESPALDO_JSON_MD
+AFL-<VIN6>__AÑO_MARCA_MODELO/
+├── 00_INBOX
+├── 01_ORIGINALES_FOTOS
+├── 02_ORIGINALES_VIDEO
+├── 03_DOCUMENTOS_PRIVADOS
+├── 04_INSPECCION_FISICA
+├── 05_SELECCION
+├── 06_RETOQUE
+├── 07_PRODUCCION
+├── 08_APROBADOS_MIGUEL
+├── 09_ENTREGA_CLIENTE
+├── 10_RESULTADOS
+└── 99_HISTORICO
 ```
+
+Autoridad: `Vehiculos/docs/PROTOCOLO_VEHICULO_V2.md`.
+
+APV puede mostrar etiquetas UX más simples, pero no debe inventar una segunda estructura física ni crear carpetas paralelas. Las carpetas legacy se reutilizan mediante equivalencias verificadas y no se renombran automáticamente.
 
 Los originales no se sobrescriben.
 
