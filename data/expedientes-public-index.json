@@ -1,6 +1,6 @@
 {
   "schema_version": "3.1",
-  "generated_at": "2026-09-20",
+  "generated_at": "2026-09-21",
   "rule": "NAVEGACION_PUBLICA_SANITIZADA",
   "expedientes": [
     {
@@ -52,8 +52,8 @@
     {
       "key": "PENDIENTE_Ford_F150_2011_Texas_Edition_2026-09-10",
       "label": "Ford F-150 2011",
-      "estado": "CHECKPOINT_7D_EJECUTADO / FEED_CORREGIDO_CON_METRICAS_VERIFICABLES / VINCULO_V2_PENDIENTE_RECONCILIAR",
-      "siguiente_accion": "RECONCILIAR_FEED_V2_Y_COMPLETAR_REEL_TIKTOK_SI_HAY_EVIDENCIA",
+      "estado": "V2_APROBADO_Y_PUBLICADO / MEDICION_7D_EJECUTADA / FEED_CORREGIDO_CON_METRICAS_VERIFICABLES / VINCULO_V2_PENDIENTE_RECONCILIAR",
+      "siguiente_accion": "RECONCILIAR_PUBLICACION_EXACTA_FEED_V2",
       "flags": [
         "PUBLICADO_CONFIRMADO",
         "MEDICION_7D_EJECUTADA",
@@ -63,7 +63,7 @@
     {
       "key": "PENDIENTE_Ford_F150_FX4_2026-09-07",
       "label": "Ford F-150 FX4 2013",
-      "estado": "FEED_V3_APROBADO / FORMATOS_RESTANTES_PENDIENTES",
+      "estado": "FEED_V3_APROBADO / NO_PUBLICADO / FORMATOS_RESTANTES_PENDIENTES",
       "siguiente_accion": "ADAPTAR_DIRECCION_V3_A_FORMATOS_RESTANTES",
       "flags": [
         "APROBADO_POR_MIGUEL",
