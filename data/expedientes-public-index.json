@@ -32,11 +32,12 @@
     {
       "key": "PENDIENTE_Chevrolet_Silverado_Texas_Edition_Gris_2026-09-11",
       "label": "Chevrolet Silverado Texas Edition Gris",
-      "estado": "REDISENO_APROBADO / VALIDACION_PENDIENTE / AUDIOVISUAL_BLOQUEADO",
-      "siguiente_accion": "VALIDAR_ARTEFACTO_APROBADO",
+      "estado": "REDISENO_APROBADO / ARTEFACTO_PENDIENTE_DE_LOCALIZAR / AUDIOVISUAL_BLOQUEADO / NO_PUBLICAR",
+      "siguiente_accion": "LOCALIZAR_ARTEFACTO_APROBADO",
       "flags": [
-        "ESPERANDO_VERIFICACION",
-        "BLOQUEADO"
+        "ESPERANDO_ARTEFACTO",
+        "AUDIOVISUAL_BLOQUEADO",
+        "NO_PUBLICAR"
       ]
     },
     {
