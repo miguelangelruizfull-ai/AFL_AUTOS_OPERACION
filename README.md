@@ -28,6 +28,24 @@ URL:
 
 El Home público no expone fuentes privadas. La producción privada puede usar herramientas separadas en `AFL_AUTOS_PLATFORM`, pero las reglas de coordinación permanecen aquí y las autoridades de datos no cambian.
 
+## APV V1 — interfaz operativa unificada
+
+Arquitectura aprobada: `docs/APV_V1_ARQUITECTURA.md`.
+
+APV se define como la interfaz operativa que unifica búsqueda de vehículos, alta de inventario, carpetas y material, respuestas, leads, seguimiento, producción, resultados y acceso a Demo UX/Content Lab, sin sustituir las fuentes dueñas.
+
+Regla:
+
+`APV = ORQUESTADOR`
+
+`UNA INTERFAZ / VARIAS AUTORIDADES / UN MISMO VEHICLE_ID`
+
+Identidad común:
+
+`VEHICLE_ID = CODIGO_VEHICULO = CODIGO_WHATSAPP = AFL-<VIN6>`
+
+Durante implementación, el Home vigente no se reemplaza hasta validar APV.
+
 ## Flujo principal
 
 ```text
