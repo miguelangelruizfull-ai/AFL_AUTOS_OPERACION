@@ -1,0 +1,219 @@
+# APV V1 — ARQUITECTURA OPERATIVA UNIFICADA
+
+Fecha: 2026-09-22
+Estado: `ARQUITECTURA_APROBADA / IMPLEMENTACION_PENDIENTE`
+
+## Objetivo
+
+APV será la interfaz operativa unificada de AFL AUTOS para trabajar desde una sola superficie sin duplicar fuentes de verdad.
+
+Principio:
+
+`UNA INTERFAZ / VARIAS AUTORIDADES / UN MISMO VEHICLE_ID`
+
+APV no sustituye repositorios dueños. Orquesta navegación, consulta, captura y acciones controladas.
+
+## Identidad canónica
+
+La clave operativa común será:
+
+`VEHICLE_ID = CODIGO_VEHICULO = CODIGO_WHATSAPP = AFL-<VIN6>`
+
+El VIN completo puede mostrarse y editarse únicamente en la capa privada autorizada. No debe persistirse en superficies públicas.
+
+## Módulos APV V1
+
+- Inicio
+- Buscador global
+- Nuevo vehículo
+- Inventario
+- Ficha de vehículo
+- Material / Drive
+- Respuestas
+- Leads
+- Seguimientos
+- Agenda
+- Producción
+- Resultados
+- Demo UX
+- Content Lab
+- Drive / GitHub
+- ROOT
+
+## Buscador global
+
+Debe resolver por:
+
+- VEHICLE_ID;
+- VIN completo en capa privada;
+- VIN6;
+- marca;
+- modelo;
+- año;
+- versión;
+- alias;
+- código WhatsApp.
+
+La salida debe unificar navegación hacia:
+
+- ficha vigente;
+- expediente / PUENTE;
+- carpetas y material;
+- paquete WhatsApp;
+- respuestas rápidas;
+- leads relacionados;
+- siguiente acción;
+- producción y resultados.
+
+## Nuevo vehículo
+
+Flujo base:
+
+`VIN → AFL-<VIN6> → CARPETA DRIVE → JSON PRIVADO → CAPTURA DE DATOS → SUBIR FOTOS/VIDEOS → CORROBORACION VISUAL → CONFIRMACION MIGUEL → FICHAS COMERCIALES → PRODUCCION`
+
+La unidad permanece en estado provisional hasta validación.
+
+## Material y Drive
+
+APV debe permitir localizar y abrir las carpetas del vehículo y cargar material nuevo o existente desde dispositivo hacia el almacenamiento privado autorizado.
+
+Estructura objetivo por vehículo:
+
+```text
+AFL-<VIN6>__<MARCA>_<MODELO>_<ANIO>
+├── 00_ENTRADAS
+├── 01_SELECCION
+├── 02_RETOQUE
+├── 03_VIDEOS
+├── 04_RESULTADOS
+├── 05_WHATSAPP
+├── 06_COMERCIAL
+├── 07_DOCUMENTACION
+└── 08_RESPALDO_JSON_MD
+```
+
+Los originales no se sobrescriben.
+
+## Respuestas y comercial
+
+Desde la ficha de unidad APV debe permitir:
+
+- contestar comentario;
+- contestar inbox;
+- preparar respuesta Messenger/TikTok/WhatsApp;
+- consultar precio, disponibilidad, ubicación y atributos vigentes;
+- enviar paquete de fotos WhatsApp aprobado;
+- generar CTA;
+- crear o vincular lead;
+- registrar siguiente acción.
+
+La lógica comercial pertenece a `AFL_AUTOS_COMERCIAL`.
+
+## Leads y seguimiento
+
+Cada lead activo debe tener:
+
+- lead_id;
+- vehicle_id;
+- canal/origen;
+- etapa;
+- último contacto;
+- interés/pregunta;
+- siguiente acción;
+- fecha de seguimiento;
+- notas resumidas;
+- resultado.
+
+Acciones disponibles:
+
+- llamar;
+- WhatsApp;
+- enviar fotos;
+- enviar ubicación;
+- proponer/agendar visita;
+- registrar negociación;
+- programar seguimiento.
+
+APV puede recomendar la siguiente acción, pero no debe inventar datos de vehículo ni estado comercial.
+
+## Producción
+
+Desde una unidad confirmada APV debe poder enviar el contexto correcto a producción:
+
+- recomendar qué producir;
+- flyer;
+- Reel;
+- TikTok;
+- historia;
+- paquete;
+- WhatsApp.
+
+Autoridad creativa: `AFL_AUTOS_CONTENT_SYSTEM`.
+
+## Demo UX
+
+APV incluirá acceso directo a `AFL_AUTOS_HOME_UX_DEMO1`.
+
+Regla:
+
+`DEMO_UX = LABORATORIO`
+
+`APV = OPERACION_REAL`
+
+Las ideas validadas en Demo UX pueden incorporarse a APV después de revisión. Demo UX no se convierte en fuente de verdad.
+
+## Mapa de autoridades
+
+| Dominio APV | Fuente dueña |
+|---|---|
+| identidad, datos vigentes, expediente | `Vehiculos` |
+| RAW, fotos, videos, documentos, entregables | Drive privado |
+| comercial, respuestas, leads, seguimiento | `AFL_AUTOS_COMERCIAL` |
+| creatividad y producción | `AFL_AUTOS_CONTENT_SYSTEM` |
+| herramientas privadas, schemas, métricas | `AFL_AUTOS_PLATFORM` |
+| histórico sanitizado | `AFL_AUTOS_DATA_HISTORY` |
+| experimentos creativos | `AFL_AUTOS_CONTENT_LAB` |
+| interfaz, navegación, prompts | `AFL_AUTOS_OPERACION` |
+| demo UX | `AFL_AUTOS_HOME_UX_DEMO1` |
+| gobierno transversal | `ROOT_ECOSISTEMA` |
+
+## Regla de integración
+
+`APV = ORQUESTADOR`
+
+`APV != FUENTE_DE_VERDAD`
+
+La interfaz consulta o importa las fuentes autorizadas y devuelve cambios al repositorio o almacenamiento dueño.
+
+No crear un JSON público maestro con PII, VIN completo, conversaciones, teléfonos, documentos o enlaces privados.
+
+## Privacidad
+
+APV podrá tener una capa privada autenticada con VIN completo, enlaces Drive, datos de inventario y seguimiento real.
+
+La superficie pública de `AFL_AUTOS_OPERACION` conserva sanitización. Si durante construcción se reutiliza una UI pública, los datos reales deben mantenerse fuera del repositorio y cargarse desde fuente privada/autorizada.
+
+`UI_PUBLICA != DATOS_PUBLICOS`
+
+## Estado de implementación
+
+Aprobado por Miguel el 2026-09-22.
+
+Pendiente:
+
+1. contrato JSON privado APV;
+2. diseño UI responsive móvil/escritorio;
+3. buscador global;
+4. integración de Nuevo Vehículo;
+5. resolución de carpetas Drive;
+6. ficha unificada;
+7. respuestas/leads/seguimiento;
+8. acceso Demo UX y Content Lab;
+9. integración de producción;
+10. pruebas antes de sustituir cualquier Home vigente.
+
+Hasta completar pruebas:
+
+`HOME_VIGENTE NO SE REEMPLAZA`
+
+`APV_V1 = CONSTRUCCION CONTROLADA`
