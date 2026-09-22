@@ -123,6 +123,8 @@ Las auditorías, motores completos, logs y casos se consultan bajo demanda cuand
 
 Prompts activos:
 
+- `prompts/ABRIR_NUEVO_VEHICULO.md` — entrada corta para iniciar una unidad desde un chat nuevo;
+- `prompts/RETOMAR_CONTENIDO_MOODBOARD.md` — reanudar producción visual/moodboard desde fuentes vigentes;
 - `prompts/MENU_VEHICULO_POST_UPDATE.md` — menú contextual después de cada consulta/actualización de unidad;
 - `prompts/RECOMENDAR_PRODUCCION_HOY.md`;
 - `prompts/PRODUCIR_REDES.md`;
