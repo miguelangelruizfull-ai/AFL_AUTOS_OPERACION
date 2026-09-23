@@ -124,12 +124,13 @@
     {
       "public_ref": "PUB-0944B53F",
       "label": "Jeep Grand Cherokee Limited 2016 negra",
-      "status": "PLAN_CAPTURA_LISTO / TAREA_CAMPO_ACTIVA / CAPTURA_PENDIENTE / NO_PUBLICAR",
+      "status": "PLAN_CAPTURA_LISTO / TAREA_CAMPO_ACTIVA / CAPTURA_PENDIENTE / PRECIO_CONFIRMADO / NO_PUBLICAR",
       "next_action": "CAPTURAR_Y_SUBIR_MATERIAL_SEGUN_PLAN",
       "flags": [
         "NO_PUBLICAR",
         "CAPTURA_PENDIENTE",
-        "DATOS_COMERCIALES_PENDIENTES"
+        "DATOS_COMERCIALES_PENDIENTES",
+        "PRECIO_CONFIRMADO"
       ]
     }
   ]
