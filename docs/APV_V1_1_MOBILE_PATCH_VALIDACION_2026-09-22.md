@@ -81,3 +81,34 @@ El patch modifica únicamente:
 `apv/index.html`
 
 La evidencia de validación se registra en este archivo. No se modificaron expedientes de vehículo, Drive, comercial, leads reales ni el Home vigente.
+
+## Smoke test físico — Moto G77
+
+Fecha: 2026-09-22
+
+Resultado reportado por Miguel:
+
+`PASS`
+
+Validación adicional de dispositivo real sobre APV V1.1 en Moto G77.
+
+Alcance del smoke test:
+- navegación inferior 4 accesos + `MÁS`;
+- acceso reversible a módulos;
+- tactilidad de controles;
+- VIN oculto / mostrar / ocultar;
+- previsualización de material no subido;
+- controles de datos privados locales;
+- confirmación de limpieza local;
+- comportamiento de safe area;
+- retorno y navegación móvil general.
+
+Este resultado complementa la validación funcional/estructural previa y no cambia la arquitectura.
+
+Estado ampliado:
+
+`APV_V1_1_MOBILE_PATCH_APLICADO / MOBILE_NAV_PASS / TOUCH_PASS / VIN_PRIVACY_PASS / LOCAL_DATA_CONTROL_PASS / DESKTOP_REGRESSION_PASS / PHYSICAL_SMOKE_PASS`
+
+Regla vigente:
+
+`APV = ORQUESTADOR != FUENTE_DE_VERDAD`.
