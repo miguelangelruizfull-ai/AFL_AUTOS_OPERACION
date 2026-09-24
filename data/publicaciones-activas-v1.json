@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "updated_at": "2026-09-16",
+  "updated_at": "2026-09-24",
   "rule": "INDICE_SANITIZADO_DE_IDENTIDAD_NO_FUENTE_DE_VERDAD_DE_UNIDAD",
   "coverage": "PUBLICACIONES_VIGENTES_DOCUMENTADAS_EN_FUENTES_DURABLES_MAS_OBSERVACIONES_PENDIENTES_DE_VINCULO",
   "authority_order": [
@@ -97,6 +97,26 @@
       "telefono_comercial_autorizado": null,
       "observaciones_publicas": "Publicación V2 confirmada por Miguel. Precio no confirmado.",
       "referencia_PUENTE": "vehiculos/PENDIENTE_Ford_F150_2011_Texas_Edition_2026-09-10/PUENTE.md"
+    },
+    {
+      "PUBLICACION_KEY": "FB_REEL_ATLAS_2018_V1_2026-09-24",
+      "plataforma": "FACEBOOK_REEL",
+      "fecha": "2026-09-24",
+      "estado": "ACTIVA",
+      "vehiculo": "Volkswagen Atlas SE",
+      "anio": 2018,
+      "version": "SE",
+      "EXPEDIENTE_KEY": "AFL-510418__2018_VOLKSWAGEN_ATLAS",
+      "publicacion_o_pieza_relacionada": "Facebook Reel V1 Atlas",
+      "public_url": "https://www.facebook.com/share/r/19VEdJYFVp/",
+      "copy_publico_vigente": "Volkswagen Atlas SE 2018 disponible. Motor 3.6L, automática, 4x2 y cámara de reversa. ¿Quieres verla o recibir más fotos? Mándanos mensaje.",
+      "precio_mostrado_publicacion": null,
+      "ESTADO_PRECIO": "NO_MOSTRADO_EN_ESTA_PIEZA",
+      "disponibilidad_publica_conocida": true,
+      "CTA_autorizado": "MÁNDANOS MENSAJE",
+      "telefono_comercial_autorizado": null,
+      "observaciones_publicas": "Publicación confirmada por Miguel mediante captura y URL el 2026-09-24. Solo Facebook Reel confirmado; TikTok permanece sin publicación confirmada.",
+      "referencia_PUENTE": "vehiculos/AFL-510418__2018_VOLKSWAGEN_ATLAS/PUENTE.md"
     }
   ],
   "pendientes_vinculo": [
