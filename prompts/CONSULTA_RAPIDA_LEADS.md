@@ -9,7 +9,7 @@ Lee fuentes vigentes; no respondas desde memoria del chat cuando exista una fuen
 1. Evidencia actual enviada por Miguel: captura/publicación/mensaje/reply del anuncio.
 2. `AFL_AUTOS_OPERACION/data/publicaciones-activas-v1.json`.
 3. `Vehiculos/vehiculos/{EXPEDIENTE_KEY}/PUENTE.md` de la unidad resuelta.
-4. `AFL_AUTOS_COMERCIAL/rules/REGLAS_COMERCIALES.md` y `rules/FUENTES_DE_VERDAD.md`.
+4. `AFL_AUTOS_COMERCIAL/rules/REGLAS_COMERCIALES.md`, `rules/FUENTES_DE_VERDAD.md` y `rules/LEADS_INGESTA_V2.md`.
 5. `ROOT_ECOSISTEMA/docs/AFL_AUTOS_SISTEMA_ACTUAL.md` cuando haya duda de arquitectura.
 
 ## Reglas críticas
@@ -20,7 +20,39 @@ Lee fuentes vigentes; no respondas desde memoria del chat cuando exista una fuen
 - La publicación sirve para identidad y contexto público; datos variables se validan contra `PUENTE.md`.
 - Nunca inventar precio, disponibilidad, versión, año, motor o expediente.
 - Si publicación y `PUENTE.md` discrepan, emitir `CONTRADICCION_DETECTADA` y no afirmar el dato en conflicto.
-- No guardar PII de leads, conversación privada, teléfonos de prospectos, VIN completo, IDs/rutas privadas de Drive ni credenciales.
+- PII de leads, conversación privada y teléfonos solo pueden persistirse en `AFL_AUTOS_LEADS_PRIVADO` / Drive privado autorizado. Nunca en GitHub público, Home público ni retornos sanitizados.
+
+## Ingesta automática del lead
+
+Ante cada captura, mensaje o lead nuevo:
+
+1. resolver fecha/hora local `America/Mexico_City`;
+2. detectar teléfono/WhatsApp solo si está visible o fue proporcionado;
+3. buscar duplicado privado;
+4. asignar o conservar `LEAD_ID` con formato `LEAD-YYYYMMDD-NNN`;
+5. si hay número, normalizarlo en privado e identificar código de país, LADA y ubicación probable; si es ambiguo marcar `PROBABLE/PENDIENTE`;
+6. persistir PII únicamente en `AFL_AUTOS_LEADS_PRIVADO`;
+7. clasificar `PRIORIDAD BAJA/MEDIA/ALTA`;
+8. consultar material de la unidad y determinar fotos/video disponibles;
+9. fijar una `SIGUIENTE_ACCION` principal;
+10. reflejar al Home/Console únicamente estado sanitizado.
+
+Si el mismo teléfono confirmado ya existe, actualizar ese lead y no duplicarlo.
+
+### Recomendaciones automáticas
+
+Según el caso, recomendar una o más opciones para Miguel después de cada mensaje:
+
+- responder o mandar mensaje;
+- llamar cuando haya motivo real de cierre/visita/negociación;
+- preparar o enviar fotos;
+- preparar o enviar video;
+- si falta video: pedir a Miguel subir aquí los videos disponibles o abrir producción de video;
+- enviar ubicación;
+- proponer visita;
+- programar seguimiento.
+
+No ejecutar llamada, mensaje externo ni publicación sin instrucción/autorización correspondiente.
 
 ## Precio
 
@@ -67,11 +99,16 @@ Si Miguel aporta un dato nuevo inequívoco:
 Devuelve siempre:
 
 ```text
+LEAD_ID:
 UNIDAD IDENTIFICADA:
 PRECIO:
 ESTADO_PRECIO:
 DISPONIBILIDAD:
 INTENCION_LEAD:
+PRIORIDAD:
+LADA/LUGAR_PROBABLE:
+MATERIAL_FOTOS:
+MATERIAL_VIDEO:
 RESPUESTA_RAPIDA:
 SIGUIENTE_ACCION:
 ```
@@ -93,17 +130,18 @@ Formato:
 ```text
 SIGUIENTE MOVIMIENTO
 
-1. RESPONDER / CONTINUAR LEAD
-   Seguir en este mismo chat con la siguiente respuesta comercial.
+Mostrar opciones adaptadas al caso, por ejemplo:
 
-2. PERSISTIR / CORREGIR FUENTE
-   Actualizar PUENTE, índice de publicaciones o regla durable si se detectó información nueva o una corrección.
-
-3. ABRIR PRODUCTOR / EJECUTOR
-   Cuando ya exista una acción concreta fuera de Consulta Rápida.
-
-4. VOLVER A COORDINADOR / ROOT
-   Cuando haga falta decidir módulo, revisar arquitectura o cambiar de área.
+1. ENVIAR / CONTINUAR RESPUESTA
+2. PREPARAR O ENVIAR FOTOS
+3. PREPARAR O ENVIAR VIDEO
+4. SUBIR AQUÍ VIDEOS DISPONIBLES
+5. CREAR VIDEO NUEVO
+6. LLAMAR / MANDAR MENSAJE
+7. ENVIAR UBICACIÓN / PROPONER VISITA
+8. PROGRAMAR SEGUIMIENTO
+9. ABRIR FICHA / MATERIAL
+10. VOLVER A RESPONDER / LEADS
 
 RECOMENDADO AHORA: <número + motivo breve>
 NUEVO_CHAT_RECOMENDADO: SI/NO
