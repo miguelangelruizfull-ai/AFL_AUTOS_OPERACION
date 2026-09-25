@@ -29,7 +29,7 @@ La hora/día sí deben influir en la `SIGUIENTE_ACCION` (por ejemplo, visita hoy
 1. Contexto actual enviado por Miguel: captura, publicación, mensaje del lead o reply específico del anuncio.
 2. `data/publicaciones-activas-v1.json` para resolver publicación → unidad.
 3. `Vehiculos/vehiculos/{EXPEDIENTE_KEY}/PUENTE.md` para datos vigentes de la unidad.
-4. `AFL_AUTOS_COMERCIAL/rules/REGLAS_COMERCIALES.md` y demás reglas comerciales vigentes.
+4. `AFL_AUTOS_COMERCIAL/rules/REGLAS_COMERCIALES.md`, `rules/LEADS_INGESTA_V2.md` y demás reglas comerciales vigentes.
 5. `ROOT_ECOSISTEMA/docs/AFL_AUTOS_SISTEMA_ACTUAL.md` para arquitectura transversal.
 
 Regla central:
@@ -37,6 +37,23 @@ Regla central:
 `PUBLICACIÓN ≠ PRECIO ACTUAL CONFIRMADO`
 
 La publicación ayuda a identificar la unidad y recuperar información pública, pero precio, disponibilidad y estado actual se validan contra la fuente vigente del vehículo.
+
+## Registro privado del lead
+
+Cada captura o mensaje nuevo puede crear o actualizar un lead privado.
+
+Regla:
+
+`CAPTURA/MENSAJE → IDENTIDAD → LEAD_ID → TIEMPO → TELÉFONO/LADA SI EXISTE → PRIORIDAD → MATERIAL → SIGUIENTE_ACCION → PERSISTENCIA PRIVADA → RETORNO SANITIZADO`
+
+- ID nuevo: `LEAD-YYYYMMDD-NNN`.
+- Si existe teléfono/WhatsApp visible, se conserva solo en Drive privado y se usa para deduplicar.
+- Código de país, LADA y ubicación probable se registran con estado de confianza; no inventar ciudad cuando la numeración sea ambigua.
+- Fuente privada: `AFL_AUTOS_LEADS_PRIVADO`.
+- Home/Console nunca reciben PII; solo estado sanitizado.
+- Todo lead activo conserva siguiente acción.
+- Para intención alta, revisar si conviene llamada, mensaje, fotos, video, ubicación o visita.
+- Antes de ofrecer material, consultar si las fotos/videos existen. Si falta video, recomendar subir material disponible al chat o abrir producción.
 
 ## Identidad de la unidad
 
@@ -111,11 +128,16 @@ Para intención `ALTA`, proponer una sola siguiente acción comercial útil. No 
 ## Salida obligatoria
 
 ```text
+LEAD_ID:
 UNIDAD IDENTIFICADA:
 PRECIO:
 ESTADO_PRECIO:
 DISPONIBILIDAD:
 INTENCION_LEAD:
+PRIORIDAD:
+LADA/LUGAR_PROBABLE:
+MATERIAL_FOTOS:
+MATERIAL_VIDEO:
 RESPUESTA_RAPIDA:
 SIGUIENTE_ACCION:
 ```
