@@ -4,6 +4,17 @@
   "rule": "PUBLIC_NAVIGATION_ONLY",
   "vehicles": [
     {
+      "public_ref": "PUB-0B6503AF",
+      "label": "GMC Sierra 1500 SLT 2017 plata",
+      "status": "REVISION_MATERIAL_CERRADA / PLAN_CAPTURA_LISTO / CAPTURA_COMPLEMENTARIA_PENDIENTE / DISPONIBLE_CONFIRMADO / NO_PUBLICAR",
+      "next_action": "CAPTURA_COMPLEMENTARIA",
+      "flags": [
+        "NO_PUBLICAR",
+        "PLAN_CAPTURA_LISTO",
+        "CAPTURA_PENDIENTE"
+      ]
+    },
+    {
       "public_ref": "PUB-2607B901",
       "label": "International 4300 2017 caja seca",
       "status": "INVENTARIO_COMPLETADO / IDENTIFICACION_PARCIAL / SIN_PRODUCCION",
