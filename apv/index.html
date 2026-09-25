@@ -96,8 +96,8 @@ button,input,select,textarea,a{font:inherit}.app{min-height:100vh;display:grid;g
 <section class="page" data-page="respuestas">
   <div class="card gold"><h2>Responder / lead</h2>
     <div class="two"><div><label>Vehículo</label><select id="replyVehicle"></select></div><div><label>Canal</label><select id="replyChannel"><option>Facebook comentario</option><option>Messenger</option><option>TikTok</option><option>WhatsApp</option><option>Llamada</option></select></div></div>
-    <label>Mensaje / comentario</label><textarea id="leadMessage" placeholder="Pega solo lo necesario. No se guarda completo."></textarea><div class="muted tiny">Los leads nuevos guardan solo un resumen operativo breve; localStorage es auxiliar y no es un CRM.</div>
-    <div class="actions"><button class="btn primary" id="copyReplyPrompt">COPIAR PROMPT RESPUESTA</button><button class="btn" id="saveLead">GUARDAR LEAD LOCAL</button></div>
+    <label>Mensaje / comentario</label><textarea id="leadMessage" placeholder="Pega solo lo necesario. No se guarda completo."></textarea><div class="muted tiny">Lead V2: ChatGPT persiste PII solo en Drive privado. localStorage continúa siendo caché auxiliar, no CRM.</div>
+    <div class="actions"><button class="btn primary" id="copyReplyPrompt">COPIAR PROMPT LEAD V2</button><a class="btn blue" href="https://chatgpt.com/" target="_blank" rel="noopener">ABRIR CHATGPT</a><button class="btn" id="saveLead">GUARDAR CACHE LOCAL</button><a class="btn" href="../afl-console.html">CONSOLE AFL</a></div>
   </div>
   <div class="card"><h3>Leads locales</h3><div id="leadList" class="list"></div></div>
 </section>
@@ -106,7 +106,7 @@ button,input,select,textarea,a{font:inherit}.app{min-height:100vh;display:grid;g
   <div class="card gold"><h2>Seguimiento</h2>
     <div class="grid">
       <div><label>Lead</label><select id="followLead"></select></div>
-      <div><label>Próxima acción</label><select id="followAction"><option>RESPONDER</option><option>LLAMAR</option><option>WHATSAPP</option><option>ENVIAR_FOTOS</option><option>ENVIAR_UBICACION</option><option>AGENDAR_VISITA</option><option>NEGOCIACION</option><option>SEGUIMIENTO</option><option>CERRAR</option></select></div>
+      <div><label>Próxima acción</label><select id="followAction"><option>RESPONDER</option><option>MENSAJE_WHATSAPP</option><option>LLAMAR</option><option>PREPARAR_FOTOS_DRIVE</option><option>ENVIAR_FOTOS</option><option>PREPARAR_VIDEO</option><option>ENVIAR_VIDEO</option><option>SUBIR_VIDEO_A_CHAT</option><option>CREAR_VIDEO</option><option>ENVIAR_UBICACION</option><option>AGENDAR_VISITA</option><option>NEGOCIACION</option><option>SEGUIMIENTO</option><option>CERRAR</option></select></div>
       <div><label>Fecha / hora</label><input id="followDate" type="datetime-local"></div>
     </div>
     <div class="two"><div><label>Etapa</label><select id="followStage"><option>NUEVO</option><option>CONTACTADO</option><option>INTERESADO</option><option>VISITA</option><option>NEGOCIACION</option><option>VENDIDO</option><option>DESCARTADO</option></select></div><div><label>Nota resumida</label><input id="followNote" placeholder="Sin PII innecesaria"></div></div>
@@ -129,6 +129,7 @@ button,input,select,textarea,a{font:inherit}.app{min-height:100vh;display:grid;g
     <a class="btn primary" href="https://miguelangelruizfull-ai.github.io/AFL_AUTOS_HOME_UX_DEMO1/" target="_blank" rel="noopener">ABRIR DEMO UX</a>
     <button class="btn" id="copyLabPrompt">LABORATORIO CREATIVO</button>
     <a class="btn" href="../home-operaciones-v4.html">HOME OPERACIONES V4</a>
+    <a class="btn blue" href="../afl-console.html">CONSOLE AFL</a>
     <button class="btn" id="copyRootPrompt">ROOT</button>
     <button class="btn" id="openLocalLinks">CONEXIONES LOCALES</button>
     <button class="btn danger" id="clearLocalData">LIMPIAR DATOS LOCALES</button>
@@ -147,7 +148,7 @@ button,input,select,textarea,a{font:inherit}.app{min-height:100vh;display:grid;g
 const STORE={vehicles:'apv_v1_vehicles',leads:'apv_v1_leads',cfg:'apv_v1_cfg',driveIndex:'apv_v1_drive_index'};
 let vehicles=load(STORE.vehicles,[]), publicVehicles=[], leads=load(STORE.leads,[]), driveIndex=load(STORE.driveIndex,{vehicles:[]}), current=null, currentTab='datos', vinVisible=false;
 vehicles=vehicles.map(normalizePrivateRecord);
-const pages=[['inicio','Inicio'],['buscar','Buscar'],['nuevo','Nuevo'],['inventario','Inventario'],['ficha','Ficha'],['material','Material'],['respuestas','Respuestas'],['seguimiento','Seguimiento'],['produccion','Producción'],['resultados','Resultados'],['herramientas','Herramientas']];
+const pages=[['inicio','Inicio'],['buscar','1 · Buscar'],['inventario','2 · Inventario'],['nuevo','3 · Nuevo'],['ficha','4 · Ficha'],['material','5 · Material'],['respuestas','6 · Responder / Leads'],['seguimiento','7 · Seguimiento'],['produccion','8 · Producción'],['resultados','9 · Resultados'],['herramientas','10 · Herramientas']];
 const mobilePrimary=['inicio','buscar','inventario','nuevo'];
 function load(k,d){try{return JSON.parse(localStorage.getItem(k)||JSON.stringify(d))}catch{return d}}
 function save(k,v){localStorage.setItem(k,JSON.stringify(v));updateLocalDataBadge()}
@@ -214,7 +215,7 @@ function leadTimeContext(){
   const now=new Date(),tz='America/Mexico_City',parts=new Intl.DateTimeFormat('es-MX',{timeZone:tz,year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23',weekday:'long'}).formatToParts(now),get=t=>parts.find(x=>x.type===t)?.value||'';
   return {timestamp_utc:now.toISOString(),local_date:get('year')+'-'+get('month')+'-'+get('day'),local_time:get('hour')+':'+get('minute'),local_day:get('weekday'),timezone:tz};
 }
-document.getElementById('copyReplyPrompt').onclick=()=>{const v=currentVehicleFromSelect('replyVehicle'),msg=leadMessage.value.trim(),ch=replyChannel.value,t=leadTimeContext();cp('AFL AUTOS — CONSULTA COMERCIAL\nVEHICLE_REF: '+(v?vehicleRef(v):'NO INDICADO')+'\nCANAL: '+ch+'\nFECHA_CONSULTA_LOCAL: '+t.local_date+'\nHORA_CONSULTA_LOCAL: '+t.local_time+'\nDIA_SEMANA_LOCAL: '+t.local_day+'\nZONA_HORARIA: '+t.timezone+'\nTIMESTAMP_UTC: '+t.timestamp_utc+'\nMENSAJE: '+msg+'\nConsulta primero la fuente vigente del vehículo y la fuente comercial privada. Usa fecha/hora para contextualizar la siguiente acción, sin inferir disponibilidad o precio. Responde directo, no inventes datos, propone una sola siguiente acción útil y señala si conviene WhatsApp, llamada, visita o seguimiento.')};
+document.getElementById('copyReplyPrompt').onclick=()=>{const v=currentVehicleFromSelect('replyVehicle'),msg=leadMessage.value.trim(),ch=replyChannel.value,t=leadTimeContext();cp('AFL AUTOS — CONSULTA COMERCIAL / LEAD V2\nVEHICLE_REF: '+(v?vehicleRef(v):'NO INDICADO')+'\nCANAL: '+ch+'\nFECHA_CONSULTA_LOCAL: '+t.local_date+'\nHORA_CONSULTA_LOCAL: '+t.local_time+'\nDIA_SEMANA_LOCAL: '+t.local_day+'\nZONA_HORARIA: '+t.timezone+'\nTIMESTAMP_UTC: '+t.timestamp_utc+'\nMENSAJE: '+msg+'\nAplica LEADS_INGESTA_V2. Si hay teléfono/WhatsApp visible, crea o actualiza el lead privado en Drive, asigna LEAD_ID, normaliza país/LADA y ubicación probable sin inventar. Consulta PUENTE vigente, clasifica prioridad y revisa fotos/video disponibles. Responde directo y después muestra opciones adaptadas para Miguel: mensaje, llamada, fotos, video, ubicación, visita o seguimiento. Si falta video, ofrece subir aquí videos disponibles o crear/preparar uno. Nunca publiques automáticamente ni pongas PII en GitHub/Home.')};
 function summarizeLeadMessage(msg){return String(msg||'').replace(/\s+/g,' ').trim().slice(0,180)}
 document.getElementById('saveLead').onclick=()=>{const v=currentVehicleFromSelect('replyVehicle'),msg=leadMessage.value.trim();if(!msg)return alert('Captura el mensaje.');const t=leadTimeContext(),lead={lead_id:'L-'+Date.now().toString().slice(-7),vehicle_id:v?idOf(v):'',vehicle_label:v?titleOf(v):'',channel:replyChannel.value,summary:summarizeLeadMessage(msg),stage:'NUEVO',created_at:t.timestamp_utc,created_at_local:t.local_date+'T'+t.local_time,local_date:t.local_date,local_time:t.local_time,local_day:t.local_day,timezone:t.timezone,next_action:'RESPONDER',next_date:'',note:''};leads.unshift(lead);save(STORE.leads,leads);leadMessage.value='';refreshAll();renderLeads()};
 function renderLeads(){const h=document.getElementById('leadList');h.innerHTML=leads.length?leads.map(l=>{const summary=l.summary||summarizeLeadMessage(l.message||''),temporal=l.local_date?(l.local_day+' '+l.local_date+' · '+l.local_time+' · '+(l.timezone||'America/Mexico_City')):'';return '<div class="item"><strong>'+esc(l.lead_id)+' · '+esc(l.vehicle_id||l.vehicle_label||'SIN VEHÍCULO')+'</strong><span class="muted">'+esc(l.channel)+' · '+esc(l.stage)+' · siguiente: '+esc(l.next_action)+'</span>'+(temporal?'<div class="muted tiny" style="margin-top:4px">Consulta: '+esc(temporal)+'</div>':'')+(summary?'<div class="muted tiny" style="margin-top:5px">'+esc(summary)+'</div>':'')+'</div>'}).join(''):'<div class="muted">Sin leads locales.</div>'}
