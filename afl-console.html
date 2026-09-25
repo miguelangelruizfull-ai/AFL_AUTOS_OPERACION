@@ -82,13 +82,14 @@ a.btn strong{display:block}.primary{background:#d6ad49!important;color:#17120a!i
 </main>
 <script>
 (async()=>{
+ const countEl=document.getElementById('leadCount'),highEl=document.getElementById('leadHigh'),pendingEl=document.getElementById('leadPending'),recentEl=document.getElementById('leadRecent');
  try{
   const r=await fetch('data/leads-sanitized-v1.json?t='+Date.now(),{cache:'no-store'}),j=await r.json(),a=Array.isArray(j.leads)?j.leads:[];
-  leadCount.textContent=a.length;
-  leadHigh.textContent=a.filter(x=>x.priority==='ALTA').length;
-  leadPending.textContent=a.filter(x=>String(x.result||x.state||'').includes('PENDIENTE_RESPUESTA')).length;
+  countEl.textContent=a.length;
+  highEl.textContent=a.filter(x=>x.priority==='ALTA').length;
+  pendingEl.textContent=a.filter(x=>String(x.result||x.state||'').includes('PENDIENTE_RESPUESTA')).length;
   const recent=a.slice().sort((x,y)=>String((y.date_local||'')+(y.time_local||'')).localeCompare(String((x.date_local||'')+(x.time_local||'')))).slice(0,5);
-  leadRecent.textContent=recent.length?recent.map(x=>[x.lead_key,x.vehicle||'SIN VEHÍCULO',x.channel||'',x.priority||'SIN PRIORIDAD','Siguiente: '+(x.next_action||'PENDIENTE')].join(' · ')).join('\n'):'Sin leads sanitizados.';
- }catch(e){leadRecent.textContent='Estado sanitizado no disponible.'}
+  recentEl.textContent=recent.length?recent.map(x=>[x.lead_key,x.vehicle||'SIN VEHÍCULO',x.channel||'',x.priority||'SIN PRIORIDAD','Siguiente: '+(x.next_action||'PENDIENTE')].join(' · ')).join('\n'):'Sin leads sanitizados.';
+ }catch(e){recentEl.textContent='Estado sanitizado no disponible.'}
 })();
 </script></body></html>
