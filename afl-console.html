@@ -14,7 +14,7 @@ h1{margin:0}.muted{color:#91a3af}.pill{border:1px solid #3b4a55;border-radius:99
 a.btn,button.btn{display:flex;align-items:center;gap:8px;text-decoration:none;background:#10171d;color:#edf2f7;border:1px solid #34444f;border-radius:10px;padding:13px;min-height:52px;cursor:pointer}
 a.btn strong{display:block}.primary{background:#d6ad49!important;color:#17120a!important;font-weight:850}.blue{background:#18364d!important}.green{background:#183c2c!important}
 .num{display:grid;place-items:center;width:26px;height:26px;border:1px solid currentColor;border-radius:999px;font-weight:900;flex:0 0 26px}
-.code{white-space:pre-wrap;background:#0c1217;border:1px solid #283741;border-radius:10px;padding:11px}
+.code{white-space:pre-wrap;background:#0c1217;border:1px solid #283741;border-radius:10px;padding:11px}.stat{font-size:26px;font-weight:900}
 @media(max-width:760px){main{padding:13px}.grid{grid-template-columns:1fr}.top{align-items:flex-start}.pill{font-size:10px}}
 </style>
 </head>
@@ -29,6 +29,16 @@ a.btn strong{display:block}.primary{background:#d6ad49!important;color:#17120a!i
 <a class="btn" href="apv/index.html#seguimiento"><span class="num">7</span><span><strong>SEGUIMIENTO</strong><small>Siguiente acción, fecha, etapa y control</small></span></a>
 <a class="btn blue" href="home-operaciones-v4.html#operaciones"><span class="num">0</span><span><strong>HOME V4</strong><small>Centro de operación</small></span></a>
 </div>
+</section>
+
+<section class="card gold">
+<h2 style="margin-top:0">Estado de leads · sanitizado</h2>
+<div class="grid">
+<div class="card"><div class="muted">Leads registrados</div><div class="stat" id="leadCount">—</div></div>
+<div class="card"><div class="muted">Prioridad ALTA</div><div class="stat" id="leadHigh">—</div></div>
+<div class="card"><div class="muted">Respuesta pendiente</div><div class="stat" id="leadPending">—</div></div>
+</div>
+<div id="leadRecent" class="code">Cargando estado sanitizado…</div>
 </section>
 
 <section class="group"><h2>APV OPERATIVO</h2><div class="grid">
@@ -69,4 +79,16 @@ a.btn strong{display:block}.primary{background:#d6ad49!important;color:#17120a!i
 → ESTADO SANITIZADO EN HOME/CONSOLE</div>
 <p class="muted">PII, teléfono, conversaciones y notas privadas permanecen en Drive autorizado. Esta consola no los carga ni los muestra.</p>
 </section>
-</main></body></html>
+</main>
+<script>
+(async()=>{
+ try{
+  const r=await fetch('data/leads-sanitized-v1.json?t='+Date.now(),{cache:'no-store'}),j=await r.json(),a=Array.isArray(j.leads)?j.leads:[];
+  leadCount.textContent=a.length;
+  leadHigh.textContent=a.filter(x=>x.priority==='ALTA').length;
+  leadPending.textContent=a.filter(x=>String(x.result||x.state||'').includes('PENDIENTE_RESPUESTA')).length;
+  const recent=a.slice().sort((x,y)=>String((y.date_local||'')+(y.time_local||'')).localeCompare(String((x.date_local||'')+(x.time_local||'')))).slice(0,5);
+  leadRecent.textContent=recent.length?recent.map(x=>[x.lead_key,x.vehicle||'SIN VEHÍCULO',x.channel||'',x.priority||'SIN PRIORIDAD','Siguiente: '+(x.next_action||'PENDIENTE')].join(' · ')).join('\n'):'Sin leads sanitizados.';
+ }catch(e){leadRecent.textContent='Estado sanitizado no disponible.'}
+})();
+</script></body></html>
