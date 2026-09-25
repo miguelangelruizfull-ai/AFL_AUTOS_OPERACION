@@ -1,0 +1,44 @@
+{
+  "schema": "afl-autos-leads-sanitized-v1",
+  "generated_at": "2026-09-24T22:35:58-06:00",
+  "timezone": "America/Mexico_City",
+  "privacy": "NO_PII",
+  "leads": [
+    {
+      "lead_key": "LEAD-2026-09-20-NM-001",
+      "date_local": "2026-09-20",
+      "time_local": null,
+      "day_local": null,
+      "channel": "Facebook / Messenger",
+      "vehicle_id": null,
+      "vehicle": "Ford F-150 Lariat 2018 Blanca",
+      "intent": "LARIAT | PRECIO",
+      "priority": null,
+      "state": "CONVERSACION / FOTOS_ENVIADAS / ESPERANDO_RESPUESTA",
+      "next_action": "Esperar respuesta. Si responde con interés: confirmar precio/ubicación y proponer visita.",
+      "trigger": "AL_RESPONDER",
+      "photos": "FOTOS_ENVIADAS",
+      "video": null,
+      "material_action": null,
+      "result": null
+    },
+    {
+      "lead_key": "LEAD-20260924-001",
+      "date_local": "2026-09-24",
+      "time_local": "22:00",
+      "day_local": "jueves",
+      "channel": "WhatsApp",
+      "vehicle_id": "AFL-0035",
+      "vehicle": "Volkswagen Tiguan SEL R-Line 4MOTION 2019",
+      "intent": "PRECIO | DISPONIBILIDAD",
+      "priority": "ALTA",
+      "state": "CONVERSACION / PRECIO_Y_DISPONIBILIDAD_CONFIRMADOS / RESPUESTA_PENDIENTE",
+      "next_action": "Enviar respuesta con precio y disponibilidad; ofrecer ubicación y visita para el próximo horario operativo.",
+      "trigger": "RESPUESTA_PENDIENTE",
+      "photos": "FOTOS_DISPONIBLES",
+      "video": "VIDEO_DISPONIBLE / REQUIERE_APROBACION_MIGUEL",
+      "material_action": "PREPARAR_PAQUETE_LEAD: 6 fotos; video solo con aprobación",
+      "result": "PENDIENTE_RESPUESTA"
+    }
+  ]
+}
