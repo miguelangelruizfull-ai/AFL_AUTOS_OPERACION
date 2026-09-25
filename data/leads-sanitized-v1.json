@@ -1,6 +1,6 @@
 {
   "schema": "afl-autos-leads-sanitized-v1",
-  "generated_at": "2026-09-24T22:35:58-06:00",
+  "generated_at": "2026-09-25T09:24:15-06:00",
   "timezone": "America/Mexico_City",
   "privacy": "NO_PII",
   "leads": [
@@ -38,6 +38,24 @@
       "photos": "FOTOS_DISPONIBLES",
       "video": "VIDEO_DISPONIBLE / REQUIERE_APROBACION_MIGUEL",
       "material_action": "PREPARAR_PAQUETE_LEAD: 6 fotos; video solo con aprobación",
+      "result": "PENDIENTE_RESPUESTA"
+    },
+    {
+      "lead_key": "LEAD-20260925-001",
+      "date_local": "2026-09-25",
+      "time_local": "09:24",
+      "day_local": "viernes",
+      "channel": "Facebook / Messenger",
+      "vehicle_id": "AFL-0009",
+      "vehicle": "Ford F-150 Lariat 2018 Blanca",
+      "intent": "PRECIO",
+      "priority": "ALTA",
+      "state": "CONVERSACION / PRECIO_PENDIENTE_CONFIRMACION / RESPUESTA_PENDIENTE",
+      "next_action": "Confirmar precio vigente de AFL-0009 y responder. Si muestra interés, ofrecer paquete de 5 fotos y proponer visita.",
+      "trigger": "RESPUESTA_PENDIENTE",
+      "photos": "FOTOS_DISPONIBLES_5",
+      "video": "VIDEO_PENDIENTE / CARPETA_CANONICA_VACIA",
+      "material_action": "ENVIAR_FOTOS_SI_INTERES; si pide video: SUBIR_VIDEO_A_CHAT o PREPARAR_VIDEO",
       "result": "PENDIENTE_RESPUESTA"
     }
   ]
