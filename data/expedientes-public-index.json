@@ -1,6 +1,6 @@
 {
   "schema_version": "4.0",
-  "generated_at": "2026-09-24",
+  "generated_at": "2026-09-25",
   "rule": "PUBLIC_NAVIGATION_ONLY",
   "vehicles": [
     {
@@ -147,6 +147,17 @@
         "PLAN_CAPTURA_LISTO",
         "CAPTURA_PENDIENTE",
         "DATOS_COMERCIALES_PENDIENTES"
+      ]
+    },
+    {
+      "public_ref": "PUB-D177AF69",
+      "label": "Ford F-150 Lariat 2018 blanca",
+      "status": "PRECIO_510000_MXN_CONFIRMADO / ATENCION_LEADS_ACTIVA / DISPONIBILIDAD_PENDIENTE_CONFIRMACION",
+      "next_action": "RESPONDER_PRECIO_Y_CONFIRMAR_DISPONIBILIDAD",
+      "flags": [
+        "PRECIO_CONFIRMADO",
+        "LEADS_ACTIVOS",
+        "DISPONIBILIDAD_PENDIENTE"
       ]
     }
   ]
