@@ -7,6 +7,23 @@ Estado: `VIGENTE`
 
 Responder consultas de leads usando evidencia actual y fuentes durables, sin depender de la memoria del chat y sin recorrer manualmente todas las publicaciones en cada consulta.
 
+## Contexto temporal obligatorio
+
+Antes de resolver una consulta, obtener la fecha y hora local vigente de AFL AUTOS usando `America/Mexico_City`.
+
+Campos de contexto:
+
+- `FECHA_CONSULTA_LOCAL: YYYY-MM-DD`;
+- `HORA_CONSULTA_LOCAL: HH:mm`;
+- `DIA_SEMANA_LOCAL`;
+- `ZONA_HORARIA: America/Mexico_City`;
+- `TIMESTAMP_UTC` cuando esté disponible.
+
+Si la captura contiene una hora visible del mensaje, conservarla como evidencia separada. La hora actual del sistema es `HORA_PROCESAMIENTO` y no debe atribuirse al mensaje original salvo coincidencia verificable.
+
+La hora/día sí deben influir en la `SIGUIENTE_ACCION` (por ejemplo, visita hoy vs. próximo horario operativo), pero no modifican por sí mismos precio, disponibilidad, identidad ni estado comercial.
+
+
 ## Jerarquía de resolución
 
 1. Contexto actual enviado por Miguel: captura, publicación, mensaje del lead o reply específico del anuncio.
