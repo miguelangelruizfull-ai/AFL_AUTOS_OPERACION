@@ -1,6 +1,6 @@
 {
   "schema": "afl-autos-leads-sanitized-v1",
-  "generated_at": "2026-09-25T09:24:15-06:00",
+  "generated_at": "2026-09-25T09:31:14-06:00",
   "timezone": "America/Mexico_City",
   "privacy": "NO_PII",
   "leads": [
@@ -15,7 +15,7 @@
       "intent": "LARIAT | PRECIO",
       "priority": null,
       "state": "CONVERSACION / FOTOS_ENVIADAS / ESPERANDO_RESPUESTA",
-      "next_action": "Esperar respuesta. Si responde con interés: confirmar precio/ubicación y proponer visita.",
+      "next_action": "Esperar respuesta. Precio vigente confirmado en $510,000 MXN; si responde con interés, ofrecer fotos y confirmar disponibilidad antes de proponer visita.",
       "trigger": "AL_RESPONDER",
       "photos": "FOTOS_ENVIADAS",
       "video": null,
@@ -50,13 +50,13 @@
       "vehicle": "Ford F-150 Lariat 2018 Blanca",
       "intent": "PRECIO",
       "priority": "ALTA",
-      "state": "CONVERSACION / PRECIO_PENDIENTE_CONFIRMACION / RESPUESTA_PENDIENTE",
-      "next_action": "Confirmar precio vigente de AFL-0009 y responder. Si muestra interés, ofrecer paquete de 5 fotos y proponer visita.",
+      "state": "CONVERSACION / PRECIO_CONFIRMADO / RESPUESTA_PENDIENTE",
+      "next_action": "Responder $510,000 MXN. Si muestra interés, ofrecer paquete de 5 fotos; confirmar disponibilidad antes de proponer visita.",
       "trigger": "RESPUESTA_PENDIENTE",
       "photos": "FOTOS_DISPONIBLES_5",
       "video": "VIDEO_PENDIENTE / CARPETA_CANONICA_VACIA",
       "material_action": "ENVIAR_FOTOS_SI_INTERES; si pide video: SUBIR_VIDEO_A_CHAT o PREPARAR_VIDEO",
-      "result": "PENDIENTE_RESPUESTA"
+      "result": "PRECIO_CONFIRMADO / PENDIENTE_RESPUESTA"
     }
   ]
 }
