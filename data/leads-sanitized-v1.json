@@ -1,6 +1,6 @@
 {
   "schema": "afl-autos-leads-sanitized-v1",
-  "generated_at": "2026-09-25T09:51:02-06:00",
+  "generated_at": "2026-09-25T11:51:56-06:00",
   "timezone": "America/Mexico_City",
   "privacy": "NO_PII",
   "leads": [
@@ -50,13 +50,13 @@
       "vehicle": "Ford F-150 Lariat 2018 Blanca",
       "intent": "PRECIO",
       "priority": "ALTA",
-      "state": "CONVERSACION / PRECIO_CONFIRMADO / PAQUETE_FOTOS_LISTO / RESPUESTA_PENDIENTE",
-      "next_action": "Responder $510,000 MXN. Si muestra interés, enviar paquete preparado de 5 fotos; confirmar disponibilidad antes de proponer visita.",
+      "state": "CONVERSACION / PRECIO_CONFIRMADO / PAQUETE_FOTOS_LISTO / LISTO_PARA_ENVIAR_MANUAL",
+      "next_action": "Enviar manualmente en Messenger el mensaje preparado y las 5 fotos. Después esperar respuesta y confirmar disponibilidad antes de visita.",
       "trigger": "RESPUESTA_PENDIENTE",
       "photos": "FOTOS_PAQUETE_LISTO_5",
       "video": "VIDEO_PENDIENTE / CARPETA_CANONICA_VACIA",
-      "material_action": "ENVIAR_PAQUETE_5_FOTOS_SI_INTERES; si pide video: SUBIR_VIDEO_A_CHAT o PREPARAR_VIDEO",
-      "result": "PRECIO_CONFIRMADO / PAQUETE_FOTOS_LISTO / PENDIENTE_RESPUESTA"
+      "material_action": "PAQUETE_5_FOTOS_LISTO; no enviado aún",
+      "result": "LISTO_PARA_ENVIAR_MANUAL / NO_ENVIADO"
     }
   ]
 }
