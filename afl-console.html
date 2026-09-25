@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<title>AFL AUTOS — Console</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0d1117;color:#edf2f7;font:14px system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+main{max-width:1180px;margin:auto;padding:18px}.top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:16px}
+h1{margin:0}.muted{color:#91a3af}.pill{border:1px solid #3b4a55;border-radius:999px;padding:6px 10px;font-size:11px}
+.card{background:#151d25;border:1px solid #293740;border-radius:15px;padding:15px;margin-bottom:12px}.gold{border-top:3px solid #d6ad49}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.group{margin-top:18px}
+a.btn,button.btn{display:flex;align-items:center;gap:8px;text-decoration:none;background:#10171d;color:#edf2f7;border:1px solid #34444f;border-radius:10px;padding:13px;min-height:52px;cursor:pointer}
+a.btn strong{display:block}.primary{background:#d6ad49!important;color:#17120a!important;font-weight:850}.blue{background:#18364d!important}.green{background:#183c2c!important}
+.num{display:grid;place-items:center;width:26px;height:26px;border:1px solid currentColor;border-radius:999px;font-weight:900;flex:0 0 26px}
+.code{white-space:pre-wrap;background:#0c1217;border:1px solid #283741;border-radius:10px;padding:11px}
+@media(max-width:760px){main{padding:13px}.grid{grid-template-columns:1fr}.top{align-items:flex-start}.pill{font-size:10px}}
+</style>
+</head>
+<body><main>
+<header class="top"><div><h1>AFL AUTOS — Console</h1><div class="muted">Entrada directa a todo el ramal operativo</div></div><span class="pill">CONSOLE V1 · 2026-09-24</span></header>
+
+<section class="card gold">
+<h2 style="margin-top:0">Acceso rápido</h2>
+<p class="muted">La consola solo navega. Vehículos, Comercial, Producción y Drive conservan sus propias fuentes de verdad. No contiene PII.</p>
+<div class="grid">
+<a class="btn primary" href="apv/index.html#respuestas"><span class="num">6</span><span><strong>RESPONDER / LEADS</strong><small>Facebook, Messenger, TikTok, WhatsApp o llamada</small></span></a>
+<a class="btn" href="apv/index.html#seguimiento"><span class="num">7</span><span><strong>SEGUIMIENTO</strong><small>Siguiente acción, fecha, etapa y control</small></span></a>
+<a class="btn blue" href="home-operaciones-v4.html#operaciones"><span class="num">0</span><span><strong>HOME V4</strong><small>Centro de operación</small></span></a>
+</div>
+</section>
+
+<section class="group"><h2>APV OPERATIVO</h2><div class="grid">
+<a class="btn" href="apv/index.html#buscar"><span class="num">1</span><span><strong>BUSCAR VEHÍCULO</strong><small>Localizar unidad y abrir contexto</small></span></a>
+<a class="btn" href="apv/index.html#inventario"><span class="num">2</span><span><strong>INVENTARIO</strong><small>Navegación de unidades</small></span></a>
+<a class="btn" href="apv/index.html#nuevo"><span class="num">3</span><span><strong>NUEVO VEHÍCULO</strong><small>Identidad, alta y Drive</small></span></a>
+<a class="btn" href="apv/index.html#ficha"><span class="num">4</span><span><strong>FICHA</strong><small>Datos, comercial y pendientes</small></span></a>
+<a class="btn" href="apv/index.html#material"><span class="num">5</span><span><strong>MATERIAL / DRIVE</strong><small>Fotos, videos y carpetas</small></span></a>
+<a class="btn primary" href="apv/index.html#respuestas"><span class="num">6</span><span><strong>RESPONDER / LEADS</strong><small>Lead V2 + siguiente acción</small></span></a>
+<a class="btn" href="apv/index.html#seguimiento"><span class="num">7</span><span><strong>SEGUIMIENTO</strong><small>Acción y fecha</small></span></a>
+<a class="btn" href="apv/index.html#produccion"><span class="num">8</span><span><strong>PRODUCCIÓN</strong><small>Fotos, video y contenido</small></span></a>
+<a class="btn" href="apv/index.html#resultados"><span class="num">9</span><span><strong>RESULTADOS</strong><small>Medición 7D</small></span></a>
+<a class="btn" href="apv/index.html#herramientas"><span class="num">10</span><span><strong>HERRAMIENTAS</strong><small>Conexiones y utilidades</small></span></a>
+</div></section>
+
+<section class="group"><h2>HOME / COORDINACIÓN</h2><div class="grid">
+<a class="btn" href="home-operaciones-v4.html#respuestas"><strong>COMERCIAL / RESPUESTAS</strong></a>
+<a class="btn" href="home-operaciones-v4.html#seguimiento"><strong>SEGUIMIENTO HOME</strong></a>
+<a class="btn" href="home-operaciones-v4.html#ficha"><strong>FICHA / JSON</strong></a>
+<a class="btn" href="home-operaciones-v4.html#produccion"><strong>PRODUCCIÓN</strong></a>
+<a class="btn" href="home-operaciones-v4.html#lab"><strong>CONTENT LAB</strong></a>
+<a class="btn" href="home-operaciones-v4.html#drive"><strong>DRIVE / ESTRUCTURA</strong></a>
+<a class="btn" href="home-operaciones-v4.html#sistema"><strong>SISTEMA / GITHUB</strong></a>
+<a class="btn green" href="home-operaciones-v4.html#rootconsole"><strong>ROOT / COORDINADOR</strong></a>
+</div></section>
+
+<section class="card gold group">
+<h2 style="margin-top:0">Lead V2</h2>
+<div class="code">CAPTURA / MENSAJE
+→ LEAD_ID
+→ FECHA + HORA
+→ TELÉFONO/LADA si existe
+→ PRIORIDAD
+→ RESPUESTA
+→ MATERIAL (fotos/video)
+→ SIGUIENTE ACCIÓN
+→ DRIVE PRIVADO
+→ ESTADO SANITIZADO EN HOME/CONSOLE</div>
+<p class="muted">PII, teléfono, conversaciones y notas privadas permanecen en Drive autorizado. Esta consola no los carga ni los muestra.</p>
+</section>
+</main></body></html>
